@@ -32,3 +32,8 @@ D:\Proyectos\AudioCorrientes\AudioCorrientes\Login\obj\Debug\CPresentacion.cspro
 D:\Proyectos\AudioCorrientes\AudioCorrientes\Login\obj\Debug\Login.exe
 D:\Proyectos\AudioCorrientes\AudioCorrientes\Login\obj\Debug\Login.pdb
 D:\Proyectos\AudioCorrientes\AudioCorrientes\Login\obj\Debug\Login.CSuAdministrador.MenuPrincipalSA.resources
+P:\AudioCorrientes\AudioCorrientes\Login\obj\Debug\Login.CSuAdministrador.MenuPrincipalSA.resources
+P:\AudioCorrientes\AudioCorrientes\Login\obj\Debug\Login.CSuAdministrador.SUDashboard.resources
+P:\AudioCorrientes\AudioCorrientes\Login\obj\Debug\Login.CSuAdministrador.AgregarProducto.resources
+P:\AudioCorrientes\AudioCorrientes\Login\obj\Debug\Login.CSuAdministrador.Ventas.resources
+P:\AudioCorrientes\AudioCorrientes\Login\obj\Debug\Login.CSuAdministrador.Empleados.resources

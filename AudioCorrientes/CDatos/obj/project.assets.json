@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Proyectos\\AudioCorrientes\\AudioCorrientes\\CDatos\\CDatos.csproj",
+      "projectUniqueName": "P:\\AudioCorrientes\\AudioCorrientes\\CDatos\\CDatos.csproj",
       "projectName": "CDatos",
-      "projectPath": "D:\\Proyectos\\AudioCorrientes\\AudioCorrientes\\CDatos\\CDatos.csproj",
+      "projectPath": "P:\\AudioCorrientes\\AudioCorrientes\\CDatos\\CDatos.csproj",
       "packagesPath": "C:\\Users\\colo5\\.nuget\\packages\\",
-      "outputPath": "D:\\Proyectos\\AudioCorrientes\\AudioCorrientes\\CDatos\\obj\\",
+      "outputPath": "P:\\AudioCorrientes\\AudioCorrientes\\CDatos\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\colo5\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Login.CSuAdministrador
 {
-    public partial class MenuPrincipalSAa : Form
+    public partial class Empleados : Form
     {
-        public MenuPrincipalSAa()
+        public Empleados()
         {
             InitializeComponent();
         }

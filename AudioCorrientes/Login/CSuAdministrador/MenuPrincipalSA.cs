@@ -101,5 +101,10 @@ namespace Login.CSuAdministrador
         {
             AbrirFormEnPanel(new Empleados());
         }
+
+        private void btnBackUp_Click(object sender, EventArgs e)
+        {
+            AbrirFormEnPanel(new BackUpForm());
+        }
     }
 }

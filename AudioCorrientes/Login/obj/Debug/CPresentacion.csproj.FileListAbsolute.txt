@@ -37,3 +37,5 @@ P:\AudioCorrientes\AudioCorrientes\Login\obj\Debug\Login.CSuAdministrador.SUDash
 P:\AudioCorrientes\AudioCorrientes\Login\obj\Debug\Login.CSuAdministrador.AgregarProducto.resources
 P:\AudioCorrientes\AudioCorrientes\Login\obj\Debug\Login.CSuAdministrador.Ventas.resources
 P:\AudioCorrientes\AudioCorrientes\Login\obj\Debug\Login.CSuAdministrador.Empleados.resources
+P:\AudioCorrientes\AudioCorrientes\Login\obj\Debug\Login.CSuAdministrador.BackUpForm.resources
+P:\AudioCorrientes\AudioCorrientes\Login\obj\Debug\Login.CVendedor.MenuPrincipalVendedor.resources

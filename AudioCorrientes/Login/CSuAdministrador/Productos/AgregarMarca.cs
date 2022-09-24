@@ -8,13 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Login.CSuAdministrador
+namespace Login.CSuAdministrador.Productos
 {
-    public partial class AgregarProducto : Form
+    public partial class AgregarMarca : Form
     {
-        public AgregarProducto()
+        public AgregarMarca()
         {
             InitializeComponent();
         }
+
+       
     }
 }

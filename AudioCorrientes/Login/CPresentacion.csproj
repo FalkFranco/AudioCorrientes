@@ -47,11 +47,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CSuAdministrador\AgregarProducto.cs">
+    <Compile Include="CSuAdministrador\Productos\AgregarCategoria.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CSuAdministrador\AgregarProducto.Designer.cs">
-      <DependentUpon>AgregarProducto.cs</DependentUpon>
+    <Compile Include="CSuAdministrador\Productos\AgregarCategoria.Designer.cs">
+      <DependentUpon>AgregarCategoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CSuAdministrador\Productos\AgregarMarca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CSuAdministrador\Productos\AgregarMarca.Designer.cs">
+      <DependentUpon>AgregarMarca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CSuAdministrador\Productos\AgregarProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CSuAdministrador\Productos\AgregarProductos.Designer.cs">
+      <DependentUpon>AgregarProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CSuAdministrador\Productos\Pruductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CSuAdministrador\Productos\Pruductos.Designer.cs">
+      <DependentUpon>Pruductos.cs</DependentUpon>
     </Compile>
     <Compile Include="CSuAdministrador\BackUpForm.cs">
       <SubType>Form</SubType>
@@ -103,8 +121,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="CSuAdministrador\AgregarProducto.resx">
-      <DependentUpon>AgregarProducto.cs</DependentUpon>
+    <EmbeddedResource Include="CSuAdministrador\Productos\AgregarCategoria.resx">
+      <DependentUpon>AgregarCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CSuAdministrador\Productos\AgregarMarca.resx">
+      <DependentUpon>AgregarMarca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CSuAdministrador\Productos\AgregarProductos.resx">
+      <DependentUpon>AgregarProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CSuAdministrador\Productos\Pruductos.resx">
+      <DependentUpon>Pruductos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CSuAdministrador\BackUpForm.resx">
       <DependentUpon>BackUpForm.cs</DependentUpon>

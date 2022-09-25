@@ -28,23 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.txtPrecioCompra = new System.Windows.Forms.TextBox();
+            this.txtPrecioVenta = new System.Windows.Forms.TextBox();
+            this.txtStock = new System.Windows.Forms.TextBox();
+            this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBoxCategoria = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.comboBoxMarca = new System.Windows.Forms.ComboBox();
+            this.btnAgregarProducto = new System.Windows.Forms.Button();
+            this.btnSalirMenuPrincipal = new System.Windows.Forms.Button();
+            this.errorProviderAgregarProducto = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderAgregarProducto)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -57,41 +60,46 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Agregar Producto";
             // 
-            // textBox1
+            // txtNombre
             // 
-            this.textBox1.Location = new System.Drawing.Point(75, 131);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(161, 20);
-            this.textBox1.TabIndex = 1;
+            this.txtNombre.Location = new System.Drawing.Point(75, 131);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(161, 20);
+            this.txtNombre.TabIndex = 1;
+            this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
-            // textBox2
+            // txtPrecioCompra
             // 
-            this.textBox2.Location = new System.Drawing.Point(75, 190);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(161, 20);
-            this.textBox2.TabIndex = 2;
+            this.txtPrecioCompra.Location = new System.Drawing.Point(75, 190);
+            this.txtPrecioCompra.Name = "txtPrecioCompra";
+            this.txtPrecioCompra.Size = new System.Drawing.Size(161, 20);
+            this.txtPrecioCompra.TabIndex = 2;
+            this.txtPrecioCompra.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecioCompra_KeyPress);
             // 
-            // textBox3
+            // txtPrecioVenta
             // 
-            this.textBox3.Location = new System.Drawing.Point(75, 251);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(161, 20);
-            this.textBox3.TabIndex = 3;
+            this.txtPrecioVenta.Location = new System.Drawing.Point(75, 251);
+            this.txtPrecioVenta.Name = "txtPrecioVenta";
+            this.txtPrecioVenta.Size = new System.Drawing.Size(161, 20);
+            this.txtPrecioVenta.TabIndex = 3;
+            this.txtPrecioVenta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecioVenta_KeyPress);
             // 
-            // textBox4
+            // txtStock
             // 
-            this.textBox4.Location = new System.Drawing.Point(305, 251);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(161, 20);
-            this.textBox4.TabIndex = 4;
+            this.txtStock.Location = new System.Drawing.Point(305, 251);
+            this.txtStock.Name = "txtStock";
+            this.txtStock.Size = new System.Drawing.Size(161, 20);
+            this.txtStock.TabIndex = 4;
+            this.txtStock.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtStock_KeyPress);
             // 
-            // textBox6
+            // txtDescripcion
             // 
-            this.textBox6.Location = new System.Drawing.Point(75, 309);
-            this.textBox6.Multiline = true;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(391, 129);
-            this.textBox6.TabIndex = 6;
+            this.txtDescripcion.Location = new System.Drawing.Point(75, 309);
+            this.txtDescripcion.Multiline = true;
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(391, 129);
+            this.txtDescripcion.TabIndex = 6;
+            this.txtDescripcion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDescripcion_KeyPress);
             // 
             // label2
             // 
@@ -138,13 +146,19 @@
             this.label6.TabIndex = 11;
             this.label6.Text = "Stock";
             // 
-            // comboBox1
+            // comboBoxCategoria
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(305, 131);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(161, 21);
-            this.comboBox1.TabIndex = 12;
+            this.comboBoxCategoria.FormattingEnabled = true;
+            this.comboBoxCategoria.Items.AddRange(new object[] {
+            "Guitarras Electricas",
+            "Guitarras Acusticas",
+            "Baterias",
+            "Bajos",
+            "Amplificadores"});
+            this.comboBoxCategoria.Location = new System.Drawing.Point(305, 131);
+            this.comboBoxCategoria.Name = "comboBoxCategoria";
+            this.comboBoxCategoria.Size = new System.Drawing.Size(161, 21);
+            this.comboBoxCategoria.TabIndex = 12;
             // 
             // label7
             // 
@@ -164,56 +178,67 @@
             this.label8.TabIndex = 14;
             this.label8.Text = "Marca";
             // 
-            // comboBox2
+            // comboBoxMarca
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(305, 189);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(161, 21);
-            this.comboBox2.TabIndex = 15;
+            this.comboBoxMarca.FormattingEnabled = true;
+            this.comboBoxMarca.Items.AddRange(new object[] {
+            "Gibson",
+            "Fender",
+            "Marshall",
+            "Boos"});
+            this.comboBoxMarca.Location = new System.Drawing.Point(305, 189);
+            this.comboBoxMarca.Name = "comboBoxMarca";
+            this.comboBoxMarca.Size = new System.Drawing.Size(161, 21);
+            this.comboBoxMarca.TabIndex = 15;
             // 
-            // button1
+            // btnAgregarProducto
             // 
-            this.button1.Location = new System.Drawing.Point(75, 463);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(161, 44);
-            this.button1.TabIndex = 16;
-            this.button1.Text = "Agregar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnAgregarProducto.Location = new System.Drawing.Point(75, 463);
+            this.btnAgregarProducto.Name = "btnAgregarProducto";
+            this.btnAgregarProducto.Size = new System.Drawing.Size(161, 44);
+            this.btnAgregarProducto.TabIndex = 16;
+            this.btnAgregarProducto.Text = "Agregar";
+            this.btnAgregarProducto.UseVisualStyleBackColor = true;
+            this.btnAgregarProducto.Click += new System.EventHandler(this.btnAgregarProducto_Click);
             // 
-            // button2
+            // btnSalirMenuPrincipal
             // 
-            this.button2.Location = new System.Drawing.Point(305, 463);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(161, 44);
-            this.button2.TabIndex = 17;
-            this.button2.Text = "Salir";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnSalirMenuPrincipal.Location = new System.Drawing.Point(305, 463);
+            this.btnSalirMenuPrincipal.Name = "btnSalirMenuPrincipal";
+            this.btnSalirMenuPrincipal.Size = new System.Drawing.Size(161, 44);
+            this.btnSalirMenuPrincipal.TabIndex = 17;
+            this.btnSalirMenuPrincipal.Text = "Salir";
+            this.btnSalirMenuPrincipal.UseVisualStyleBackColor = true;
+            // 
+            // errorProviderAgregarProducto
+            // 
+            this.errorProviderAgregarProducto.ContainerControl = this;
             // 
             // AgregarProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(553, 540);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.btnSalirMenuPrincipal);
+            this.Controls.Add(this.btnAgregarProducto);
+            this.Controls.Add(this.comboBoxMarca);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.comboBoxCategoria);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtDescripcion);
+            this.Controls.Add(this.txtStock);
+            this.Controls.Add(this.txtPrecioVenta);
+            this.Controls.Add(this.txtPrecioCompra);
+            this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.label1);
             this.Name = "AgregarProductos";
             this.Text = "AgregarProductos";
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderAgregarProducto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -222,21 +247,22 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.TextBox txtPrecioCompra;
+        private System.Windows.Forms.TextBox txtPrecioVenta;
+        private System.Windows.Forms.TextBox txtStock;
+        private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBoxCategoria;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ComboBox comboBoxMarca;
+        private System.Windows.Forms.Button btnAgregarProducto;
+        private System.Windows.Forms.Button btnSalirMenuPrincipal;
+        private System.Windows.Forms.ErrorProvider errorProviderAgregarProducto;
     }
 }

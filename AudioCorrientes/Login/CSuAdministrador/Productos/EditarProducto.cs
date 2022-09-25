@@ -7,13 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Windows.Forms.DataVisualization.Charting;
 
 namespace Login.CSuAdministrador.Productos
 {
-    public partial class AgregarProductos : Form
+    public partial class EditarProducto : Form
     {
-        public AgregarProductos()
+        public EditarProducto()
         {
             InitializeComponent();
         }
@@ -27,16 +26,15 @@ namespace Login.CSuAdministrador.Productos
                 DialogResult result;
 
                 // Displays the MessageBox.
-                result = MessageBox.Show("Desea agregar un nuevo producto?", "Agregar Producto", buttons, MessageBoxIcon.Exclamation);
+                result = MessageBox.Show("Desea editar este producto?", "Editar Producto", buttons, MessageBoxIcon.Exclamation);
                 if (result == System.Windows.Forms.DialogResult.Yes)
                 {
-                    MessageBox.Show("Producto Agregado");
+                    MessageBox.Show("Producto Editado");
                     //limpiarFormulario();
                 }
-                
+
             }
         }
-
         private bool ValidarCampos()
         {
             string msg = "No puede estar vacio";
@@ -46,17 +44,17 @@ namespace Login.CSuAdministrador.Productos
             if (txtNombre.Text == "")
             {
                 ok = false;
-                errorProviderAgregarProducto.SetError(txtNombre, msg);
+                errorProviderEditarProducto.SetError(txtNombre, msg);
             }
             if (txtPrecioCompra.Text == "")
             {
                 ok = false;
-                errorProviderAgregarProducto.SetError(txtPrecioCompra, msg);
+                errorProviderEditarProducto.SetError(txtPrecioCompra, msg);
             }
             if (txtPrecioVenta.Text == "")
             {
                 ok = false;
-                errorProviderAgregarProducto.SetError(txtPrecioVenta, msg);
+                errorProviderEditarProducto.SetError(txtPrecioVenta, msg);
             }
             //if (Int32.Parse(txtPrecioVenta.Text) < Int32.Parse(txtPrecioCompra.Text))
             //{
@@ -66,51 +64,48 @@ namespace Login.CSuAdministrador.Productos
             if (txtDescripcion.Text == "")
             {
                 ok = false;
-                errorProviderAgregarProducto.SetError(txtDescripcion, msg);
+                errorProviderEditarProducto.SetError(txtDescripcion, msg);
             }
             if (txtStock.Text == "")
             {
                 ok = false;
-                errorProviderAgregarProducto.SetError(txtStock, msg);
+                errorProviderEditarProducto.SetError(txtStock, msg);
             }
             //Min Caracteres
             if (txtNombre.Text.Length <= 4)
             {
                 ok = false;
-                errorProviderAgregarProducto.SetError(txtNombre, msgCar);
+                errorProviderEditarProducto.SetError(txtNombre, msgCar);
             }
             if (txtDescripcion.Text.Length <= 20)
             {
                 ok = false;
-                errorProviderAgregarProducto.SetError(txtDescripcion, msgCar);
+                errorProviderEditarProducto.SetError(txtDescripcion, msgCar);
             }
             //Validacion ComboBox
             if (comboBoxCategoria.Text == "")
             {
                 ok = false;
-                errorProviderAgregarProducto.SetError(comboBoxCategoria, msg);
+                errorProviderEditarProducto.SetError(comboBoxCategoria, msg);
             }
             if (comboBoxMarca.Text == "")
             {
                 ok = false;
-                errorProviderAgregarProducto.SetError(comboBoxMarca, msg);
+                errorProviderEditarProducto.SetError(comboBoxMarca, msg);
             }
             return ok;
         }
         private void BorrarMensajeProvider()
         {
-            errorProviderAgregarProducto.SetError(txtNombre, "");
-            errorProviderAgregarProducto.SetError(txtPrecioCompra, "");
-            errorProviderAgregarProducto.SetError(txtPrecioVenta, "");
-            errorProviderAgregarProducto.SetError(txtStock, "");
-            errorProviderAgregarProducto.SetError(txtDescripcion, "");
-            errorProviderAgregarProducto.SetError(comboBoxCategoria, "");
-            errorProviderAgregarProducto.SetError(comboBoxMarca, "");
+            errorProviderEditarProducto.SetError(txtNombre, "");
+            errorProviderEditarProducto.SetError(txtPrecioCompra, "");
+            errorProviderEditarProducto.SetError(txtPrecioVenta, "");
+            errorProviderEditarProducto.SetError(txtStock, "");
+            errorProviderEditarProducto.SetError(txtDescripcion, "");
+            errorProviderEditarProducto.SetError(comboBoxCategoria, "");
+            errorProviderEditarProducto.SetError(comboBoxMarca, "");
         }
 
-        //Bloqueo de teclas segun elo tipo de datos a ingresar
-
-        //String
         private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))

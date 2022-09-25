@@ -28,30 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.components = new System.ComponentModel.Container();
+            this.btnSalir = new System.Windows.Forms.Button();
+            this.btnAgregarMarca = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtMarca = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.errorProviderMarca = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderMarca)).BeginInit();
             this.SuspendLayout();
             // 
-            // button2
+            // btnSalir
             // 
-            this.button2.Location = new System.Drawing.Point(288, 185);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(161, 44);
-            this.button2.TabIndex = 34;
-            this.button2.Text = "Salir";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnSalir.Location = new System.Drawing.Point(288, 185);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(161, 44);
+            this.btnSalir.TabIndex = 34;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
-            // button1
+            // btnAgregarMarca
             // 
-            this.button1.Location = new System.Drawing.Point(58, 185);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(161, 44);
-            this.button1.TabIndex = 33;
-            this.button1.Text = "Agregar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnAgregarMarca.Location = new System.Drawing.Point(58, 185);
+            this.btnAgregarMarca.Name = "btnAgregarMarca";
+            this.btnAgregarMarca.Size = new System.Drawing.Size(161, 44);
+            this.btnAgregarMarca.TabIndex = 33;
+            this.btnAgregarMarca.Text = "Agregar";
+            this.btnAgregarMarca.UseVisualStyleBackColor = true;
+            this.btnAgregarMarca.Click += new System.EventHandler(this.btnAgregarMarca_Click);
             // 
             // label2
             // 
@@ -62,12 +67,13 @@
             this.label2.TabIndex = 24;
             this.label2.Text = "Nombre de la Marca";
             // 
-            // textBox1
+            // txtMarca
             // 
-            this.textBox1.Location = new System.Drawing.Point(58, 117);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(391, 20);
-            this.textBox1.TabIndex = 19;
+            this.txtMarca.Location = new System.Drawing.Point(58, 117);
+            this.txtMarca.Name = "txtMarca";
+            this.txtMarca.Size = new System.Drawing.Size(391, 20);
+            this.txtMarca.TabIndex = 19;
+            this.txtMarca.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMarca_KeyPress);
             // 
             // label1
             // 
@@ -79,18 +85,23 @@
             this.label1.TabIndex = 18;
             this.label1.Text = "Agregar Marca";
             // 
+            // errorProviderMarca
+            // 
+            this.errorProviderMarca.ContainerControl = this;
+            // 
             // AgregarMarca
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(489, 271);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnSalir);
+            this.Controls.Add(this.btnAgregarMarca);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtMarca);
             this.Controls.Add(this.label1);
             this.Name = "AgregarMarca";
             this.Text = "AgregarMarca";
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderMarca)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -98,10 +109,11 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.Button btnAgregarMarca;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtMarca;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ErrorProvider errorProviderMarca;
     }
 }

@@ -36,6 +36,12 @@ namespace Login.CSuAdministrador
             formAddMarca.Show();
         }
 
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            EditarProducto formEditarProducto = new EditarProducto();
+            formEditarProducto.Show();
+        }
+
         //Validaciones de Formularios
         private void btnBuscar_Click(object sender, EventArgs e)
         {
@@ -71,6 +77,20 @@ namespace Login.CSuAdministrador
         {
             if(!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar)){
                 e.Handled = true;
+            }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result;
+
+            // Displays the MessageBox.
+            result = MessageBox.Show("Desea Eliminar el producto ....?", "Eliminar Producto", buttons, MessageBoxIcon.Warning);
+            if (result == System.Windows.Forms.DialogResult.Yes)
+            {
+                MessageBox.Show("Producto Eliminado");
+                //limpiarFormulario();
             }
         }
     }

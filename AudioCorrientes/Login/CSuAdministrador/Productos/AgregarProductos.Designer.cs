@@ -209,6 +209,7 @@
             this.btnSalirMenuPrincipal.TabIndex = 17;
             this.btnSalirMenuPrincipal.Text = "Salir";
             this.btnSalirMenuPrincipal.UseVisualStyleBackColor = true;
+            this.btnSalirMenuPrincipal.Click += new System.EventHandler(this.btnSalirMenuPrincipal_Click);
             // 
             // errorProviderAgregarProducto
             // 

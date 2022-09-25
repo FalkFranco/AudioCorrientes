@@ -65,6 +65,12 @@
     <Compile Include="CSuAdministrador\Productos\AgregarProductos.Designer.cs">
       <DependentUpon>AgregarProductos.cs</DependentUpon>
     </Compile>
+    <Compile Include="CSuAdministrador\Productos\EditarProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CSuAdministrador\Productos\EditarProducto.Designer.cs">
+      <DependentUpon>EditarProducto.cs</DependentUpon>
+    </Compile>
     <Compile Include="CSuAdministrador\Productos\Pruductos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,6 +135,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CSuAdministrador\Productos\AgregarProductos.resx">
       <DependentUpon>AgregarProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CSuAdministrador\Productos\EditarProducto.resx">
+      <DependentUpon>EditarProducto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CSuAdministrador\Productos\Pruductos.resx">
       <DependentUpon>Pruductos.cs</DependentUpon>

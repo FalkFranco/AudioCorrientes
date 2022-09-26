@@ -1,4 +1,4 @@
-﻿namespace Login.CSuAdministrador
+﻿namespace Login.CSuAdministrador.Empleados
 {
     partial class Empleados
     {
@@ -28,14 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            this.lbProductoTitle = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btnAgregarROL = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnEditar = new System.Windows.Forms.Button();
+            this.btnAgregar = new System.Windows.Forms.Button();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.dataGridViewEmpleados = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.label5 = new System.Windows.Forms.Label();
@@ -48,14 +52,34 @@
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.lbProductoTitle = new System.Windows.Forms.Label();
+            this.errorProviderBuscarEmpleado = new System.Windows.Forms.ErrorProvider(this.components);
+            this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmpleados)).BeginInit();
             this.tabPage2.SuspendLayout();
-            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderBuscarEmpleado)).BeginInit();
             this.SuspendLayout();
+            // 
+            // lbProductoTitle
+            // 
+            this.lbProductoTitle.AutoSize = true;
+            this.lbProductoTitle.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbProductoTitle.Location = new System.Drawing.Point(61, 24);
+            this.lbProductoTitle.Name = "lbProductoTitle";
+            this.lbProductoTitle.Size = new System.Drawing.Size(125, 25);
+            this.lbProductoTitle.TabIndex = 0;
+            this.lbProductoTitle.Text = "Empleados";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.lbProductoTitle);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1255, 67);
+            this.panel1.TabIndex = 16;
             // 
             // tabControl1
             // 
@@ -66,16 +90,17 @@
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1255, 542);
-            this.tabControl1.TabIndex = 3;
+            this.tabControl1.TabIndex = 17;
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.button4);
-            this.tabPage1.Controls.Add(this.button3);
-            this.tabPage1.Controls.Add(this.button2);
-            this.tabPage1.Controls.Add(this.textBox1);
-            this.tabPage1.Controls.Add(this.button1);
-            this.tabPage1.Controls.Add(this.dataGridView1);
+            this.tabPage1.Controls.Add(this.btnAgregarROL);
+            this.tabPage1.Controls.Add(this.btnEliminar);
+            this.tabPage1.Controls.Add(this.btnEditar);
+            this.tabPage1.Controls.Add(this.btnAgregar);
+            this.tabPage1.Controls.Add(this.txtBuscar);
+            this.tabPage1.Controls.Add(this.btnBuscar);
+            this.tabPage1.Controls.Add(this.dataGridViewEmpleados);
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
@@ -85,56 +110,69 @@
             this.tabPage1.Text = "Listar Empleados";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // btnAgregarROL
             // 
-            this.button4.Location = new System.Drawing.Point(1106, 197);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(123, 35);
-            this.button4.TabIndex = 6;
-            this.button4.Text = "Eliminar";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnAgregarROL.Location = new System.Drawing.Point(1106, 460);
+            this.btnAgregarROL.Name = "btnAgregarROL";
+            this.btnAgregarROL.Size = new System.Drawing.Size(123, 35);
+            this.btnAgregarROL.TabIndex = 7;
+            this.btnAgregarROL.Text = "Agregar ROL";
+            this.btnAgregarROL.UseVisualStyleBackColor = true;
+            this.btnAgregarROL.Click += new System.EventHandler(this.btnAgregarROL_Click);
             // 
-            // button3
+            // btnEliminar
             // 
-            this.button3.Location = new System.Drawing.Point(1106, 144);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(123, 35);
-            this.button3.TabIndex = 5;
-            this.button3.Text = "Editar";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnEliminar.Location = new System.Drawing.Point(1106, 197);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(123, 35);
+            this.btnEliminar.TabIndex = 6;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnEditar
             // 
-            this.button2.Location = new System.Drawing.Point(1106, 92);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(123, 35);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Agregar";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnEditar.Location = new System.Drawing.Point(1106, 144);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(123, 35);
+            this.btnEditar.TabIndex = 5;
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
-            // textBox1
+            // btnAgregar
             // 
-            this.textBox1.Location = new System.Drawing.Point(26, 57);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(960, 20);
-            this.textBox1.TabIndex = 3;
+            this.btnAgregar.Location = new System.Drawing.Point(1106, 92);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(123, 35);
+            this.btnAgregar.TabIndex = 4;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
-            // button1
+            // txtBuscar
             // 
-            this.button1.Location = new System.Drawing.Point(1003, 55);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Buscar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.txtBuscar.Location = new System.Drawing.Point(26, 57);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(960, 20);
+            this.txtBuscar.TabIndex = 3;
             // 
-            // dataGridView1
+            // btnBuscar
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(26, 92);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1061, 403);
-            this.dataGridView1.TabIndex = 1;
+            this.btnBuscar.Location = new System.Drawing.Point(1003, 55);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscar.TabIndex = 2;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
+            // dataGridViewEmpleados
+            // 
+            this.dataGridViewEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewEmpleados.Location = new System.Drawing.Point(26, 92);
+            this.dataGridViewEmpleados.Name = "dataGridViewEmpleados";
+            this.dataGridViewEmpleados.Size = new System.Drawing.Size(1061, 403);
+            this.dataGridViewEmpleados.TabIndex = 1;
             // 
             // label1
             // 
@@ -247,25 +285,9 @@
             this.textBox2.Size = new System.Drawing.Size(171, 20);
             this.textBox2.TabIndex = 0;
             // 
-            // panel1
+            // errorProviderBuscarEmpleado
             // 
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.lbProductoTitle);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1255, 67);
-            this.panel1.TabIndex = 2;
-            // 
-            // lbProductoTitle
-            // 
-            this.lbProductoTitle.AutoSize = true;
-            this.lbProductoTitle.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbProductoTitle.Location = new System.Drawing.Point(61, 24);
-            this.lbProductoTitle.Name = "lbProductoTitle";
-            this.lbProductoTitle.Size = new System.Drawing.Size(125, 25);
-            this.lbProductoTitle.TabIndex = 0;
-            this.lbProductoTitle.Text = "Empleados";
+            this.errorProviderBuscarEmpleado.ContainerControl = this;
             // 
             // Empleados
             // 
@@ -276,28 +298,32 @@
             this.Controls.Add(this.panel1);
             this.Name = "Empleados";
             this.Text = "Empleados";
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmpleados)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderBuscarEmpleado)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
+        private System.Windows.Forms.Label lbProductoTitle;
+        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btnAgregarROL;
+        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Button btnEditar;
+        private System.Windows.Forms.Button btnAgregar;
+        private System.Windows.Forms.TextBox txtBuscar;
+        private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.DataGridView dataGridViewEmpleados;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Label label5;
@@ -310,7 +336,6 @@
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label lbProductoTitle;
+        private System.Windows.Forms.ErrorProvider errorProviderBuscarEmpleado;
     }
 }

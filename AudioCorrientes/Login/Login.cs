@@ -83,5 +83,7 @@ namespace Login
             else MessageBox.Show("No existe el usuario", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             
         }
+
+        
     }
 }

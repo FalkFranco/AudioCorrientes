@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Login.CSuAdministrador
+namespace Login.CSuAdministrador.Empleados
 {
-    public partial class Empleados : Form
+    public partial class AgregarRol : Form
     {
-        public Empleados()
+        public AgregarRol()
         {
             InitializeComponent();
         }

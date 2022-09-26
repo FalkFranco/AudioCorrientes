@@ -47,6 +47,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CSuAdministrador\Empleados\AgregarEmpleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CSuAdministrador\Empleados\AgregarEmpleados.Designer.cs">
+      <DependentUpon>AgregarEmpleados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CSuAdministrador\Empleados\AgregarRol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CSuAdministrador\Empleados\AgregarRol.Designer.cs">
+      <DependentUpon>AgregarRol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CSuAdministrador\Empleados\EditarEmpleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CSuAdministrador\Empleados\EditarEmpleados.Designer.cs">
+      <DependentUpon>EditarEmpleados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CSuAdministrador\Empleados\Empleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CSuAdministrador\Empleados\Empleados.Designer.cs">
+      <DependentUpon>Empleados.cs</DependentUpon>
+    </Compile>
     <Compile Include="CSuAdministrador\Productos\AgregarCategoria.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,12 +106,6 @@
     </Compile>
     <Compile Include="CSuAdministrador\BackUpForm.Designer.cs">
       <DependentUpon>BackUpForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CSuAdministrador\Empleados.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CSuAdministrador\Empleados.Designer.cs">
-      <DependentUpon>Empleados.cs</DependentUpon>
     </Compile>
     <Compile Include="CSuAdministrador\SUDashboard.cs">
       <SubType>Form</SubType>
@@ -127,6 +145,15 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CSuAdministrador\Empleados\AgregarEmpleados.resx">
+      <DependentUpon>AgregarEmpleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CSuAdministrador\Empleados\EditarEmpleados.resx">
+      <DependentUpon>EditarEmpleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CSuAdministrador\Empleados\Empleados.resx">
+      <DependentUpon>Empleados.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CSuAdministrador\Productos\AgregarCategoria.resx">
       <DependentUpon>AgregarCategoria.cs</DependentUpon>
     </EmbeddedResource>
@@ -144,9 +171,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CSuAdministrador\BackUpForm.resx">
       <DependentUpon>BackUpForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CSuAdministrador\Empleados.resx">
-      <DependentUpon>Empleados.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CSuAdministrador\MenuPrincipalSA.resx">
       <DependentUpon>MenuPrincipalSA.cs</DependentUpon>
@@ -270,6 +294,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\servers21.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mostrar-contrasena.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

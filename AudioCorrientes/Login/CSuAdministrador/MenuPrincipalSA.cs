@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Login.CSuAdministrador.Empleados;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -99,7 +100,7 @@ namespace Login.CSuAdministrador
 
         private void btnEmpleados_Click(object sender, EventArgs e)
         {
-            AbrirFormEnPanel(new Empleados());
+            AbrirFormEnPanel(new Empleados.Empleados());
         }
 
         private void btnBackUp_Click(object sender, EventArgs e)

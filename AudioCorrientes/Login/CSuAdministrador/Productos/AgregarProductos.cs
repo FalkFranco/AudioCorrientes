@@ -20,21 +20,7 @@ namespace Login.CSuAdministrador.Productos
 
         private void btnAgregarProducto_Click(object sender, EventArgs e)
         {
-            BorrarMensajeProvider();
-            if (ValidarCampos())
-            {
-                MessageBoxButtons buttons = MessageBoxButtons.YesNo;
-                DialogResult result;
 
-                // Displays the MessageBox.
-                result = MessageBox.Show("Desea agregar un nuevo producto?", "Agregar Producto", buttons, MessageBoxIcon.Exclamation);
-                if (result == System.Windows.Forms.DialogResult.Yes)
-                {
-                    MessageBox.Show("Producto Agregado");
-                    //limpiarFormulario();
-                }
-                
-            }
         }
 
         private bool ValidarCampos()
@@ -155,6 +141,11 @@ namespace Login.CSuAdministrador.Productos
         private void btnSalirMenuPrincipal_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnAgregarEmpleado_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

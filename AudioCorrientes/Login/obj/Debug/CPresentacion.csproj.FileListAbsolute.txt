@@ -35,7 +35,6 @@ D:\Proyectos\AudioCorrientes\AudioCorrientes\Login\obj\Debug\Login.CSuAdministra
 P:\AudioCorrientes\AudioCorrientes\Login\obj\Debug\Login.CSuAdministrador.MenuPrincipalSA.resources
 P:\AudioCorrientes\AudioCorrientes\Login\obj\Debug\Login.CSuAdministrador.SUDashboard.resources
 P:\AudioCorrientes\AudioCorrientes\Login\obj\Debug\Login.CSuAdministrador.Ventas.resources
-P:\AudioCorrientes\AudioCorrientes\Login\obj\Debug\Login.CSuAdministrador.Empleados.resources
 P:\AudioCorrientes\AudioCorrientes\Login\obj\Debug\Login.CSuAdministrador.BackUpForm.resources
 P:\AudioCorrientes\AudioCorrientes\Login\obj\Debug\Login.CVendedor.MenuPrincipalVendedor.resources
 P:\AudioCorrientes\AudioCorrientes\Login\obj\Debug\Login.CSuAdministrador.Productos.AgregarProductos.resources
@@ -43,3 +42,6 @@ P:\AudioCorrientes\AudioCorrientes\Login\obj\Debug\Login.CSuAdministrador.Pruduc
 P:\AudioCorrientes\AudioCorrientes\Login\obj\Debug\Login.CSuAdministrador.Productos.AgregarCategoria.resources
 P:\AudioCorrientes\AudioCorrientes\Login\obj\Debug\Login.CSuAdministrador.Productos.AgregarMarca.resources
 P:\AudioCorrientes\AudioCorrientes\Login\obj\Debug\Login.CSuAdministrador.Productos.EditarProducto.resources
+P:\AudioCorrientes\AudioCorrientes\Login\obj\Debug\Login.CSuAdministrador.Empleados.AgregarEmpleados.resources
+P:\AudioCorrientes\AudioCorrientes\Login\obj\Debug\Login.CSuAdministrador.Empleados.EditarEmpleados.resources
+P:\AudioCorrientes\AudioCorrientes\Login\obj\Debug\Login.CSuAdministrador.Empleados.Empleados.resources

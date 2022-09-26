@@ -68,12 +68,14 @@ namespace Login.CSuAdministrador
             }
         }
 
-        
+
 
         private void AbrirFormEnPanel(object Formhijo)
         {
-            if (this.panelContenedor.Controls.Count > 0)
+            if (this.panelContenedor.Controls.Count > 0) 
+            { 
                 this.panelContenedor.Controls.RemoveAt(0);
+            }
             Form fh = Formhijo as Form;
             fh.TopLevel = false;
             fh.FormBorderStyle = FormBorderStyle.None;
@@ -106,6 +108,11 @@ namespace Login.CSuAdministrador
         private void btnBackUp_Click(object sender, EventArgs e)
         {
             AbrirFormEnPanel(new BackUpForm());
+        }
+
+        private void btnClientes_Click(object sender, EventArgs e)
+        {
+            AbrirFormEnPanel(new Clientes.Clientes());
         }
     }
 }

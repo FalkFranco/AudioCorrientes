@@ -71,5 +71,19 @@ namespace Login.CSuAdministrador.Empleados
                 e.Handled = true;
             }
         }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result;
+
+            // Displays the MessageBox.
+            result = MessageBox.Show("Desea Eliminar el Empleado ....?", "Eliminar Empleado", buttons, MessageBoxIcon.Warning);
+            if (result == System.Windows.Forms.DialogResult.Yes)
+            {
+                MessageBox.Show("Empleado Eliminado");
+                //limpiarFormulario();
+            }
+        }
     }
 }

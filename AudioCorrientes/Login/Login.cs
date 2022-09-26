@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using Login.CSuAdministrador;
+using Login.CVendedor;
 
 namespace Login
 {
@@ -78,6 +79,11 @@ namespace Login
             {
                 MenuPrincipalSA menuPrincipal = new MenuPrincipalSA();
                 menuPrincipal.Show();
+                this.Hide();
+            }else if (txtUser.Text == "Vendedor" && txtPassword.Text == "Vendedor")
+            {
+                MenuPrincipalVendedor menuPrincipalVendedor = new MenuPrincipalVendedor();
+                menuPrincipalVendedor.Show();
                 this.Hide();
             }
             else MessageBox.Show("No existe el usuario", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);

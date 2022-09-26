@@ -45,3 +45,5 @@ P:\AudioCorrientes\AudioCorrientes\Login\obj\Debug\Login.CSuAdministrador.Produc
 P:\AudioCorrientes\AudioCorrientes\Login\obj\Debug\Login.CSuAdministrador.Empleados.AgregarEmpleados.resources
 P:\AudioCorrientes\AudioCorrientes\Login\obj\Debug\Login.CSuAdministrador.Empleados.EditarEmpleados.resources
 P:\AudioCorrientes\AudioCorrientes\Login\obj\Debug\Login.CSuAdministrador.Empleados.Empleados.resources
+P:\AudioCorrientes\AudioCorrientes\Login\obj\Debug\Login.CSuAdministrador.Clientes.Clientes.resources
+P:\AudioCorrientes\AudioCorrientes\Login\obj\Debug\Login.CSuAdministrador.Empleados.AgregarRol.resources

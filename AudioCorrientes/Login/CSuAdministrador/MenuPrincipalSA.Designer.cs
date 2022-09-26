@@ -30,13 +30,13 @@
         {
             this.panelTop = new System.Windows.Forms.Panel();
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panelContenedor = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
             this.btnBackUp = new System.Windows.Forms.Button();
             this.btnEmpleados = new System.Windows.Forms.Button();
             this.btnClientes = new System.Windows.Forms.Button();
@@ -89,6 +89,14 @@
             this.panelMenu.Size = new System.Drawing.Size(220, 612);
             this.panelMenu.TabIndex = 1;
             // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.panel6.Location = new System.Drawing.Point(0, 435);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(5, 50);
+            this.panel6.TabIndex = 12;
+            // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
@@ -131,18 +139,11 @@
             // 
             // panelContenedor
             // 
+            this.panelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContenedor.Location = new System.Drawing.Point(220, 40);
             this.panelContenedor.Name = "panelContenedor";
-            this.panelContenedor.Size = new System.Drawing.Size(1215, 612);
+            this.panelContenedor.Size = new System.Drawing.Size(1261, 612);
             this.panelContenedor.TabIndex = 2;
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.panel6.Location = new System.Drawing.Point(0, 435);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(5, 50);
-            this.panel6.TabIndex = 12;
             // 
             // btnBackUp
             // 
@@ -202,6 +203,7 @@
             this.btnClientes.Text = "Clientes";
             this.btnClientes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnClientes.UseVisualStyleBackColor = true;
+            this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
             // 
             // btnVentas
             // 

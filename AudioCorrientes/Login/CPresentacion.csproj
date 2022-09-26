@@ -47,6 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CSuAdministrador\Clientes\Clientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CSuAdministrador\Clientes\Clientes.Designer.cs">
+      <DependentUpon>Clientes.cs</DependentUpon>
+    </Compile>
     <Compile Include="CSuAdministrador\Empleados\AgregarEmpleados.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,10 +125,10 @@
     <Compile Include="CSuAdministrador\MenuPrincipalSA.Designer.cs">
       <DependentUpon>MenuPrincipalSA.cs</DependentUpon>
     </Compile>
-    <Compile Include="CSuAdministrador\Ventas.cs">
+    <Compile Include="CSuAdministrador\Ventas\Ventas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CSuAdministrador\Ventas.Designer.cs">
+    <Compile Include="CSuAdministrador\Ventas\Ventas.Designer.cs">
       <DependentUpon>Ventas.cs</DependentUpon>
     </Compile>
     <Compile Include="CVendedor\MenuPrincipalVendedor.cs">
@@ -145,8 +151,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CSuAdministrador\Clientes\Clientes.resx">
+      <DependentUpon>Clientes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CSuAdministrador\Empleados\AgregarEmpleados.resx">
       <DependentUpon>AgregarEmpleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CSuAdministrador\Empleados\AgregarRol.resx">
+      <DependentUpon>AgregarRol.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CSuAdministrador\Empleados\EditarEmpleados.resx">
       <DependentUpon>EditarEmpleados.cs</DependentUpon>
@@ -178,7 +190,7 @@
     <EmbeddedResource Include="CSuAdministrador\SUDashboard.resx">
       <DependentUpon>SUDashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CSuAdministrador\Ventas.resx">
+    <EmbeddedResource Include="CSuAdministrador\Ventas\Ventas.resx">
       <DependentUpon>Ventas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CVendedor\MenuPrincipalVendedor.resx">

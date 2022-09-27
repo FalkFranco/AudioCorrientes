@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using Login.CSuAdministrador;
 using Login.CVendedor;
+using Login.CAdministrador;
+using Login.CGerente;
 
 namespace Login
 {
@@ -84,6 +86,16 @@ namespace Login
             {
                 MenuPrincipalVendedor menuPrincipalVendedor = new MenuPrincipalVendedor();
                 menuPrincipalVendedor.Show();
+                this.Hide();
+            }else if (txtUser.Text == "Admin" && txtPassword.Text == "Admin")
+            {
+                MenuPrincipalAdministrador menuPrincipalAdministrador = new MenuPrincipalAdministrador();
+                menuPrincipalAdministrador.Show();
+                this.Hide();
+            }else if (txtUser.Text == "Gerente" && txtPassword.Text == "Gerente")
+            {
+                MenuPrincipalGerente menuPrincipalGerente = new MenuPrincipalGerente();
+                menuPrincipalGerente.Show();
                 this.Hide();
             }
             else MessageBox.Show("No existe el usuario", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);

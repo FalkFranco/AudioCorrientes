@@ -73,6 +73,16 @@ namespace Login.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap cerrar_sesion_Mesa_de_trabajo_11 {
+            get {
+                object obj = ResourceManager.GetObject("cerrar-sesion_Mesa de trabajo 11", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap clientes {
             get {
                 object obj = ResourceManager.GetObject("clientes", resourceCulture);
@@ -206,6 +216,16 @@ namespace Login.Properties {
         internal static System.Drawing.Bitmap Icono_Restaurar {
             get {
                 object obj = ResourceManager.GetObject("Icono Restaurar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap informe_seo_Mesa_de_trabajo_1 {
+            get {
+                object obj = ResourceManager.GetObject("informe-seo_Mesa de trabajo 1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

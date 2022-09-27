@@ -1,6 +1,6 @@
-﻿namespace Login.CSuAdministrador
+﻿namespace Login.CGerente
 {
-    partial class MenuPrincipalSA
+    partial class MenuPrincipalGerente
     {
         /// <summary>
         /// Required designer variable.
@@ -31,15 +31,15 @@
             this.panelTop = new System.Windows.Forms.Panel();
             this.panelMenu = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panelContenedor = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.btnReporte = new System.Windows.Forms.Button();
             this.btnCerrarSesion = new System.Windows.Forms.Button();
-            this.btnBackUp = new System.Windows.Forms.Button();
             this.btnEmpleados = new System.Windows.Forms.Button();
             this.btnClientes = new System.Windows.Forms.Button();
             this.btnVentas = new System.Windows.Forms.Button();
@@ -66,16 +66,16 @@
             this.panelTop.Location = new System.Drawing.Point(0, 0);
             this.panelTop.Name = "panelTop";
             this.panelTop.Size = new System.Drawing.Size(1481, 40);
-            this.panelTop.TabIndex = 0;
+            this.panelTop.TabIndex = 1;
             this.panelTop.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTop_MouseDown);
             // 
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(204)))));
+            this.panelMenu.Controls.Add(this.panel6);
+            this.panelMenu.Controls.Add(this.btnReporte);
             this.panelMenu.Controls.Add(this.panel7);
             this.panelMenu.Controls.Add(this.btnCerrarSesion);
-            this.panelMenu.Controls.Add(this.panel6);
-            this.panelMenu.Controls.Add(this.btnBackUp);
             this.panelMenu.Controls.Add(this.panel5);
             this.panelMenu.Controls.Add(this.btnEmpleados);
             this.panelMenu.Controls.Add(this.panel4);
@@ -91,7 +91,7 @@
             this.panelMenu.Location = new System.Drawing.Point(0, 40);
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(220, 612);
-            this.panelMenu.TabIndex = 1;
+            this.panelMenu.TabIndex = 2;
             // 
             // panel7
             // 
@@ -100,14 +100,6 @@
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(5, 50);
             this.panel7.TabIndex = 14;
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.panel6.Location = new System.Drawing.Point(0, 435);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(5, 50);
-            this.panel6.TabIndex = 12;
             // 
             // panel5
             // 
@@ -155,7 +147,34 @@
             this.panelContenedor.Location = new System.Drawing.Point(220, 40);
             this.panelContenedor.Name = "panelContenedor";
             this.panelContenedor.Size = new System.Drawing.Size(1261, 612);
-            this.panelContenedor.TabIndex = 2;
+            this.panelContenedor.TabIndex = 3;
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.panel6.Location = new System.Drawing.Point(0, 444);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(5, 50);
+            this.panel6.TabIndex = 16;
+            // 
+            // btnReporte
+            // 
+            this.btnReporte.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnReporte.FlatAppearance.BorderSize = 0;
+            this.btnReporte.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Navy;
+            this.btnReporte.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(57)))), ((int)(((byte)(104)))));
+            this.btnReporte.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReporte.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReporte.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnReporte.Image = global::Login.Properties.Resources.informe_seo_Mesa_de_trabajo_1;
+            this.btnReporte.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReporte.Location = new System.Drawing.Point(0, 444);
+            this.btnReporte.Name = "btnReporte";
+            this.btnReporte.Size = new System.Drawing.Size(220, 50);
+            this.btnReporte.TabIndex = 15;
+            this.btnReporte.Text = "Reportes";
+            this.btnReporte.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnReporte.UseVisualStyleBackColor = true;
             // 
             // btnCerrarSesion
             // 
@@ -177,26 +196,6 @@
             this.btnCerrarSesion.UseVisualStyleBackColor = true;
             this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
             // 
-            // btnBackUp
-            // 
-            this.btnBackUp.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBackUp.FlatAppearance.BorderSize = 0;
-            this.btnBackUp.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Navy;
-            this.btnBackUp.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(57)))), ((int)(((byte)(104)))));
-            this.btnBackUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBackUp.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBackUp.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnBackUp.Image = global::Login.Properties.Resources.servers21;
-            this.btnBackUp.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBackUp.Location = new System.Drawing.Point(0, 435);
-            this.btnBackUp.Name = "btnBackUp";
-            this.btnBackUp.Size = new System.Drawing.Size(220, 50);
-            this.btnBackUp.TabIndex = 11;
-            this.btnBackUp.Text = "Backup";
-            this.btnBackUp.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnBackUp.UseVisualStyleBackColor = true;
-            this.btnBackUp.Click += new System.EventHandler(this.btnBackUp_Click);
-            // 
             // btnEmpleados
             // 
             this.btnEmpleados.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -215,7 +214,6 @@
             this.btnEmpleados.Text = "Empleados";
             this.btnEmpleados.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEmpleados.UseVisualStyleBackColor = true;
-            this.btnEmpleados.Click += new System.EventHandler(this.btnEmpleados_Click);
             // 
             // btnClientes
             // 
@@ -235,7 +233,6 @@
             this.btnClientes.Text = "Clientes";
             this.btnClientes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnClientes.UseVisualStyleBackColor = true;
-            this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
             // 
             // btnVentas
             // 
@@ -255,7 +252,6 @@
             this.btnVentas.Text = "Ventas";
             this.btnVentas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnVentas.UseVisualStyleBackColor = true;
-            this.btnVentas.Click += new System.EventHandler(this.btnVentas_Click);
             // 
             // btnProductos
             // 
@@ -275,7 +271,6 @@
             this.btnProductos.Text = "Productos";
             this.btnProductos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnProductos.UseVisualStyleBackColor = true;
-            this.btnProductos.Click += new System.EventHandler(this.btnProductos_Click);
             // 
             // pictureBox1
             // 
@@ -305,7 +300,6 @@
             this.btnDashboard.Text = "Dashboard";
             this.btnDashboard.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnDashboard.UseVisualStyleBackColor = true;
-            this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click);
             // 
             // btnRestaurar
             // 
@@ -376,7 +370,7 @@
             this.btnCerrar.UseVisualStyleBackColor = false;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
-            // MenuPrincipalSA
+            // MenuPrincipalGerente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -385,8 +379,8 @@
             this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.panelTop);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "MenuPrincipalSA";
-            this.Text = "SUADashboard";
+            this.Name = "MenuPrincipalGerente";
+            this.Text = "MenuPrincipalGerente";
             this.panelTop.ResumeLayout(false);
             this.panelMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -397,15 +391,13 @@
         #endregion
 
         private System.Windows.Forms.Panel panelTop;
-        private System.Windows.Forms.Panel panelMenu;
-        private System.Windows.Forms.Panel panelContenedor;
-        private System.Windows.Forms.Button btnCerrar;
-        private System.Windows.Forms.Button btnMaximizar;
-        private System.Windows.Forms.Button btnMinimizar;
         private System.Windows.Forms.Button btnRestaurar;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button btnDashboard;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnMinimizar;
+        private System.Windows.Forms.Button btnMaximizar;
+        private System.Windows.Forms.Button btnCerrar;
+        private System.Windows.Forms.Panel panelMenu;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Button btnCerrarSesion;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button btnEmpleados;
         private System.Windows.Forms.Panel panel4;
@@ -414,9 +406,11 @@
         private System.Windows.Forms.Button btnVentas;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnProductos;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnDashboard;
+        private System.Windows.Forms.Panel panelContenedor;
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Button btnBackUp;
-        private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Button btnCerrarSesion;
+        private System.Windows.Forms.Button btnReporte;
     }
 }

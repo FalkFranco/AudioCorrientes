@@ -71,6 +71,7 @@
             this.btnAgregarProducto.TabIndex = 50;
             this.btnAgregarProducto.Text = "Agregar";
             this.btnAgregarProducto.UseVisualStyleBackColor = true;
+
             // 
             // comboBoxMarca
             // 

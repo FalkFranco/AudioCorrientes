@@ -196,6 +196,9 @@
     <EmbeddedResource Include="CVendedor\MenuPrincipalVendedor.resx">
       <DependentUpon>MenuPrincipalVendedor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CVendedor\Vender.resx">
+      <DependentUpon>Vender.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -309,6 +312,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\mostrar-contrasena.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cerrar-sesion_Mesa de trabajo 1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

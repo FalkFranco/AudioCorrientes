@@ -114,5 +114,20 @@ namespace Login.CSuAdministrador
         {
             AbrirFormEnPanel(new Clientes.Clientes());
         }
+
+        private void btnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result;
+
+            // Displays the MessageBox.
+            result = MessageBox.Show("¿Seguro que desea cerrar sesión?", "Alerta", buttons, MessageBoxIcon.Exclamation);
+            if (result == System.Windows.Forms.DialogResult.Yes)
+            {
+                Login login = new Login();
+                login.Show();
+                this.Hide();
+            }
+        }
     }
 }

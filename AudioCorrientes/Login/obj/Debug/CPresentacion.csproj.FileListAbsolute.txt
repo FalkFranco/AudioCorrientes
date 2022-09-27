@@ -47,3 +47,4 @@ P:\AudioCorrientes\AudioCorrientes\Login\obj\Debug\Login.CSuAdministrador.Emplea
 P:\AudioCorrientes\AudioCorrientes\Login\obj\Debug\Login.CSuAdministrador.Empleados.Empleados.resources
 P:\AudioCorrientes\AudioCorrientes\Login\obj\Debug\Login.CSuAdministrador.Clientes.Clientes.resources
 P:\AudioCorrientes\AudioCorrientes\Login\obj\Debug\Login.CSuAdministrador.Empleados.AgregarRol.resources
+P:\AudioCorrientes\AudioCorrientes\Login\obj\Debug\Login.CVendedor.Vender.resources

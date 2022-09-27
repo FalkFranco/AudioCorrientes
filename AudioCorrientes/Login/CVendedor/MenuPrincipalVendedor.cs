@@ -8,6 +8,8 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
+
 
 namespace Login.CVendedor
 {
@@ -23,7 +25,7 @@ namespace Login.CVendedor
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
 
-        private void btnCerrar_Click(object sender, EventArgs e)
+        private void btnCerrar_Click_1(object sender, EventArgs e)
         {
             MessageBoxButtons buttons = MessageBoxButtons.YesNo;
             DialogResult result;
@@ -36,19 +38,19 @@ namespace Login.CVendedor
                 Application.Exit();
             }
         }
-        private void btnMaximizar_Click(object sender, EventArgs e)
+        private void btnMaximizar_Click_1(object sender, EventArgs e)
         {
             btnMaximizar.Visible = false;
             btnRestaurar.Visible = true;
             this.WindowState = FormWindowState.Maximized;
         }
 
-        private void btnMinimizar_Click(object sender, EventArgs e)
+        private void btnMinimizar_Click_1(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void btnRestaurar_Click(object sender, EventArgs e)
+        private void btnRestaurar_Click_1(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Normal;
             btnRestaurar.Visible = false;
@@ -56,7 +58,7 @@ namespace Login.CVendedor
 
         }
 
-        private void panelTop_MouseDown(object sender, MouseEventArgs e)
+        private void panelTop_MouseDown_1(object sender, MouseEventArgs e)
         {
             if (this.WindowState == FormWindowState.Normal)
             {
@@ -69,8 +71,9 @@ namespace Login.CVendedor
 
         private void AbrirFormEnPanel(object Formhijo)
         {
-            if (this.panelContenedor.Controls.Count > 0)
+            if (this.panelContenedor.Controls.Count > 0) { 
                 this.panelContenedor.Controls.RemoveAt(0);
+            }
             Form fh = Formhijo as Form;
             fh.TopLevel = false;
             fh.FormBorderStyle = FormBorderStyle.None;
@@ -81,12 +84,27 @@ namespace Login.CVendedor
         }
         private void btnProductos_Click(object sender, EventArgs e)
         {
-
+            AbrirFormEnPanel(new CSuAdministrador.Pruductos());
         }
 
         private void btnVentas_Click(object sender, EventArgs e)
         {
+            AbrirFormEnPanel(new Vender());
+        }
 
+        private void btnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result;
+
+            // Displays the MessageBox.
+            result = MessageBox.Show("¿Seguro que desea cerrar sesión?", "Alerta", buttons, MessageBoxIcon.Exclamation);
+            if (result == System.Windows.Forms.DialogResult.Yes)
+            {
+                Login login = new Login();
+                login.Show();
+                this.Hide();
+            }
         }
     }
 }

@@ -26,10 +26,10 @@ namespace Login.CSuAdministrador.Empleados
                 DialogResult result;
 
                 // Displays the MessageBox.
-                result = MessageBox.Show("Desea agregar un nuevo producto?", "Agregar Producto", buttons, MessageBoxIcon.Exclamation);
+                result = MessageBox.Show("Desea Editar este producto?", "Editar Producto", buttons, MessageBoxIcon.Exclamation);
                 if (result == System.Windows.Forms.DialogResult.Yes)
                 {
-                    MessageBox.Show("Producto Agregado");
+                    MessageBox.Show("Producto Editado");
                     //limpiarFormulario();
                 }
 

@@ -57,7 +57,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1254, 67);
+            this.panel1.Size = new System.Drawing.Size(1126, 67);
             this.panel1.TabIndex = 0;
             // 
             // lbProductoTitle
@@ -77,7 +77,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 67);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1254, 542);
+            this.tabControl1.Size = new System.Drawing.Size(1126, 542);
             this.tabControl1.TabIndex = 1;
             // 
             // tabPage1
@@ -94,14 +94,14 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1246, 516);
+            this.tabPage1.Size = new System.Drawing.Size(1118, 516);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Listar Productos";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // btnAgregarMarca
             // 
-            this.btnAgregarMarca.Location = new System.Drawing.Point(1106, 460);
+            this.btnAgregarMarca.Location = new System.Drawing.Point(980, 460);
             this.btnAgregarMarca.Name = "btnAgregarMarca";
             this.btnAgregarMarca.Size = new System.Drawing.Size(123, 35);
             this.btnAgregarMarca.TabIndex = 8;
@@ -111,7 +111,7 @@
             // 
             // btnAgregarCat
             // 
-            this.btnAgregarCat.Location = new System.Drawing.Point(1106, 403);
+            this.btnAgregarCat.Location = new System.Drawing.Point(980, 403);
             this.btnAgregarCat.Name = "btnAgregarCat";
             this.btnAgregarCat.Size = new System.Drawing.Size(123, 35);
             this.btnAgregarCat.TabIndex = 7;
@@ -121,7 +121,7 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(1106, 197);
+            this.btnEliminar.Location = new System.Drawing.Point(980, 197);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(123, 35);
             this.btnEliminar.TabIndex = 6;
@@ -131,7 +131,7 @@
             // 
             // btnEditar
             // 
-            this.btnEditar.Location = new System.Drawing.Point(1106, 144);
+            this.btnEditar.Location = new System.Drawing.Point(980, 144);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(123, 35);
             this.btnEditar.TabIndex = 5;
@@ -141,7 +141,7 @@
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(1106, 92);
+            this.btnAgregar.Location = new System.Drawing.Point(980, 92);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(123, 35);
             this.btnAgregar.TabIndex = 4;
@@ -153,13 +153,13 @@
             // 
             this.txtBuscar.Location = new System.Drawing.Point(26, 57);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(960, 20);
+            this.txtBuscar.Size = new System.Drawing.Size(848, 20);
             this.txtBuscar.TabIndex = 3;
             this.txtBuscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBuscar_KeyPress);
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(1003, 55);
+            this.btnBuscar.Location = new System.Drawing.Point(891, 57);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(75, 23);
             this.btnBuscar.TabIndex = 2;
@@ -172,7 +172,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(26, 92);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1061, 403);
+            this.dataGridView1.Size = new System.Drawing.Size(940, 403);
             this.dataGridView1.TabIndex = 1;
             // 
             // label1
@@ -192,7 +192,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1254, 609);
+            this.ClientSize = new System.Drawing.Size(1126, 609);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.panel1);
             this.Name = "Pruductos";

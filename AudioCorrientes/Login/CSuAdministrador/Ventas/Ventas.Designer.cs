@@ -52,7 +52,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 67);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1255, 542);
+            this.tabControl1.Size = new System.Drawing.Size(1126, 542);
             this.tabControl1.TabIndex = 3;
             // 
             // tabPage1
@@ -64,7 +64,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1247, 516);
+            this.tabPage1.Size = new System.Drawing.Size(1118, 516);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Listar Ventas";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -73,13 +73,13 @@
             // 
             this.txtBusqueda.Location = new System.Drawing.Point(26, 57);
             this.txtBusqueda.Name = "txtBusqueda";
-            this.txtBusqueda.Size = new System.Drawing.Size(1109, 20);
+            this.txtBusqueda.Size = new System.Drawing.Size(974, 20);
             this.txtBusqueda.TabIndex = 3;
             // 
             // btnBuscar
             // 
             this.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBuscar.Location = new System.Drawing.Point(1149, 54);
+            this.btnBuscar.Location = new System.Drawing.Point(1027, 55);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(75, 23);
             this.btnBuscar.TabIndex = 2;
@@ -92,7 +92,7 @@
             this.txtBuscador.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.txtBuscador.Location = new System.Drawing.Point(26, 92);
             this.txtBuscador.Name = "txtBuscador";
-            this.txtBuscador.Size = new System.Drawing.Size(1198, 403);
+            this.txtBuscador.Size = new System.Drawing.Size(1076, 403);
             this.txtBuscador.TabIndex = 1;
             // 
             // label1
@@ -111,7 +111,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1255, 67);
+            this.panel1.Size = new System.Drawing.Size(1126, 67);
             this.panel1.TabIndex = 2;
             // 
             // lbProductoTitle
@@ -132,7 +132,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1255, 609);
+            this.ClientSize = new System.Drawing.Size(1126, 609);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.panel1);
             this.Name = "Ventas";

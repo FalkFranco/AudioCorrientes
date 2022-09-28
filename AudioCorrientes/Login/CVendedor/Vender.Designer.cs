@@ -57,8 +57,13 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.lbDevolucion = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.lbDevolucion = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDetalle)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -157,11 +162,11 @@
             // btnBuscar
             // 
             this.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBuscar.Location = new System.Drawing.Point(344, 95);
+            this.btnBuscar.Location = new System.Drawing.Point(312, 113);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(100, 35);
             this.btnBuscar.TabIndex = 26;
-            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.Text = "Buscar Producto";
             this.btnBuscar.UseVisualStyleBackColor = true;
             // 
             // btnCargarLista
@@ -323,19 +328,6 @@
             this.panel3.Size = new System.Drawing.Size(261, 41);
             this.panel3.TabIndex = 39;
             // 
-            // lbDevolucion
-            // 
-            this.lbDevolucion.AccessibleDescription = "";
-            this.lbDevolucion.AutoSize = true;
-            this.lbDevolucion.BackColor = System.Drawing.Color.Transparent;
-            this.lbDevolucion.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDevolucion.ForeColor = System.Drawing.Color.DarkGreen;
-            this.lbDevolucion.Location = new System.Drawing.Point(29, 8);
-            this.lbDevolucion.Name = "lbDevolucion";
-            this.lbDevolucion.Size = new System.Drawing.Size(54, 25);
-            this.lbDevolucion.TabIndex = 37;
-            this.lbDevolucion.Text = "0.00";
-            // 
             // label9
             // 
             this.label9.AccessibleDescription = "";
@@ -349,11 +341,71 @@
             this.label9.TabIndex = 38;
             this.label9.Text = "$";
             // 
+            // lbDevolucion
+            // 
+            this.lbDevolucion.AccessibleDescription = "";
+            this.lbDevolucion.AutoSize = true;
+            this.lbDevolucion.BackColor = System.Drawing.Color.Transparent;
+            this.lbDevolucion.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDevolucion.ForeColor = System.Drawing.Color.DarkGreen;
+            this.lbDevolucion.Location = new System.Drawing.Point(29, 8);
+            this.lbDevolucion.Name = "lbDevolucion";
+            this.lbDevolucion.Size = new System.Drawing.Size(54, 25);
+            this.lbDevolucion.TabIndex = 37;
+            this.lbDevolucion.Text = "0.00";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(500, 151);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(79, 13);
+            this.label10.TabIndex = 43;
+            this.label10.Text = "Nombre Cliente";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(500, 102);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(61, 13);
+            this.label11.TabIndex = 42;
+            this.label11.Text = "DNI Cliente";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(594, 144);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(156, 20);
+            this.textBox1.TabIndex = 41;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(594, 95);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(156, 20);
+            this.textBox2.TabIndex = 40;
+            // 
+            // button1
+            // 
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.Location = new System.Drawing.Point(503, 185);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(247, 35);
+            this.button1.TabIndex = 44;
+            this.button1.Text = "Buscar Cliente";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // Vender
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1255, 609);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.btnVender);
@@ -420,5 +472,10 @@
         private System.Windows.Forms.Label lbTotal;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox2;
     }
 }

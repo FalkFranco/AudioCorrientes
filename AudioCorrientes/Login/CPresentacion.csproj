@@ -59,64 +59,64 @@
     <Compile Include="CGerente\MenuPrincipalGerente.Designer.cs">
       <DependentUpon>MenuPrincipalGerente.cs</DependentUpon>
     </Compile>
-    <Compile Include="CSuAdministrador\Clientes\Clientes.cs">
+    <Compile Include="CAdministrador\Clientes\Clientes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CSuAdministrador\Clientes\Clientes.Designer.cs">
+    <Compile Include="CAdministrador\Clientes\Clientes.Designer.cs">
       <DependentUpon>Clientes.cs</DependentUpon>
     </Compile>
-    <Compile Include="CSuAdministrador\Empleados\AgregarEmpleados.cs">
+    <Compile Include="CAdministrador\Empleados\AgregarEmpleados.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CSuAdministrador\Empleados\AgregarEmpleados.Designer.cs">
+    <Compile Include="CAdministrador\Empleados\AgregarEmpleados.Designer.cs">
       <DependentUpon>AgregarEmpleados.cs</DependentUpon>
     </Compile>
-    <Compile Include="CSuAdministrador\Empleados\AgregarRol.cs">
+    <Compile Include="CAdministrador\Empleados\AgregarRol.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CSuAdministrador\Empleados\AgregarRol.Designer.cs">
+    <Compile Include="CAdministrador\Empleados\AgregarRol.Designer.cs">
       <DependentUpon>AgregarRol.cs</DependentUpon>
     </Compile>
-    <Compile Include="CSuAdministrador\Empleados\EditarEmpleados.cs">
+    <Compile Include="CAdministrador\Empleados\EditarEmpleados.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CSuAdministrador\Empleados\EditarEmpleados.Designer.cs">
+    <Compile Include="CAdministrador\Empleados\EditarEmpleados.Designer.cs">
       <DependentUpon>EditarEmpleados.cs</DependentUpon>
     </Compile>
-    <Compile Include="CSuAdministrador\Empleados\Empleados.cs">
+    <Compile Include="CAdministrador\Empleados\Empleados.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CSuAdministrador\Empleados\Empleados.Designer.cs">
+    <Compile Include="CAdministrador\Empleados\Empleados.Designer.cs">
       <DependentUpon>Empleados.cs</DependentUpon>
     </Compile>
-    <Compile Include="CSuAdministrador\Productos\AgregarCategoria.cs">
+    <Compile Include="CAdministrador\Productos\AgregarCategoria.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CSuAdministrador\Productos\AgregarCategoria.Designer.cs">
+    <Compile Include="CAdministrador\Productos\AgregarCategoria.Designer.cs">
       <DependentUpon>AgregarCategoria.cs</DependentUpon>
     </Compile>
-    <Compile Include="CSuAdministrador\Productos\AgregarMarca.cs">
+    <Compile Include="CAdministrador\Productos\AgregarMarca.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CSuAdministrador\Productos\AgregarMarca.Designer.cs">
+    <Compile Include="CAdministrador\Productos\AgregarMarca.Designer.cs">
       <DependentUpon>AgregarMarca.cs</DependentUpon>
     </Compile>
-    <Compile Include="CSuAdministrador\Productos\AgregarProductos.cs">
+    <Compile Include="CAdministrador\Productos\AgregarProductos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CSuAdministrador\Productos\AgregarProductos.Designer.cs">
+    <Compile Include="CAdministrador\Productos\AgregarProductos.Designer.cs">
       <DependentUpon>AgregarProductos.cs</DependentUpon>
     </Compile>
-    <Compile Include="CSuAdministrador\Productos\EditarProducto.cs">
+    <Compile Include="CAdministrador\Productos\EditarProducto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CSuAdministrador\Productos\EditarProducto.Designer.cs">
+    <Compile Include="CAdministrador\Productos\EditarProducto.Designer.cs">
       <DependentUpon>EditarProducto.cs</DependentUpon>
     </Compile>
-    <Compile Include="CSuAdministrador\Productos\Pruductos.cs">
+    <Compile Include="CAdministrador\Productos\Pruductos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CSuAdministrador\Productos\Pruductos.Designer.cs">
+    <Compile Include="CAdministrador\Productos\Pruductos.Designer.cs">
       <DependentUpon>Pruductos.cs</DependentUpon>
     </Compile>
     <Compile Include="CSuAdministrador\BackUpForm.cs">
@@ -125,10 +125,10 @@
     <Compile Include="CSuAdministrador\BackUpForm.Designer.cs">
       <DependentUpon>BackUpForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="CSuAdministrador\SUDashboard.cs">
+    <Compile Include="CAdministrador\SUDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CSuAdministrador\SUDashboard.Designer.cs">
+    <Compile Include="CAdministrador\SUDashboard.Designer.cs">
       <DependentUpon>SUDashboard.cs</DependentUpon>
     </Compile>
     <Compile Include="CSuAdministrador\MenuPrincipalSA.cs">
@@ -137,11 +137,35 @@
     <Compile Include="CSuAdministrador\MenuPrincipalSA.Designer.cs">
       <DependentUpon>MenuPrincipalSA.cs</DependentUpon>
     </Compile>
+    <Compile Include="CSuAdministrador\Usuarios\AgregarRol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CSuAdministrador\Usuarios\AgregarRol.Designer.cs">
+      <DependentUpon>AgregarRol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CSuAdministrador\Usuarios\EditarRol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CSuAdministrador\Usuarios\EditarRol.Designer.cs">
+      <DependentUpon>EditarRol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CSuAdministrador\Usuarios\Usuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CSuAdministrador\Usuarios\Usuarios.Designer.cs">
+      <DependentUpon>Usuarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="CSuAdministrador\Ventas\Ventas.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CSuAdministrador\Ventas\Ventas.Designer.cs">
       <DependentUpon>Ventas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CVendedor\Clientes\AgregarClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CVendedor\Clientes\AgregarClientes.Designer.cs">
+      <DependentUpon>AgregarClientes.cs</DependentUpon>
     </Compile>
     <Compile Include="CVendedor\MenuPrincipalVendedor.cs">
       <SubType>Form</SubType>
@@ -169,34 +193,34 @@
     <EmbeddedResource Include="CGerente\MenuPrincipalGerente.resx">
       <DependentUpon>MenuPrincipalGerente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CSuAdministrador\Clientes\Clientes.resx">
+    <EmbeddedResource Include="CAdministrador\Clientes\Clientes.resx">
       <DependentUpon>Clientes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CSuAdministrador\Empleados\AgregarEmpleados.resx">
+    <EmbeddedResource Include="CAdministrador\Empleados\AgregarEmpleados.resx">
       <DependentUpon>AgregarEmpleados.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CSuAdministrador\Empleados\AgregarRol.resx">
+    <EmbeddedResource Include="CAdministrador\Empleados\AgregarRol.resx">
       <DependentUpon>AgregarRol.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CSuAdministrador\Empleados\EditarEmpleados.resx">
+    <EmbeddedResource Include="CAdministrador\Empleados\EditarEmpleados.resx">
       <DependentUpon>EditarEmpleados.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CSuAdministrador\Empleados\Empleados.resx">
+    <EmbeddedResource Include="CAdministrador\Empleados\Empleados.resx">
       <DependentUpon>Empleados.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CSuAdministrador\Productos\AgregarCategoria.resx">
+    <EmbeddedResource Include="CAdministrador\Productos\AgregarCategoria.resx">
       <DependentUpon>AgregarCategoria.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CSuAdministrador\Productos\AgregarMarca.resx">
+    <EmbeddedResource Include="CAdministrador\Productos\AgregarMarca.resx">
       <DependentUpon>AgregarMarca.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CSuAdministrador\Productos\AgregarProductos.resx">
+    <EmbeddedResource Include="CAdministrador\Productos\AgregarProductos.resx">
       <DependentUpon>AgregarProductos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CSuAdministrador\Productos\EditarProducto.resx">
+    <EmbeddedResource Include="CAdministrador\Productos\EditarProducto.resx">
       <DependentUpon>EditarProducto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CSuAdministrador\Productos\Pruductos.resx">
+    <EmbeddedResource Include="CAdministrador\Productos\Pruductos.resx">
       <DependentUpon>Pruductos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CSuAdministrador\BackUpForm.resx">
@@ -205,11 +229,23 @@
     <EmbeddedResource Include="CSuAdministrador\MenuPrincipalSA.resx">
       <DependentUpon>MenuPrincipalSA.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CSuAdministrador\SUDashboard.resx">
+    <EmbeddedResource Include="CAdministrador\SUDashboard.resx">
       <DependentUpon>SUDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CSuAdministrador\Usuarios\AgregarRol.resx">
+      <DependentUpon>AgregarRol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CSuAdministrador\Usuarios\EditarRol.resx">
+      <DependentUpon>EditarRol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CSuAdministrador\Usuarios\Usuarios.resx">
+      <DependentUpon>Usuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CSuAdministrador\Ventas\Ventas.resx">
       <DependentUpon>Ventas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CVendedor\Clientes\AgregarClientes.resx">
+      <DependentUpon>AgregarClientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CVendedor\MenuPrincipalVendedor.resx">
       <DependentUpon>MenuPrincipalVendedor.cs</DependentUpon>

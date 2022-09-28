@@ -16,5 +16,30 @@ namespace Login.CVendedor.Clientes
         {
             InitializeComponent();
         }
+
+        private void btnAgregarMarca_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAgregarCat_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtBuscar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

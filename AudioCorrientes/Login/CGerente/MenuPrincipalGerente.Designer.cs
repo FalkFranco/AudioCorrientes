@@ -41,8 +41,6 @@
             this.btnReporte = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
             this.btnCerrarSesion = new System.Windows.Forms.Button();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.btnEmpleados = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnVentas = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -149,8 +147,6 @@
             this.panelMenu.Controls.Add(this.btnReporte);
             this.panelMenu.Controls.Add(this.panel7);
             this.panelMenu.Controls.Add(this.btnCerrarSesion);
-            this.panelMenu.Controls.Add(this.panel5);
-            this.panelMenu.Controls.Add(this.btnEmpleados);
             this.panelMenu.Controls.Add(this.panel3);
             this.panelMenu.Controls.Add(this.btnVentas);
             this.panelMenu.Controls.Add(this.panel2);
@@ -169,7 +165,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.Control;
-            this.label1.Location = new System.Drawing.Point(7, 206);
+            this.label1.Location = new System.Drawing.Point(21, 241);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(80, 19);
             this.label1.TabIndex = 19;
@@ -200,7 +196,7 @@
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.panel6.Location = new System.Drawing.Point(0, 489);
+            this.panel6.Location = new System.Drawing.Point(0, 488);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(5, 50);
             this.panel6.TabIndex = 16;
@@ -216,7 +212,7 @@
             this.btnReporte.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnReporte.Image = global::Login.Properties.Resources.informe_seo_Mesa_de_trabajo_1;
             this.btnReporte.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReporte.Location = new System.Drawing.Point(0, 489);
+            this.btnReporte.Location = new System.Drawing.Point(0, 488);
             this.btnReporte.Name = "btnReporte";
             this.btnReporte.Size = new System.Drawing.Size(220, 50);
             this.btnReporte.TabIndex = 15;
@@ -252,37 +248,10 @@
             this.btnCerrarSesion.UseVisualStyleBackColor = true;
             this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
             // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.panel5.Location = new System.Drawing.Point(0, 429);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(5, 50);
-            this.panel5.TabIndex = 10;
-            // 
-            // btnEmpleados
-            // 
-            this.btnEmpleados.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEmpleados.FlatAppearance.BorderSize = 0;
-            this.btnEmpleados.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Navy;
-            this.btnEmpleados.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(57)))), ((int)(((byte)(104)))));
-            this.btnEmpleados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEmpleados.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEmpleados.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnEmpleados.Image = global::Login.Properties.Resources.empleados;
-            this.btnEmpleados.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEmpleados.Location = new System.Drawing.Point(0, 429);
-            this.btnEmpleados.Name = "btnEmpleados";
-            this.btnEmpleados.Size = new System.Drawing.Size(220, 50);
-            this.btnEmpleados.TabIndex = 9;
-            this.btnEmpleados.Text = "Empleados";
-            this.btnEmpleados.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnEmpleados.UseVisualStyleBackColor = true;
-            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.panel3.Location = new System.Drawing.Point(0, 361);
+            this.panel3.Location = new System.Drawing.Point(0, 420);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(5, 50);
             this.panel3.TabIndex = 6;
@@ -298,7 +267,7 @@
             this.btnVentas.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnVentas.Image = global::Login.Properties.Resources.venta;
             this.btnVentas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnVentas.Location = new System.Drawing.Point(0, 361);
+            this.btnVentas.Location = new System.Drawing.Point(0, 420);
             this.btnVentas.Name = "btnVentas";
             this.btnVentas.Size = new System.Drawing.Size(220, 50);
             this.btnVentas.TabIndex = 5;
@@ -309,7 +278,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.panel2.Location = new System.Drawing.Point(0, 303);
+            this.panel2.Location = new System.Drawing.Point(0, 354);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(5, 50);
             this.panel2.TabIndex = 4;
@@ -325,7 +294,7 @@
             this.btnProductos.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnProductos.Image = global::Login.Properties.Resources.producto;
             this.btnProductos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProductos.Location = new System.Drawing.Point(0, 303);
+            this.btnProductos.Location = new System.Drawing.Point(0, 354);
             this.btnProductos.Name = "btnProductos";
             this.btnProductos.Size = new System.Drawing.Size(220, 50);
             this.btnProductos.TabIndex = 3;
@@ -336,7 +305,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.panel1.Location = new System.Drawing.Point(0, 247);
+            this.panel1.Location = new System.Drawing.Point(0, 286);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(5, 50);
             this.panel1.TabIndex = 2;
@@ -362,7 +331,7 @@
             this.btnDashboard.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnDashboard.Image = global::Login.Properties.Resources.reportes;
             this.btnDashboard.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDashboard.Location = new System.Drawing.Point(0, 247);
+            this.btnDashboard.Location = new System.Drawing.Point(0, 286);
             this.btnDashboard.Name = "btnDashboard";
             this.btnDashboard.Size = new System.Drawing.Size(220, 50);
             this.btnDashboard.TabIndex = 0;
@@ -407,8 +376,6 @@
         private System.Windows.Forms.Panel panelMenu;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Button btnCerrarSesion;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Button btnEmpleados;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btnVentas;
         private System.Windows.Forms.Panel panel2;

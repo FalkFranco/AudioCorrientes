@@ -95,6 +95,7 @@
             // 
             this.txtIdArticulo.Location = new System.Drawing.Point(136, 95);
             this.txtIdArticulo.Name = "txtIdArticulo";
+            this.txtIdArticulo.ReadOnly = true;
             this.txtIdArticulo.Size = new System.Drawing.Size(156, 20);
             this.txtIdArticulo.TabIndex = 18;
             this.txtIdArticulo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIdArticulo_KeyPress);
@@ -103,6 +104,7 @@
             // 
             this.txtNombre.Location = new System.Drawing.Point(136, 144);
             this.txtNombre.Name = "txtNombre";
+            this.txtNombre.ReadOnly = true;
             this.txtNombre.Size = new System.Drawing.Size(156, 20);
             this.txtNombre.TabIndex = 19;
             this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
@@ -119,6 +121,7 @@
             // 
             this.txtPrecio.Location = new System.Drawing.Point(136, 193);
             this.txtPrecio.Name = "txtPrecio";
+            this.txtPrecio.ReadOnly = true;
             this.txtPrecio.Size = new System.Drawing.Size(156, 20);
             this.txtPrecio.TabIndex = 20;
             this.txtPrecio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecio_KeyPress);

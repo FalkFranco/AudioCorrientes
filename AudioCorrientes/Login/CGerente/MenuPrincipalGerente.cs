@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Login.CSuAdministrador;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -27,7 +28,11 @@ namespace Login.CGerente
 
         private void panelTop_MouseDown(object sender, MouseEventArgs e)
         {
-
+            if (this.WindowState == FormWindowState.Normal)
+            {
+                ReleaseCapture();
+                SendMessage(this.Handle, 0x112, 0xf012, 0);
+            }
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -84,12 +89,28 @@ namespace Login.CGerente
             DialogResult result;
 
             // Displays the MessageBox.
-            result = MessageBox.Show("¿Seguro que desa cerrar la aplicacion?", "Alerta", buttons, MessageBoxIcon.Exclamation);
+            result = MessageBox.Show("¿Seguro que desea cerrar sesión?", "Alerta", buttons, MessageBoxIcon.Exclamation);
             if (result == System.Windows.Forms.DialogResult.Yes)
             {
-                // Closes the parent form.
-                Application.Exit();
+                Login login = new Login();
+                login.Show();
+                this.Hide();
             }
+        }
+
+        private void btnProductos_Click(object sender, EventArgs e)
+        {
+            AbrirFormEnPanel(new ReporteProductos());
+        }
+
+        private void btnVentas_Click(object sender, EventArgs e)
+        {
+            AbrirFormEnPanel(new ReporteVentas());
+        }
+
+        private void btnDashboard_Click(object sender, EventArgs e)
+        {
+            AbrirFormEnPanel(new SUDashboard());
         }
     }
 }

@@ -100,6 +100,7 @@
             this.Controls.Add(this.txtMarca);
             this.Controls.Add(this.label1);
             this.Name = "AgregarMarca";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AgregarMarca";
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderMarca)).EndInit();
             this.ResumeLayout(false);

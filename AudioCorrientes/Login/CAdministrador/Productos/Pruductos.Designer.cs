@@ -33,36 +33,15 @@
             this.lbProductoTitle = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.chbNombre = new System.Windows.Forms.CheckBox();
+            this.chbId = new System.Windows.Forms.CheckBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnAgregarMarca = new System.Windows.Forms.Button();
             this.btnAgregarCat = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.button3 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewButtonColumn1 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.dataGridViewButtonColumn2 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.label2 = new System.Windows.Forms.Label();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.button7 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button8 = new System.Windows.Forms.Button();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewButtonColumn3 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.dataGridViewButtonColumn4 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.label3 = new System.Windows.Forms.Label();
-            this.errorProviderBuscar = new System.Windows.Forms.ErrorProvider(this.components);
-            this.checkBox5 = new System.Windows.Forms.CheckBox();
-            this.checkBox6 = new System.Windows.Forms.CheckBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.dgvProductos = new System.Windows.Forms.DataGridView();
             this.IdProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -70,10 +49,31 @@
             this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Editar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.btnAgregarC = new System.Windows.Forms.Button();
+            this.txtBuscarC = new System.Windows.Forms.TextBox();
+            this.btnBuscarC = new System.Windows.Forms.Button();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewButtonColumn1 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.dataGridViewButtonColumn2 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.label2 = new System.Windows.Forms.Label();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.btnAgregarM = new System.Windows.Forms.Button();
+            this.txtBuscarM = new System.Windows.Forms.TextBox();
+            this.btnBuscarM = new System.Windows.Forms.Button();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewButtonColumn3 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.dataGridViewButtonColumn4 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.label3 = new System.Windows.Forms.Label();
+            this.errorProviderBuscar = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.tabPage3.SuspendLayout();
@@ -115,15 +115,15 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.checkBox5);
-            this.tabPage1.Controls.Add(this.checkBox6);
+            this.tabPage1.Controls.Add(this.chbNombre);
+            this.tabPage1.Controls.Add(this.chbId);
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Controls.Add(this.btnAgregarMarca);
             this.tabPage1.Controls.Add(this.btnAgregarCat);
             this.tabPage1.Controls.Add(this.btnAgregar);
             this.tabPage1.Controls.Add(this.txtBuscar);
             this.tabPage1.Controls.Add(this.btnBuscar);
-            this.tabPage1.Controls.Add(this.dataGridView1);
+            this.tabPage1.Controls.Add(this.dgvProductos);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -131,6 +131,39 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Listar Productos";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // chbNombre
+            // 
+            this.chbNombre.AutoSize = true;
+            this.chbNombre.Location = new System.Drawing.Point(241, 17);
+            this.chbNombre.Name = "chbNombre";
+            this.chbNombre.Size = new System.Drawing.Size(63, 17);
+            this.chbNombre.TabIndex = 19;
+            this.chbNombre.Text = "Nombre";
+            this.chbNombre.UseVisualStyleBackColor = true;
+            this.chbNombre.Click += new System.EventHandler(this.chbNombre_Click);
+            // 
+            // chbId
+            // 
+            this.chbId.AutoSize = true;
+            this.chbId.Checked = true;
+            this.chbId.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chbId.Location = new System.Drawing.Point(155, 18);
+            this.chbId.Name = "chbId";
+            this.chbId.Size = new System.Drawing.Size(35, 17);
+            this.chbId.TabIndex = 18;
+            this.chbId.Text = "Id";
+            this.chbId.UseVisualStyleBackColor = true;
+            this.chbId.Click += new System.EventHandler(this.chbId_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(23, 18);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(107, 13);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "Buscar Producto por:";
             // 
             // btnAgregarMarca
             // 
@@ -180,11 +213,11 @@
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
-            // dataGridView1
+            // dgvProductos
             // 
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvProductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProductos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdProducto,
             this.Nombre,
             this.Categoria,
@@ -192,16 +225,52 @@
             this.Precio,
             this.Editar,
             this.Eliminar});
-            this.dataGridView1.Location = new System.Drawing.Point(26, 92);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(940, 403);
-            this.dataGridView1.TabIndex = 1;
+            this.dgvProductos.Location = new System.Drawing.Point(26, 92);
+            this.dgvProductos.Name = "dgvProductos";
+            this.dgvProductos.Size = new System.Drawing.Size(940, 403);
+            this.dgvProductos.TabIndex = 1;
+            this.dgvProductos.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvProductos_CellPainting);
+            // 
+            // IdProducto
+            // 
+            this.IdProducto.HeaderText = "IdProducto";
+            this.IdProducto.Name = "IdProducto";
+            // 
+            // Nombre
+            // 
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            // 
+            // Categoria
+            // 
+            this.Categoria.HeaderText = "Categoria";
+            this.Categoria.Name = "Categoria";
+            // 
+            // Marca
+            // 
+            this.Marca.HeaderText = "Marca";
+            this.Marca.Name = "Marca";
+            // 
+            // Precio
+            // 
+            this.Precio.HeaderText = "Precio";
+            this.Precio.Name = "Precio";
+            // 
+            // Editar
+            // 
+            this.Editar.HeaderText = "Editar";
+            this.Editar.Name = "Editar";
+            // 
+            // Eliminar
+            // 
+            this.Eliminar.HeaderText = "Eliminar";
+            this.Eliminar.Name = "Eliminar";
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.button3);
-            this.tabPage2.Controls.Add(this.textBox1);
-            this.tabPage2.Controls.Add(this.button4);
+            this.tabPage2.Controls.Add(this.btnAgregarC);
+            this.tabPage2.Controls.Add(this.txtBuscarC);
+            this.tabPage2.Controls.Add(this.btnBuscarC);
             this.tabPage2.Controls.Add(this.dataGridView2);
             this.tabPage2.Controls.Add(this.label2);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
@@ -212,30 +281,32 @@
             this.tabPage2.Text = "Listar Categorias";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnAgregarC
             // 
-            this.button3.Location = new System.Drawing.Point(980, 92);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(123, 35);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "Agregar";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnAgregarC.Location = new System.Drawing.Point(980, 92);
+            this.btnAgregarC.Name = "btnAgregarC";
+            this.btnAgregarC.Size = new System.Drawing.Size(123, 35);
+            this.btnAgregarC.TabIndex = 4;
+            this.btnAgregarC.Text = "Agregar";
+            this.btnAgregarC.UseVisualStyleBackColor = true;
+            this.btnAgregarC.Click += new System.EventHandler(this.btnAgregarCat_Click);
             // 
-            // textBox1
+            // txtBuscarC
             // 
-            this.textBox1.Location = new System.Drawing.Point(26, 57);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(848, 20);
-            this.textBox1.TabIndex = 3;
+            this.txtBuscarC.Location = new System.Drawing.Point(26, 57);
+            this.txtBuscarC.Name = "txtBuscarC";
+            this.txtBuscarC.Size = new System.Drawing.Size(848, 20);
+            this.txtBuscarC.TabIndex = 3;
             // 
-            // button4
+            // btnBuscarC
             // 
-            this.button4.Location = new System.Drawing.Point(891, 57);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 2;
-            this.button4.Text = "Buscar";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnBuscarC.Location = new System.Drawing.Point(891, 57);
+            this.btnBuscarC.Name = "btnBuscarC";
+            this.btnBuscarC.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscarC.TabIndex = 2;
+            this.btnBuscarC.Text = "Buscar";
+            this.btnBuscarC.UseVisualStyleBackColor = true;
+            this.btnBuscarC.Click += new System.EventHandler(this.btnBuscarC_Click);
             // 
             // dataGridView2
             // 
@@ -282,9 +353,9 @@
             // 
             // tabPage3
             // 
-            this.tabPage3.Controls.Add(this.button7);
-            this.tabPage3.Controls.Add(this.textBox2);
-            this.tabPage3.Controls.Add(this.button8);
+            this.tabPage3.Controls.Add(this.btnAgregarM);
+            this.tabPage3.Controls.Add(this.txtBuscarM);
+            this.tabPage3.Controls.Add(this.btnBuscarM);
             this.tabPage3.Controls.Add(this.dataGridView3);
             this.tabPage3.Controls.Add(this.label3);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
@@ -295,30 +366,32 @@
             this.tabPage3.Text = "Listar Marcas";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // button7
+            // btnAgregarM
             // 
-            this.button7.Location = new System.Drawing.Point(980, 92);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(123, 35);
-            this.button7.TabIndex = 4;
-            this.button7.Text = "Agregar";
-            this.button7.UseVisualStyleBackColor = true;
+            this.btnAgregarM.Location = new System.Drawing.Point(980, 92);
+            this.btnAgregarM.Name = "btnAgregarM";
+            this.btnAgregarM.Size = new System.Drawing.Size(123, 35);
+            this.btnAgregarM.TabIndex = 4;
+            this.btnAgregarM.Text = "Agregar";
+            this.btnAgregarM.UseVisualStyleBackColor = true;
+            this.btnAgregarM.Click += new System.EventHandler(this.btnAgregarMarca_Click);
             // 
-            // textBox2
+            // txtBuscarM
             // 
-            this.textBox2.Location = new System.Drawing.Point(26, 57);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(848, 20);
-            this.textBox2.TabIndex = 3;
+            this.txtBuscarM.Location = new System.Drawing.Point(26, 57);
+            this.txtBuscarM.Name = "txtBuscarM";
+            this.txtBuscarM.Size = new System.Drawing.Size(848, 20);
+            this.txtBuscarM.TabIndex = 3;
             // 
-            // button8
+            // btnBuscarM
             // 
-            this.button8.Location = new System.Drawing.Point(891, 57);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(75, 23);
-            this.button8.TabIndex = 2;
-            this.button8.Text = "Buscar";
-            this.button8.UseVisualStyleBackColor = true;
+            this.btnBuscarM.Location = new System.Drawing.Point(891, 57);
+            this.btnBuscarM.Name = "btnBuscarM";
+            this.btnBuscarM.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscarM.TabIndex = 2;
+            this.btnBuscarM.Text = "Buscar";
+            this.btnBuscarM.UseVisualStyleBackColor = true;
+            this.btnBuscarM.Click += new System.EventHandler(this.btnBuscarM_Click);
             // 
             // dataGridView3
             // 
@@ -367,70 +440,6 @@
             // 
             this.errorProviderBuscar.ContainerControl = this;
             // 
-            // checkBox5
-            // 
-            this.checkBox5.AutoSize = true;
-            this.checkBox5.Location = new System.Drawing.Point(241, 17);
-            this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(63, 17);
-            this.checkBox5.TabIndex = 19;
-            this.checkBox5.Text = "Nombre";
-            this.checkBox5.UseVisualStyleBackColor = true;
-            // 
-            // checkBox6
-            // 
-            this.checkBox6.AutoSize = true;
-            this.checkBox6.Location = new System.Drawing.Point(155, 18);
-            this.checkBox6.Name = "checkBox6";
-            this.checkBox6.Size = new System.Drawing.Size(35, 17);
-            this.checkBox6.TabIndex = 18;
-            this.checkBox6.Text = "Id";
-            this.checkBox6.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(23, 18);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(107, 13);
-            this.label1.TabIndex = 17;
-            this.label1.Text = "Buscar Producto por:";
-            // 
-            // IdProducto
-            // 
-            this.IdProducto.HeaderText = "IdProducto";
-            this.IdProducto.Name = "IdProducto";
-            // 
-            // Nombre
-            // 
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            // 
-            // Categoria
-            // 
-            this.Categoria.HeaderText = "Categoria";
-            this.Categoria.Name = "Categoria";
-            // 
-            // Marca
-            // 
-            this.Marca.HeaderText = "Marca";
-            this.Marca.Name = "Marca";
-            // 
-            // Precio
-            // 
-            this.Precio.HeaderText = "Precio";
-            this.Precio.Name = "Precio";
-            // 
-            // Editar
-            // 
-            this.Editar.HeaderText = "Editar";
-            this.Editar.Name = "Editar";
-            // 
-            // Eliminar
-            // 
-            this.Eliminar.HeaderText = "Eliminar";
-            this.Eliminar.Name = "Eliminar";
-            // 
             // Pruductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -445,7 +454,7 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
@@ -463,7 +472,7 @@
         private System.Windows.Forms.Label lbProductoTitle;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvProductos;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Button btnBuscar;
@@ -471,9 +480,9 @@
         private System.Windows.Forms.Button btnAgregarCat;
         private System.Windows.Forms.ErrorProvider errorProviderBuscar;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnAgregarC;
+        private System.Windows.Forms.TextBox txtBuscarC;
+        private System.Windows.Forms.Button btnBuscarC;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
@@ -481,17 +490,17 @@
         private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button btnAgregarM;
+        private System.Windows.Forms.TextBox txtBuscarM;
+        private System.Windows.Forms.Button btnBuscarM;
         private System.Windows.Forms.DataGridView dataGridView3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn3;
         private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.CheckBox checkBox5;
-        private System.Windows.Forms.CheckBox checkBox6;
+        private System.Windows.Forms.CheckBox chbNombre;
+        private System.Windows.Forms.CheckBox chbId;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;

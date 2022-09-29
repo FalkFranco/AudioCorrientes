@@ -67,3 +67,10 @@ D:\Proyectos\AudioCorrientes\AudioCorrientes\Login\obj\Debug\Login.CSuAdministra
 D:\Proyectos\AudioCorrientes\AudioCorrientes\Login\obj\Debug\Login.CSuAdministrador.Ventas.resources
 D:\Proyectos\AudioCorrientes\AudioCorrientes\Login\obj\Debug\Login.CVendedor.MenuPrincipalVendedor.resources
 D:\Proyectos\AudioCorrientes\AudioCorrientes\Login\obj\Debug\Login.CVendedor.Vender.resources
+P:\AudioCorrientes\AudioCorrientes\Login\obj\Debug\Login.CGerente.ReporteProductos.resources
+P:\AudioCorrientes\AudioCorrientes\Login\obj\Debug\Login.CGerente.ReporteVentas.resources
+P:\AudioCorrientes\AudioCorrientes\Login\obj\Debug\Login.CSuAdministrador.Usuarios.AgregarRol.resources
+P:\AudioCorrientes\AudioCorrientes\Login\obj\Debug\Login.CSuAdministrador.Usuarios.EditarRol.resources
+P:\AudioCorrientes\AudioCorrientes\Login\obj\Debug\Login.CSuAdministrador.Usuarios.Usuarios.resources
+P:\AudioCorrientes\AudioCorrientes\Login\obj\Debug\Login.CVendedor.Clientes.AgregarClientes.resources
+P:\AudioCorrientes\AudioCorrientes\Login\obj\Debug\Login.CVendedor.Productos.ListarProductos.resources

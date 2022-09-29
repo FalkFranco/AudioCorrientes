@@ -37,8 +37,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lbVendedor = new System.Windows.Forms.Label();
             this.lbUsuario = new System.Windows.Forms.Label();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.btnReporte = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
             this.btnCerrarSesion = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -143,8 +141,6 @@
             this.panelMenu.Controls.Add(this.label1);
             this.panelMenu.Controls.Add(this.lbVendedor);
             this.panelMenu.Controls.Add(this.lbUsuario);
-            this.panelMenu.Controls.Add(this.panel6);
-            this.panelMenu.Controls.Add(this.btnReporte);
             this.panelMenu.Controls.Add(this.panel7);
             this.panelMenu.Controls.Add(this.btnCerrarSesion);
             this.panelMenu.Controls.Add(this.panel3);
@@ -192,33 +188,6 @@
             this.lbUsuario.Size = new System.Drawing.Size(135, 19);
             this.lbUsuario.TabIndex = 17;
             this.lbUsuario.Text = "NombreGerente";
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.panel6.Location = new System.Drawing.Point(0, 488);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(5, 50);
-            this.panel6.TabIndex = 16;
-            // 
-            // btnReporte
-            // 
-            this.btnReporte.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnReporte.FlatAppearance.BorderSize = 0;
-            this.btnReporte.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Navy;
-            this.btnReporte.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(57)))), ((int)(((byte)(104)))));
-            this.btnReporte.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReporte.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReporte.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnReporte.Image = global::Login.Properties.Resources.informe_seo_Mesa_de_trabajo_1;
-            this.btnReporte.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReporte.Location = new System.Drawing.Point(0, 488);
-            this.btnReporte.Name = "btnReporte";
-            this.btnReporte.Size = new System.Drawing.Size(220, 50);
-            this.btnReporte.TabIndex = 15;
-            this.btnReporte.Text = "Reportes";
-            this.btnReporte.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnReporte.UseVisualStyleBackColor = true;
             // 
             // panel7
             // 
@@ -274,6 +243,7 @@
             this.btnVentas.Text = "Ventas";
             this.btnVentas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnVentas.UseVisualStyleBackColor = true;
+            this.btnVentas.Click += new System.EventHandler(this.btnVentas_Click);
             // 
             // panel2
             // 
@@ -301,6 +271,7 @@
             this.btnProductos.Text = "Productos";
             this.btnProductos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnProductos.UseVisualStyleBackColor = true;
+            this.btnProductos.Click += new System.EventHandler(this.btnProductos_Click);
             // 
             // panel1
             // 
@@ -338,6 +309,7 @@
             this.btnDashboard.Text = "Dashboard";
             this.btnDashboard.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnDashboard.UseVisualStyleBackColor = true;
+            this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click);
             // 
             // panelContenedor
             // 
@@ -384,8 +356,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnDashboard;
         private System.Windows.Forms.Panel panelContenedor;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Button btnReporte;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lbVendedor;
         private System.Windows.Forms.Label lbUsuario;

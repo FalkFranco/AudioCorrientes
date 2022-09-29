@@ -17,29 +17,70 @@ namespace Login.CVendedor.Clientes
             InitializeComponent();
         }
 
-        private void btnAgregarMarca_Click(object sender, EventArgs e)
+        private void btnBuscar_Click(object sender, EventArgs e)
         {
-
+            //validacion txtbox
+            BorrarMensajeProvider();
+            if (ValidarCampos())
+            {
+                //Buscar
+                if (chbCuit.Checked)
+                {
+                    MessageBox.Show("Buscando por CUIT");
+                }
+                else
+                {
+                    MessageBox.Show("Buscando por Nombre");
+                }
+            }
         }
 
-        private void btnAgregarCat_Click(object sender, EventArgs e)
+        private bool ValidarCampos()
         {
-
+            string msg = "No puede estar vacio";
+            bool ok = true;
+            //Si estan vacios
+            if (txtBuscar.Text == "")
+            {
+                ok = false;
+                errorProvider1.SetError(txtBuscar, msg);
+            }
+            if (chbCuit.Checked == true && txtBuscar.Text.Length > 11)
+            {
+                ok = false;
+                errorProvider1.SetError(txtBuscar, "Ingrese un CUIT valido (11 digitos)");
+            }
+            return ok;
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void BorrarMensajeProvider()
         {
+            errorProvider1.SetError(txtBuscar, "");
+        }
 
+
+        private void chbNombre_Click(object sender, EventArgs e)
+        {
+            chbCuit.Checked = false;
+            chbNombre.Checked = true;
+        }
+
+        private void chbCuit_Click(object sender, EventArgs e)
+        {
+            chbNombre.Checked = false;
+            chbCuit.Checked = true;
         }
 
         private void txtBuscar_KeyPress(object sender, KeyPressEventArgs e)
         {
-
-        }
-
-        private void btnBuscar_Click(object sender, EventArgs e)
-        {
-
+            if (chbCuit.Checked)
+            {
+                if (!char.IsNumber(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
+                {
+                    e.Handled = true;
+                }
+            }
         }
     }
 }
+

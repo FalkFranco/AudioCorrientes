@@ -71,7 +71,7 @@
             this.btnAgregarProducto.TabIndex = 50;
             this.btnAgregarProducto.Text = "Agregar";
             this.btnAgregarProducto.UseVisualStyleBackColor = true;
-
+            this.btnAgregarProducto.Click += new System.EventHandler(this.btnAgregarProducto_Click_1);
             // 
             // comboBoxMarca
             // 
@@ -232,6 +232,7 @@
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.label1);
             this.Name = "AgregarProductos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AgregarProductos";
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderAgregarProducto)).EndInit();
             this.ResumeLayout(false);

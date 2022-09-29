@@ -21,25 +21,25 @@ namespace Login.CSuAdministrador
         private void button2_Click(object sender, EventArgs e)
         {
             AgregarProductos formAgregarProd = new AgregarProductos();
-            formAgregarProd.Show();
+            formAgregarProd.ShowDialog();
         }
 
         private void btnAgregarCat_Click(object sender, EventArgs e)
         {
             AgregarCategoria formAddCat = new AgregarCategoria();
-            formAddCat.Show();
+            formAddCat.ShowDialog();
         }
 
         private void btnAgregarMarca_Click(object sender, EventArgs e)
         {
             AgregarMarca formAddMarca = new AgregarMarca();
-            formAddMarca.Show();
+            formAddMarca.ShowDialog();
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
             EditarProducto formEditarProducto = new EditarProducto();
-            formEditarProducto.Show();
+            formEditarProducto.ShowDialog();
         }
 
         //Validaciones de Formularios
@@ -48,9 +48,17 @@ namespace Login.CSuAdministrador
             BorrarMensajeProvider();
             if (ValidarCampos())
             {
-                MessageBox.Show("Realizando busqueda...");
+                //Buscar
+                if (chbId.Checked)
+                {
+                    MessageBox.Show("Buscando por Id");
+                }
+                else
+                {
+                    MessageBox.Show("Buscando por Nombre");
+                }
             }
-           
+
         }
 
         private bool ValidarCampos()
@@ -75,22 +83,78 @@ namespace Login.CSuAdministrador
 
         private void txtBuscar_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if(!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar)){
-                e.Handled = true;
+            if (chbId.Checked)
+            {
+                if (!char.IsNumber(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
+                {
+                    e.Handled = true;
+                }
             }
         }
 
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
-            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
-            DialogResult result;
 
-            // Displays the MessageBox.
-            result = MessageBox.Show("Desea Eliminar el producto ....?", "Eliminar Producto", buttons, MessageBoxIcon.Warning);
-            if (result == System.Windows.Forms.DialogResult.Yes)
+        private void chbId_Click(object sender, EventArgs e)
+        {
+            chbNombre.Checked = false;
+            chbId.Checked = true;
+        }
+
+        private void chbNombre_Click(object sender, EventArgs e)
+        {
+            chbId.Checked = false;
+            chbNombre.Checked = true;
+        }
+
+        private void dgvProductos_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            if(e.ColumnIndex >= 0 && this.dgvProductos.Columns[e.ColumnIndex].Name == "Eliminar" && e.RowIndex >= 0)
             {
-                MessageBox.Show("Producto Eliminado");
-                //limpiarFormulario();
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+
+                DataGridViewButtonCell cellBoton = this.dgvProductos.Rows[e.RowIndex].Cells["Eliminar"] as DataGridViewButtonCell;
+
+            }
+        }
+
+
+        //Listar Categorias
+        private void btnBuscarC_Click(object sender, EventArgs e)
+        {
+            BorrarMensajeProviderCM(txtBuscarC);
+            if (ValidarCamposCM(txtBuscarC))
+            {
+                MessageBox.Show("Buscando Categoria");
+            }
+        }
+
+        private bool ValidarCamposCM(TextBox textBox)
+        {
+            bool ok = true;
+            if (textBox.Text == "")
+            {
+                ok = false;
+                errorProviderBuscar.SetError(textBox, "No puede estar vacio");
+            }
+            if (txtBuscarC.Text.Length <= 4)
+            {
+                ok = false;
+                errorProviderBuscar.SetError(textBox, "Ingrese mas de 4 caracteres");
+            }
+            return ok;
+        }
+        
+        //Listar Marca
+        private void BorrarMensajeProviderCM(TextBox textBox)
+        {
+            errorProviderBuscar.SetError(textBox, "");
+        }
+
+        private void btnBuscarM_Click(object sender, EventArgs e)
+        {
+            BorrarMensajeProviderCM(txtBuscarM);
+            if (ValidarCamposCM(txtBuscarM))
+            {
+                MessageBox.Show("Buscando Marca");
             }
         }
     }

@@ -100,6 +100,7 @@
             this.Controls.Add(this.txtCategoria);
             this.Controls.Add(this.label1);
             this.Name = "AgregarCategoria";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AgregarCategoria";
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderCat)).EndInit();
             this.ResumeLayout(false);

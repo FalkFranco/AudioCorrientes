@@ -51,11 +51,6 @@ namespace Login.CSuAdministrador.Empleados
                 userVal = int.Parse(txtDni.Text);
             }
 
-            if (txtPassword.Text == "")
-            {
-                ok = false;
-                errorProviderAgregarEmpleado.SetError(txtPassword, msg);
-            }
             if (txtNombre.Text == "")
             {
                 ok = false;
@@ -89,23 +84,16 @@ namespace Login.CSuAdministrador.Empleados
                 ok = false;
                 errorProviderAgregarEmpleado.SetError(txtTel, "Ingrese un telefono valido | 10 digitos");
             }
-            //Validacion ComboBox
-            if (comboBoxRol.Text == "")
-            {
-                ok = false;
-                errorProviderAgregarEmpleado.SetError(comboBoxRol, msg);
-            }
+
             return ok;
         }
         private void BorrarMensajeProvider()
         {
             errorProviderAgregarEmpleado.SetError(txtDni, "");
-            errorProviderAgregarEmpleado.SetError(txtPassword, "");
             errorProviderAgregarEmpleado.SetError(txtNombre, "");
             errorProviderAgregarEmpleado.SetError(txtApellido, "");
             errorProviderAgregarEmpleado.SetError(txtTel, "");
             errorProviderAgregarEmpleado.SetError(txtDireccion, "");
-            errorProviderAgregarEmpleado.SetError(comboBoxRol, "");
         }
 
 
@@ -148,52 +136,5 @@ namespace Login.CSuAdministrador.Empleados
             }
         }
 
-        private void txtPassword_TextChanged(object sender, EventArgs e)
-        {
-            if(verPass == true)
-            {
-                txtPassword.UseSystemPasswordChar = false;
-            }
-            else
-            {
-                txtPassword.UseSystemPasswordChar = true;
-            }
-            
-            if (AlgoritmoContraseñaSegura(txtPassword.Text) == false)
-            {
-                errorProviderAgregarEmpleado.SetError(txtPassword, "La contraseña debe contener al menos una Mayuscula, simbolo y numero");
-            }
-        }
-
-        private bool AlgoritmoContraseñaSegura(string password)
-        {
-            bool mayuscula = false, minuscula = false, numero = false, carespecial = false;
-            for (int i = 0; i < password.Length; i++)
-            {
-                if (Char.IsUpper(password, i))
-                {
-                    mayuscula = true;
-                }
-                else if (Char.IsLower(password, i))
-                {
-                    minuscula = true;
-                }
-                else if (Char.IsDigit(password, i))
-                {
-                    numero = true;
-                }
-                else
-                {
-                    carespecial = true;
-                }
-            }
-            if (mayuscula && minuscula && numero && carespecial && password.Length >= 8)
-            {
-                return true;
-            }
-            return false;
-        }
-
-        
     }
 }

@@ -28,12 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbProductoTitle = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.checkBox5 = new System.Windows.Forms.CheckBox();
-            this.checkBox6 = new System.Windows.Forms.CheckBox();
+            this.chbNombre = new System.Windows.Forms.CheckBox();
+            this.chbCuit = new System.Windows.Forms.CheckBox();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
@@ -45,10 +46,12 @@
             this.Editar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.label1 = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -83,8 +86,8 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.checkBox5);
-            this.tabPage1.Controls.Add(this.checkBox6);
+            this.tabPage1.Controls.Add(this.chbNombre);
+            this.tabPage1.Controls.Add(this.chbCuit);
             this.tabPage1.Controls.Add(this.btnAgregar);
             this.tabPage1.Controls.Add(this.txtBuscar);
             this.tabPage1.Controls.Add(this.btnBuscar);
@@ -98,25 +101,29 @@
             this.tabPage1.Text = "Listar Clientes";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // checkBox5
+            // chbNombre
             // 
-            this.checkBox5.AutoSize = true;
-            this.checkBox5.Location = new System.Drawing.Point(227, 16);
-            this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(63, 17);
-            this.checkBox5.TabIndex = 14;
-            this.checkBox5.Text = "Nombre";
-            this.checkBox5.UseVisualStyleBackColor = true;
+            this.chbNombre.AutoSize = true;
+            this.chbNombre.Location = new System.Drawing.Point(227, 16);
+            this.chbNombre.Name = "chbNombre";
+            this.chbNombre.Size = new System.Drawing.Size(63, 17);
+            this.chbNombre.TabIndex = 14;
+            this.chbNombre.Text = "Nombre";
+            this.chbNombre.UseVisualStyleBackColor = true;
+            this.chbNombre.Click += new System.EventHandler(this.chbNombre_Click);
             // 
-            // checkBox6
+            // chbCuit
             // 
-            this.checkBox6.AutoSize = true;
-            this.checkBox6.Location = new System.Drawing.Point(141, 17);
-            this.checkBox6.Name = "checkBox6";
-            this.checkBox6.Size = new System.Drawing.Size(51, 17);
-            this.checkBox6.TabIndex = 13;
-            this.checkBox6.Text = "CUIT";
-            this.checkBox6.UseVisualStyleBackColor = true;
+            this.chbCuit.AutoSize = true;
+            this.chbCuit.Checked = true;
+            this.chbCuit.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chbCuit.Location = new System.Drawing.Point(141, 17);
+            this.chbCuit.Name = "chbCuit";
+            this.chbCuit.Size = new System.Drawing.Size(51, 17);
+            this.chbCuit.TabIndex = 13;
+            this.chbCuit.Text = "CUIT";
+            this.chbCuit.UseVisualStyleBackColor = true;
+            this.chbCuit.Click += new System.EventHandler(this.chbCuit_Click);
             // 
             // btnAgregar
             // 
@@ -133,6 +140,7 @@
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(848, 20);
             this.txtBuscar.TabIndex = 3;
+            this.txtBuscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBuscar_KeyPress);
             // 
             // btnBuscar
             // 
@@ -142,6 +150,7 @@
             this.btnBuscar.TabIndex = 2;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // dataGridView1
             // 
@@ -198,6 +207,10 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Buscar Cliente por:";
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // AgregarClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -213,6 +226,7 @@
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -228,13 +242,14 @@
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.CheckBox checkBox5;
-        private System.Windows.Forms.CheckBox checkBox6;
+        private System.Windows.Forms.CheckBox chbNombre;
+        private System.Windows.Forms.CheckBox chbCuit;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdCliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cuit;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn TipoCliente;
         private System.Windows.Forms.DataGridViewButtonColumn Editar;
         private System.Windows.Forms.DataGridViewButtonColumn Eliminar;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

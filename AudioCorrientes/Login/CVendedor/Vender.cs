@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Login.CVendedor.Clientes;
+using Login.CVendedor.Productos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -162,5 +164,16 @@ namespace Login.CVendedor
             }
         }
 
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            ListarProductos listarProductos = new ListarProductos();
+            listarProductos.ShowDialog();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AgregarClientes agregarClientes = new AgregarClientes();
+            agregarClientes.ShowDialog();
+        }
     }
 }

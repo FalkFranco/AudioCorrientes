@@ -119,6 +119,18 @@
     <Compile Include="CAdministrador\Productos\Pruductos.Designer.cs">
       <DependentUpon>Pruductos.cs</DependentUpon>
     </Compile>
+    <Compile Include="CGerente\ReporteProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CGerente\ReporteProductos.Designer.cs">
+      <DependentUpon>ReporteProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CGerente\ReporteVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CGerente\ReporteVentas.Designer.cs">
+      <DependentUpon>ReporteVentas.cs</DependentUpon>
+    </Compile>
     <Compile Include="CSuAdministrador\BackUpForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -155,10 +167,10 @@
     <Compile Include="CSuAdministrador\Usuarios\Usuarios.Designer.cs">
       <DependentUpon>Usuarios.cs</DependentUpon>
     </Compile>
-    <Compile Include="CSuAdministrador\Ventas\Ventas.cs">
+    <Compile Include="CAdministrador\Ventas\Ventas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CSuAdministrador\Ventas\Ventas.Designer.cs">
+    <Compile Include="CAdministrador\Ventas\Ventas.Designer.cs">
       <DependentUpon>Ventas.cs</DependentUpon>
     </Compile>
     <Compile Include="CVendedor\Clientes\AgregarClientes.cs">
@@ -172,6 +184,12 @@
     </Compile>
     <Compile Include="CVendedor\MenuPrincipalVendedor.Designer.cs">
       <DependentUpon>MenuPrincipalVendedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CVendedor\Productos\ListarProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CVendedor\Productos\ListarProductos.Designer.cs">
+      <DependentUpon>ListarProductos.cs</DependentUpon>
     </Compile>
     <Compile Include="CVendedor\Vender.cs">
       <SubType>Form</SubType>
@@ -223,6 +241,12 @@
     <EmbeddedResource Include="CAdministrador\Productos\Pruductos.resx">
       <DependentUpon>Pruductos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CGerente\ReporteProductos.resx">
+      <DependentUpon>ReporteProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CGerente\ReporteVentas.resx">
+      <DependentUpon>ReporteVentas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CSuAdministrador\BackUpForm.resx">
       <DependentUpon>BackUpForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -241,7 +265,7 @@
     <EmbeddedResource Include="CSuAdministrador\Usuarios\Usuarios.resx">
       <DependentUpon>Usuarios.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CSuAdministrador\Ventas\Ventas.resx">
+    <EmbeddedResource Include="CAdministrador\Ventas\Ventas.resx">
       <DependentUpon>Ventas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CVendedor\Clientes\AgregarClientes.resx">
@@ -249,6 +273,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CVendedor\MenuPrincipalVendedor.resx">
       <DependentUpon>MenuPrincipalVendedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CVendedor\Productos\ListarProductos.resx">
+      <DependentUpon>ListarProductos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CVendedor\Vender.resx">
       <DependentUpon>Vender.cs</DependentUpon>
@@ -371,6 +398,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\informe-seo_Mesa de trabajo 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clientes1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

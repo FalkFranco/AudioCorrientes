@@ -171,6 +171,7 @@
             this.btnBuscar.TabIndex = 26;
             this.btnBuscar.Text = "Buscar Producto";
             this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // btnCargarLista
             // 
@@ -398,6 +399,7 @@
             this.button1.TabIndex = 44;
             this.button1.Text = "Buscar Cliente";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Vender
             // 

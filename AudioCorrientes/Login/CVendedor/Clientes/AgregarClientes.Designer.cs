@@ -32,21 +32,19 @@
             this.lbProductoTitle = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.btnAgregarMarca = new System.Windows.Forms.Button();
-            this.btnAgregarCat = new System.Windows.Forms.Button();
+            this.checkBox5 = new System.Windows.Forms.CheckBox();
+            this.checkBox6 = new System.Windows.Forms.CheckBox();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.checkBox5 = new System.Windows.Forms.CheckBox();
-            this.checkBox6 = new System.Windows.Forms.CheckBox();
             this.IdCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cuit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TipoCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Editar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -87,8 +85,6 @@
             // 
             this.tabPage1.Controls.Add(this.checkBox5);
             this.tabPage1.Controls.Add(this.checkBox6);
-            this.tabPage1.Controls.Add(this.btnAgregarMarca);
-            this.tabPage1.Controls.Add(this.btnAgregarCat);
             this.tabPage1.Controls.Add(this.btnAgregar);
             this.tabPage1.Controls.Add(this.txtBuscar);
             this.tabPage1.Controls.Add(this.btnBuscar);
@@ -102,23 +98,25 @@
             this.tabPage1.Text = "Listar Clientes";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // btnAgregarMarca
+            // checkBox5
             // 
-            this.btnAgregarMarca.Location = new System.Drawing.Point(980, 460);
-            this.btnAgregarMarca.Name = "btnAgregarMarca";
-            this.btnAgregarMarca.Size = new System.Drawing.Size(123, 35);
-            this.btnAgregarMarca.TabIndex = 8;
-            this.btnAgregarMarca.Text = "Agregar Marca";
-            this.btnAgregarMarca.UseVisualStyleBackColor = true;
+            this.checkBox5.AutoSize = true;
+            this.checkBox5.Location = new System.Drawing.Point(227, 16);
+            this.checkBox5.Name = "checkBox5";
+            this.checkBox5.Size = new System.Drawing.Size(63, 17);
+            this.checkBox5.TabIndex = 14;
+            this.checkBox5.Text = "Nombre";
+            this.checkBox5.UseVisualStyleBackColor = true;
             // 
-            // btnAgregarCat
+            // checkBox6
             // 
-            this.btnAgregarCat.Location = new System.Drawing.Point(980, 403);
-            this.btnAgregarCat.Name = "btnAgregarCat";
-            this.btnAgregarCat.Size = new System.Drawing.Size(123, 35);
-            this.btnAgregarCat.TabIndex = 7;
-            this.btnAgregarCat.Text = "Agregar Categoria";
-            this.btnAgregarCat.UseVisualStyleBackColor = true;
+            this.checkBox6.AutoSize = true;
+            this.checkBox6.Location = new System.Drawing.Point(141, 17);
+            this.checkBox6.Name = "checkBox6";
+            this.checkBox6.Size = new System.Drawing.Size(51, 17);
+            this.checkBox6.TabIndex = 13;
+            this.checkBox6.Text = "CUIT";
+            this.checkBox6.UseVisualStyleBackColor = true;
             // 
             // btnAgregar
             // 
@@ -161,35 +159,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(940, 403);
             this.dataGridView1.TabIndex = 1;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(23, 17);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(96, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Buscar Cliente por:";
-            // 
-            // checkBox5
-            // 
-            this.checkBox5.AutoSize = true;
-            this.checkBox5.Location = new System.Drawing.Point(227, 16);
-            this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(63, 17);
-            this.checkBox5.TabIndex = 14;
-            this.checkBox5.Text = "Nombre";
-            this.checkBox5.UseVisualStyleBackColor = true;
-            // 
-            // checkBox6
-            // 
-            this.checkBox6.AutoSize = true;
-            this.checkBox6.Location = new System.Drawing.Point(141, 17);
-            this.checkBox6.Name = "checkBox6";
-            this.checkBox6.Size = new System.Drawing.Size(51, 17);
-            this.checkBox6.TabIndex = 13;
-            this.checkBox6.Text = "CUIT";
-            this.checkBox6.UseVisualStyleBackColor = true;
-            // 
             // IdCliente
             // 
             this.IdCliente.HeaderText = "IdCliente";
@@ -220,6 +189,15 @@
             this.Eliminar.HeaderText = "Eliminar";
             this.Eliminar.Name = "Eliminar";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(23, 17);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(96, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Buscar Cliente por:";
+            // 
             // AgregarClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -245,8 +223,6 @@
         private System.Windows.Forms.Label lbProductoTitle;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.Button btnAgregarMarca;
-        private System.Windows.Forms.Button btnAgregarCat;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Button btnBuscar;

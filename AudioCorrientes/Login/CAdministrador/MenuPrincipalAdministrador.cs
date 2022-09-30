@@ -117,7 +117,7 @@ namespace Login.CAdministrador
 
         private void btnClientes_Click(object sender, EventArgs e)
         {
-            AbrirFormEnPanel(new Clientes());
+            AbrirFormEnPanel(new CVendedor.Clientes.AgregarClientes());
         }
 
         private void btnEmpleados_Click(object sender, EventArgs e)

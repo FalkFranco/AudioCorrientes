@@ -106,5 +106,10 @@ namespace Login.CVendedor
                 this.Hide();
             }
         }
+
+        private void btnClientes_Click(object sender, EventArgs e)
+        {
+            AbrirFormEnPanel(new Clientes.AgregarClientes());
+        }
     }
 }

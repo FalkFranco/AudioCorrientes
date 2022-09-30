@@ -31,9 +31,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.txtLoc = new System.Windows.Forms.TextBox();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.btnRestaurar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -42,7 +42,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(98, 169);
+            this.label4.Location = new System.Drawing.Point(87, 167);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(150, 21);
             this.label4.TabIndex = 9;
@@ -51,50 +51,53 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.textBox2);
-            this.panel2.Controls.Add(this.button2);
-            this.panel2.Controls.Add(this.button3);
-            this.panel2.Location = new System.Drawing.Point(80, 182);
+            this.panel2.Controls.Add(this.txtLoc);
+            this.panel2.Controls.Add(this.btnBuscar);
+            this.panel2.Location = new System.Drawing.Point(69, 180);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(641, 100);
+            this.panel2.Size = new System.Drawing.Size(658, 100);
             this.panel2.TabIndex = 8;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(59, 23);
+            this.label5.Location = new System.Drawing.Point(59, 42);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(109, 21);
             this.label5.TabIndex = 4;
             this.label5.Text = "Localización:";
             // 
-            // textBox2
+            // txtLoc
             // 
-            this.textBox2.Location = new System.Drawing.Point(212, 23);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(292, 20);
-            this.textBox2.TabIndex = 3;
+            this.txtLoc.Location = new System.Drawing.Point(212, 42);
+            this.txtLoc.Name = "txtLoc";
+            this.txtLoc.ReadOnly = true;
+            this.txtLoc.Size = new System.Drawing.Size(292, 20);
+            this.txtLoc.TabIndex = 3;
             // 
-            // button2
+            // btnBuscar
             // 
-            this.button2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(520, 16);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(118, 33);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Buscar";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBuscar.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscar.Location = new System.Drawing.Point(520, 35);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(118, 33);
+            this.btnBuscar.TabIndex = 2;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnRestaurar
             // 
-            this.button3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(520, 55);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(118, 33);
-            this.button3.TabIndex = 1;
-            this.button3.Text = "Restaurar Copia";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnRestaurar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRestaurar.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRestaurar.Location = new System.Drawing.Point(323, 324);
+            this.btnRestaurar.Name = "btnRestaurar";
+            this.btnRestaurar.Size = new System.Drawing.Size(188, 33);
+            this.btnRestaurar.TabIndex = 1;
+            this.btnRestaurar.Text = "Restaurar Copia";
+            this.btnRestaurar.UseVisualStyleBackColor = true;
+            this.btnRestaurar.Click += new System.EventHandler(this.btnRestaurar_Click);
             // 
             // label1
             // 
@@ -114,6 +117,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.panel2);
+            this.Controls.Add(this.btnRestaurar);
             this.Name = "Restaurar_Backup";
             this.Text = "Restaurar_Backup";
             this.panel2.ResumeLayout(false);
@@ -128,9 +132,9 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.TextBox txtLoc;
+        private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.Button btnRestaurar;
         private System.Windows.Forms.Label label1;
     }
 }

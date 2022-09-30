@@ -17,23 +17,42 @@ namespace Login.CSuAdministrador
             InitializeComponent();
         }
 
-        private void btnBackup_Click(object sender, EventArgs e)
+        private void btnGenerarBackUp_Click(object sender, EventArgs e)
         {
-            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
-            DialogResult result;
-            var backupOk = false;
-
-            // Displays the MessageBox.
-            result = MessageBox.Show("¿Seguro que desea realizar un backup de la base de datos?", "Backup", buttons, MessageBoxIcon.Exclamation);
-            if (result == System.Windows.Forms.DialogResult.Yes)
+            if (validarCampos())
             {
-                //Funcion Backup
-                backupOk = true;
-                if(backupOk == true)
+                MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+                DialogResult result;
+                var backupOk = false;
+
+                // Displays the MessageBox.
+                result = MessageBox.Show("¿Seguro que desea realizar un backup de la base de datos?", "Backup", buttons, MessageBoxIcon.Exclamation);
+                if (result == System.Windows.Forms.DialogResult.Yes)
                 {
-                    MessageBox.Show("Backup realizado con exito", "Backup Exitoso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    //Funcion Backup
+                    backupOk = true;
+                    if (backupOk == true)
+                    {
+                        MessageBox.Show("Backup realizado con exito", "Backup Exitoso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
                 }
+            }else
+            {
+                MessageBox.Show("Debe selaccionar los archivos para generar", "Error" , MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private bool validarCampos()
+        {
+            bool ok = true;
+            if (txtLoc.Text == "" || txtLoc.Text == "")
+            {
+                btnGenerarBackUp.Enabled = false;
+                ok = false;
+            }
+            btnGenerarBackUp.Enabled = true;
+            return ok;
+        }
+
     }
 }

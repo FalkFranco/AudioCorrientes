@@ -167,12 +167,6 @@
     <Compile Include="CSuAdministrador\Usuarios\EditarRol.Designer.cs">
       <DependentUpon>EditarRol.cs</DependentUpon>
     </Compile>
-    <Compile Include="CSuAdministrador\Usuarios\ListadoEmpleados.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CSuAdministrador\Usuarios\ListadoEmpleados.Designer.cs">
-      <DependentUpon>ListadoEmpleados.cs</DependentUpon>
-    </Compile>
     <Compile Include="CSuAdministrador\Usuarios\Usuarios.cs">
       <SubType>Form</SubType>
     </Compile>

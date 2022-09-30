@@ -37,31 +37,16 @@ namespace Login.CSuAdministrador.Empleados
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            BorrarMensajeProvider();
-            if (ValidarCampos())
+            BorrarMensajeProvider(txtBuscar);
+            if (ValidarCampos(txtBuscar, chbNombreE))
             {
-                MessageBox.Show("Realizando busqueda...");
+                MessageBox.Show("Buscando Usuario");
             }
         }
 
-        private bool ValidarCampos()
+        private void BorrarMensajeProvider(TextBox textBox)
         {
-            bool ok = true;
-            if (txtBuscar.Text == "")
-            {
-                ok = false;
-                errorProviderBuscarEmpleado.SetError(txtBuscar, "No puede estar vacio al realizar una busqueda");
-            }
-            if (txtBuscar.Text.Length <= 4)
-            {
-                ok = false;
-                errorProviderBuscarEmpleado.SetError(txtBuscar, "Ingrese mas de 4 caracteres");
-            }
-            return ok;
-        }
-        private void BorrarMensajeProvider()
-        {
-            errorProviderBuscarEmpleado.SetError(txtBuscar, "");
+            errorProvider1.SetError(textBox, "");
         }
 
         private void txtBuscar_KeyPress(object sender, KeyPressEventArgs e)
@@ -83,6 +68,57 @@ namespace Login.CSuAdministrador.Empleados
             {
                 MessageBox.Show("Empleado Eliminado");
                 //limpiarFormulario();
+            }
+        }
+
+        private void btnAgregarE_Click(object sender, EventArgs e)
+        {
+            AgregarEmpleados agregarEmpleados = new AgregarEmpleados();
+            agregarEmpleados.ShowDialog();
+        }
+
+
+        private bool ValidarCampos(TextBox textBox, CheckBox checkBox)
+        {
+            bool ok = true;
+            if (textBox.Text == "")
+            {
+                ok = false;
+                errorProvider1.SetError(textBox, "No puede estar vacio");
+            }
+            if (checkBox.Checked && textBox.Text.Length <= 4)
+            {
+                ok = false;
+                errorProvider1.SetError(textBox, "Ingrese mas de 4 caracteres");
+            }
+            return ok;
+        }
+
+        private void chbNombreE_Click(object sender, EventArgs e)
+        {
+            chbDniE.Checked = false;
+            chbNombreE.Checked = true;
+        }
+
+        private void chbDniE_Click(object sender, EventArgs e)
+        {
+            chbNombreE.Checked = false;
+            chbDniE.Checked = true;
+        }
+
+        private void txtBuscar_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            bloqString(chbDniE, e);
+        }
+
+        private void bloqString(CheckBox checkBox, KeyPressEventArgs e)
+        {
+            if (checkBox.Checked)
+            {
+                if (!char.IsNumber(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
+                {
+                    e.Handled = true;
+                }
             }
         }
     }

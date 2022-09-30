@@ -32,7 +32,6 @@
             this.lbProductoTitle = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.errorProviderBuscarEmpleado = new System.Windows.Forms.ErrorProvider(this.components);
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.chbNombreE = new System.Windows.Forms.CheckBox();
             this.chbDniE = new System.Windows.Forms.CheckBox();
@@ -47,11 +46,12 @@
             this.dataGridViewButtonColumn1 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.dataGridViewButtonColumn2 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.label3 = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProviderBuscarEmpleado)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // lbProductoTitle
@@ -84,10 +84,6 @@
             this.tabControl1.Size = new System.Drawing.Size(1123, 542);
             this.tabControl1.TabIndex = 17;
             // 
-            // errorProviderBuscarEmpleado
-            // 
-            this.errorProviderBuscarEmpleado.ContainerControl = this;
-            // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.chbNombreE);
@@ -114,6 +110,7 @@
             this.chbNombreE.TabIndex = 12;
             this.chbNombreE.Text = "Nombre";
             this.chbNombreE.UseVisualStyleBackColor = true;
+            this.chbNombreE.Click += new System.EventHandler(this.chbNombreE_Click);
             // 
             // chbDniE
             // 
@@ -126,6 +123,7 @@
             this.chbDniE.TabIndex = 11;
             this.chbDniE.Text = "DNI";
             this.chbDniE.UseVisualStyleBackColor = true;
+            this.chbDniE.Click += new System.EventHandler(this.chbDniE_Click);
             // 
             // btnAgregarE
             // 
@@ -135,6 +133,7 @@
             this.btnAgregarE.TabIndex = 4;
             this.btnAgregarE.Text = "Agregar Empleado";
             this.btnAgregarE.UseVisualStyleBackColor = true;
+            this.btnAgregarE.Click += new System.EventHandler(this.btnAgregarE_Click);
             // 
             // txtBuscar
             // 
@@ -142,6 +141,7 @@
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(848, 20);
             this.txtBuscar.TabIndex = 3;
+            this.txtBuscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBuscar_KeyPress_1);
             // 
             // btnBuscarE
             // 
@@ -151,6 +151,7 @@
             this.btnBuscarE.TabIndex = 2;
             this.btnBuscarE.Text = "Buscar";
             this.btnBuscarE.UseVisualStyleBackColor = true;
+            this.btnBuscarE.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // dataGridView3
             // 
@@ -215,6 +216,10 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "Buscar Empleado por:";
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // Empleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -227,10 +232,10 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.errorProviderBuscarEmpleado)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -240,7 +245,6 @@
         private System.Windows.Forms.Label lbProductoTitle;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.ErrorProvider errorProviderBuscarEmpleado;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.CheckBox chbNombreE;
         private System.Windows.Forms.CheckBox chbDniE;
@@ -255,5 +259,6 @@
         private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn1;
         private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

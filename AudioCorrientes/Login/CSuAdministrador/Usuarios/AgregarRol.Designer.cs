@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label3 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.txtDireccion = new System.Windows.Forms.TextBox();
@@ -45,10 +46,12 @@
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtDni = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnBuscarEmpleado = new System.Windows.Forms.Button();
             this.btnVerPass = new System.Windows.Forms.PictureBox();
             this.helpProvider1 = new System.Windows.Forms.HelpProvider();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.btnVerPass)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // label3
@@ -93,6 +96,7 @@
             this.btnSalirMenuPrincipal.TabIndex = 52;
             this.btnSalirMenuPrincipal.Text = "Salir";
             this.btnSalirMenuPrincipal.UseVisualStyleBackColor = true;
+            this.btnSalirMenuPrincipal.Click += new System.EventHandler(this.btnSalirMenuPrincipal_Click);
             // 
             // btnAgregarEmpleado
             // 
@@ -102,6 +106,7 @@
             this.btnAgregarEmpleado.TabIndex = 51;
             this.btnAgregarEmpleado.Text = "Agregar";
             this.btnAgregarEmpleado.UseVisualStyleBackColor = true;
+            this.btnAgregarEmpleado.Click += new System.EventHandler(this.btnAgregarEmpleado_Click);
             // 
             // label7
             // 
@@ -114,13 +119,12 @@
             // 
             // comboBoxRol
             // 
+            this.comboBoxRol.Enabled = false;
             this.comboBoxRol.FormattingEnabled = true;
             this.comboBoxRol.Items.AddRange(new object[] {
-            "Guitarras Electricas",
-            "Guitarras Acusticas",
-            "Baterias",
-            "Bajos",
-            "Amplificadores"});
+            "Vendedor",
+            "Administrador",
+            "Gerente"});
             this.comboBoxRol.Location = new System.Drawing.Point(320, 150);
             this.comboBoxRol.Name = "comboBoxRol";
             this.comboBoxRol.Size = new System.Drawing.Size(161, 21);
@@ -180,6 +184,7 @@
             // 
             // txtPassword
             // 
+            this.txtPassword.Enabled = false;
             this.txtPassword.Location = new System.Drawing.Point(90, 209);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(161, 20);
@@ -202,14 +207,15 @@
             this.label1.TabIndex = 40;
             this.label1.Text = "Agregar Usuario";
             // 
-            // button1
+            // btnBuscarEmpleado
             // 
-            this.button1.Location = new System.Drawing.Point(320, 311);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(161, 44);
-            this.button1.TabIndex = 58;
-            this.button1.Text = "Buscar Empleado";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnBuscarEmpleado.Location = new System.Drawing.Point(320, 311);
+            this.btnBuscarEmpleado.Name = "btnBuscarEmpleado";
+            this.btnBuscarEmpleado.Size = new System.Drawing.Size(161, 44);
+            this.btnBuscarEmpleado.TabIndex = 58;
+            this.btnBuscarEmpleado.Text = "Buscar Empleado";
+            this.btnBuscarEmpleado.UseVisualStyleBackColor = true;
+            this.btnBuscarEmpleado.Click += new System.EventHandler(this.btnBuscarEmpleado_Click);
             // 
             // btnVerPass
             // 
@@ -221,13 +227,18 @@
             this.btnVerPass.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnVerPass.TabIndex = 57;
             this.btnVerPass.TabStop = false;
+            this.btnVerPass.Click += new System.EventHandler(this.btnVerPass_Click);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // AgregarRol
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(525, 496);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnBuscarEmpleado);
             this.Controls.Add(this.btnVerPass);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label9);
@@ -249,6 +260,7 @@
             this.Name = "AgregarRol";
             this.Text = "AgregarRol";
             ((System.ComponentModel.ISupportInitialize)(this.btnVerPass)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -274,7 +286,8 @@
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.TextBox txtDni;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnBuscarEmpleado;
         private System.Windows.Forms.HelpProvider helpProvider1;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

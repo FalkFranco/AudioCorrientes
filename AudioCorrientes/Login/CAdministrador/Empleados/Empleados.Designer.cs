@@ -32,21 +32,26 @@
             this.lbProductoTitle = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.btnAgregarROL = new System.Windows.Forms.Button();
-            this.btnEliminar = new System.Windows.Forms.Button();
-            this.btnEditar = new System.Windows.Forms.Button();
-            this.btnAgregar = new System.Windows.Forms.Button();
-            this.txtBuscar = new System.Windows.Forms.TextBox();
-            this.btnBuscar = new System.Windows.Forms.Button();
-            this.dataGridViewEmpleados = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
             this.errorProviderBuscarEmpleado = new System.Windows.Forms.ErrorProvider(this.components);
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.chbNombreE = new System.Windows.Forms.CheckBox();
+            this.chbDniE = new System.Windows.Forms.CheckBox();
+            this.btnAgregarE = new System.Windows.Forms.Button();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.btnBuscarE = new System.Windows.Forms.Button();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Dni = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewButtonColumn1 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.dataGridViewButtonColumn2 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmpleados)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderBuscarEmpleado)).BeginInit();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.SuspendLayout();
             // 
             // lbProductoTitle
@@ -66,160 +71,155 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1255, 67);
+            this.panel1.Size = new System.Drawing.Size(1123, 67);
             this.panel1.TabIndex = 16;
             // 
             // tabControl1
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 67);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1255, 542);
+            this.tabControl1.Size = new System.Drawing.Size(1123, 542);
             this.tabControl1.TabIndex = 17;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.BackColor = System.Drawing.Color.White;
-            this.tabPage1.Controls.Add(this.btnAgregarROL);
-            this.tabPage1.Controls.Add(this.btnEliminar);
-            this.tabPage1.Controls.Add(this.btnEditar);
-            this.tabPage1.Controls.Add(this.btnAgregar);
-            this.tabPage1.Controls.Add(this.txtBuscar);
-            this.tabPage1.Controls.Add(this.btnBuscar);
-            this.tabPage1.Controls.Add(this.dataGridViewEmpleados);
-            this.tabPage1.Controls.Add(this.label1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1247, 516);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Listar Empleados";
-            // 
-            // btnAgregarROL
-            // 
-            this.btnAgregarROL.BackColor = System.Drawing.Color.LimeGreen;
-            this.btnAgregarROL.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAgregarROL.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnAgregarROL.FlatAppearance.BorderSize = 2;
-            this.btnAgregarROL.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Teal;
-            this.btnAgregarROL.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregarROL.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregarROL.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnAgregarROL.Location = new System.Drawing.Point(1106, 460);
-            this.btnAgregarROL.Name = "btnAgregarROL";
-            this.btnAgregarROL.Size = new System.Drawing.Size(123, 35);
-            this.btnAgregarROL.TabIndex = 7;
-            this.btnAgregarROL.Text = "Agregar ROL";
-            this.btnAgregarROL.UseVisualStyleBackColor = false;
-            this.btnAgregarROL.Click += new System.EventHandler(this.btnAgregarROL_Click);
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.BackColor = System.Drawing.Color.Red;
-            this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEliminar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnEliminar.FlatAppearance.BorderSize = 2;
-            this.btnEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnEliminar.Location = new System.Drawing.Point(1106, 197);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(123, 35);
-            this.btnEliminar.TabIndex = 6;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = false;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
-            // 
-            // btnEditar
-            // 
-            this.btnEditar.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnEditar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEditar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnEditar.FlatAppearance.BorderSize = 2;
-            this.btnEditar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnEditar.Location = new System.Drawing.Point(1106, 144);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(123, 35);
-            this.btnEditar.TabIndex = 5;
-            this.btnEditar.Text = "Editar";
-            this.btnEditar.UseVisualStyleBackColor = false;
-            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
-            // 
-            // btnAgregar
-            // 
-            this.btnAgregar.BackColor = System.Drawing.Color.LimeGreen;
-            this.btnAgregar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAgregar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnAgregar.FlatAppearance.BorderSize = 2;
-            this.btnAgregar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green;
-            this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnAgregar.Location = new System.Drawing.Point(1106, 92);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(123, 35);
-            this.btnAgregar.TabIndex = 4;
-            this.btnAgregar.Text = "Agregar";
-            this.btnAgregar.UseVisualStyleBackColor = false;
-            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
-            // 
-            // txtBuscar
-            // 
-            this.txtBuscar.Location = new System.Drawing.Point(26, 57);
-            this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(960, 20);
-            this.txtBuscar.TabIndex = 3;
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.BackColor = System.Drawing.Color.Orange;
-            this.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBuscar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnBuscar.FlatAppearance.BorderSize = 2;
-            this.btnBuscar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnBuscar.Location = new System.Drawing.Point(1003, 43);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(89, 35);
-            this.btnBuscar.TabIndex = 2;
-            this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.UseVisualStyleBackColor = false;
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
-            // 
-            // dataGridViewEmpleados
-            // 
-            this.dataGridViewEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewEmpleados.Location = new System.Drawing.Point(26, 92);
-            this.dataGridViewEmpleados.Name = "dataGridViewEmpleados";
-            this.dataGridViewEmpleados.Size = new System.Drawing.Size(1061, 403);
-            this.dataGridViewEmpleados.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(23, 17);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(90, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Buscar Empleado";
             // 
             // errorProviderBuscarEmpleado
             // 
             this.errorProviderBuscarEmpleado.ContainerControl = this;
             // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.chbNombreE);
+            this.tabPage2.Controls.Add(this.chbDniE);
+            this.tabPage2.Controls.Add(this.btnAgregarE);
+            this.tabPage2.Controls.Add(this.txtBuscar);
+            this.tabPage2.Controls.Add(this.btnBuscarE);
+            this.tabPage2.Controls.Add(this.dataGridView3);
+            this.tabPage2.Controls.Add(this.label3);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(1115, 516);
+            this.tabPage2.TabIndex = 4;
+            this.tabPage2.Text = "Listado Empleados";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // chbNombreE
+            // 
+            this.chbNombreE.AutoSize = true;
+            this.chbNombreE.Location = new System.Drawing.Point(213, 17);
+            this.chbNombreE.Name = "chbNombreE";
+            this.chbNombreE.Size = new System.Drawing.Size(63, 17);
+            this.chbNombreE.TabIndex = 12;
+            this.chbNombreE.Text = "Nombre";
+            this.chbNombreE.UseVisualStyleBackColor = true;
+            // 
+            // chbDniE
+            // 
+            this.chbDniE.AutoSize = true;
+            this.chbDniE.Checked = true;
+            this.chbDniE.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chbDniE.Location = new System.Drawing.Point(147, 17);
+            this.chbDniE.Name = "chbDniE";
+            this.chbDniE.Size = new System.Drawing.Size(45, 17);
+            this.chbDniE.TabIndex = 11;
+            this.chbDniE.Text = "DNI";
+            this.chbDniE.UseVisualStyleBackColor = true;
+            // 
+            // btnAgregarE
+            // 
+            this.btnAgregarE.Location = new System.Drawing.Point(980, 92);
+            this.btnAgregarE.Name = "btnAgregarE";
+            this.btnAgregarE.Size = new System.Drawing.Size(123, 35);
+            this.btnAgregarE.TabIndex = 4;
+            this.btnAgregarE.Text = "Agregar Empleado";
+            this.btnAgregarE.UseVisualStyleBackColor = true;
+            // 
+            // txtBuscar
+            // 
+            this.txtBuscar.Location = new System.Drawing.Point(26, 57);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(848, 20);
+            this.txtBuscar.TabIndex = 3;
+            // 
+            // btnBuscarE
+            // 
+            this.btnBuscarE.Location = new System.Drawing.Point(891, 57);
+            this.btnBuscarE.Name = "btnBuscarE";
+            this.btnBuscarE.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscarE.TabIndex = 2;
+            this.btnBuscarE.Text = "Buscar";
+            this.btnBuscarE.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView3
+            // 
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.Dni,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewButtonColumn1,
+            this.dataGridViewButtonColumn2});
+            this.dataGridView3.Location = new System.Drawing.Point(26, 92);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.Size = new System.Drawing.Size(940, 403);
+            this.dataGridView3.TabIndex = 1;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn1.HeaderText = "idEmpleado";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // Dni
+            // 
+            this.Dni.HeaderText = "Dni";
+            this.Dni.Name = "Dni";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn2.HeaderText = "Nombre";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn3.HeaderText = "Apellido";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // dataGridViewButtonColumn1
+            // 
+            this.dataGridViewButtonColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewButtonColumn1.HeaderText = "Editar";
+            this.dataGridViewButtonColumn1.Name = "dataGridViewButtonColumn1";
+            this.dataGridViewButtonColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewButtonColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // dataGridViewButtonColumn2
+            // 
+            this.dataGridViewButtonColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewButtonColumn2.HeaderText = "Eliminar";
+            this.dataGridViewButtonColumn2.Name = "dataGridViewButtonColumn2";
+            this.dataGridViewButtonColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewButtonColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(23, 17);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(111, 13);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Buscar Empleado por:";
+            // 
             // Empleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1255, 609);
+            this.ClientSize = new System.Drawing.Size(1123, 609);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.panel1);
             this.Name = "Empleados";
@@ -227,10 +227,10 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmpleados)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderBuscarEmpleado)).EndInit();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -240,15 +240,20 @@
         private System.Windows.Forms.Label lbProductoTitle;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.Button btnAgregarROL;
-        private System.Windows.Forms.Button btnEliminar;
-        private System.Windows.Forms.Button btnEditar;
-        private System.Windows.Forms.Button btnAgregar;
-        private System.Windows.Forms.TextBox txtBuscar;
-        private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.DataGridView dataGridViewEmpleados;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ErrorProvider errorProviderBuscarEmpleado;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.CheckBox chbNombreE;
+        private System.Windows.Forms.CheckBox chbDniE;
+        private System.Windows.Forms.Button btnAgregarE;
+        private System.Windows.Forms.TextBox txtBuscar;
+        private System.Windows.Forms.Button btnBuscarE;
+        private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Dni;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn1;
+        private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn2;
+        private System.Windows.Forms.Label label3;
     }
 }

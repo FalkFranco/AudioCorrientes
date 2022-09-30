@@ -135,7 +135,7 @@ namespace Login.CSuAdministrador
                 ok = false;
                 errorProviderBuscar.SetError(textBox, "No puede estar vacio");
             }
-            if (txtBuscarC.Text.Length <= 4)
+            if (textBox.Text.Length <= 4)
             {
                 ok = false;
                 errorProviderBuscar.SetError(textBox, "Ingrese mas de 4 caracteres");

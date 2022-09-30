@@ -149,6 +149,12 @@
     <Compile Include="CSuAdministrador\MenuPrincipalSA.Designer.cs">
       <DependentUpon>MenuPrincipalSA.cs</DependentUpon>
     </Compile>
+    <Compile Include="CSuAdministrador\Restaurar Backup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CSuAdministrador\Restaurar Backup.Designer.cs">
+      <DependentUpon>Restaurar Backup.cs</DependentUpon>
+    </Compile>
     <Compile Include="CSuAdministrador\Usuarios\AgregarRol.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -160,6 +166,12 @@
     </Compile>
     <Compile Include="CSuAdministrador\Usuarios\EditarRol.Designer.cs">
       <DependentUpon>EditarRol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CSuAdministrador\Usuarios\ListadoEmpleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CSuAdministrador\Usuarios\ListadoEmpleados.Designer.cs">
+      <DependentUpon>ListadoEmpleados.cs</DependentUpon>
     </Compile>
     <Compile Include="CSuAdministrador\Usuarios\Usuarios.cs">
       <SubType>Form</SubType>
@@ -255,6 +267,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CAdministrador\SUDashboard.resx">
       <DependentUpon>SUDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CSuAdministrador\Restaurar Backup.resx">
+      <DependentUpon>Restaurar Backup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CSuAdministrador\Usuarios\AgregarRol.resx">
       <DependentUpon>AgregarRol.cs</DependentUpon>
@@ -401,6 +416,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\clientes1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="CDatos\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

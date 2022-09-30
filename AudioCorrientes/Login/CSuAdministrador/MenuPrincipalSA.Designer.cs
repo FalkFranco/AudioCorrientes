@@ -34,15 +34,17 @@
             this.btnMaximizar = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.lbVendedor = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.btnCerrarSesion = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
             this.btnBackUp = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.btnEmpleados = new System.Windows.Forms.Button();
+            this.btnUsuarios = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelContenedor = new System.Windows.Forms.Panel();
-            this.lbVendedor = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnRestaurarDB = new System.Windows.Forms.Button();
             this.panelTop.SuspendLayout();
             this.panelMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -134,19 +136,32 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(204)))));
+            this.panelMenu.Controls.Add(this.panel1);
+            this.panelMenu.Controls.Add(this.btnRestaurarDB);
             this.panelMenu.Controls.Add(this.lbVendedor);
             this.panelMenu.Controls.Add(this.panel7);
             this.panelMenu.Controls.Add(this.btnCerrarSesion);
             this.panelMenu.Controls.Add(this.panel6);
             this.panelMenu.Controls.Add(this.btnBackUp);
             this.panelMenu.Controls.Add(this.panel5);
-            this.panelMenu.Controls.Add(this.btnEmpleados);
+            this.panelMenu.Controls.Add(this.btnUsuarios);
             this.panelMenu.Controls.Add(this.pictureBox1);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 40);
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(220, 728);
             this.panelMenu.TabIndex = 1;
+            // 
+            // lbVendedor
+            // 
+            this.lbVendedor.AutoSize = true;
+            this.lbVendedor.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbVendedor.ForeColor = System.Drawing.SystemColors.Control;
+            this.lbVendedor.Location = new System.Drawing.Point(29, 140);
+            this.lbVendedor.Name = "lbVendedor";
+            this.lbVendedor.Size = new System.Drawing.Size(162, 19);
+            this.lbVendedor.TabIndex = 20;
+            this.lbVendedor.Text = "SuperAdministrador";
             // 
             // panel7
             // 
@@ -199,7 +214,7 @@
             this.btnBackUp.Name = "btnBackUp";
             this.btnBackUp.Size = new System.Drawing.Size(220, 50);
             this.btnBackUp.TabIndex = 11;
-            this.btnBackUp.Text = "Backup";
+            this.btnBackUp.Text = "Generar Backup";
             this.btnBackUp.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnBackUp.UseVisualStyleBackColor = true;
             this.btnBackUp.Click += new System.EventHandler(this.btnBackUp_Click);
@@ -212,25 +227,25 @@
             this.panel5.Size = new System.Drawing.Size(5, 50);
             this.panel5.TabIndex = 10;
             // 
-            // btnEmpleados
+            // btnUsuarios
             // 
-            this.btnEmpleados.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEmpleados.FlatAppearance.BorderSize = 0;
-            this.btnEmpleados.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Navy;
-            this.btnEmpleados.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(57)))), ((int)(((byte)(104)))));
-            this.btnEmpleados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEmpleados.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEmpleados.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnEmpleados.Image = global::Login.Properties.Resources.empleados;
-            this.btnEmpleados.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEmpleados.Location = new System.Drawing.Point(0, 294);
-            this.btnEmpleados.Name = "btnEmpleados";
-            this.btnEmpleados.Size = new System.Drawing.Size(220, 50);
-            this.btnEmpleados.TabIndex = 9;
-            this.btnEmpleados.Text = "Usuarios";
-            this.btnEmpleados.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnEmpleados.UseVisualStyleBackColor = true;
-            this.btnEmpleados.Click += new System.EventHandler(this.btnEmpleados_Click);
+            this.btnUsuarios.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnUsuarios.FlatAppearance.BorderSize = 0;
+            this.btnUsuarios.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Navy;
+            this.btnUsuarios.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(57)))), ((int)(((byte)(104)))));
+            this.btnUsuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUsuarios.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUsuarios.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnUsuarios.Image = global::Login.Properties.Resources.empleados;
+            this.btnUsuarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUsuarios.Location = new System.Drawing.Point(0, 294);
+            this.btnUsuarios.Name = "btnUsuarios";
+            this.btnUsuarios.Size = new System.Drawing.Size(220, 50);
+            this.btnUsuarios.TabIndex = 9;
+            this.btnUsuarios.Text = "Gestión Usuarios";
+            this.btnUsuarios.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnUsuarios.UseVisualStyleBackColor = true;
+            this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
             // 
             // pictureBox1
             // 
@@ -250,16 +265,33 @@
             this.panelContenedor.Size = new System.Drawing.Size(1146, 728);
             this.panelContenedor.TabIndex = 2;
             // 
-            // lbVendedor
+            // panel1
             // 
-            this.lbVendedor.AutoSize = true;
-            this.lbVendedor.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbVendedor.ForeColor = System.Drawing.SystemColors.Control;
-            this.lbVendedor.Location = new System.Drawing.Point(29, 140);
-            this.lbVendedor.Name = "lbVendedor";
-            this.lbVendedor.Size = new System.Drawing.Size(162, 19);
-            this.lbVendedor.TabIndex = 20;
-            this.lbVendedor.Text = "SuperAdministrador";
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.panel1.Location = new System.Drawing.Point(0, 450);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(5, 50);
+            this.panel1.TabIndex = 22;
+            // 
+            // btnRestaurarDB
+            // 
+            this.btnRestaurarDB.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRestaurarDB.FlatAppearance.BorderSize = 0;
+            this.btnRestaurarDB.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Navy;
+            this.btnRestaurarDB.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(57)))), ((int)(((byte)(104)))));
+            this.btnRestaurarDB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRestaurarDB.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRestaurarDB.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnRestaurarDB.Image = global::Login.Properties.Resources.servers21;
+            this.btnRestaurarDB.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRestaurarDB.Location = new System.Drawing.Point(0, 450);
+            this.btnRestaurarDB.Name = "btnRestaurarDB";
+            this.btnRestaurarDB.Size = new System.Drawing.Size(220, 50);
+            this.btnRestaurarDB.TabIndex = 21;
+            this.btnRestaurarDB.Text = "Restaurar Backup";
+            this.btnRestaurarDB.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnRestaurarDB.UseVisualStyleBackColor = true;
+            this.btnRestaurarDB.Click += new System.EventHandler(this.btnRestaurarDB_Click);
             // 
             // MenuPrincipalSA
             // 
@@ -291,11 +323,13 @@
         private System.Windows.Forms.Button btnRestaurar;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Button btnEmpleados;
+        private System.Windows.Forms.Button btnUsuarios;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Button btnBackUp;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Button btnCerrarSesion;
         private System.Windows.Forms.Label lbVendedor;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnRestaurarDB;
     }
 }

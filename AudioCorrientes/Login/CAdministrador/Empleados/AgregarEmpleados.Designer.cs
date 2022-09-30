@@ -56,6 +56,7 @@
             this.btnSalirMenuPrincipal.TabIndex = 34;
             this.btnSalirMenuPrincipal.Text = "Salir";
             this.btnSalirMenuPrincipal.UseVisualStyleBackColor = true;
+            this.btnSalirMenuPrincipal.Click += new System.EventHandler(this.btnSalirMenuPrincipal_Click);
             // 
             // btnAgregarEmpleado
             // 

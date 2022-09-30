@@ -12,7 +12,7 @@ namespace Login.CSuAdministrador.Empleados
 {
     public partial class AgregarEmpleados : Form
     {
-        bool verPass;
+        
         public AgregarEmpleados()
         {
             InitializeComponent();
@@ -27,10 +27,10 @@ namespace Login.CSuAdministrador.Empleados
                 DialogResult result;
 
                 // Displays the MessageBox.
-                result = MessageBox.Show("Desea agregar un nuevo producto?", "Agregar Producto", buttons, MessageBoxIcon.Exclamation);
+                result = MessageBox.Show("Desea agregar un nuevo empleado?", "Agregar Empleado", buttons, MessageBoxIcon.Exclamation);
                 if (result == System.Windows.Forms.DialogResult.Yes)
                 {
-                    MessageBox.Show("Producto Agregado");
+                    MessageBox.Show("Empleado Agregado");
                     //limpiarFormulario();
                 }
 
@@ -98,10 +98,7 @@ namespace Login.CSuAdministrador.Empleados
 
 
 
-        private void btnVerPass_Click(object sender, EventArgs e)
-        {
-            verPass = !verPass; //cambia el estado a true o false
-        }
+       
 
         private void txtDni_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -136,5 +133,9 @@ namespace Login.CSuAdministrador.Empleados
             }
         }
 
+        private void btnSalirMenuPrincipal_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

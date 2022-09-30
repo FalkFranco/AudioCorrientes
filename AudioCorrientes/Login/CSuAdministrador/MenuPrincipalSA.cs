@@ -1,4 +1,5 @@
 ﻿using Login.CSuAdministrador.Empleados;
+using Login.CSuAdministrador.Usuarios;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -100,10 +101,10 @@ namespace Login.CSuAdministrador
             AbrirFormEnPanel(new Ventas());
         }
 
-        private void btnEmpleados_Click(object sender, EventArgs e)
-        {
-            AbrirFormEnPanel(new Empleados.Empleados());
-        }
+        //private void btnEmpleados_Click(object sender, EventArgs e)
+        //{
+        //    AbrirFormEnPanel(new Empleados.Empleados());
+        //}
 
         private void btnBackUp_Click(object sender, EventArgs e)
         {
@@ -128,6 +129,16 @@ namespace Login.CSuAdministrador
                 login.Show();
                 this.Hide();
             }
+        }
+
+        private void btnUsuarios_Click(object sender, EventArgs e)
+        {
+            AbrirFormEnPanel(new Usuarios.Usuarios());
+        }
+
+        private void btnRestaurarDB_Click(object sender, EventArgs e)
+        {
+            AbrirFormEnPanel(new Restaurar_Backup());
         }
     }
 }

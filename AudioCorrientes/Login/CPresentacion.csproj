@@ -185,6 +185,12 @@
     <Compile Include="CVendedor\Clientes\AgregarClientes.Designer.cs">
       <DependentUpon>AgregarClientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="CVendedor\Clientes\FormAgregarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CVendedor\Clientes\FormAgregarCliente.Designer.cs">
+      <DependentUpon>FormAgregarCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="CVendedor\MenuPrincipalVendedor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -279,6 +285,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CVendedor\Clientes\AgregarClientes.resx">
       <DependentUpon>AgregarClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CVendedor\Clientes\FormAgregarCliente.resx">
+      <DependentUpon>FormAgregarCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CVendedor\MenuPrincipalVendedor.resx">
       <DependentUpon>MenuPrincipalVendedor.cs</DependentUpon>

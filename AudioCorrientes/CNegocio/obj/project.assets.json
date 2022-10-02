@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Proyectos\\AudioCorrientes\\AudioCorrientes\\CNegocio\\CNegocio.csproj",
+      "projectUniqueName": "C:\\Users\\colo5\\OneDrive\\Escritorio\\Proyectos\\AudioCorrientes\\AudioCorrientes\\CNegocio\\CNegocio.csproj",
       "projectName": "CNegocio",
-      "projectPath": "D:\\Proyectos\\AudioCorrientes\\AudioCorrientes\\CNegocio\\CNegocio.csproj",
+      "projectPath": "C:\\Users\\colo5\\OneDrive\\Escritorio\\Proyectos\\AudioCorrientes\\AudioCorrientes\\CNegocio\\CNegocio.csproj",
       "packagesPath": "C:\\Users\\colo5\\.nuget\\packages\\",
-      "outputPath": "D:\\Proyectos\\AudioCorrientes\\AudioCorrientes\\CNegocio\\obj\\",
+      "outputPath": "C:\\Users\\colo5\\OneDrive\\Escritorio\\Proyectos\\AudioCorrientes\\AudioCorrientes\\CNegocio\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\colo5\\AppData\\Roaming\\NuGet\\NuGet.Config",

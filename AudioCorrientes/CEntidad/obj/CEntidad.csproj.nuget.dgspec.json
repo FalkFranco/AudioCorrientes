@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Proyectos\\AudioCorrientes\\AudioCorrientes\\CEntidad\\CEntidad.csproj": {}
+    "C:\\Users\\colo5\\OneDrive\\Escritorio\\Proyectos\\AudioCorrientes\\AudioCorrientes\\CEntidad\\CEntidad.csproj": {}
   },
   "projects": {
-    "D:\\Proyectos\\AudioCorrientes\\AudioCorrientes\\CEntidad\\CEntidad.csproj": {
+    "C:\\Users\\colo5\\OneDrive\\Escritorio\\Proyectos\\AudioCorrientes\\AudioCorrientes\\CEntidad\\CEntidad.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Proyectos\\AudioCorrientes\\AudioCorrientes\\CEntidad\\CEntidad.csproj",
+        "projectUniqueName": "C:\\Users\\colo5\\OneDrive\\Escritorio\\Proyectos\\AudioCorrientes\\AudioCorrientes\\CEntidad\\CEntidad.csproj",
         "projectName": "CEntidad",
-        "projectPath": "D:\\Proyectos\\AudioCorrientes\\AudioCorrientes\\CEntidad\\CEntidad.csproj",
+        "projectPath": "C:\\Users\\colo5\\OneDrive\\Escritorio\\Proyectos\\AudioCorrientes\\AudioCorrientes\\CEntidad\\CEntidad.csproj",
         "packagesPath": "C:\\Users\\colo5\\.nuget\\packages\\",
-        "outputPath": "D:\\Proyectos\\AudioCorrientes\\AudioCorrientes\\CEntidad\\obj\\",
+        "outputPath": "C:\\Users\\colo5\\OneDrive\\Escritorio\\Proyectos\\AudioCorrientes\\AudioCorrientes\\CEntidad\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\colo5\\AppData\\Roaming\\NuGet\\NuGet.Config",

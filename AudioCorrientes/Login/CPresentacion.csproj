@@ -33,8 +33,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -47,166 +56,195 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CAdministrador\MenuPrincipalAdministrador.cs">
+    <Compile Include="AudioCorrientesDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AudioCorrientesDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CDatos\DtipoCliente.cs" />
+    <Compile Include="CNegocio\NCliente.cs" />
+    <Compile Include="CPresentacion\CAdministrador\MenuPrincipalAdministrador.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CAdministrador\MenuPrincipalAdministrador.Designer.cs">
+    <Compile Include="CPresentacion\CAdministrador\MenuPrincipalAdministrador.Designer.cs">
       <DependentUpon>MenuPrincipalAdministrador.cs</DependentUpon>
     </Compile>
-    <Compile Include="CGerente\MenuPrincipalGerente.cs">
+    <Compile Include="CDatos\Cliente.cs">
+      <DependentUpon>Model1db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CDatos\Dclientes.cs" />
+    <Compile Include="CDatos\Model1db.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1db.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CDatos\Model1db.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CDatos\Model1db.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1db.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="CDatos\TipoCliente.cs">
+      <DependentUpon>Model1db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CPresentacion\CGerente\MenuPrincipalGerente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CGerente\MenuPrincipalGerente.Designer.cs">
+    <Compile Include="CPresentacion\CGerente\MenuPrincipalGerente.Designer.cs">
       <DependentUpon>MenuPrincipalGerente.cs</DependentUpon>
     </Compile>
-    <Compile Include="CAdministrador\Clientes\Clientes.cs">
+    <Compile Include="CPresentacion\CAdministrador\Clientes\Clientes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CAdministrador\Clientes\Clientes.Designer.cs">
+    <Compile Include="CPresentacion\CAdministrador\Clientes\Clientes.Designer.cs">
       <DependentUpon>Clientes.cs</DependentUpon>
     </Compile>
-    <Compile Include="CAdministrador\Empleados\AgregarEmpleados.cs">
+    <Compile Include="CPresentacion\CAdministrador\Empleados\AgregarEmpleados.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CAdministrador\Empleados\AgregarEmpleados.Designer.cs">
+    <Compile Include="CPresentacion\CAdministrador\Empleados\AgregarEmpleados.Designer.cs">
       <DependentUpon>AgregarEmpleados.cs</DependentUpon>
     </Compile>
-    <Compile Include="CAdministrador\Empleados\AgregarRol.cs">
+    <Compile Include="CPresentacion\CAdministrador\Empleados\AgregarRol.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CAdministrador\Empleados\AgregarRol.Designer.cs">
+    <Compile Include="CPresentacion\CAdministrador\Empleados\AgregarRol.Designer.cs">
       <DependentUpon>AgregarRol.cs</DependentUpon>
     </Compile>
-    <Compile Include="CAdministrador\Empleados\EditarEmpleados.cs">
+    <Compile Include="CPresentacion\CAdministrador\Empleados\EditarEmpleados.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CAdministrador\Empleados\EditarEmpleados.Designer.cs">
+    <Compile Include="CPresentacion\CAdministrador\Empleados\EditarEmpleados.Designer.cs">
       <DependentUpon>EditarEmpleados.cs</DependentUpon>
     </Compile>
-    <Compile Include="CAdministrador\Empleados\Empleados.cs">
+    <Compile Include="CPresentacion\CAdministrador\Empleados\Empleados.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CAdministrador\Empleados\Empleados.Designer.cs">
+    <Compile Include="CPresentacion\CAdministrador\Empleados\Empleados.Designer.cs">
       <DependentUpon>Empleados.cs</DependentUpon>
     </Compile>
-    <Compile Include="CAdministrador\Productos\AgregarCategoria.cs">
+    <Compile Include="CPresentacion\CAdministrador\Productos\AgregarCategoria.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CAdministrador\Productos\AgregarCategoria.Designer.cs">
+    <Compile Include="CPresentacion\CAdministrador\Productos\AgregarCategoria.Designer.cs">
       <DependentUpon>AgregarCategoria.cs</DependentUpon>
     </Compile>
-    <Compile Include="CAdministrador\Productos\AgregarMarca.cs">
+    <Compile Include="CPresentacion\CAdministrador\Productos\AgregarMarca.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CAdministrador\Productos\AgregarMarca.Designer.cs">
+    <Compile Include="CPresentacion\CAdministrador\Productos\AgregarMarca.Designer.cs">
       <DependentUpon>AgregarMarca.cs</DependentUpon>
     </Compile>
-    <Compile Include="CAdministrador\Productos\AgregarProductos.cs">
+    <Compile Include="CPresentacion\CAdministrador\Productos\AgregarProductos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CAdministrador\Productos\AgregarProductos.Designer.cs">
+    <Compile Include="CPresentacion\CAdministrador\Productos\AgregarProductos.Designer.cs">
       <DependentUpon>AgregarProductos.cs</DependentUpon>
     </Compile>
-    <Compile Include="CAdministrador\Productos\EditarProducto.cs">
+    <Compile Include="CPresentacion\CAdministrador\Productos\EditarProducto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CAdministrador\Productos\EditarProducto.Designer.cs">
+    <Compile Include="CPresentacion\CAdministrador\Productos\EditarProducto.Designer.cs">
       <DependentUpon>EditarProducto.cs</DependentUpon>
     </Compile>
-    <Compile Include="CAdministrador\Productos\Pruductos.cs">
+    <Compile Include="CPresentacion\CAdministrador\Productos\Pruductos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CAdministrador\Productos\Pruductos.Designer.cs">
+    <Compile Include="CPresentacion\CAdministrador\Productos\Pruductos.Designer.cs">
       <DependentUpon>Pruductos.cs</DependentUpon>
     </Compile>
-    <Compile Include="CGerente\ReporteProductos.cs">
+    <Compile Include="CPresentacion\CGerente\ReporteProductos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CGerente\ReporteProductos.Designer.cs">
+    <Compile Include="CPresentacion\CGerente\ReporteProductos.Designer.cs">
       <DependentUpon>ReporteProductos.cs</DependentUpon>
     </Compile>
-    <Compile Include="CGerente\ReporteVentas.cs">
+    <Compile Include="CPresentacion\CGerente\ReporteVentas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CGerente\ReporteVentas.Designer.cs">
+    <Compile Include="CPresentacion\CGerente\ReporteVentas.Designer.cs">
       <DependentUpon>ReporteVentas.cs</DependentUpon>
     </Compile>
-    <Compile Include="CSuAdministrador\BackUpForm.cs">
+    <Compile Include="CPresentacion\CSuAdministrador\BackUpForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CSuAdministrador\BackUpForm.Designer.cs">
+    <Compile Include="CPresentacion\CSuAdministrador\BackUpForm.Designer.cs">
       <DependentUpon>BackUpForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="CAdministrador\SUDashboard.cs">
+    <Compile Include="CPresentacion\CAdministrador\SUDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CAdministrador\SUDashboard.Designer.cs">
+    <Compile Include="CPresentacion\CAdministrador\SUDashboard.Designer.cs">
       <DependentUpon>SUDashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="CSuAdministrador\MenuPrincipalSA.cs">
+    <Compile Include="CPresentacion\CSuAdministrador\MenuPrincipalSA.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CSuAdministrador\MenuPrincipalSA.Designer.cs">
+    <Compile Include="CPresentacion\CSuAdministrador\MenuPrincipalSA.Designer.cs">
       <DependentUpon>MenuPrincipalSA.cs</DependentUpon>
     </Compile>
-    <Compile Include="CSuAdministrador\Restaurar Backup.cs">
+    <Compile Include="CPresentacion\CSuAdministrador\Restaurar Backup.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CSuAdministrador\Restaurar Backup.Designer.cs">
+    <Compile Include="CPresentacion\CSuAdministrador\Restaurar Backup.Designer.cs">
       <DependentUpon>Restaurar Backup.cs</DependentUpon>
     </Compile>
-    <Compile Include="CSuAdministrador\Usuarios\AgregarRol.cs">
+    <Compile Include="CPresentacion\CSuAdministrador\Usuarios\AgregarRol.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CSuAdministrador\Usuarios\AgregarRol.Designer.cs">
+    <Compile Include="CPresentacion\CSuAdministrador\Usuarios\AgregarRol.Designer.cs">
       <DependentUpon>AgregarRol.cs</DependentUpon>
     </Compile>
-    <Compile Include="CSuAdministrador\Usuarios\EditarRol.cs">
+    <Compile Include="CPresentacion\CSuAdministrador\Usuarios\EditarRol.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CSuAdministrador\Usuarios\EditarRol.Designer.cs">
+    <Compile Include="CPresentacion\CSuAdministrador\Usuarios\EditarRol.Designer.cs">
       <DependentUpon>EditarRol.cs</DependentUpon>
     </Compile>
-    <Compile Include="CSuAdministrador\Usuarios\Usuarios.cs">
+    <Compile Include="CPresentacion\CSuAdministrador\Usuarios\Usuarios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CSuAdministrador\Usuarios\Usuarios.Designer.cs">
+    <Compile Include="CPresentacion\CSuAdministrador\Usuarios\Usuarios.Designer.cs">
       <DependentUpon>Usuarios.cs</DependentUpon>
     </Compile>
-    <Compile Include="CAdministrador\Ventas\Ventas.cs">
+    <Compile Include="CPresentacion\CAdministrador\Ventas\Ventas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CAdministrador\Ventas\Ventas.Designer.cs">
+    <Compile Include="CPresentacion\CAdministrador\Ventas\Ventas.Designer.cs">
       <DependentUpon>Ventas.cs</DependentUpon>
     </Compile>
-    <Compile Include="CVendedor\Clientes\AgregarClientes.cs">
+    <Compile Include="CPresentacion\CVendedor\Clientes\AgregarClientes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CVendedor\Clientes\AgregarClientes.Designer.cs">
+    <Compile Include="CPresentacion\CVendedor\Clientes\AgregarClientes.Designer.cs">
       <DependentUpon>AgregarClientes.cs</DependentUpon>
     </Compile>
-    <Compile Include="CVendedor\Clientes\FormAgregarCliente.cs">
+    <Compile Include="CPresentacion\CVendedor\Clientes\FormAgregarCliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CVendedor\Clientes\FormAgregarCliente.Designer.cs">
+    <Compile Include="CPresentacion\CVendedor\Clientes\FormAgregarCliente.Designer.cs">
       <DependentUpon>FormAgregarCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="CVendedor\MenuPrincipalVendedor.cs">
+    <Compile Include="CPresentacion\CVendedor\MenuPrincipalVendedor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CVendedor\MenuPrincipalVendedor.Designer.cs">
+    <Compile Include="CPresentacion\CVendedor\MenuPrincipalVendedor.Designer.cs">
       <DependentUpon>MenuPrincipalVendedor.cs</DependentUpon>
     </Compile>
-    <Compile Include="CVendedor\Productos\ListarProductos.cs">
+    <Compile Include="CPresentacion\CVendedor\Productos\ListarProductos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CVendedor\Productos\ListarProductos.Designer.cs">
+    <Compile Include="CPresentacion\CVendedor\Productos\ListarProductos.Designer.cs">
       <DependentUpon>ListarProductos.cs</DependentUpon>
     </Compile>
-    <Compile Include="CVendedor\Vender.cs">
+    <Compile Include="CPresentacion\CVendedor\Vender.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CVendedor\Vender.Designer.cs">
+    <Compile Include="CPresentacion\CVendedor\Vender.Designer.cs">
       <DependentUpon>Vender.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
@@ -217,85 +255,85 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="CAdministrador\MenuPrincipalAdministrador.resx">
+    <EmbeddedResource Include="CPresentacion\CAdministrador\MenuPrincipalAdministrador.resx">
       <DependentUpon>MenuPrincipalAdministrador.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CGerente\MenuPrincipalGerente.resx">
+    <EmbeddedResource Include="CPresentacion\CGerente\MenuPrincipalGerente.resx">
       <DependentUpon>MenuPrincipalGerente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CAdministrador\Clientes\Clientes.resx">
+    <EmbeddedResource Include="CPresentacion\CAdministrador\Clientes\Clientes.resx">
       <DependentUpon>Clientes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CAdministrador\Empleados\AgregarEmpleados.resx">
+    <EmbeddedResource Include="CPresentacion\CAdministrador\Empleados\AgregarEmpleados.resx">
       <DependentUpon>AgregarEmpleados.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CAdministrador\Empleados\AgregarRol.resx">
+    <EmbeddedResource Include="CPresentacion\CAdministrador\Empleados\AgregarRol.resx">
       <DependentUpon>AgregarRol.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CAdministrador\Empleados\EditarEmpleados.resx">
+    <EmbeddedResource Include="CPresentacion\CAdministrador\Empleados\EditarEmpleados.resx">
       <DependentUpon>EditarEmpleados.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CAdministrador\Empleados\Empleados.resx">
+    <EmbeddedResource Include="CPresentacion\CAdministrador\Empleados\Empleados.resx">
       <DependentUpon>Empleados.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CAdministrador\Productos\AgregarCategoria.resx">
+    <EmbeddedResource Include="CPresentacion\CAdministrador\Productos\AgregarCategoria.resx">
       <DependentUpon>AgregarCategoria.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CAdministrador\Productos\AgregarMarca.resx">
+    <EmbeddedResource Include="CPresentacion\CAdministrador\Productos\AgregarMarca.resx">
       <DependentUpon>AgregarMarca.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CAdministrador\Productos\AgregarProductos.resx">
+    <EmbeddedResource Include="CPresentacion\CAdministrador\Productos\AgregarProductos.resx">
       <DependentUpon>AgregarProductos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CAdministrador\Productos\EditarProducto.resx">
+    <EmbeddedResource Include="CPresentacion\CAdministrador\Productos\EditarProducto.resx">
       <DependentUpon>EditarProducto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CAdministrador\Productos\Pruductos.resx">
+    <EmbeddedResource Include="CPresentacion\CAdministrador\Productos\Pruductos.resx">
       <DependentUpon>Pruductos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CGerente\ReporteProductos.resx">
+    <EmbeddedResource Include="CPresentacion\CGerente\ReporteProductos.resx">
       <DependentUpon>ReporteProductos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CGerente\ReporteVentas.resx">
+    <EmbeddedResource Include="CPresentacion\CGerente\ReporteVentas.resx">
       <DependentUpon>ReporteVentas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CSuAdministrador\BackUpForm.resx">
+    <EmbeddedResource Include="CPresentacion\CSuAdministrador\BackUpForm.resx">
       <DependentUpon>BackUpForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CSuAdministrador\MenuPrincipalSA.resx">
+    <EmbeddedResource Include="CPresentacion\CSuAdministrador\MenuPrincipalSA.resx">
       <DependentUpon>MenuPrincipalSA.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CAdministrador\SUDashboard.resx">
+    <EmbeddedResource Include="CPresentacion\CAdministrador\SUDashboard.resx">
       <DependentUpon>SUDashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CSuAdministrador\Restaurar Backup.resx">
+    <EmbeddedResource Include="CPresentacion\CSuAdministrador\Restaurar Backup.resx">
       <DependentUpon>Restaurar Backup.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CSuAdministrador\Usuarios\AgregarRol.resx">
+    <EmbeddedResource Include="CPresentacion\CSuAdministrador\Usuarios\AgregarRol.resx">
       <DependentUpon>AgregarRol.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CSuAdministrador\Usuarios\EditarRol.resx">
+    <EmbeddedResource Include="CPresentacion\CSuAdministrador\Usuarios\EditarRol.resx">
       <DependentUpon>EditarRol.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CSuAdministrador\Usuarios\Usuarios.resx">
+    <EmbeddedResource Include="CPresentacion\CSuAdministrador\Usuarios\Usuarios.resx">
       <DependentUpon>Usuarios.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CAdministrador\Ventas\Ventas.resx">
+    <EmbeddedResource Include="CPresentacion\CAdministrador\Ventas\Ventas.resx">
       <DependentUpon>Ventas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CVendedor\Clientes\AgregarClientes.resx">
+    <EmbeddedResource Include="CPresentacion\CVendedor\Clientes\AgregarClientes.resx">
       <DependentUpon>AgregarClientes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CVendedor\Clientes\FormAgregarCliente.resx">
+    <EmbeddedResource Include="CPresentacion\CVendedor\Clientes\FormAgregarCliente.resx">
       <DependentUpon>FormAgregarCliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CVendedor\MenuPrincipalVendedor.resx">
+    <EmbeddedResource Include="CPresentacion\CVendedor\MenuPrincipalVendedor.resx">
       <DependentUpon>MenuPrincipalVendedor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CVendedor\Productos\ListarProductos.resx">
+    <EmbeddedResource Include="CPresentacion\CVendedor\Productos\ListarProductos.resx">
       <DependentUpon>ListarProductos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CVendedor\Vender.resx">
+    <EmbeddedResource Include="CPresentacion\CVendedor\Vender.resx">
       <DependentUpon>Vender.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
@@ -311,6 +349,25 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EntityDeploy Include="CDatos\Model1db.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1db.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="AudioCorrientesDataSet.xsc">
+      <DependentUpon>AudioCorrientesDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="AudioCorrientesDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AudioCorrientesDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="AudioCorrientesDataSet.xss">
+      <DependentUpon>AudioCorrientesDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="CDatos\Model1db.edmx.diagram">
+      <DependentUpon>Model1db.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -420,8 +477,21 @@
   <ItemGroup>
     <None Include="Resources\clientes1.png" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="CDatos\" />
+    <Content Include="CDatos\Model1db.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Model1db.Context.cs</LastGenOutput>
+      <DependentUpon>Model1db.edmx</DependentUpon>
+    </Content>
+    <Content Include="CDatos\Model1db.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1db.edmx</DependentUpon>
+      <LastGenOutput>Model1db.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

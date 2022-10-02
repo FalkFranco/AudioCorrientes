@@ -95,6 +95,12 @@ namespace Login.CVendedor.Clientes
             FormAgregarCliente formAgregarCliente = new FormAgregarCliente();
             formAgregarCliente.ShowDialog();
         }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            objCliente.CargarGrid(dgvClientes);
+            objCliente.ocultarColumnas(dgvClientes);
+        }
     }
 }
 

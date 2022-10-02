@@ -41,14 +41,13 @@
             this.lbCuit = new System.Windows.Forms.Label();
             this.txtApellido = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
-            this.txtDni = new System.Windows.Forms.TextBox();
+            this.txtCuit = new System.Windows.Forms.TextBox();
             this.lbCliente = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-
-            this.tipoClienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.tipoClienteBindingSource)).BeginInit();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // label4
@@ -87,7 +86,7 @@
             // 
             // txtTel
             // 
-            this.txtTel.Location = new System.Drawing.Point(50, 172);
+            this.txtTel.Location = new System.Drawing.Point(50, 278);
             this.txtTel.Name = "txtTel";
             this.txtTel.Size = new System.Drawing.Size(200, 20);
             this.txtTel.TabIndex = 51;
@@ -109,6 +108,7 @@
             this.btnAgregarEmpleado.TabIndex = 49;
             this.btnAgregarEmpleado.Text = "Agregar";
             this.btnAgregarEmpleado.UseVisualStyleBackColor = true;
+            this.btnAgregarEmpleado.Click += new System.EventHandler(this.btnAgregarEmpleado_Click);
             // 
             // label6
             // 
@@ -139,24 +139,24 @@
             // 
             // txtApellido
             // 
-            this.txtApellido.Location = new System.Drawing.Point(50, 279);
+            this.txtApellido.Location = new System.Drawing.Point(50, 228);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(200, 20);
             this.txtApellido.TabIndex = 45;
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(50, 227);
+            this.txtNombre.Location = new System.Drawing.Point(50, 172);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(200, 20);
             this.txtNombre.TabIndex = 44;
             // 
-            // txtDni
+            // txtCuit
             // 
-            this.txtDni.Location = new System.Drawing.Point(50, 116);
-            this.txtDni.Name = "txtDni";
-            this.txtDni.Size = new System.Drawing.Size(200, 20);
-            this.txtDni.TabIndex = 43;
+            this.txtCuit.Location = new System.Drawing.Point(50, 116);
+            this.txtCuit.Name = "txtCuit";
+            this.txtCuit.Size = new System.Drawing.Size(200, 20);
+            this.txtCuit.TabIndex = 43;
             // 
             // lbCliente
             // 
@@ -168,12 +168,12 @@
             this.lbCliente.TabIndex = 42;
             this.lbCliente.Text = "Agregar Cliente";
             // 
-            // textBox1
+            // txtEmail
             // 
-            this.textBox1.Location = new System.Drawing.Point(281, 172);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(200, 20);
-            this.textBox1.TabIndex = 56;
+            this.txtEmail.Location = new System.Drawing.Point(281, 172);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(200, 20);
+            this.txtEmail.TabIndex = 56;
             // 
             // label1
             // 
@@ -186,13 +186,16 @@
             // 
             // comboBox1
             // 
-            this.comboBox1.DataSource = this.tipoClienteBindingSource;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(281, 227);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(200, 21);
             this.comboBox1.TabIndex = 58;
- 
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // FormAgregarCliente
             // 
@@ -201,7 +204,7 @@
             this.ClientSize = new System.Drawing.Size(529, 452);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label9);
@@ -214,13 +217,12 @@
             this.Controls.Add(this.lbCuit);
             this.Controls.Add(this.txtApellido);
             this.Controls.Add(this.txtNombre);
-            this.Controls.Add(this.txtDni);
+            this.Controls.Add(this.txtCuit);
             this.Controls.Add(this.lbCliente);
             this.Name = "FormAgregarCliente";
             this.Text = "FormAgregarCliente";
             this.Load += new System.EventHandler(this.FormAgregarCliente_Load);
-
-            ((System.ComponentModel.ISupportInitialize)(this.tipoClienteBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -239,13 +241,11 @@
         private System.Windows.Forms.Label lbCuit;
         private System.Windows.Forms.TextBox txtApellido;
         private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.TextBox txtDni;
+        private System.Windows.Forms.TextBox txtCuit;
         private System.Windows.Forms.Label lbCliente;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox comboBox1;
-
-        private System.Windows.Forms.BindingSource tipoClienteBindingSource;
-
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

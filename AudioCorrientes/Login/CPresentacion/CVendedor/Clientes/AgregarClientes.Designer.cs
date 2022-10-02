@@ -41,6 +41,7 @@
             this.dgvClientes = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.btnActualizar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -80,6 +81,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.btnActualizar);
             this.tabPage1.Controls.Add(this.chbNombre);
             this.tabPage1.Controls.Add(this.chbCuit);
             this.tabPage1.Controls.Add(this.btnAgregar);
@@ -169,6 +171,16 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // btnActualizar
+            // 
+            this.btnActualizar.Location = new System.Drawing.Point(980, 57);
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Size = new System.Drawing.Size(75, 23);
+            this.btnActualizar.TabIndex = 15;
+            this.btnActualizar.Text = "Actualizar";
+            this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
+            // 
             // AgregarClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -204,5 +216,6 @@
         private System.Windows.Forms.CheckBox chbNombre;
         private System.Windows.Forms.CheckBox chbCuit;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Button btnActualizar;
     }
 }

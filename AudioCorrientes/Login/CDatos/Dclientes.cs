@@ -11,7 +11,7 @@ namespace Login.CDatos
     {
         AudioCorrientesEntities db;
 
-        public void Create(Cliente pCliente)
+        public bool Create(Cliente pCliente)
         {
             try
             {
@@ -19,11 +19,13 @@ namespace Login.CDatos
                 {
                     db.Clientes.Add(pCliente);
                     db.SaveChanges();
+                    return true;
                 }
             }
             catch(Exception ex)
             {
                 MessageBox.Show(ex.Message);
+                return false;
             }
         }
 

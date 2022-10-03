@@ -4,10 +4,28 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="a745d2e546774d7da69a94f6823e110f" Name="Diagram1">
+      <Diagram DiagramId="d947f7ff5bd24fc78e687f53a4e498d3" Name="Diagram1">
+        <EntityTypeShape EntityType="dbAudioCorrientesModel.Categoria" Width="1.5" PointX="3" PointY="13.5" IsExpanded="true" />
         <EntityTypeShape EntityType="dbAudioCorrientesModel.Cliente" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbAudioCorrientesModel.TipoCliente" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbAudioCorrientesModel.DetalleVenta" Width="1.5" PointX="7.5" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbAudioCorrientesModel.Empleado" Width="1.5" PointX="0.75" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbAudioCorrientesModel.Marca" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbAudioCorrientesModel.Producto" Width="1.5" PointX="5.25" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbAudioCorrientesModel.Role" Width="1.5" PointX="0.75" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbAudioCorrientesModel.TipoCliente" Width="1.5" PointX="0.75" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbAudioCorrientesModel.TipoFactura" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbAudioCorrientesModel.Usuario" Width="1.5" PointX="3" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbAudioCorrientesModel.Venta" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="dbAudioCorrientesModel.FK_Producto_Categoria" ManuallyRouted="false" />
+        <AssociationConnector Association="dbAudioCorrientesModel.FK_Producto_Marca" ManuallyRouted="false" />
         <AssociationConnector Association="dbAudioCorrientesModel.FK_Cliente_TipoCliente" ManuallyRouted="false" />
+        <AssociationConnector Association="dbAudioCorrientesModel.FK_Venta_Cliente" ManuallyRouted="false" />
+        <AssociationConnector Association="dbAudioCorrientesModel.FK_Detalle_Producto" ManuallyRouted="false" />
+        <AssociationConnector Association="dbAudioCorrientesModel.FK_Detalle_Venta" ManuallyRouted="false" />
+        <AssociationConnector Association="dbAudioCorrientesModel.FK_Usuario_Empleado" ManuallyRouted="false" />
+        <AssociationConnector Association="dbAudioCorrientesModel.FK_Usuario_Rol" ManuallyRouted="false" />
+        <AssociationConnector Association="dbAudioCorrientesModel.FK_Venta_TipoFactura" ManuallyRouted="false" />
+        <AssociationConnector Association="dbAudioCorrientesModel.FK_Venta_Usuario" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

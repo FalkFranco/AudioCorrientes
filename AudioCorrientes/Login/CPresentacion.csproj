@@ -61,18 +61,22 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AudioCorrientesDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="CDatos\DtipoCliente.cs" />
-    <Compile Include="CNegocio\NCliente.cs" />
-    <Compile Include="CPresentacion\CAdministrador\MenuPrincipalAdministrador.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CPresentacion\CAdministrador\MenuPrincipalAdministrador.Designer.cs">
-      <DependentUpon>MenuPrincipalAdministrador.cs</DependentUpon>
+    <Compile Include="CDatos\Categoria.cs">
+      <DependentUpon>Model1db.tt</DependentUpon>
     </Compile>
     <Compile Include="CDatos\Cliente.cs">
       <DependentUpon>Model1db.tt</DependentUpon>
     </Compile>
-    <Compile Include="CDatos\Dclientes.cs" />
+    <Compile Include="CDatos\DetalleVenta.cs">
+      <DependentUpon>Model1db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CDatos\DtipoCliente.cs" />
+    <Compile Include="CDatos\Empleado.cs">
+      <DependentUpon>Model1db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CDatos\Marca.cs">
+      <DependentUpon>Model1db.tt</DependentUpon>
+    </Compile>
     <Compile Include="CDatos\Model1db.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -88,9 +92,32 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1db.edmx</DependentUpon>
     </Compile>
+    <Compile Include="CDatos\Producto.cs">
+      <DependentUpon>Model1db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CDatos\Role.cs">
+      <DependentUpon>Model1db.tt</DependentUpon>
+    </Compile>
     <Compile Include="CDatos\TipoCliente.cs">
       <DependentUpon>Model1db.tt</DependentUpon>
     </Compile>
+    <Compile Include="CDatos\TipoFactura.cs">
+      <DependentUpon>Model1db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CDatos\Usuario.cs">
+      <DependentUpon>Model1db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CDatos\Venta.cs">
+      <DependentUpon>Model1db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CNegocio\NCliente.cs" />
+    <Compile Include="CPresentacion\CAdministrador\MenuPrincipalAdministrador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CPresentacion\CAdministrador\MenuPrincipalAdministrador.Designer.cs">
+      <DependentUpon>MenuPrincipalAdministrador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CDatos\Dclientes.cs" />
     <Compile Include="CPresentacion\CGerente\MenuPrincipalGerente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -349,10 +376,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EntityDeploy Include="CDatos\Model1db.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model1db.Designer.cs</LastGenOutput>
-    </EntityDeploy>
     <None Include="AudioCorrientesDataSet.xsc">
       <DependentUpon>AudioCorrientesDataSet.xsd</DependentUpon>
     </None>
@@ -364,6 +387,10 @@
     <None Include="AudioCorrientesDataSet.xss">
       <DependentUpon>AudioCorrientesDataSet.xsd</DependentUpon>
     </None>
+    <EntityDeploy Include="CDatos\Model1db.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1db.Designer.cs</LastGenOutput>
+    </EntityDeploy>
     <None Include="CDatos\Model1db.edmx.diagram">
       <DependentUpon>Model1db.edmx</DependentUpon>
     </None>
@@ -477,12 +504,11 @@
   <ItemGroup>
     <None Include="Resources\clientes1.png" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Content Include="CDatos\Model1db.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Model1db.Context.cs</LastGenOutput>
       <DependentUpon>Model1db.edmx</DependentUpon>
+      <LastGenOutput>Model1db.Context.cs</LastGenOutput>
     </Content>
     <Content Include="CDatos\Model1db.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

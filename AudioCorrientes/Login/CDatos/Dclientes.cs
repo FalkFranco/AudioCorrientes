@@ -9,13 +9,14 @@ namespace Login.CDatos
 {
     internal class Dclientes
     {
-        AudioCorrientesEntities db;
+
+        dbAudioCorrientesEntities1 db;
 
         public bool Create(Cliente pCliente)
         {
             try
             {
-                using (db = new AudioCorrientesEntities())
+                using (db = new dbAudioCorrientesEntities1())
                 {
                     db.Clientes.Add(pCliente);
                     db.SaveChanges();
@@ -33,7 +34,7 @@ namespace Login.CDatos
         {
             try
             {
-                using(db = new AudioCorrientesEntities())
+                using(db = new dbAudioCorrientesEntities1())
                 {
                     return db.Clientes.ToList();
                 }
@@ -49,7 +50,7 @@ namespace Login.CDatos
         {
             try
             {
-                using (db = new AudioCorrientesEntities())
+                using (db = new dbAudioCorrientesEntities1())
                 {
                     return db.Clientes.Where(p=>p.cuit.Contains(pCuit)).ToList();
                 }
@@ -64,7 +65,7 @@ namespace Login.CDatos
         {
             try
             {
-                using (db = new AudioCorrientesEntities())
+                using (db = new dbAudioCorrientesEntities1())
                 {
                     return db.Clientes.Where(p => p.nombre.Contains(pNombre)).ToList();
                 }

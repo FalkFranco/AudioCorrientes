@@ -27,6 +27,7 @@ namespace Login.CNegocio
         public void ocultarColumnas(DataGridView dgv)
         {
             dgv.Columns["TipoCliente"].Visible = false;
+            dgv.Columns["Ventas"].Visible = false;
         }
 
         public void CargarComboBox(ComboBox cb)

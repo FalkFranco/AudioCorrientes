@@ -12,25 +12,21 @@ namespace Login.CDatos
     using System;
     using System.Collections.Generic;
     
-    public partial class Cliente
+    public partial class Categoria
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Cliente()
+        public Categoria()
         {
-            this.Ventas = new HashSet<Venta>();
+            this.Productos = new HashSet<Producto>();
+            this.Productos1 = new HashSet<Producto>();
         }
     
-        public int id_cliente { get; set; }
-        public string cuit { get; set; }
-        public string nombre { get; set; }
-        public string apellido { get; set; }
-        public string telefono { get; set; }
-        public string direccion { get; set; }
-        public string email { get; set; }
-        public Nullable<int> id_tipoCliente { get; set; }
+        public int id_categorias { get; set; }
+        public string categoria1 { get; set; }
     
-        public virtual TipoCliente TipoCliente { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Venta> Ventas { get; set; }
+        public virtual ICollection<Producto> Productos { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Producto> Productos1 { get; set; }
     }
 }

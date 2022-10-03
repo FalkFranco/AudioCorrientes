@@ -159,5 +159,10 @@ namespace Login.CVendedor.Clientes
             idValue = comboBox1.SelectedValue.ToString();
 
         }
+
+        private void btnSalirMenuPrincipal_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

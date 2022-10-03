@@ -60,7 +60,7 @@ namespace Login.CVendedor.Productos
             chbNombre.Checked = true;
         }
 
-        private void chbId_CheckedChanged(object sender, EventArgs e)
+        private void chbId_Click(object sender, EventArgs e)
         {
             chbNombre.Checked = false;
             chbId.Checked = true;
@@ -77,6 +77,6 @@ namespace Login.CVendedor.Productos
             }
         }
 
-
+        
     }
 }

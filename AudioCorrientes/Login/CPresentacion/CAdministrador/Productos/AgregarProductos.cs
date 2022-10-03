@@ -156,10 +156,5 @@ namespace Login.CSuAdministrador.Productos
         {
             this.Close();
         }
-
-        private void btnAgregarProducto_Click_1(object sender, EventArgs e)
-        {
-
-        }
     }
 }

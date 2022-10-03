@@ -121,7 +121,7 @@
             this.chbId.TabIndex = 15;
             this.chbId.Text = "Id";
             this.chbId.UseVisualStyleBackColor = true;
-            this.chbId.CheckedChanged += new System.EventHandler(this.chbId_CheckedChanged);
+            this.chbId.Click += new System.EventHandler(this.chbId_Click);
             // 
             // txtBuscar
             // 

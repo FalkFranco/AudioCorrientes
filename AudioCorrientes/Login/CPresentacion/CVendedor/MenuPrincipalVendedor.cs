@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Login.CVendedor.Productos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -84,7 +85,7 @@ namespace Login.CVendedor
         }
         private void btnProductos_Click(object sender, EventArgs e)
         {
-            AbrirFormEnPanel(new CSuAdministrador.Pruductos());
+            AbrirFormEnPanel(new ListarProductos());
         }
 
         private void btnVentas_Click(object sender, EventArgs e)

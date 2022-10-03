@@ -1,0 +1,12 @@
+Super Administrador:
+	Usuario: SuAdmin
+	Pass: SuAdmin
+Administrador:
+	Usuario: Admin
+	Pass: Admin
+Gerente:
+	Usuario: Gerente
+	Pass: Gerente
+Vendedor:
+	Usuario: Vendedor
+	Pass: Vendedor

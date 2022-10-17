@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="dbAudioCorrientesModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="dbAudioCorrientesModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Categoria">
           <Key>
             <PropertyRef Name="id_categorias" />
@@ -17,13 +17,13 @@
             <PropertyRef Name="id_cliente" />
           </Key>
           <Property Name="id_cliente" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="cuit" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="dni" Type="varchar" MaxLength="8" Nullable="false" />
           <Property Name="nombre" Type="varchar" MaxLength="25" Nullable="false" />
           <Property Name="apellido" Type="varchar" MaxLength="25" Nullable="false" />
           <Property Name="telefono" Type="varchar" MaxLength="30" Nullable="false" />
           <Property Name="direccion" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="email" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="id_tipoCliente" Type="int" />
+          <Property Name="id_tipoCliente" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="DetalleVenta">
           <Key>
@@ -46,6 +46,7 @@
           <Property Name="apellido" Type="varchar" MaxLength="25" Nullable="false" />
           <Property Name="telefono" Type="varchar" MaxLength="30" Nullable="false" />
           <Property Name="direccion" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="activo" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="Marca">
           <Key>
@@ -98,6 +99,7 @@
           <Property Name="usuario" Type="varchar" MaxLength="25" Nullable="false" />
           <Property Name="contrasena" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="id_rol" Type="int" Nullable="false" />
+          <Property Name="activo" Type="bit" />
         </EntityType>
         <EntityType Name="Ventas">
           <Key>
@@ -111,7 +113,7 @@
           <Property Name="total" Type="float" Nullable="false" />
         </EntityType>
         <Association Name="FK_Cliente_TipoCliente">
-          <End Role="TipoCliente" Type="Self.TipoCliente" Multiplicity="0..1" />
+          <End Role="TipoCliente" Type="Self.TipoCliente" Multiplicity="1" />
           <End Role="Clientes" Type="Self.Clientes" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="TipoCliente">
@@ -283,8 +285,7 @@
             <End Role="Ventas" EntitySet="Ventas" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="dbAudioCorrientesModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -308,9 +309,10 @@
           <Property Name="telefono" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="direccion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="id_tipoCliente" Type="Int32" />
+          <Property Name="id_tipoCliente" Type="Int32" Nullable="false" />
           <NavigationProperty Name="TipoCliente" Relationship="Self.FK_Cliente_TipoCliente" FromRole="Clientes" ToRole="TipoCliente" />
           <NavigationProperty Name="Ventas" Relationship="Self.FK_Venta_Cliente" FromRole="Clientes" ToRole="Ventas" />
+          <Property Name="dni" Type="String" Nullable="false" MaxLength="8" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="DetalleVenta">
           <Key>
@@ -336,6 +338,7 @@
           <Property Name="telefono" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="direccion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Usuarios" Relationship="Self.FK_Usuario_Empleado" FromRole="Empleados" ToRole="Usuarios" />
+          <Property Name="activo" Type="Boolean" Nullable="false" />
         </EntityType>
         <EntityType Name="Marca">
           <Key>
@@ -397,6 +400,7 @@
           <NavigationProperty Name="Empleado" Relationship="Self.FK_Usuario_Empleado" FromRole="Usuarios" ToRole="Empleados" />
           <NavigationProperty Name="Role" Relationship="Self.FK_Usuario_Rol" FromRole="Usuarios" ToRole="Roles" />
           <NavigationProperty Name="Ventas" Relationship="Self.FK_Venta_Usuario" FromRole="Usuarios" ToRole="Ventas" />
+          <Property Name="activo" Type="Boolean" />
         </EntityType>
         <EntityType Name="Venta">
           <Key>
@@ -603,8 +607,8 @@
           <EntitySetMapping Name="Clientes">
             <EntityTypeMapping TypeName="dbAudioCorrientesModel.Cliente">
               <MappingFragment StoreEntitySet="Clientes">
+                <ScalarProperty Name="dni" ColumnName="dni" />
                 <ScalarProperty Name="id_cliente" ColumnName="id_cliente" />
-                <ScalarProperty Name="cuit" ColumnName="cuit" />
                 <ScalarProperty Name="nombre" ColumnName="nombre" />
                 <ScalarProperty Name="apellido" ColumnName="apellido" />
                 <ScalarProperty Name="telefono" ColumnName="telefono" />
@@ -629,6 +633,7 @@
           <EntitySetMapping Name="Empleados">
             <EntityTypeMapping TypeName="dbAudioCorrientesModel.Empleado">
               <MappingFragment StoreEntitySet="Empleados">
+                <ScalarProperty Name="activo" ColumnName="activo" />
                 <ScalarProperty Name="id_empleado" ColumnName="id_empleado" />
                 <ScalarProperty Name="dni" ColumnName="dni" />
                 <ScalarProperty Name="nombre" ColumnName="nombre" />
@@ -688,6 +693,7 @@
           <EntitySetMapping Name="Usuarios">
             <EntityTypeMapping TypeName="dbAudioCorrientesModel.Usuario">
               <MappingFragment StoreEntitySet="Usuarios">
+                <ScalarProperty Name="activo" ColumnName="activo" />
                 <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
                 <ScalarProperty Name="id_empleado" ColumnName="id_empleado" />
                 <ScalarProperty Name="usuario1" ColumnName="usuario" />

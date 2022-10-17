@@ -41,7 +41,7 @@
             this.lbCuit = new System.Windows.Forms.Label();
             this.txtApellido = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
-            this.txtCuit = new System.Windows.Forms.TextBox();
+            this.txtDni = new System.Windows.Forms.TextBox();
             this.lbCliente = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -134,9 +134,9 @@
             this.lbCuit.AutoSize = true;
             this.lbCuit.Location = new System.Drawing.Point(47, 99);
             this.lbCuit.Name = "lbCuit";
-            this.lbCuit.Size = new System.Drawing.Size(25, 13);
+            this.lbCuit.Size = new System.Drawing.Size(23, 13);
             this.lbCuit.TabIndex = 46;
-            this.lbCuit.Text = "Cuit";
+            this.lbCuit.Text = "Dni";
             // 
             // txtApellido
             // 
@@ -152,12 +152,12 @@
             this.txtNombre.Size = new System.Drawing.Size(200, 20);
             this.txtNombre.TabIndex = 44;
             // 
-            // txtCuit
+            // txtDni
             // 
-            this.txtCuit.Location = new System.Drawing.Point(50, 116);
-            this.txtCuit.Name = "txtCuit";
-            this.txtCuit.Size = new System.Drawing.Size(200, 20);
-            this.txtCuit.TabIndex = 43;
+            this.txtDni.Location = new System.Drawing.Point(50, 116);
+            this.txtDni.Name = "txtDni";
+            this.txtDni.Size = new System.Drawing.Size(200, 20);
+            this.txtDni.TabIndex = 43;
             // 
             // lbCliente
             // 
@@ -218,7 +218,7 @@
             this.Controls.Add(this.lbCuit);
             this.Controls.Add(this.txtApellido);
             this.Controls.Add(this.txtNombre);
-            this.Controls.Add(this.txtCuit);
+            this.Controls.Add(this.txtDni);
             this.Controls.Add(this.lbCliente);
             this.Name = "FormAgregarCliente";
             this.Text = "FormAgregarCliente";
@@ -242,7 +242,7 @@
         private System.Windows.Forms.Label lbCuit;
         private System.Windows.Forms.TextBox txtApellido;
         private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.TextBox txtCuit;
+        private System.Windows.Forms.TextBox txtDni;
         private System.Windows.Forms.Label lbCliente;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label label1;

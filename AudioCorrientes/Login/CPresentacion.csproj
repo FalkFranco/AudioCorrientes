@@ -62,53 +62,53 @@
       <DependentUpon>AudioCorrientesDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="CDatos\Categoria.cs">
-      <DependentUpon>Model1db.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="CDatos\Cliente.cs">
-      <DependentUpon>Model1db.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="CDatos\DetalleVenta.cs">
-      <DependentUpon>Model1db.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="CDatos\DtipoCliente.cs" />
     <Compile Include="CDatos\Empleado.cs">
-      <DependentUpon>Model1db.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="CDatos\Marca.cs">
-      <DependentUpon>Model1db.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="CDatos\Model1db.Context.cs">
+    <Compile Include="CDatos\Model1.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Model1db.Context.tt</DependentUpon>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="CDatos\Model1db.cs">
+    <Compile Include="CDatos\Model1.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Model1db.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="CDatos\Model1db.Designer.cs">
+    <Compile Include="CDatos\Model1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Model1db.edmx</DependentUpon>
+      <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
     <Compile Include="CDatos\Producto.cs">
-      <DependentUpon>Model1db.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="CDatos\Role.cs">
-      <DependentUpon>Model1db.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="CDatos\TipoCliente.cs">
-      <DependentUpon>Model1db.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="CDatos\TipoFactura.cs">
-      <DependentUpon>Model1db.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="CDatos\Usuario.cs">
-      <DependentUpon>Model1db.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="CDatos\Venta.cs">
-      <DependentUpon>Model1db.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="CNegocio\NCliente.cs" />
     <Compile Include="CPresentacion\CAdministrador\MenuPrincipalAdministrador.cs">
@@ -387,12 +387,12 @@
     <None Include="AudioCorrientesDataSet.xss">
       <DependentUpon>AudioCorrientesDataSet.xsd</DependentUpon>
     </None>
-    <EntityDeploy Include="CDatos\Model1db.edmx">
+    <EntityDeploy Include="CDatos\Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model1db.Designer.cs</LastGenOutput>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="CDatos\Model1db.edmx.diagram">
-      <DependentUpon>Model1db.edmx</DependentUpon>
+    <None Include="CDatos\Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -505,19 +505,19 @@
     <None Include="Resources\clientes1.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="CDatos\Model1db.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1db.edmx</DependentUpon>
-      <LastGenOutput>Model1db.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="CDatos\Model1db.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1db.edmx</DependentUpon>
-      <LastGenOutput>Model1db.cs</LastGenOutput>
-    </Content>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Content Include="CDatos\Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="CDatos\Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

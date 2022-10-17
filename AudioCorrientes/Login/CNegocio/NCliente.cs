@@ -24,6 +24,19 @@ namespace Login.CNegocio
             dgv.DataSource = Lst;
         }
 
+        public void CargarGridDni(DataGridView dgv, String dni)
+        {
+            var Lst = datos.buscardni(dni);
+            dgv.DataSource = Lst;
+        }
+
+        public void CargarGridNom(DataGridView dgv, String nombre)
+        {
+            var Lst = datos.buscarNombre(nombre);
+            dgv.DataSource = Lst;
+        }
+
+
         public void ocultarColumnas(DataGridView dgv)
         {
             dgv.Columns["TipoCliente"].Visible = false;
@@ -45,10 +58,10 @@ namespace Login.CNegocio
             }
         }
 
-        public bool AgregarCliente(string cuit, string nombre, string apellido, string tel, string direc, string email, int idTipo)
+        public bool AgregarCliente(string dni, string nombre, string apellido, string tel, string direc, string email, int idTipo)
         {
             //int idTipoInt = Int32.Parse(idTipo);//De string a int para poder almacenar en la base de datos
-            cliente.cuit = cuit;
+            cliente.dni = dni;
             cliente.nombre = nombre;
             cliente.apellido = apellido;
             cliente.telefono = tel;
@@ -66,6 +79,8 @@ namespace Login.CNegocio
             }
 
         }
+
+
 
     }
 }

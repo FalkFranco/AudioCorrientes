@@ -28,11 +28,13 @@ namespace Login.CVendedor.Clientes
                 //Buscar
                 if (chbCuit.Checked)
                 {
-                    MessageBox.Show("Buscando por CUIT");
+                    //MessageBox.Show("Buscando por DNI");
+                    objCliente.CargarGridDni(dgvClientes, txtBuscar.Text);
                 }
-                else
+                else if (chbNombre.Checked)
                 {
-                    MessageBox.Show("Buscando por Nombre");
+                    //MessageBox.Show("Buscando por Nombre");
+                    objCliente.CargarGridNom(dgvClientes, txtBuscar.Text);
                 }
             }
         }
@@ -50,7 +52,7 @@ namespace Login.CVendedor.Clientes
             if (chbCuit.Checked == true && txtBuscar.Text.Length > 11)
             {
                 ok = false;
-                errorProvider1.SetError(txtBuscar, "Ingrese un CUIT valido (11 digitos)");
+                errorProvider1.SetError(txtBuscar, "Ingrese un DNI valido (8 digitos)");
             }
             return ok;
         }
@@ -100,6 +102,26 @@ namespace Login.CVendedor.Clientes
         {
             objCliente.CargarGrid(dgvClientes);
             objCliente.ocultarColumnas(dgvClientes);
+        }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            //validacion txtbox
+            BorrarMensajeProvider();
+            if (ValidarCampos())
+            {
+                //Buscar
+                if (chbCuit.Checked)
+                {
+                    //MessageBox.Show("Buscando por DNI");
+                    objCliente.CargarGridDni(dgvClientes, txtBuscar.Text);
+                }
+                else if (chbNombre.Checked)
+                {
+                    //MessageBox.Show("Buscando por Nombre");
+                    objCliente.CargarGridNom(dgvClientes, txtBuscar.Text);
+                }
+            }
         }
     }
 }

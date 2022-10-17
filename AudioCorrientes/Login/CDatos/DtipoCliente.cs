@@ -9,13 +9,13 @@ namespace Login.CDatos
 {
     internal class DtipoCliente
     {
-        dbAudioCorrientesEntities1 db;
+        dbAudioCorrientesEntities db;
 
         public List<TipoCliente> Read()
         {
             try
             {
-                using (db = new dbAudioCorrientesEntities1())
+                using (db = new dbAudioCorrientesEntities())
                 {
                     return db.TipoClientes.ToList();
                 }

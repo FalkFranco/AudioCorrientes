@@ -40,7 +40,7 @@ namespace Login.CVendedor.Clientes
                 if (result == System.Windows.Forms.DialogResult.Yes)
                 {
                     int idTipoInt = Int32.Parse(idValue);//De string a int para poder almacenar en la base de datos
-                    if (objCliente.AgregarCliente(txtCuit.Text,txtNombre.Text,txtApellido.Text,txtTel.Text,txtDireccion.Text,txtEmail.Text, idTipoInt))
+                    if (objCliente.AgregarCliente(txtDni.Text,txtNombre.Text,txtApellido.Text,txtTel.Text,txtDireccion.Text,txtEmail.Text, idTipoInt))
                     {
                         MessageBox.Show("El Cliente se registró correctamente", "Cliente Registrado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Close();
@@ -48,7 +48,7 @@ namespace Login.CVendedor.Clientes
                     else
                     {
                         MessageBox.Show("El Cliente ya existe", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        txtCuit.Focus();
+                        txtDni.Focus();
                     }
                     //limpiarFormulario();
                 }
@@ -61,10 +61,10 @@ namespace Login.CVendedor.Clientes
             string msgCar = "Ingrese un CUIT/CUIL valido";
             bool ok = true;
             //Si estan vacios
-            if (txtCuit.Text == "")
+            if (txtDni.Text == "")
             {
                 ok = false;
-                errorProvider1.SetError(txtCuit, msg);
+                errorProvider1.SetError(txtDni, msg);
             }
             //else
             //{
@@ -99,10 +99,10 @@ namespace Login.CVendedor.Clientes
             }
             //Dni con 8 Caracteres
 
-            if (txtCuit.Text.Length != 11)
+            if (txtDni.Text.Length != 8)
             {
                 ok = false;
-                errorProvider1.SetError(txtCuit, msgCar);
+                errorProvider1.SetError(txtDni, msgCar);
             }
             if (txtTel.Text.Length != 10)
             {
@@ -120,7 +120,7 @@ namespace Login.CVendedor.Clientes
         }
         private void BorrarMensajeProvider()
         {
-            errorProvider1.SetError(txtCuit, "");
+            errorProvider1.SetError(txtDni, "");
             errorProvider1.SetError(txtNombre, "");
             errorProvider1.SetError(txtApellido, "");
             errorProvider1.SetError(txtTel, "");

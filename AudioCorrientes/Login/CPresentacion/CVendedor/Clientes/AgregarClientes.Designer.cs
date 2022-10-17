@@ -33,6 +33,7 @@
             this.lbProductoTitle = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.btnActualizar = new System.Windows.Forms.Button();
             this.chbNombre = new System.Windows.Forms.CheckBox();
             this.chbCuit = new System.Windows.Forms.CheckBox();
             this.btnAgregar = new System.Windows.Forms.Button();
@@ -41,7 +42,6 @@
             this.dgvClientes = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.btnActualizar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -97,6 +97,16 @@
             this.tabPage1.Text = "Listar Clientes";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // btnActualizar
+            // 
+            this.btnActualizar.Location = new System.Drawing.Point(980, 57);
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Size = new System.Drawing.Size(75, 23);
+            this.btnActualizar.TabIndex = 15;
+            this.btnActualizar.Text = "Actualizar";
+            this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
+            // 
             // chbNombre
             // 
             this.chbNombre.AutoSize = true;
@@ -115,9 +125,9 @@
             this.chbCuit.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chbCuit.Location = new System.Drawing.Point(141, 17);
             this.chbCuit.Name = "chbCuit";
-            this.chbCuit.Size = new System.Drawing.Size(51, 17);
+            this.chbCuit.Size = new System.Drawing.Size(45, 17);
             this.chbCuit.TabIndex = 13;
-            this.chbCuit.Text = "CUIT";
+            this.chbCuit.Text = "DNI";
             this.chbCuit.UseVisualStyleBackColor = true;
             this.chbCuit.Click += new System.EventHandler(this.chbCuit_Click);
             // 
@@ -137,6 +147,7 @@
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(848, 20);
             this.txtBuscar.TabIndex = 3;
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             this.txtBuscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBuscar_KeyPress);
             // 
             // btnBuscar
@@ -170,16 +181,6 @@
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
-            // 
-            // btnActualizar
-            // 
-            this.btnActualizar.Location = new System.Drawing.Point(980, 57);
-            this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(75, 23);
-            this.btnActualizar.TabIndex = 15;
-            this.btnActualizar.Text = "Actualizar";
-            this.btnActualizar.UseVisualStyleBackColor = true;
-            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // AgregarClientes
             // 

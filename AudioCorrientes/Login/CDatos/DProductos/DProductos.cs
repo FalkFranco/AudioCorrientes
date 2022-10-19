@@ -29,6 +29,24 @@ namespace Login.CDatos.DProductos
             }
         }
 
+        public bool EditarProducto(Producto pProducto)
+        {
+            try
+            {
+                using (db = new dbAudioCorrientesEntities())
+                {
+                    db.Entry(pProducto).State = System.Data.Entity.EntityState.Modified;
+                    db.SaveChanges();
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+        }
+
         public List<Producto> Read()
         {
             try
@@ -67,6 +85,22 @@ namespace Login.CDatos.DProductos
                 using (db = new dbAudioCorrientesEntities())
                 {
                     return db.Productos.Where(p => p.nombre.Contains(pNombre)).ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return null;
+            }
+        }
+
+        public List<Producto> Buscar(int pId)
+        {
+            try
+            {
+                using (db = new dbAudioCorrientesEntities())
+                {
+                    return db.Productos.Where(p => p.id_productos == pId).ToList();
                 }
             }
             catch (Exception ex)

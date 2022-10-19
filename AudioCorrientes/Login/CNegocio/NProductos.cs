@@ -134,8 +134,6 @@ namespace Login.CNegocio
 
                 cb.AutoCompleteMode = AutoCompleteMode.Suggest;
                 cb.AutoCompleteSource = AutoCompleteSource.ListItems;
-
-
             }
         }
 

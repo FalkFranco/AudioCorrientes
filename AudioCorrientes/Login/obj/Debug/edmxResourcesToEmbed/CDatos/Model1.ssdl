@@ -60,8 +60,8 @@
     <Property Name="id_productos" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="id_categorias" Type="int" Nullable="false" />
     <Property Name="id_marcas" Type="int" Nullable="false" />
-    <Property Name="nombre" Type="varchar" MaxLength="30" Nullable="false" />
-    <Property Name="descripcion" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="descripcion" Type="varchar" MaxLength="900" Nullable="false" />
     <Property Name="precio" Type="float" Nullable="false" />
     <Property Name="stock" Type="int" Nullable="false" />
     <Property Name="estado" Type="bit" Nullable="false" />

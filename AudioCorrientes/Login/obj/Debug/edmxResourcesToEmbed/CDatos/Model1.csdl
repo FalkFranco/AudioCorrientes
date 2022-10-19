@@ -68,8 +68,8 @@
     <Property Name="id_productos" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="id_categorias" Type="Int32" Nullable="false" />
     <Property Name="id_marcas" Type="Int32" Nullable="false" />
-    <Property Name="nombre" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="descripcion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="descripcion" Type="String" MaxLength="900" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="precio" Type="Double" Nullable="false" />
     <Property Name="stock" Type="Int32" Nullable="false" />
     <Property Name="estado" Type="Boolean" Nullable="false" />

@@ -25,8 +25,6 @@ CREATE TABLE Clientes (
 	CONSTRAINT CK_telefono CHECK (len(telefono) = 10)
 );
 
-INSERT INTO Clientes(dni,nombre,apellido,telefono,direccion,email,id_tipoCliente) VALUES ('12345678','Franco','Falk','3794396611','Junin 378','franco@gmail.com.ar',1)
-
 CREATE TABLE Categoria(
 	id_categorias INT PRIMARY KEY IDENTITY,
 	categoria VARCHAR(40) UNIQUE NOT NULL
@@ -127,18 +125,6 @@ CREATE TABLE DetalleVenta(
 
 
 
-
-
-INSERT INTO Clientes (dni, nombre, apellido, telefono, direccion, email, id_tipoCLiente) VALUES ('25633256', 'Juan', 'Esteban', '3794275467', 'Las Heras 734', 'juanperez@gmail.com', 1);
-
-
-SELECT Clientes.id_cliente, Clientes.dni, Clientes.nombre,Clientes.apellido, Clientes.telefono, Clientes.email, TipoCliente.tipo
-FROM Clientes
-INNER JOIN TipoCliente
-ON Clientes.id_tipoCliente = TipoCliente.id_tipoCliente;
-
-
-SELECT * FROM TipoCliente
 
 
 

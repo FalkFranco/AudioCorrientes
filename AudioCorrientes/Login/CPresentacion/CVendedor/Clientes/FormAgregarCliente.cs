@@ -22,9 +22,12 @@ namespace Login.CVendedor.Clientes
         }
         NCliente objCliente = new NCliente();
         Dclientes datos = new Dclientes();
+        string idValue = "";
         private void FormAgregarCliente_Load(object sender, EventArgs e)
         {
             objCliente.CargarComboBox(comboBox1);
+            comboBox1.SelectedValue = 1; //Por defecto al cargar es Consumidor Final
+            idValue = comboBox1.SelectedValue.ToString(); //Alamacena el id para poder cargar en la db
         }
 
         private void btnAgregarEmpleado_Click(object sender, EventArgs e)
@@ -147,7 +150,7 @@ namespace Login.CVendedor.Clientes
                 return false;
             }
         }
-        string idValue = "";
+
         //private void button1_Click(object sender, EventArgs e)
         //{
         //    textBox1.Text = idValue;
@@ -157,7 +160,6 @@ namespace Login.CVendedor.Clientes
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             idValue = comboBox1.SelectedValue.ToString();
-
         }
 
         private void btnSalirMenuPrincipal_Click(object sender, EventArgs e)

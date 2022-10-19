@@ -114,11 +114,27 @@ namespace Login.CNegocio
                     tel.Text = cliente.telefono;
                     direc.Text = cliente.direccion;
                     email.Text = cliente.email;
-                    CargarComboBox(tipoCliente);
+                    CargarComboBoxEditar(tipoCliente, cliente.id_tipoCliente);
                 }
             }
         }
 
+        public void CargarComboBoxEditar(ComboBox cb, int id)
+        {
+            var Lst = tcDatos.Read();
+            if (Lst.Count > 0) //Si la lista no esta vacia
+            {
+                cb.DataSource = Lst;
+                cb.DisplayMember = "tipo"; //Aparece el nombre del tipo en las opciones
+                cb.ValueMember = "id_tipoCliente"; //El valor que se va almacenar es el id 
+                cb.SelectedValue = id;
+
+                cb.AutoCompleteMode = AutoCompleteMode.Suggest;
+                cb.AutoCompleteSource = AutoCompleteSource.ListItems;
+
+                
+            }
+        }
 
         public bool EditarCliente(int id ,string dni, string nombre, string apellido, string tel, string direc, string email, int idTipo)
         {

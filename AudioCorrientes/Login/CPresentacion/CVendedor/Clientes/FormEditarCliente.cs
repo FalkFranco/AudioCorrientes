@@ -16,15 +16,12 @@ namespace Login.CPresentacion.CVendedor.Clientes
     public partial class FormEditarCliente : Form
     {
         NCliente objCliente = new NCliente();
-        
+        string idValue;
         public FormEditarCliente(int pId)
         {
             InitializeComponent();
             objCliente.CargarFormEditar(pId,txtId, txtDni, txtNombre, txtApellido, txtTel, txtDireccion, txtEmail, comboBox1);
         }
-
-        string idValue = "";
-
         private void btnSalirMenuPrincipal_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -133,6 +130,11 @@ namespace Login.CPresentacion.CVendedor.Clientes
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            idValue = comboBox1.SelectedValue.ToString();
+        }
+
+        private void FormEditarCliente_Load(object sender, EventArgs e)
         {
             idValue = comboBox1.SelectedValue.ToString();
         }

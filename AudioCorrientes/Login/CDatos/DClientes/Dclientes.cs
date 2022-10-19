@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity.Core.Objects.DataClasses;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 
 namespace Login.CDatos
 {
@@ -24,6 +26,44 @@ namespace Login.CDatos
                 }
             }
             catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+        }
+
+        public bool EditarCliente(Cliente pCliente)
+        {
+            try
+            {
+                using (db = new dbAudioCorrientesEntities())
+                {
+                    db.Entry(pCliente).State = System.Data.Entity.EntityState.Modified;
+                    db.SaveChanges();
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+        }
+
+        public bool EliminarCliente(int pId)
+        {
+            try
+            {
+                using (db = new dbAudioCorrientesEntities())
+                {
+                    
+                    db.Clientes.Remove(db.Clientes.Single(p => p.id_cliente == pId));
+                    //db.Clientes.Remove(db.Clientes.Single(p => p.id_tipoCliente == pId));
+                    db.SaveChanges();
+                    return true;
+                }
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
                 return false;
@@ -77,6 +117,21 @@ namespace Login.CDatos
             }
         }
 
+        public List<Cliente> Buscar(int pId)
+        {
+            try
+            {
+                using (db = new dbAudioCorrientesEntities())
+                {
+                    return db.Clientes.Where(p => p.id_cliente == pId).ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return null;
+            }
+        }
 
     }
 }

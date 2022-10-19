@@ -22,12 +22,33 @@ namespace Login.CNegocio
         {
             var Lst = datos.Read();
             dgv.DataSource = Lst;
+            OrdenDgv(dgv);
         }
+
+        public void OrdenDgv(DataGridView dgv)
+        {
+            dgv.Columns["id_cliente"].DisplayIndex = 0;
+            dgv.Columns["dni"].DisplayIndex = 1;
+            dgv.Columns["nombre"].DisplayIndex = 2;
+            dgv.Columns["apellido"].DisplayIndex = 3;
+            dgv.Columns["telefono"].DisplayIndex = 4;
+            dgv.Columns["direccion"].DisplayIndex = 5;
+            dgv.Columns["email"].DisplayIndex = 6;
+            dgv.Columns["id_tipoCliente"].DisplayIndex = 7;
+            dgv.Columns["Editar"].DisplayIndex = 8;
+            dgv.Columns["Eliminar"].DisplayIndex = 9;
+        }
+
 
         public void CargarGridDni(DataGridView dgv, String dni)
         {
             var Lst = datos.buscardni(dni);
             dgv.DataSource = Lst;
+        }
+
+        public void EliminarCliente(int Id)
+        {
+            datos.EliminarCliente(Id);
         }
 
         public void CargarGridNom(DataGridView dgv, String nombre)
@@ -77,10 +98,48 @@ namespace Login.CNegocio
             {
                 return false;
             }
+        }
 
+        public void CargarFormEditar(int pId,TextBox id, TextBox dni, TextBox nom, TextBox ape, TextBox tel, TextBox direc, TextBox email, ComboBox tipoCliente)
+        {
+            var Lst = datos.Buscar(pId);
+            if (Lst.Count > 0)
+            {
+                foreach (Cliente cliente in Lst)
+                {
+                    id.Text = cliente.id_cliente.ToString();
+                    dni.Text = cliente.dni;
+                    nom.Text = cliente.nombre;
+                    ape.Text = cliente.apellido;
+                    tel.Text = cliente.telefono;
+                    direc.Text = cliente.direccion;
+                    email.Text = cliente.email;
+                    CargarComboBox(tipoCliente);
+                }
+            }
         }
 
 
+        public bool EditarCliente(int id ,string dni, string nombre, string apellido, string tel, string direc, string email, int idTipo)
+        {
+            //int idTipoInt = Int32.Parse(idTipo);//De string a int para poder almacenar en la base de datos
+            cliente.id_cliente = id;
+            cliente.dni = dni;
+            cliente.nombre = nombre;
+            cliente.apellido = apellido;
+            cliente.telefono = tel;
+            cliente.direccion = direc;
+            cliente.email = email;
+            cliente.id_tipoCliente = idTipo;
 
+            if (datos.EditarCliente(cliente))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

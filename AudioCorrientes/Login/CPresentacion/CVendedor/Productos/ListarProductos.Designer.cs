@@ -37,19 +37,14 @@
             this.chbId = new System.Windows.Forms.CheckBox();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.IdProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Seleccionar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.dgvProductos = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.Seleccionar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -89,7 +84,7 @@
             this.tabPage1.Controls.Add(this.chbId);
             this.tabPage1.Controls.Add(this.txtBuscar);
             this.tabPage1.Controls.Add(this.btnBuscar);
-            this.tabPage1.Controls.Add(this.dataGridView1);
+            this.tabPage1.Controls.Add(this.dgvProductos);
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
@@ -141,51 +136,16 @@
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
-            // dataGridView1
+            // dgvProductos
             // 
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.IdProducto,
-            this.Nombre,
-            this.Categoria,
-            this.Marca,
-            this.Precio,
+            this.dgvProductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProductos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Seleccionar});
-            this.dataGridView1.Location = new System.Drawing.Point(26, 92);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1061, 403);
-            this.dataGridView1.TabIndex = 1;
-            // 
-            // IdProducto
-            // 
-            this.IdProducto.HeaderText = "IdProducto";
-            this.IdProducto.Name = "IdProducto";
-            // 
-            // Nombre
-            // 
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            // 
-            // Categoria
-            // 
-            this.Categoria.HeaderText = "Categoria";
-            this.Categoria.Name = "Categoria";
-            // 
-            // Marca
-            // 
-            this.Marca.HeaderText = "Marca";
-            this.Marca.Name = "Marca";
-            // 
-            // Precio
-            // 
-            this.Precio.HeaderText = "Precio";
-            this.Precio.Name = "Precio";
-            // 
-            // Seleccionar
-            // 
-            this.Seleccionar.HeaderText = "Seleccionar";
-            this.Seleccionar.Name = "Seleccionar";
+            this.dgvProductos.Location = new System.Drawing.Point(26, 92);
+            this.dgvProductos.Name = "dgvProductos";
+            this.dgvProductos.Size = new System.Drawing.Size(1061, 403);
+            this.dgvProductos.TabIndex = 1;
             // 
             // label1
             // 
@@ -200,6 +160,11 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // Seleccionar
+            // 
+            this.Seleccionar.HeaderText = "Seleccionar";
+            this.Seleccionar.Name = "Seleccionar";
+            // 
             // ListarProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -209,12 +174,13 @@
             this.Controls.Add(this.panel1);
             this.Name = "ListarProductos";
             this.Text = "ListarProductos";
+            this.Load += new System.EventHandler(this.ListarProductos_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
@@ -228,16 +194,11 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvProductos;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.CheckBox chbNombre;
         private System.Windows.Forms.CheckBox chbId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IdProducto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Categoria;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Marca;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
-        private System.Windows.Forms.DataGridViewButtonColumn Seleccionar;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.DataGridViewButtonColumn Seleccionar;
     }
 }

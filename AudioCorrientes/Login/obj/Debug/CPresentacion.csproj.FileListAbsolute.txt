@@ -168,3 +168,4 @@ C:\Users\colo5\Desktop\AudiCorrientes\AudioCorrientes\AudioCorrientes\Login\bin\
 C:\Users\colo5\Desktop\AudiCorrientes\AudioCorrientes\AudioCorrientes\Login\bin\Debug\EntityFramework.xml
 C:\Users\colo5\Desktop\AudiCorrientes\AudioCorrientes\AudioCorrientes\Login\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\colo5\Desktop\AudiCorrientes\AudioCorrientes\AudioCorrientes\Login\obj\Debug\CPresentacion.csproj.CopyComplete
+C:\Users\colo5\Desktop\AudiCorrientes\AudioCorrientes\AudioCorrientes\Login\obj\Debug\Login.CPresentacion.CVendedor.Clientes.FormEditarCliente.resources

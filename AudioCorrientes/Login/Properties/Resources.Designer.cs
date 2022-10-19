@@ -63,6 +63,36 @@ namespace Login.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap basura {
+            get {
+                object obj = ResourceManager.GetObject("basura", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap basura25x25 {
+            get {
+                object obj = ResourceManager.GetObject("basura25x25", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap basura50x50 {
+            get {
+                object obj = ResourceManager.GetObject("basura50x50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap cerrar_sesion_Mesa_de_trabajo_1 {
             get {
                 object obj = ResourceManager.GetObject("cerrar-sesion_Mesa de trabajo 1", resourceCulture);
@@ -136,6 +166,36 @@ namespace Login.Properties {
         internal static System.Drawing.Bitmap delivery1 {
             get {
                 object obj = ResourceManager.GetObject("delivery1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap editar {
+            get {
+                object obj = ResourceManager.GetObject("editar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap editar25x25 {
+            get {
+                object obj = ResourceManager.GetObject("editar25x25", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap editar50x50 {
+            get {
+                object obj = ResourceManager.GetObject("editar50x50", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

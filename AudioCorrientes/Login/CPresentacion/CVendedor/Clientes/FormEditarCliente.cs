@@ -1,6 +1,6 @@
 ﻿using Login.CDatos;
 using Login.CNegocio;
-using Login.CSuAdministrador.Productos;
+using Login.CVendedor.Clientes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,26 +8,29 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Login.CVendedor.Clientes
+namespace Login.CPresentacion.CVendedor.Clientes
 {
-    public partial class FormAgregarCliente : Form
+    public partial class FormEditarCliente : Form
     {
-        public FormAgregarCliente()
+        NCliente objCliente = new NCliente();
+        
+        public FormEditarCliente(int pId)
         {
             InitializeComponent();
-        }
-        NCliente objCliente = new NCliente();
-        Dclientes datos = new Dclientes();
-        private void FormAgregarCliente_Load(object sender, EventArgs e)
-        {
-            objCliente.CargarComboBox(comboBox1);
+            objCliente.CargarFormEditar(pId,txtId, txtDni, txtNombre, txtApellido, txtTel, txtDireccion, txtEmail, comboBox1);
         }
 
-        private void btnAgregarEmpleado_Click(object sender, EventArgs e)
+        string idValue = "";
+
+        private void btnSalirMenuPrincipal_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnEditarCliente_Click(object sender, EventArgs e)
         {
             BorrarMensajeProvider();
             if (ValidarCampos())
@@ -36,18 +39,19 @@ namespace Login.CVendedor.Clientes
                 DialogResult result;
 
                 // Displays the MessageBox.
-                result = MessageBox.Show("Desea agregar un nuevo Cliente?", "Agregar Cliente", buttons, MessageBoxIcon.Exclamation);
+                result = MessageBox.Show("Desea editar el Cliente?", "Editar Cliente", buttons, MessageBoxIcon.Exclamation);
                 if (result == System.Windows.Forms.DialogResult.Yes)
                 {
+                    int id = Convert.ToInt32(txtId.Text);
                     int idTipoInt = Int32.Parse(idValue);//De string a int para poder almacenar en la base de datos
-                    if (objCliente.AgregarCliente(txtDni.Text,txtNombre.Text,txtApellido.Text,txtTel.Text,txtDireccion.Text,txtEmail.Text, idTipoInt))
+                    if (objCliente.EditarCliente(id,txtDni.Text, txtNombre.Text, txtApellido.Text, txtTel.Text, txtDireccion.Text, txtEmail.Text, idTipoInt))
                     {
-                        MessageBox.Show("El Cliente se registró correctamente", "Cliente Registrado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("El Cliente se Edito correctamente", "Cliente Editado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Close();
                     }
                     else
                     {
-                        MessageBox.Show("El Cliente ya existe", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Error", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         txtDni.Focus();
                     }
                     //limpiarFormulario();
@@ -55,7 +59,7 @@ namespace Login.CVendedor.Clientes
             }
         }
 
-        private bool ValidarCampos()
+        public bool ValidarCampos()
         {
             string msg = "No puede estar vacio";
             string msgCar = "Ingrese un DNI valido";
@@ -110,15 +114,16 @@ namespace Login.CVendedor.Clientes
                 errorProvider1.SetError(txtTel, "Ingrese un telefono valido | 10 digitos");
             }
             //Email Valido
-            if (ValidarEmail(txtEmail.Text) == false)
+            if (FormAgregarCliente.ValidarEmail(txtEmail.Text) == false)
             {
                 ok = false;
                 errorProvider1.SetError(txtEmail, "Ingrese un email valido");
             }
 
-                return ok;
+            return ok;
         }
-        private void BorrarMensajeProvider()
+
+        public void BorrarMensajeProvider()
         {
             errorProvider1.SetError(txtDni, "");
             errorProvider1.SetError(txtNombre, "");
@@ -127,42 +132,9 @@ namespace Login.CVendedor.Clientes
             errorProvider1.SetError(txtDireccion, "");
         }
 
-        public static bool ValidarEmail(string comprobarEmail)
-        {
-            string emailFormato;
-            emailFormato = "\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*";
-            if (Regex.IsMatch(comprobarEmail, emailFormato))
-            {
-                if (Regex.Replace(comprobarEmail, emailFormato, String.Empty).Length == 0)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-            else
-            {
-                return false;
-            }
-        }
-        string idValue = "";
-        //private void button1_Click(object sender, EventArgs e)
-        //{
-        //    textBox1.Text = idValue;
-        //}
-
-        
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             idValue = comboBox1.SelectedValue.ToString();
-
-        }
-
-        private void btnSalirMenuPrincipal_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }

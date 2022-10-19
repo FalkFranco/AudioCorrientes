@@ -70,7 +70,11 @@
     <Compile Include="CDatos\DetalleVenta.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="CDatos\DtipoCliente.cs" />
+    <Compile Include="CDatos\DClientes\DtipoCliente.cs" />
+    <Compile Include="CDatos\DProductos\DCategoria.cs" />
+    <Compile Include="CDatos\DProductos\DMarca.cs" />
+    <Compile Include="CDatos\DProductos\DProductos.cs" />
+    <Compile Include="CDatos\DProductos\Producto.cs" />
     <Compile Include="CDatos\Empleado.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -111,13 +115,14 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="CNegocio\NCliente.cs" />
+    <Compile Include="CNegocio\NProductos.cs" />
     <Compile Include="CPresentacion\CAdministrador\MenuPrincipalAdministrador.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CPresentacion\CAdministrador\MenuPrincipalAdministrador.Designer.cs">
       <DependentUpon>MenuPrincipalAdministrador.cs</DependentUpon>
     </Compile>
-    <Compile Include="CDatos\Dclientes.cs" />
+    <Compile Include="CDatos\DClientes\Dclientes.cs" />
     <Compile Include="CPresentacion\CGerente\MenuPrincipalGerente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -256,6 +261,12 @@
     <Compile Include="CPresentacion\CVendedor\Clientes\FormAgregarCliente.Designer.cs">
       <DependentUpon>FormAgregarCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="CPresentacion\CVendedor\Clientes\FormEditarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CPresentacion\CVendedor\Clientes\FormEditarCliente.Designer.cs">
+      <DependentUpon>FormEditarCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="CPresentacion\CVendedor\MenuPrincipalVendedor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -353,6 +364,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CPresentacion\CVendedor\Clientes\FormAgregarCliente.resx">
       <DependentUpon>FormAgregarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CPresentacion\CVendedor\Clientes\FormEditarCliente.resx">
+      <DependentUpon>FormEditarCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CPresentacion\CVendedor\MenuPrincipalVendedor.resx">
       <DependentUpon>MenuPrincipalVendedor.cs</DependentUpon>
@@ -518,6 +532,13 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\editar25x25.png" />
+    <None Include="Resources\basura25x25.png" />
+    <None Include="Resources\basura50x50.png" />
+    <None Include="Resources\editar50x50.png" />
+    <None Include="Resources\basura.png" />
+    <None Include="Resources\editar.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

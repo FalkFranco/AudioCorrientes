@@ -1,4 +1,5 @@
 ﻿using Login.CNegocio;
+using Login.CPresentacion.CVendedor.Clientes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -96,6 +97,7 @@ namespace Login.CVendedor.Clientes
         {
             FormAgregarCliente formAgregarCliente = new FormAgregarCliente();
             formAgregarCliente.ShowDialog();
+            objCliente.CargarGrid(dgvClientes);
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)
@@ -120,6 +122,33 @@ namespace Login.CVendedor.Clientes
                 {
                     //MessageBox.Show("Buscando por Nombre");
                     objCliente.CargarGridNom(dgvClientes, txtBuscar.Text);
+                }
+            }
+        }
+
+        int Id;
+        private void dgvClientes_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result;
+
+            if (dgvClientes.Columns[e.ColumnIndex].Name == "Editar")
+            {
+                Id = Convert.ToInt32( dgvClientes.CurrentRow.Cells["id_cliente"].Value.ToString());
+                FormEditarCliente FormEdit = new FormEditarCliente(Id);
+                FormEdit.ShowDialog();
+                objCliente.CargarGrid(dgvClientes);
+            }
+            if (dgvClientes.Columns[e.ColumnIndex].Name == "Eliminar")
+            {
+                Id = Convert.ToInt32(dgvClientes.CurrentRow.Cells["id_cliente"].Value.ToString());
+                result = MessageBox.Show("Desea eliminar el Cliente?\n Se eliminara de forma permanente", "Eliminar Cliente", buttons, MessageBoxIcon.Exclamation);
+                if (result == System.Windows.Forms.DialogResult.Yes)
+                {
+                    //Eliminar
+                    objCliente.EliminarCliente(Id);
+                    MessageBox.Show("Cliente eliminado con Exito", "Eliminar Cliente Exitoso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    objCliente.CargarGrid(dgvClientes);
                 }
             }
         }

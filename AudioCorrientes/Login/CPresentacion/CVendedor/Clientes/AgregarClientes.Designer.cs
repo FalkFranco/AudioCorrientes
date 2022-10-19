@@ -42,6 +42,10 @@
             this.dgvClientes = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -164,10 +168,14 @@
             // 
             this.dgvClientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvClientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Editar,
+            this.Eliminar});
             this.dgvClientes.Location = new System.Drawing.Point(26, 92);
             this.dgvClientes.Name = "dgvClientes";
             this.dgvClientes.Size = new System.Drawing.Size(940, 403);
             this.dgvClientes.TabIndex = 1;
+            this.dgvClientes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientes_CellClick);
             // 
             // label1
             // 
@@ -181,6 +189,38 @@
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
+            // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewImageColumn1.HeaderText = "Editar";
+            this.dataGridViewImageColumn1.Image = global::Login.Properties.Resources.editar;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.Width = 40;
+            // 
+            // dataGridViewImageColumn2
+            // 
+            this.dataGridViewImageColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewImageColumn2.HeaderText = "Eliminar";
+            this.dataGridViewImageColumn2.Image = global::Login.Properties.Resources.basura;
+            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
+            this.dataGridViewImageColumn2.Width = 49;
+            // 
+            // Editar
+            // 
+            this.Editar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Editar.HeaderText = "Editar";
+            this.Editar.Image = global::Login.Properties.Resources.editar25x25;
+            this.Editar.Name = "Editar";
+            this.Editar.Width = 40;
+            // 
+            // Eliminar
+            // 
+            this.Eliminar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Eliminar.HeaderText = "Eliminar";
+            this.Eliminar.Image = global::Login.Properties.Resources.basura25x25;
+            this.Eliminar.Name = "Eliminar";
+            this.Eliminar.Width = 49;
             // 
             // AgregarClientes
             // 
@@ -218,5 +258,9 @@
         private System.Windows.Forms.CheckBox chbCuit;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.Button btnActualizar;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
+        private System.Windows.Forms.DataGridViewImageColumn Editar;
+        private System.Windows.Forms.DataGridViewImageColumn Eliminar;
     }
 }

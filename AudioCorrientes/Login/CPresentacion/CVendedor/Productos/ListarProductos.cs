@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Login.CNegocio;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,6 +18,7 @@ namespace Login.CVendedor.Productos
         {
             InitializeComponent();
         }
+        NProductos objProducto = new NProductos();
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
@@ -77,6 +79,10 @@ namespace Login.CVendedor.Productos
             }
         }
 
-        
+        private void ListarProductos_Load(object sender, EventArgs e)
+        {
+            objProducto.CargarGrid(dgvProductos);
+            objProducto.OcultarColumnas(dgvProductos);
+        }
     }
 }

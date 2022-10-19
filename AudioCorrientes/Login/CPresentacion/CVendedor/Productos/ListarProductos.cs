@@ -95,6 +95,7 @@ namespace Login.CVendedor.Productos
 
             if (dgvProductos.Columns[e.ColumnIndex].Name == "Editar")
             {
+                //AGREGAR FORMULARIO PARA EDITAR
                 Id = Convert.ToInt32(dgvProductos.CurrentRow.Cells["id_cliente"].Value.ToString());
                 FormEditarCliente FormEdit = new FormEditarCliente(Id);
                 FormEdit.ShowDialog();

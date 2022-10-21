@@ -183,11 +183,11 @@
     <Compile Include="CPresentacion\CAdministrador\Productos\EditarProducto.Designer.cs">
       <DependentUpon>EditarProducto.cs</DependentUpon>
     </Compile>
-    <Compile Include="CPresentacion\CAdministrador\Productos\Pruductos.cs">
+    <Compile Include="CPresentacion\CAdministrador\Productos\MenuProductos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CPresentacion\CAdministrador\Productos\Pruductos.Designer.cs">
-      <DependentUpon>Pruductos.cs</DependentUpon>
+    <Compile Include="CPresentacion\CAdministrador\Productos\MenuProductos.Designer.cs">
+      <DependentUpon>MenuProductos.cs</DependentUpon>
     </Compile>
     <Compile Include="CPresentacion\CGerente\ReporteProductos.cs">
       <SubType>Form</SubType>
@@ -326,8 +326,8 @@
     <EmbeddedResource Include="CPresentacion\CAdministrador\Productos\EditarProducto.resx">
       <DependentUpon>EditarProducto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CPresentacion\CAdministrador\Productos\Pruductos.resx">
-      <DependentUpon>Pruductos.cs</DependentUpon>
+    <EmbeddedResource Include="CPresentacion\CAdministrador\Productos\MenuProductos.resx">
+      <DependentUpon>MenuProductos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CPresentacion\CGerente\ReporteProductos.resx">
       <DependentUpon>ReporteProductos.cs</DependentUpon>
@@ -532,6 +532,7 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\carrito-de-compras.png" />
     <None Include="Resources\editar25x25.png" />
     <None Include="Resources\basura25x25.png" />
     <None Include="Resources\basura50x50.png" />
@@ -539,6 +540,8 @@
     <None Include="Resources\basura.png" />
     <None Include="Resources\editar.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="CDatos\CEmpleados\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

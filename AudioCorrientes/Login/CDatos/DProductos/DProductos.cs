@@ -46,6 +46,7 @@ namespace Login.CDatos.DProductos
                 return false;
             }
         }
+        //Eliminar Producto
 
         public List<Producto> Read()
         {
@@ -63,21 +64,6 @@ namespace Login.CDatos.DProductos
             }
         }
 
-        //public List<Producto> buscarId(string pId)
-        //{
-        //    try
-        //    {
-        //        using (db = new dbAudioCorrientesEntities())
-        //        {
-        //            //return db.Productos.Where(p => p.id_productos.Contains(pId)).ToList();
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show(ex.Message);
-        //        return null;
-        //    }
-        //}
         public List<Producto> BuscarNombre(string pNombre)
         {
             try

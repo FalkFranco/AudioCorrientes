@@ -93,7 +93,8 @@ namespace Login.CSuAdministrador
 
         private void btnProductos_Click(object sender, EventArgs e)
         {
-            AbrirFormEnPanel(new Pruductos());
+            AbrirFormEnPanel(new MenuProductos());
+
         }
 
         private void btnVentas_Click(object sender, EventArgs e)

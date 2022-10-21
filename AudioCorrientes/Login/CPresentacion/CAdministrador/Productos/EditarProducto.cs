@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Login.CNegocio;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,14 +8,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Login.CSuAdministrador.Productos
 {
     public partial class EditarProducto : Form
     {
-        public EditarProducto()
+        NProductos objProducto = new NProductos();
+        string idValueCat;
+        string idValueMarca;
+
+        public EditarProducto(int pId)
         {
             InitializeComponent();
+            objProducto.CargarFormEditar(pId, txtIdProducto, cbCategoria, cbMarca, txtNombre, txtDescripcion, txtPrecio, txtStock, chbEstado);
         }
 
         private void btnAgregarProducto_Click(object sender, EventArgs e)
@@ -29,11 +36,36 @@ namespace Login.CSuAdministrador.Productos
                 result = MessageBox.Show("Desea editar este producto?", "Editar Producto", buttons, MessageBoxIcon.Exclamation);
                 if (result == System.Windows.Forms.DialogResult.Yes)
                 {
-                    MessageBox.Show("Producto Editado");
+                    int id = Convert.ToInt32(txtIdProducto.Text);
+                    int idcat = Int32.Parse(idValueCat);//De string a int para poder almacenar en la base de datos
+                    int idmarca = Int32.Parse(idValueMarca);//De string a int para poder almacenar en la base de datos
+                    float precio = float.Parse(txtPrecio.Text);
+                    int stock = Int32.Parse(txtStock.Text);
+                    bool estado = ValidarEstado(chbEstado);
+
+                                            //int id, int idCat, int idMar, string nombre, string descripcion, float precio, int stock, bool estado
+                    if (objProducto.EditarProducto(id,idcat,idmarca,txtNombre.Text,txtDescripcion.Text,precio,stock,estado))
+                    {
+                        MessageBox.Show("El Producto se Edito correctamente", "Cliente Editado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        //txtDni.Focus();
+                    }
                     //limpiarFormulario();
                 }
-
             }
+        }
+
+        public bool ValidarEstado(CheckBox chbEstado)
+        {
+            if (!chbEstado.Checked)
+            {
+                return false;
+            }
+            return true; 
         }
         private bool ValidarCampos()
         {
@@ -46,21 +78,11 @@ namespace Login.CSuAdministrador.Productos
                 ok = false;
                 errorProviderEditarProducto.SetError(txtNombre, msg);
             }
-            if (txtPrecioCompra.Text == "")
+            if (txtPrecio.Text == "")
             {
                 ok = false;
-                errorProviderEditarProducto.SetError(txtPrecioCompra, msg);
+                errorProviderEditarProducto.SetError(txtPrecio, msg);
             }
-            if (txtPrecioVenta.Text == "")
-            {
-                ok = false;
-                errorProviderEditarProducto.SetError(txtPrecioVenta, msg);
-            }
-            //if (Int32.Parse(txtPrecioVenta.Text) < Int32.Parse(txtPrecioCompra.Text))
-            //{
-            //    ok = false;
-            //    errorProviderAgregarProducto.SetError(txtPrecioVenta, "El valor del precio de venta no puede ser menor al precio de compra");
-            //}
             if (txtDescripcion.Text == "")
             {
                 ok = false;
@@ -83,27 +105,26 @@ namespace Login.CSuAdministrador.Productos
                 errorProviderEditarProducto.SetError(txtDescripcion, msgCar);
             }
             //Validacion ComboBox
-            if (comboBoxCategoria.Text == "")
+            if (cbCategoria.Text == "")
             {
                 ok = false;
-                errorProviderEditarProducto.SetError(comboBoxCategoria, msg);
+                errorProviderEditarProducto.SetError(cbCategoria, msg);
             }
-            if (comboBoxMarca.Text == "")
+            if (cbMarca.Text == "")
             {
                 ok = false;
-                errorProviderEditarProducto.SetError(comboBoxMarca, msg);
+                errorProviderEditarProducto.SetError(cbMarca, msg);
             }
             return ok;
         }
         private void BorrarMensajeProvider()
         {
             errorProviderEditarProducto.SetError(txtNombre, "");
-            errorProviderEditarProducto.SetError(txtPrecioCompra, "");
-            errorProviderEditarProducto.SetError(txtPrecioVenta, "");
+            errorProviderEditarProducto.SetError(txtPrecio, "");
             errorProviderEditarProducto.SetError(txtStock, "");
             errorProviderEditarProducto.SetError(txtDescripcion, "");
-            errorProviderEditarProducto.SetError(comboBoxCategoria, "");
-            errorProviderEditarProducto.SetError(comboBoxMarca, "");
+            errorProviderEditarProducto.SetError(cbCategoria, "");
+            errorProviderEditarProducto.SetError(cbMarca, "");
         }
 
         private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
@@ -150,6 +171,27 @@ namespace Login.CSuAdministrador.Productos
         private void btnSalirMenuPrincipal_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        //Modificar id al cambiar comboBox
+        private void cbCategoria_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            idValueCat = cbCategoria.SelectedValue.ToString(); 
+        }
+
+        private void cbMarca_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            idValueMarca = cbMarca.SelectedValue.ToString();
+        }
+
+
+
+        //Cargar Id al rellenar formulario
+
+        private void EditarProducto_Load(object sender, EventArgs e)
+        {
+            idValueCat = cbCategoria.SelectedValue.ToString();
+            idValueMarca = cbMarca.SelectedValue.ToString();
         }
     }
 }

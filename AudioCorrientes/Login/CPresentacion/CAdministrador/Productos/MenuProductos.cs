@@ -1,4 +1,7 @@
-﻿using Login.CSuAdministrador.Productos;
+﻿using Login.CDatos;
+using Login.CNegocio;
+using Login.CPresentacion.CVendedor.Clientes;
+using Login.CSuAdministrador.Productos;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,9 +14,10 @@ using System.Windows.Forms;
 
 namespace Login.CSuAdministrador
 {
-    public partial class Pruductos : Form
+    public partial class MenuProductos : Form
     {
-        public Pruductos()
+        NProductos objProducto = new NProductos();  
+        public MenuProductos()
         {
             InitializeComponent();
         }
@@ -36,11 +40,6 @@ namespace Login.CSuAdministrador
             formAddMarca.ShowDialog();
         }
 
-        private void btnEditar_Click(object sender, EventArgs e)
-        {
-            EditarProducto formEditarProducto = new EditarProducto();
-            formEditarProducto.ShowDialog();
-        }
 
         //Validaciones de Formularios
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -156,6 +155,40 @@ namespace Login.CSuAdministrador
             {
                 MessageBox.Show("Buscando Marca");
             }
+        }
+
+        int Id;
+
+        private void dgvProductos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result;
+
+            if (dgvProductos.Columns[e.ColumnIndex].Name == "Editar")
+            {
+                Id = Convert.ToInt32(dgvProductos.CurrentRow.Cells["id_productos"].Value.ToString());
+                EditarProducto FormEdit = new EditarProducto(Id);
+                FormEdit.ShowDialog();
+                objProducto.CargarGridAdmin(dgvProductos);
+            }
+            if (dgvProductos.Columns[e.ColumnIndex].Name == "Eliminar")
+            {
+                Id = Convert.ToInt32(dgvProductos.CurrentRow.Cells["id_cliente"].Value.ToString());
+                result = MessageBox.Show("Desea eliminar el Cliente?\n Se eliminara de forma permanente", "Eliminar Cliente", buttons, MessageBoxIcon.Exclamation);
+                if (result == System.Windows.Forms.DialogResult.Yes)
+                {
+                    //Eliminar (Cambiar Estado)
+                    //objProducto.EliminarCliente(Id);
+                    //MessageBox.Show("Cliente eliminado con Exito", "Eliminar Cliente Exitoso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    //objProducto.CargarGrid(dgvProductos);
+                }
+            }
+        }
+
+        private void MenuProductos_Load(object sender, EventArgs e)
+        {
+            objProducto.CargarGridAdmin(dgvProductos);
+            objProducto.OcultarColumnas(dgvProductos);
         }
     }
 }

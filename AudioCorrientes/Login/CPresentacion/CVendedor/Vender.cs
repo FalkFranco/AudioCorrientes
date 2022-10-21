@@ -1,4 +1,5 @@
-﻿using Login.CVendedor.Clientes;
+﻿using Login.CNegocio;
+using Login.CVendedor.Clientes;
 using Login.CVendedor.Productos;
 using System;
 using System.Collections.Generic;
@@ -15,10 +16,15 @@ namespace Login.CVendedor
 {
     public partial class Vender : Form
     {
+        NProductos dProductos = new NProductos();
         public Vender()
         {
             InitializeComponent();
+            
         }
+
+        
+
 
         private void btnCargarLista_Click(object sender, EventArgs e)
         {

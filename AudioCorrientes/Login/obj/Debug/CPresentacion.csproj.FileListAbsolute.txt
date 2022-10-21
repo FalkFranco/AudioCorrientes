@@ -138,7 +138,6 @@ C:\Users\colo5\Desktop\AudiCorrientes\AudioCorrientes\AudioCorrientes\Login\obj\
 C:\Users\colo5\Desktop\AudiCorrientes\AudioCorrientes\AudioCorrientes\Login\obj\Debug\Login.CSuAdministrador.Productos.AgregarMarca.resources
 C:\Users\colo5\Desktop\AudiCorrientes\AudioCorrientes\AudioCorrientes\Login\obj\Debug\Login.CSuAdministrador.Productos.AgregarProductos.resources
 C:\Users\colo5\Desktop\AudiCorrientes\AudioCorrientes\AudioCorrientes\Login\obj\Debug\Login.CSuAdministrador.Productos.EditarProducto.resources
-C:\Users\colo5\Desktop\AudiCorrientes\AudioCorrientes\AudioCorrientes\Login\obj\Debug\Login.CSuAdministrador.Pruductos.resources
 C:\Users\colo5\Desktop\AudiCorrientes\AudioCorrientes\AudioCorrientes\Login\obj\Debug\Login.CGerente.ReporteProductos.resources
 C:\Users\colo5\Desktop\AudiCorrientes\AudioCorrientes\AudioCorrientes\Login\obj\Debug\Login.CGerente.ReporteVentas.resources
 C:\Users\colo5\Desktop\AudiCorrientes\AudioCorrientes\AudioCorrientes\Login\obj\Debug\Login.CSuAdministrador.BackUpForm.resources
@@ -170,3 +169,4 @@ C:\Users\colo5\Desktop\AudiCorrientes\AudioCorrientes\AudioCorrientes\Login\bin\
 C:\Users\colo5\Desktop\AudiCorrientes\AudioCorrientes\AudioCorrientes\Login\obj\Debug\CPresentacion.csproj.CopyComplete
 C:\Users\colo5\Desktop\AudiCorrientes\AudioCorrientes\AudioCorrientes\Login\obj\Debug\Login.CPresentacion.CVendedor.Clientes.FormEditarCliente.resources
 C:\Users\colo5\OneDrive\Escritorio\Proyectos\AudioCorrientes\AudioCorrientes\Login\obj\Debug\Login.CPresentacion.CVendedor.Clientes.FormEditarCliente.resources
+C:\Users\colo5\Desktop\AudiCorrientes\AudioCorrientes\AudioCorrientes\Login\obj\Debug\Login.CSuAdministrador.MenuProductos.resources

@@ -17,14 +17,34 @@ namespace Login.CNegocio
         readonly DCategoria dCategoria = new DCategoria();   
         Producto Producto = new Producto();
 
-        public void CargarGrid(DataGridView dgv)
+        public void CargarGridVen(DataGridView dgv)
         {
             var Lst = dProductos.Read();
             dgv.DataSource = Lst;
-            OrdenDgv(dgv);
+            OrdenDgvVen(dgv);
         }
 
-        public void OrdenDgv(DataGridView dgv)
+        public void CargarGridAdmin(DataGridView dgv)
+        {
+            var Lst = dProductos.Read();
+            dgv.DataSource = Lst;
+            OrdenDgvAdmin(dgv);
+        }
+
+        public void OrdenDgvVen(DataGridView dgv)
+        {
+            dgv.Columns["id_productos"].DisplayIndex = 0;
+            dgv.Columns["id_categorias"].DisplayIndex = 1;
+            dgv.Columns["id_marcas"].DisplayIndex = 2;
+            dgv.Columns["nombre"].DisplayIndex = 3;
+            dgv.Columns["descripcion"].DisplayIndex = 4;
+            dgv.Columns["precio"].DisplayIndex = 5;
+            dgv.Columns["stock"].DisplayIndex = 6;
+            dgv.Columns["estado"].DisplayIndex = 7;
+            dgv.Columns["Seleccionar"].DisplayIndex = 8;
+        }
+
+        public void OrdenDgvAdmin(DataGridView dgv)
         {
             dgv.Columns["id_productos"].DisplayIndex = 0;
             dgv.Columns["id_categorias"].DisplayIndex = 1;
@@ -116,8 +136,7 @@ namespace Login.CNegocio
                     descripcion.Text = producto.descripcion;
                     precio.Text = producto.precio.ToString();
                     stock.Text = producto.stock.ToString();
-                    estado.Checked = producto.estado;
-                    
+                    estado.Checked = producto.estado; 
                 }
             }
         }

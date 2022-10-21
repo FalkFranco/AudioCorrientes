@@ -37,6 +37,7 @@ namespace Login.CNegocio
             dgv.Columns["id_tipoCliente"].DisplayIndex = 7;
             dgv.Columns["Editar"].DisplayIndex = 8;
             dgv.Columns["Eliminar"].DisplayIndex = 9;
+            dgv.Columns["Seleccionar"].DisplayIndex = 10;
         }
 
 

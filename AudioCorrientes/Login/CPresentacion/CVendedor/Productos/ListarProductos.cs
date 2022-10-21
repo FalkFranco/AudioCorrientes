@@ -83,35 +83,18 @@ namespace Login.CVendedor.Productos
 
         private void ListarProductos_Load(object sender, EventArgs e)
         {
-            objProducto.CargarGrid(dgvProductos);
+            objProducto.CargarGridVen(dgvProductos);
             objProducto.OcultarColumnas(dgvProductos);
         }
 
         int Id;
         private void dgvProductos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
-            DialogResult result;
-
-            if (dgvProductos.Columns[e.ColumnIndex].Name == "Editar")
+            if (dgvProductos.Columns[e.ColumnIndex].Name == "Seleccionar")
             {
-                //AGREGAR FORMULARIO PARA EDITAR
-                Id = Convert.ToInt32(dgvProductos.CurrentRow.Cells["id_cliente"].Value.ToString());
-                FormEditarCliente FormEdit = new FormEditarCliente(Id);
-                FormEdit.ShowDialog();
-                objProducto.CargarGrid(dgvProductos);
-            }
-            if (dgvProductos.Columns[e.ColumnIndex].Name == "Eliminar")
-            {
-                Id = Convert.ToInt32(dgvProductos.CurrentRow.Cells["id_cliente"].Value.ToString());
-                result = MessageBox.Show("Desea eliminar el Cliente?\n Se eliminara de forma permanente", "Eliminar Cliente", buttons, MessageBoxIcon.Exclamation);
-                if (result == System.Windows.Forms.DialogResult.Yes)
-                {
-                    ////Eliminar: Actualizar el estado 
-                    //objProducto.EliminarProducto(Id);
-                    //MessageBox.Show("Cliente eliminado con Exito", "Eliminar Cliente Exitoso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    //objProducto.CargarGrid(dgvProductos);
-                }
+                //Carga al Carrito
+                Id = Convert.ToInt32(dgvProductos.CurrentRow.Cells["id_productos"].Value.ToString());
+                
             }
         }
     }

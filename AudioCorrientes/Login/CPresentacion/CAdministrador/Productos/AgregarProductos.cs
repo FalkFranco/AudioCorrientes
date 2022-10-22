@@ -1,13 +1,16 @@
-﻿using System;
+﻿using Login.CNegocio;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Login.CSuAdministrador.Productos
 {
@@ -17,6 +20,9 @@ namespace Login.CSuAdministrador.Productos
         {
             InitializeComponent();
         }
+        NProductos objProducto = new NProductos(); 
+        string idValueMarca = "";
+        string idValueCat = "";
 
         private void btnAgregarProducto_Click(object sender, EventArgs e)
         {
@@ -27,10 +33,26 @@ namespace Login.CSuAdministrador.Productos
                 DialogResult result;
 
                 // Displays the MessageBox.
-                result = MessageBox.Show("Desea agregar un nuevo producto?", "Agregar Producto", buttons, MessageBoxIcon.Exclamation);
+                result = MessageBox.Show("Desea agregar un nuevo Producto?", "Agregar Producto", buttons, MessageBoxIcon.Exclamation);
                 if (result == System.Windows.Forms.DialogResult.Yes)
                 {
-                    MessageBox.Show("Producto Agregado");
+                    int idCat = Int32.Parse(idValueCat);//De string a int para poder almacenar en la base de datos
+                    int idMarca = Int32.Parse(idValueMarca);//De string a int para poder almacenar en la base de datos
+                    float precio = float.Parse(txtPrecio.Text, CultureInfo.InvariantCulture.NumberFormat);
+                    precio.ToString("0.00");
+                    int stock = Int32.Parse(txtStock.Text);
+                    bool estado = true;
+                    if (objProducto.AgregarProducto(idCat, idMarca, txtNombre.Text, txtDescripcion.Text, precio, stock,estado))
+                    {
+                        MessageBox.Show("El Producto se registró correctamente", "Producto Registrado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Close();
+                        
+                    }
+                    else
+                    {
+                        MessageBox.Show("El Producto ya existe", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        
+                    }
                     //limpiarFormulario();
                 }
 
@@ -48,16 +70,12 @@ namespace Login.CSuAdministrador.Productos
                 ok = false;
                 errorProviderAgregarProducto.SetError(txtNombre, msg);
             }
-            if (txtPrecioCompra.Text == "")
+            if (txtPrecio.Text == "")
             {
                 ok = false;
-                errorProviderAgregarProducto.SetError(txtPrecioCompra, msg);
+                errorProviderAgregarProducto.SetError(txtPrecio, msg);
             }
-            if (txtPrecioVenta.Text == "")
-            {
-                ok = false;
-                errorProviderAgregarProducto.SetError(txtPrecioVenta, msg);
-            }
+           
             //if (Int32.Parse(txtPrecioVenta.Text) < Int32.Parse(txtPrecioCompra.Text))
             //{
             //    ok = false;
@@ -85,30 +103,29 @@ namespace Login.CSuAdministrador.Productos
                 errorProviderAgregarProducto.SetError(txtDescripcion, msgCar);
             }
             //Validacion ComboBox
-            if (comboBoxCategoria.Text == "")
+            if (cbCategoria.Text == "")
             {
                 ok = false;
-                errorProviderAgregarProducto.SetError(comboBoxCategoria, msg);
+                errorProviderAgregarProducto.SetError(cbCategoria, msg);
             }
-            if (comboBoxMarca.Text == "")
+            if (cbMarca.Text == "")
             {
                 ok = false;
-                errorProviderAgregarProducto.SetError(comboBoxMarca, msg);
+                errorProviderAgregarProducto.SetError(cbMarca, msg);
             }
             return ok;
         }
         private void BorrarMensajeProvider()
         {
             errorProviderAgregarProducto.SetError(txtNombre, "");
-            errorProviderAgregarProducto.SetError(txtPrecioCompra, "");
-            errorProviderAgregarProducto.SetError(txtPrecioVenta, "");
+            errorProviderAgregarProducto.SetError(txtPrecio, "");
             errorProviderAgregarProducto.SetError(txtStock, "");
             errorProviderAgregarProducto.SetError(txtDescripcion, "");
-            errorProviderAgregarProducto.SetError(comboBoxCategoria, "");
-            errorProviderAgregarProducto.SetError(comboBoxMarca, "");
+            errorProviderAgregarProducto.SetError(cbCategoria, "");
+            errorProviderAgregarProducto.SetError(cbMarca, "");
         }
 
-        //Bloqueo de teclas segun elo tipo de datos a ingresar
+        //Bloqueo de teclas segun el tipo de datos a ingresar
 
         //String
         private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
@@ -155,6 +172,26 @@ namespace Login.CSuAdministrador.Productos
         private void btnSalirMenuPrincipal_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void AgregarProductos_Load(object sender, EventArgs e)
+        {
+            objProducto.CargarComboBoxMarca(cbMarca);
+            objProducto.CargarComboBoxCategoria(cbCategoria);
+            cbMarca.SelectedValue = 1; //Por defecto al cargar es Consumidor Final
+            cbCategoria.SelectedValue = 1; //Por defecto al cargar es Consumidor Final
+            idValueMarca = cbMarca.SelectedValue.ToString(); //Alamacena el id para poder cargar en la db
+            idValueCat = cbCategoria.SelectedValue.ToString(); //Alamacena el id para poder cargar en la db
+        }
+
+        private void cbCategoria_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            idValueCat = cbCategoria.SelectedValue.ToString();
+        }
+
+        private void cbMarca_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            idValueMarca = cbMarca.SelectedValue.ToString();
         }
     }
 }

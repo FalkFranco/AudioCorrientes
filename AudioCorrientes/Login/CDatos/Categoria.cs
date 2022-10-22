@@ -21,7 +21,7 @@ namespace Login.CDatos
         }
     
         public int id_categorias { get; set; }
-        public string categoria1 { get; set; }
+        public string categoria_descripcion { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Producto> Productos { get; set; }

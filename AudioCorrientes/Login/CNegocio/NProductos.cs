@@ -13,8 +13,8 @@ namespace Login.CNegocio
     internal class NProductos
     {
         DProductos dProductos = new DProductos(); 
-        readonly DMarca  dMarca = new DMarca();
-        readonly DCategoria dCategoria = new DCategoria();   
+        DMarca  dMarca = new DMarca();
+        DCategoria dCategoria = new DCategoria();   
         Producto Producto = new Producto();
 
         public void CargarGridVen(DataGridView dgv)
@@ -47,8 +47,8 @@ namespace Login.CNegocio
         public void OrdenDgvAdmin(DataGridView dgv)
         {
             dgv.Columns["id_productos"].DisplayIndex = 0;
-            dgv.Columns["id_categorias"].DisplayIndex = 1;
-            dgv.Columns["id_marcas"].DisplayIndex = 2;
+            dgv.Columns["categoria_id"].DisplayIndex = 1;
+            dgv.Columns["marca_id"].DisplayIndex = 2;
             dgv.Columns["nombre"].DisplayIndex = 3;
             dgv.Columns["descripcion"].DisplayIndex = 4;
             dgv.Columns["precio"].DisplayIndex = 5;
@@ -73,44 +73,19 @@ namespace Login.CNegocio
             dgv.Columns["Marca"].Visible = false;
         }
 
-        public void CargarComboBoxMarca(ComboBox cb)
-        {
-            var Lst = dMarca.Read();
-            if (Lst.Count > 0) //Si la lista no esta vacia
-            {
-                cb.DataSource = Lst;
-                cb.DisplayMember = "marca"; //Aparece el nombre del tipo en las opciones
-                cb.ValueMember = "id_marcas"; //El valor que se va almacenar es el id 
+       
+      
 
-
-                cb.AutoCompleteMode = AutoCompleteMode.Suggest;
-                cb.AutoCompleteSource = AutoCompleteSource.ListItems;
-            }
-        }
-        public void CargarComboBoxCategoria(ComboBox cb)
-        {
-            var Lst = dMarca.Read();
-            if (Lst.Count > 0) //Si la lista no esta vacia
-            {
-                cb.DataSource = Lst;
-                cb.DisplayMember = "categoria"; //Aparece el nombre del tipo en las opciones
-                cb.ValueMember = "id_categorias"; //El valor que se va almacenar es el id 
-
-
-                cb.AutoCompleteMode = AutoCompleteMode.Suggest;
-                cb.AutoCompleteSource = AutoCompleteSource.ListItems;
-            }
-        }
-
-        public bool AgregarProducto(int idCat, int idMarca, string nombre, string descripcion, float precio, int stock)
+        public bool AgregarProducto(int idCat, int idMarca, string nombre, string descripcion, float precio, int stock, bool estado)
         {
             //int idTipoInt = Int32.Parse(idTipo);//De string a int para poder almacenar en la base de datos
-            Producto.id_categorias = idCat;
-            Producto.id_marcas = idMarca;
+            Producto.categoria_id = idCat;
+            Producto.marca_id = idMarca;
             Producto.nombre = nombre;
             Producto.descripcion = descripcion;
             Producto.precio = precio;
             Producto.stock = stock;
+            Producto.estado = estado;
 
             if (dProductos.Create(Producto))
             {
@@ -130,8 +105,8 @@ namespace Login.CNegocio
                 foreach (Producto producto in Lst)
                 {
                     id.Text = producto.id_productos.ToString();
-                    CargarComboBoxEditarCat(cat, producto.id_categorias);
-                    CargarComboBoxEditarMarca(marca, producto.id_marcas);
+                    CargarComboBoxEditarCat(cat, producto.categoria_id);
+                    CargarComboBoxEditarMarca(marca, producto.marca_id);
                     nom.Text = producto.nombre;
                     descripcion.Text = producto.descripcion;
                     precio.Text = producto.precio.ToString();
@@ -140,15 +115,28 @@ namespace Login.CNegocio
                 }
             }
         }
-
-        public void CargarComboBoxEditarCat(ComboBox cb, int id)
+        public void CargarComboBoxCategoria(ComboBox cb)
         {
-            var Lst =dCategoria.Read();
+            var Lst = dCategoria.Read();
             if (Lst.Count > 0) //Si la lista no esta vacia
             {
                 cb.DataSource = Lst;
-                cb.DisplayMember = "marca"; //Aparece el nombre del tipo en las opciones
-                cb.ValueMember = "id_marcas"; //El valor que se va almacenar es el id 
+                cb.DisplayMember = "categoria_descripcion"; //Aparece el nombre del tipo en las opciones
+                cb.ValueMember = "id_categorias"; //El valor que se va almacenar es el id 
+
+
+                cb.AutoCompleteMode = AutoCompleteMode.Suggest;
+                cb.AutoCompleteSource = AutoCompleteSource.ListItems;
+            }
+        }
+        public void CargarComboBoxEditarCat(ComboBox cb, int id)
+        {
+            var Lst = dCategoria.Read();
+            if (Lst.Count > 0) //Si la lista no esta vacia
+            {
+                cb.DataSource = Lst;
+                cb.DisplayMember = "categoria_descripcion"; //Aparece el nombre del tipo en las opciones
+                cb.ValueMember = "id_categorias"; //El valor que se va almacenar es el id 
                 cb.SelectedValue = id;
 
                 cb.AutoCompleteMode = AutoCompleteMode.Suggest;
@@ -162,9 +150,23 @@ namespace Login.CNegocio
             if (Lst.Count > 0) //Si la lista no esta vacia
             {
                 cb.DataSource = Lst;
-                cb.DisplayMember = "categoria"; //Aparece el nombre del tipo en las opciones
-                cb.ValueMember = "id_categorias"; //El valor que se va almacenar es el id 
+                cb.DisplayMember = "marca_descripcion"; //Aparece el nombre del tipo en las opciones
+                cb.ValueMember = "id_marcas"; //El valor que se va almacenar es el id 
                 cb.SelectedValue = id;
+
+                cb.AutoCompleteMode = AutoCompleteMode.Suggest;
+                cb.AutoCompleteSource = AutoCompleteSource.ListItems;
+            }
+        }
+        public void CargarComboBoxMarca(ComboBox cb)
+        {
+            var Lst = dMarca.Read();
+            if (Lst.Count > 0) //Si la lista no esta vacia
+            {
+                cb.DataSource = Lst;
+                cb.DisplayMember = "marca_descripcion"; //Aparece el nombre del tipo en las opciones
+                cb.ValueMember = "id_marcas"; //El valor que se va almacenar es el id 
+
 
                 cb.AutoCompleteMode = AutoCompleteMode.Suggest;
                 cb.AutoCompleteSource = AutoCompleteSource.ListItems;
@@ -175,8 +177,9 @@ namespace Login.CNegocio
         public bool EditarProducto(int id, int idCat, int idMar, string nombre, string descripcion, float precio, int stock, bool estado)
         {
             //int idTipoInt = Int32.Parse(idTipo);//De string a int para poder almacenar en la base de datos
-            Producto.id_categorias = idCat;
-            Producto.id_marcas = idMar;
+            Producto.id_productos = id;
+            Producto.categoria_id = idCat;
+            Producto.marca_id = idMar;
             Producto.nombre = nombre;
             Producto.descripcion = descripcion;
             Producto.precio = precio;

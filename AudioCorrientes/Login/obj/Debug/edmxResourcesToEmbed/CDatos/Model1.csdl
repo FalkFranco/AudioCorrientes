@@ -1,13 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="dbAudioCorrientesModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-  <EntityType Name="Categoria">
-    <Key>
-      <PropertyRef Name="id_categorias" />
-    </Key>
-    <Property Name="id_categorias" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="categoria1" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
-    <NavigationProperty Name="Productos" Relationship="Self.FK_Producto_Categoria" FromRole="Categoria" ToRole="Productos" />
-  </EntityType>
   <EntityType Name="Cliente">
     <Key>
       <PropertyRef Name="id_cliente" />
@@ -33,8 +25,8 @@
     <Property Name="precioVenta" Type="Double" Nullable="false" />
     <Property Name="cantidad" Type="Int32" Nullable="false" />
     <Property Name="subtotal" Type="Double" Nullable="false" />
-    <NavigationProperty Name="Producto" Relationship="Self.FK_Detalle_Producto" FromRole="DetalleVenta" ToRole="Productos" />
     <NavigationProperty Name="Venta" Relationship="Self.FK_Detalle_Venta" FromRole="DetalleVenta" ToRole="Ventas" />
+    <NavigationProperty Name="Producto" Relationship="dbAudioCorrientesModel.FK_Detalle_Producto" FromRole="DetalleVenta" ToRole="Producto" />
   </EntityType>
   <EntityType Name="Empleado">
     <Key>
@@ -52,30 +44,6 @@
     <Property Name="email" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
     <NavigationProperty Name="Usuarios" Relationship="Self.FK_Usuario_Empleado" FromRole="Empleados" ToRole="Usuarios" />
     <NavigationProperty Name="Ventas" Relationship="Self.FK_Venta_Empleado" FromRole="Empleados" ToRole="Ventas" />
-  </EntityType>
-  <EntityType Name="Marca">
-    <Key>
-      <PropertyRef Name="id_marcas" />
-    </Key>
-    <Property Name="id_marcas" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="marca1" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
-    <NavigationProperty Name="Productos" Relationship="Self.FK_Producto_Marca" FromRole="Marca" ToRole="Productos" />
-  </EntityType>
-  <EntityType Name="Producto">
-    <Key>
-      <PropertyRef Name="id_productos" />
-    </Key>
-    <Property Name="id_productos" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="id_categorias" Type="Int32" Nullable="false" />
-    <Property Name="id_marcas" Type="Int32" Nullable="false" />
-    <Property Name="nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="descripcion" Type="String" MaxLength="900" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="precio" Type="Double" Nullable="false" />
-    <Property Name="stock" Type="Int32" Nullable="false" />
-    <Property Name="estado" Type="Boolean" Nullable="false" />
-    <NavigationProperty Name="Categoria" Relationship="Self.FK_Producto_Categoria" FromRole="Productos" ToRole="Categoria" />
-    <NavigationProperty Name="DetalleVentas" Relationship="Self.FK_Detalle_Producto" FromRole="Productos" ToRole="DetalleVenta" />
-    <NavigationProperty Name="Marca" Relationship="Self.FK_Producto_Marca" FromRole="Productos" ToRole="Marca" />
   </EntityType>
   <EntityType Name="Role">
     <Key>
@@ -131,18 +99,6 @@
     <NavigationProperty Name="Empleado" Relationship="Self.FK_Venta_Empleado" FromRole="Ventas" ToRole="Empleados" />
     <NavigationProperty Name="TipoFactura" Relationship="Self.FK_Venta_TipoFactura" FromRole="Ventas" ToRole="TipoFactura" />
   </EntityType>
-  <Association Name="FK_Producto_Categoria">
-    <End Role="Categoria" Type="Self.Categoria" Multiplicity="1" />
-    <End Role="Productos" Type="Self.Producto" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Categoria">
-        <PropertyRef Name="id_categorias" />
-      </Principal>
-      <Dependent Role="Productos">
-        <PropertyRef Name="id_categorias" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_Cliente_TipoCliente">
     <End Role="TipoCliente" Type="Self.TipoCliente" Multiplicity="1" />
     <End Role="Clientes" Type="Self.Cliente" Multiplicity="*" />
@@ -164,18 +120,6 @@
       </Principal>
       <Dependent Role="Ventas">
         <PropertyRef Name="id_cliente" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Detalle_Producto">
-    <End Role="Productos" Type="Self.Producto" Multiplicity="1" />
-    <End Role="DetalleVenta" Type="Self.DetalleVenta" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Productos">
-        <PropertyRef Name="id_productos" />
-      </Principal>
-      <Dependent Role="DetalleVenta">
-        <PropertyRef Name="id_productos" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -215,18 +159,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_Producto_Marca">
-    <End Role="Marca" Type="Self.Marca" Multiplicity="1" />
-    <End Role="Productos" Type="Self.Producto" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Marca">
-        <PropertyRef Name="id_marcas" />
-      </Principal>
-      <Dependent Role="Productos">
-        <PropertyRef Name="id_marcas" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_Usuario_Rol">
     <End Role="Roles" Type="Self.Role" Multiplicity="1" />
     <End Role="Usuarios" Type="Self.Usuario" Multiplicity="*" />
@@ -252,21 +184,14 @@
     </ReferentialConstraint>
   </Association>
   <EntityContainer Name="dbAudioCorrientesEntities" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="Categorias" EntityType="Self.Categoria" />
     <EntitySet Name="Clientes" EntityType="Self.Cliente" />
     <EntitySet Name="DetalleVentas" EntityType="Self.DetalleVenta" />
     <EntitySet Name="Empleados" EntityType="Self.Empleado" />
-    <EntitySet Name="Marcas" EntityType="Self.Marca" />
-    <EntitySet Name="Productos" EntityType="Self.Producto" />
     <EntitySet Name="Roles" EntityType="Self.Role" />
     <EntitySet Name="TipoClientes" EntityType="Self.TipoCliente" />
     <EntitySet Name="TipoFacturas" EntityType="Self.TipoFactura" />
     <EntitySet Name="Usuarios" EntityType="Self.Usuario" />
     <EntitySet Name="Ventas" EntityType="Self.Venta" />
-    <AssociationSet Name="FK_Producto_Categoria" Association="Self.FK_Producto_Categoria">
-      <End Role="Categoria" EntitySet="Categorias" />
-      <End Role="Productos" EntitySet="Productos" />
-    </AssociationSet>
     <AssociationSet Name="FK_Cliente_TipoCliente" Association="Self.FK_Cliente_TipoCliente">
       <End Role="TipoCliente" EntitySet="TipoClientes" />
       <End Role="Clientes" EntitySet="Clientes" />
@@ -274,10 +199,6 @@
     <AssociationSet Name="FK_Venta_Cliente" Association="Self.FK_Venta_Cliente">
       <End Role="Clientes" EntitySet="Clientes" />
       <End Role="Ventas" EntitySet="Ventas" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Detalle_Producto" Association="Self.FK_Detalle_Producto">
-      <End Role="Productos" EntitySet="Productos" />
-      <End Role="DetalleVenta" EntitySet="DetalleVentas" />
     </AssociationSet>
     <AssociationSet Name="FK_Detalle_Venta" Association="Self.FK_Detalle_Venta">
       <End Role="Ventas" EntitySet="Ventas" />
@@ -291,10 +212,6 @@
       <End Role="Empleados" EntitySet="Empleados" />
       <End Role="Ventas" EntitySet="Ventas" />
     </AssociationSet>
-    <AssociationSet Name="FK_Producto_Marca" Association="Self.FK_Producto_Marca">
-      <End Role="Marca" EntitySet="Marcas" />
-      <End Role="Productos" EntitySet="Productos" />
-    </AssociationSet>
     <AssociationSet Name="FK_Usuario_Rol" Association="Self.FK_Usuario_Rol">
       <End Role="Roles" EntitySet="Roles" />
       <End Role="Usuarios" EntitySet="Usuarios" />
@@ -303,5 +220,88 @@
       <End Role="TipoFactura" EntitySet="TipoFacturas" />
       <End Role="Ventas" EntitySet="Ventas" />
     </AssociationSet>
+    <EntitySet Name="Marcas" EntityType="dbAudioCorrientesModel.Marca" />
+    <EntitySet Name="Categorias" EntityType="dbAudioCorrientesModel.Categoria" />
+    <EntitySet Name="Productos" EntityType="dbAudioCorrientesModel.Producto" />
+    <AssociationSet Name="FK_Producto_Categoria" Association="dbAudioCorrientesModel.FK_Producto_Categoria">
+      <End Role="Categoria" EntitySet="Categorias" />
+      <End Role="Producto" EntitySet="Productos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Detalle_Producto" Association="dbAudioCorrientesModel.FK_Detalle_Producto">
+      <End Role="Producto" EntitySet="Productos" />
+      <End Role="DetalleVenta" EntitySet="DetalleVentas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Producto_Marca" Association="dbAudioCorrientesModel.FK_Producto_Marca">
+      <End Role="Marca" EntitySet="Marcas" />
+      <End Role="Producto" EntitySet="Productos" />
+    </AssociationSet>
   </EntityContainer>
+  <EntityType Name="Marca">
+    <Key>
+      <PropertyRef Name="id_marcas" />
+    </Key>
+    <Property Name="id_marcas" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="marca_descripcion" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Productos" Relationship="dbAudioCorrientesModel.FK_Producto_Marca" FromRole="Marca" ToRole="Producto" />
+  </EntityType>
+  <EntityType Name="Categoria">
+    <Key>
+      <PropertyRef Name="id_categorias" />
+    </Key>
+    <Property Name="id_categorias" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="categoria_descripcion" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Productos" Relationship="dbAudioCorrientesModel.FK_Producto_Categoria" FromRole="Categoria" ToRole="Producto" />
+  </EntityType>
+  <EntityType Name="Producto">
+    <Key>
+      <PropertyRef Name="id_productos" />
+    </Key>
+    <Property Name="id_productos" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="categoria_id" Type="Int32" Nullable="false" />
+    <Property Name="marca_id" Type="Int32" Nullable="false" />
+    <Property Name="nombre" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="descripcion" Type="String" Nullable="false" MaxLength="900" FixedLength="false" Unicode="false" />
+    <Property Name="precio" Type="Double" Nullable="false" />
+    <Property Name="stock" Type="Int32" Nullable="false" />
+    <Property Name="estado" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Categoria" Relationship="dbAudioCorrientesModel.FK_Producto_Categoria" FromRole="Producto" ToRole="Categoria" />
+    <NavigationProperty Name="DetalleVentas" Relationship="dbAudioCorrientesModel.FK_Detalle_Producto" FromRole="Producto" ToRole="DetalleVenta" />
+    <NavigationProperty Name="Marca" Relationship="dbAudioCorrientesModel.FK_Producto_Marca" FromRole="Producto" ToRole="Marca" />
+  </EntityType>
+  <Association Name="FK_Producto_Categoria">
+    <End Type="dbAudioCorrientesModel.Categoria" Role="Categoria" Multiplicity="1" />
+    <End Type="dbAudioCorrientesModel.Producto" Role="Producto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Categoria">
+        <PropertyRef Name="id_categorias" />
+      </Principal>
+      <Dependent Role="Producto">
+        <PropertyRef Name="categoria_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Detalle_Producto">
+    <End Type="dbAudioCorrientesModel.Producto" Role="Producto" Multiplicity="1" />
+    <End Type="dbAudioCorrientesModel.DetalleVenta" Role="DetalleVenta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Producto">
+        <PropertyRef Name="id_productos" />
+      </Principal>
+      <Dependent Role="DetalleVenta">
+        <PropertyRef Name="id_productos" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Producto_Marca">
+    <End Type="dbAudioCorrientesModel.Marca" Role="Marca" Multiplicity="1" />
+    <End Type="dbAudioCorrientesModel.Producto" Role="Producto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Marca">
+        <PropertyRef Name="id_marcas" />
+      </Principal>
+      <Dependent Role="Producto">
+        <PropertyRef Name="marca_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

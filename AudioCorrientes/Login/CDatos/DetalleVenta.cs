@@ -21,7 +21,7 @@ namespace Login.CDatos
         public int cantidad { get; set; }
         public double subtotal { get; set; }
     
-        public virtual Producto Producto { get; set; }
         public virtual Venta Venta { get; set; }
+        public virtual Producto Producto { get; set; }
     }
 }

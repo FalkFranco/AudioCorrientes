@@ -32,19 +32,17 @@
             this.errorProviderAgregarProducto = new System.Windows.Forms.ErrorProvider(this.components);
             this.btnSalirMenuPrincipal = new System.Windows.Forms.Button();
             this.btnAgregarProducto = new System.Windows.Forms.Button();
-            this.comboBoxMarca = new System.Windows.Forms.ComboBox();
+            this.cbMarca = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.comboBoxCategoria = new System.Windows.Forms.ComboBox();
+            this.cbCategoria = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.txtStock = new System.Windows.Forms.TextBox();
-            this.txtPrecioVenta = new System.Windows.Forms.TextBox();
-            this.txtPrecioCompra = new System.Windows.Forms.TextBox();
+            this.txtPrecio = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderAgregarProducto)).BeginInit();
@@ -74,18 +72,14 @@
             this.btnAgregarProducto.UseVisualStyleBackColor = true;
             this.btnAgregarProducto.Click += new System.EventHandler(this.btnAgregarProducto_Click);
             // 
-            // comboBoxMarca
+            // cbMarca
             // 
-            this.comboBoxMarca.FormattingEnabled = true;
-            this.comboBoxMarca.Items.AddRange(new object[] {
-            "Gibson",
-            "Fender",
-            "Marshall",
-            "Boos"});
-            this.comboBoxMarca.Location = new System.Drawing.Point(312, 187);
-            this.comboBoxMarca.Name = "comboBoxMarca";
-            this.comboBoxMarca.Size = new System.Drawing.Size(161, 21);
-            this.comboBoxMarca.TabIndex = 49;
+            this.cbMarca.FormattingEnabled = true;
+            this.cbMarca.Location = new System.Drawing.Point(312, 187);
+            this.cbMarca.Name = "cbMarca";
+            this.cbMarca.Size = new System.Drawing.Size(161, 21);
+            this.cbMarca.TabIndex = 49;
+            this.cbMarca.SelectedIndexChanged += new System.EventHandler(this.cbMarca_SelectedIndexChanged);
             // 
             // label8
             // 
@@ -105,19 +99,14 @@
             this.label7.TabIndex = 47;
             this.label7.Text = "Categoria";
             // 
-            // comboBoxCategoria
+            // cbCategoria
             // 
-            this.comboBoxCategoria.FormattingEnabled = true;
-            this.comboBoxCategoria.Items.AddRange(new object[] {
-            "Guitarras Electricas",
-            "Guitarras Acusticas",
-            "Baterias",
-            "Bajos",
-            "Amplificadores"});
-            this.comboBoxCategoria.Location = new System.Drawing.Point(312, 129);
-            this.comboBoxCategoria.Name = "comboBoxCategoria";
-            this.comboBoxCategoria.Size = new System.Drawing.Size(161, 21);
-            this.comboBoxCategoria.TabIndex = 46;
+            this.cbCategoria.FormattingEnabled = true;
+            this.cbCategoria.Location = new System.Drawing.Point(312, 129);
+            this.cbCategoria.Name = "cbCategoria";
+            this.cbCategoria.Size = new System.Drawing.Size(161, 21);
+            this.cbCategoria.TabIndex = 46;
+            this.cbCategoria.SelectedIndexChanged += new System.EventHandler(this.cbCategoria_SelectedIndexChanged);
             // 
             // label6
             // 
@@ -128,23 +117,14 @@
             this.label6.TabIndex = 45;
             this.label6.Text = "Stock";
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(79, 233);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(68, 13);
-            this.label5.TabIndex = 44;
-            this.label5.Text = "Precio Venta";
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(79, 172);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(76, 13);
+            this.label4.Size = new System.Drawing.Size(37, 13);
             this.label4.TabIndex = 43;
-            this.label4.Text = "Precio Compra";
+            this.label4.Text = "Precio";
             // 
             // label3
             // 
@@ -179,19 +159,12 @@
             this.txtStock.Size = new System.Drawing.Size(161, 20);
             this.txtStock.TabIndex = 39;
             // 
-            // txtPrecioVenta
+            // txtPrecio
             // 
-            this.txtPrecioVenta.Location = new System.Drawing.Point(82, 249);
-            this.txtPrecioVenta.Name = "txtPrecioVenta";
-            this.txtPrecioVenta.Size = new System.Drawing.Size(161, 20);
-            this.txtPrecioVenta.TabIndex = 38;
-            // 
-            // txtPrecioCompra
-            // 
-            this.txtPrecioCompra.Location = new System.Drawing.Point(82, 188);
-            this.txtPrecioCompra.Name = "txtPrecioCompra";
-            this.txtPrecioCompra.Size = new System.Drawing.Size(161, 20);
-            this.txtPrecioCompra.TabIndex = 37;
+            this.txtPrecio.Location = new System.Drawing.Point(82, 188);
+            this.txtPrecio.Name = "txtPrecio";
+            this.txtPrecio.Size = new System.Drawing.Size(161, 20);
+            this.txtPrecio.TabIndex = 37;
             // 
             // txtNombre
             // 
@@ -206,7 +179,7 @@
             this.label1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(195, 36);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(194, 25);
+            this.label1.Size = new System.Drawing.Size(291, 38);
             this.label1.TabIndex = 35;
             this.label1.Text = "Agregar Producto";
             // 
@@ -217,24 +190,23 @@
             this.ClientSize = new System.Drawing.Size(553, 540);
             this.Controls.Add(this.btnSalirMenuPrincipal);
             this.Controls.Add(this.btnAgregarProducto);
-            this.Controls.Add(this.comboBoxMarca);
+            this.Controls.Add(this.cbMarca);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.comboBoxCategoria);
+            this.Controls.Add(this.cbCategoria);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtDescripcion);
             this.Controls.Add(this.txtStock);
-            this.Controls.Add(this.txtPrecioVenta);
-            this.Controls.Add(this.txtPrecioCompra);
+            this.Controls.Add(this.txtPrecio);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.label1);
             this.Name = "AgregarProductos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AgregarProductos";
+            this.Load += new System.EventHandler(this.AgregarProductos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderAgregarProducto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -245,19 +217,17 @@
         private System.Windows.Forms.ErrorProvider errorProviderAgregarProducto;
         private System.Windows.Forms.Button btnSalirMenuPrincipal;
         private System.Windows.Forms.Button btnAgregarProducto;
-        private System.Windows.Forms.ComboBox comboBoxMarca;
+        private System.Windows.Forms.ComboBox cbMarca;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox comboBoxCategoria;
+        private System.Windows.Forms.ComboBox cbCategoria;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.TextBox txtStock;
-        private System.Windows.Forms.TextBox txtPrecioVenta;
-        private System.Windows.Forms.TextBox txtPrecioCompra;
+        private System.Windows.Forms.TextBox txtPrecio;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label label1;
     }

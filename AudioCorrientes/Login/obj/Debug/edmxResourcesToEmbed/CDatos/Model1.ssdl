@@ -5,7 +5,7 @@
       <PropertyRef Name="id_categorias" />
     </Key>
     <Property Name="id_categorias" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="categoria" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="categoria_descripcion" Type="varchar" MaxLength="40" Nullable="false" />
   </EntityType>
   <EntityType Name="Clientes">
     <Key>
@@ -51,15 +51,15 @@
       <PropertyRef Name="id_marcas" />
     </Key>
     <Property Name="id_marcas" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="marca" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="marca_descripcion" Type="varchar" MaxLength="40" Nullable="false" />
   </EntityType>
   <EntityType Name="Productos">
     <Key>
       <PropertyRef Name="id_productos" />
     </Key>
     <Property Name="id_productos" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="id_categorias" Type="int" Nullable="false" />
-    <Property Name="id_marcas" Type="int" Nullable="false" />
+    <Property Name="categoria_id" Type="int" Nullable="false" />
+    <Property Name="marca_id" Type="int" Nullable="false" />
     <Property Name="nombre" Type="varchar" MaxLength="100" Nullable="false" />
     <Property Name="descripcion" Type="varchar" MaxLength="900" Nullable="false" />
     <Property Name="precio" Type="float" Nullable="false" />
@@ -155,7 +155,7 @@
         <PropertyRef Name="id_categorias" />
       </Principal>
       <Dependent Role="Productos">
-        <PropertyRef Name="id_categorias" />
+        <PropertyRef Name="categoria_id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -167,7 +167,7 @@
         <PropertyRef Name="id_marcas" />
       </Principal>
       <Dependent Role="Productos">
-        <PropertyRef Name="id_marcas" />
+        <PropertyRef Name="marca_id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

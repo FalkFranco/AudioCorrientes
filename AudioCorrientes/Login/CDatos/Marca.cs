@@ -21,7 +21,7 @@ namespace Login.CDatos
         }
     
         public int id_marcas { get; set; }
-        public string marca1 { get; set; }
+        public string marca_descripcion { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Producto> Productos { get; set; }

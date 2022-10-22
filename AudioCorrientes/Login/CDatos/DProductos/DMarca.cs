@@ -18,6 +18,7 @@ namespace Login.CDatos.DProductos
                 using (db = new dbAudioCorrientesEntities())
                 {
                     return db.Marcas.ToList();
+                    
                 }
             }
             catch (Exception ex)

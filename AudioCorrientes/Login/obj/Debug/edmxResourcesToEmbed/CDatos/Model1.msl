@@ -1,14 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="dbAudioCorrientesModelStoreContainer" CdmEntityContainer="dbAudioCorrientesEntities">
-    <EntitySetMapping Name="Categorias">
-      <EntityTypeMapping TypeName="dbAudioCorrientesModel.Categoria">
-        <MappingFragment StoreEntitySet="Categoria">
-          <ScalarProperty Name="id_categorias" ColumnName="id_categorias" />
-          <ScalarProperty Name="categoria1" ColumnName="categoria" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Clientes">
       <EntityTypeMapping TypeName="dbAudioCorrientesModel.Cliente">
         <MappingFragment StoreEntitySet="Clientes">
@@ -48,28 +40,6 @@
           <ScalarProperty Name="fechaIngreso" ColumnName="fechaIngreso" />
           <ScalarProperty Name="fechaNac" ColumnName="fechaNac" />
           <ScalarProperty Name="email" ColumnName="email" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Marcas">
-      <EntityTypeMapping TypeName="dbAudioCorrientesModel.Marca">
-        <MappingFragment StoreEntitySet="Marca">
-          <ScalarProperty Name="id_marcas" ColumnName="id_marcas" />
-          <ScalarProperty Name="marca1" ColumnName="marca" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Productos">
-      <EntityTypeMapping TypeName="dbAudioCorrientesModel.Producto">
-        <MappingFragment StoreEntitySet="Productos">
-          <ScalarProperty Name="id_productos" ColumnName="id_productos" />
-          <ScalarProperty Name="id_categorias" ColumnName="id_categorias" />
-          <ScalarProperty Name="id_marcas" ColumnName="id_marcas" />
-          <ScalarProperty Name="nombre" ColumnName="nombre" />
-          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
-          <ScalarProperty Name="precio" ColumnName="precio" />
-          <ScalarProperty Name="stock" ColumnName="stock" />
-          <ScalarProperty Name="estado" ColumnName="estado" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -120,6 +90,36 @@
           <ScalarProperty Name="id_cliente" ColumnName="id_cliente" />
           <ScalarProperty Name="total" ColumnName="total" />
           <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Marcas">
+      <EntityTypeMapping TypeName="dbAudioCorrientesModel.Marca">
+        <MappingFragment StoreEntitySet="Marca">
+          <ScalarProperty Name="marca_descripcion" ColumnName="marca_descripcion" />
+          <ScalarProperty Name="id_marcas" ColumnName="id_marcas" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Categorias">
+      <EntityTypeMapping TypeName="dbAudioCorrientesModel.Categoria">
+        <MappingFragment StoreEntitySet="Categoria">
+          <ScalarProperty Name="categoria_descripcion" ColumnName="categoria_descripcion" />
+          <ScalarProperty Name="id_categorias" ColumnName="id_categorias" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Productos">
+      <EntityTypeMapping TypeName="dbAudioCorrientesModel.Producto">
+        <MappingFragment StoreEntitySet="Productos">
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="stock" ColumnName="stock" />
+          <ScalarProperty Name="precio" ColumnName="precio" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="marca_id" ColumnName="marca_id" />
+          <ScalarProperty Name="categoria_id" ColumnName="categoria_id" />
+          <ScalarProperty Name="id_productos" ColumnName="id_productos" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

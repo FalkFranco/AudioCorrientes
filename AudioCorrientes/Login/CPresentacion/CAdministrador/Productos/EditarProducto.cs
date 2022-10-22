@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -39,7 +40,8 @@ namespace Login.CSuAdministrador.Productos
                     int id = Convert.ToInt32(txtIdProducto.Text);
                     int idcat = Int32.Parse(idValueCat);//De string a int para poder almacenar en la base de datos
                     int idmarca = Int32.Parse(idValueMarca);//De string a int para poder almacenar en la base de datos
-                    float precio = float.Parse(txtPrecio.Text);
+                    float precio = float.Parse(txtPrecio.Text, CultureInfo.InvariantCulture.NumberFormat);
+                    precio.ToString("0.00");
                     int stock = Int32.Parse(txtStock.Text);
                     bool estado = ValidarEstado(chbEstado);
 

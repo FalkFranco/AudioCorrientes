@@ -22,11 +22,13 @@ namespace Login.CSuAdministrador
             InitializeComponent();
         }
         //Eventos para abrir formularios
-        private void button2_Click(object sender, EventArgs e)
+        private void btnAgregar_Click(object sender, EventArgs e)
         {
             AgregarProductos formAgregarProd = new AgregarProductos();
             formAgregarProd.ShowDialog();
+            objProducto.CargarGridAdmin(dgvProductos);
         }
+
 
         private void btnAgregarCat_Click(object sender, EventArgs e)
         {
@@ -186,6 +188,12 @@ namespace Login.CSuAdministrador
         }
 
         private void MenuProductos_Load(object sender, EventArgs e)
+        {
+            objProducto.CargarGridAdmin(dgvProductos);
+            objProducto.OcultarColumnas(dgvProductos);
+        }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
         {
             objProducto.CargarGridAdmin(dgvProductos);
             objProducto.OcultarColumnas(dgvProductos);

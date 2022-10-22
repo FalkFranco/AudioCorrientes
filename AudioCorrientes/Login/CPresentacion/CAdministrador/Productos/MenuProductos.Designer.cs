@@ -65,6 +65,7 @@
             this.dataGridViewButtonColumn4 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.label3 = new System.Windows.Forms.Label();
             this.errorProviderBuscar = new System.Windows.Forms.ErrorProvider(this.components);
+            this.btnActualizar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -92,7 +93,7 @@
             this.lbProductoTitle.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbProductoTitle.Location = new System.Drawing.Point(61, 24);
             this.lbProductoTitle.Name = "lbProductoTitle";
-            this.lbProductoTitle.Size = new System.Drawing.Size(112, 25);
+            this.lbProductoTitle.Size = new System.Drawing.Size(169, 38);
             this.lbProductoTitle.TabIndex = 0;
             this.lbProductoTitle.Text = "Productos";
             // 
@@ -110,6 +111,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.btnActualizar);
             this.tabPage1.Controls.Add(this.dgvProductos);
             this.tabPage1.Controls.Add(this.chbNombre);
             this.tabPage1.Controls.Add(this.chbId);
@@ -136,6 +138,7 @@
             this.Eliminar});
             this.dgvProductos.Location = new System.Drawing.Point(26, 92);
             this.dgvProductos.Name = "dgvProductos";
+            this.dgvProductos.RowHeadersWidth = 62;
             this.dgvProductos.Size = new System.Drawing.Size(940, 403);
             this.dgvProductos.TabIndex = 20;
             this.dgvProductos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductos_CellClick);
@@ -145,6 +148,7 @@
             this.Editar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Editar.HeaderText = "Editar";
             this.Editar.Image = global::Login.Properties.Resources.editar25x25;
+            this.Editar.MinimumWidth = 8;
             this.Editar.Name = "Editar";
             // 
             // Eliminar
@@ -152,6 +156,7 @@
             this.Eliminar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.Eliminar.HeaderText = "Eliminar";
             this.Eliminar.Image = global::Login.Properties.Resources.basura25x25;
+            this.Eliminar.MinimumWidth = 8;
             this.Eliminar.Name = "Eliminar";
             this.Eliminar.Width = 49;
             // 
@@ -160,7 +165,7 @@
             this.chbNombre.AutoSize = true;
             this.chbNombre.Location = new System.Drawing.Point(241, 17);
             this.chbNombre.Name = "chbNombre";
-            this.chbNombre.Size = new System.Drawing.Size(63, 17);
+            this.chbNombre.Size = new System.Drawing.Size(70, 21);
             this.chbNombre.TabIndex = 19;
             this.chbNombre.Text = "Nombre";
             this.chbNombre.UseVisualStyleBackColor = true;
@@ -173,7 +178,7 @@
             this.chbId.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chbId.Location = new System.Drawing.Point(155, 18);
             this.chbId.Name = "chbId";
-            this.chbId.Size = new System.Drawing.Size(35, 17);
+            this.chbId.Size = new System.Drawing.Size(42, 21);
             this.chbId.TabIndex = 18;
             this.chbId.Text = "Id";
             this.chbId.UseVisualStyleBackColor = true;
@@ -216,7 +221,7 @@
             this.btnAgregar.TabIndex = 4;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
-            this.btnAgregar.Click += new System.EventHandler(this.button2_Click);
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // txtBuscar
             // 
@@ -289,27 +294,32 @@
             this.dataGridViewButtonColumn2});
             this.dataGridView2.Location = new System.Drawing.Point(26, 92);
             this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowHeadersWidth = 62;
             this.dataGridView2.Size = new System.Drawing.Size(940, 403);
             this.dataGridView2.TabIndex = 1;
             // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.HeaderText = "IdCategoria";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 8;
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.HeaderText = "Nombre";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 8;
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             // 
             // dataGridViewButtonColumn1
             // 
             this.dataGridViewButtonColumn1.HeaderText = "Editar";
+            this.dataGridViewButtonColumn1.MinimumWidth = 8;
             this.dataGridViewButtonColumn1.Name = "dataGridViewButtonColumn1";
             // 
             // dataGridViewButtonColumn2
             // 
             this.dataGridViewButtonColumn2.HeaderText = "Eliminar";
+            this.dataGridViewButtonColumn2.MinimumWidth = 8;
             this.dataGridViewButtonColumn2.Name = "dataGridViewButtonColumn2";
             // 
             // label2
@@ -374,27 +384,32 @@
             this.dataGridViewButtonColumn4});
             this.dataGridView3.Location = new System.Drawing.Point(26, 92);
             this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.RowHeadersWidth = 62;
             this.dataGridView3.Size = new System.Drawing.Size(940, 403);
             this.dataGridView3.TabIndex = 1;
             // 
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.HeaderText = "IdMarca";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 8;
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             // 
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.HeaderText = "Nombre";
+            this.dataGridViewTextBoxColumn4.MinimumWidth = 8;
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             // 
             // dataGridViewButtonColumn3
             // 
             this.dataGridViewButtonColumn3.HeaderText = "Editar";
+            this.dataGridViewButtonColumn3.MinimumWidth = 8;
             this.dataGridViewButtonColumn3.Name = "dataGridViewButtonColumn3";
             // 
             // dataGridViewButtonColumn4
             // 
             this.dataGridViewButtonColumn4.HeaderText = "Eliminar";
+            this.dataGridViewButtonColumn4.MinimumWidth = 8;
             this.dataGridViewButtonColumn4.Name = "dataGridViewButtonColumn4";
             // 
             // label3
@@ -409,6 +424,16 @@
             // errorProviderBuscar
             // 
             this.errorProviderBuscar.ContainerControl = this;
+            // 
+            // btnActualizar
+            // 
+            this.btnActualizar.Location = new System.Drawing.Point(980, 57);
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Size = new System.Drawing.Size(75, 23);
+            this.btnActualizar.TabIndex = 16;
+            this.btnActualizar.Text = "Actualizar";
+            this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // MenuProductos
             // 
@@ -475,5 +500,6 @@
         private System.Windows.Forms.DataGridView dgvProductos;
         private System.Windows.Forms.DataGridViewImageColumn Editar;
         private System.Windows.Forms.DataGridViewImageColumn Eliminar;
+        private System.Windows.Forms.Button btnActualizar;
     }
 }

@@ -24,29 +24,29 @@ INSERT INTO Clientes (dni, nombre, apellido, telefono, direccion, email, id_tipo
 INSERT INTO Clientes (dni, nombre, apellido, telefono, direccion, email, id_tipoCLiente) VALUES ('35647835', 'Juan', 'Suarez', '3794876543', 'San Martin 663', 'juansuarez@gmail.com', 1);
 
 
-INSERT INTO Marca (marca) VALUES ('Fender');
-INSERT INTO Marca (marca) VALUES ('Gibson');
-INSERT INTO Marca (marca) VALUES ('Ibanez');
-INSERT INTO Marca (marca) VALUES ('Epiphone');
-INSERT INTO Marca (marca) VALUES ('Taylor');
-INSERT INTO Marca (marca) VALUES ('Gretsch');
-INSERT INTO Marca (marca) VALUES ('Squier');
-INSERT INTO Marca (marca) VALUES ('PRS');
-INSERT INTO Marca (marca) VALUES ('Marshall');
-INSERT INTO Marca (marca) VALUES ('Boss');
-INSERT INTO Marca (marca) VALUES ('Orange');
-INSERT INTO Marca (marca) VALUES ('Vox');
+INSERT INTO Marca (marca_descripcion) VALUES ('Fender');
+INSERT INTO Marca (marca_descripcion) VALUES ('Gibson');
+INSERT INTO Marca (marca_descripcion) VALUES ('Ibanez');
+INSERT INTO Marca (marca_descripcion) VALUES ('Epiphone');
+INSERT INTO Marca (marca_descripcion) VALUES ('Taylor');
+INSERT INTO Marca (marca_descripcion) VALUES ('Gretsch');
+INSERT INTO Marca (marca_descripcion) VALUES ('Squier');
+INSERT INTO Marca (marca_descripcion) VALUES ('PRS');
+INSERT INTO Marca (marca_descripcion) VALUES ('Marshall');
+INSERT INTO Marca (marca_descripcion) VALUES ('Boss');
+INSERT INTO Marca (marca_descripcion) VALUES ('Orange');
+INSERT INTO Marca (marca_descripcion) VALUES ('Vox');
 
 
-INSERT INTO Categoria(categoria) VALUES ('Guitarra Electrica');
-INSERT INTO Categoria(categoria) VALUES ('Guitarra Acustica');
-INSERT INTO Categoria(categoria) VALUES ('Bajos');
-INSERT INTO Categoria(categoria) VALUES ('Amplificadores');
-INSERT INTO Categoria(categoria) VALUES ('Pedales');
-INSERT INTO Categoria(categoria) VALUES ('Accesorios');
+INSERT INTO Categoria(categoria_descripcion) VALUES ('Guitarra Electrica');
+INSERT INTO Categoria(categoria_descripcion) VALUES ('Guitarra Acustica');
+INSERT INTO Categoria(categoria_descripcion) VALUES ('Bajos');
+INSERT INTO Categoria(categoria_descripcion) VALUES ('Amplificadores');
+INSERT INTO Categoria(categoria_descripcion) VALUES ('Pedales');
+INSERT INTO Categoria(categoria_descripcion) VALUES ('Accesorios');
 
 INSERT INTO Productos
-(id_categorias,id_marcas,nombre,descripcion,precio,stock) 
+(categoria_id,marca_id,nombre,descripcion,precio,stock) 
 VALUES (1,1,
 'Fender Player Series Stratocaster Maple Fingerboard Electric Guitar Polar White',
 'Over the decades, players have been continually inspired by the sound of a Strat. From the clarity of the high end, through the gut punch of the mids and the solid lows,
@@ -57,7 +57,7 @@ Series Stratocaster is primed and ready to carry you along your musical voyage.'
 849.99,20);
 
 INSERT INTO Productos
-(id_categorias,id_marcas,nombre,descripcion,precio,stock) 
+(categoria_id,marca_id,nombre,descripcion,precio,stock) 
 VALUES (1,1,
 'Fender Player Telecaster Maple Fingerboard Electric Guitar Butterscotch Blonde',
 'From a whisper to a scream, from pure country twang to serious rock and roll�even jazz�there 
@@ -69,7 +69,7 @@ tone and vibe.',
 
 
 INSERT INTO Productos
-(id_categorias,id_marcas,nombre,descripcion,precio,stock) 
+(categoria_id,marca_id,nombre,descripcion,precio,stock) 
 VALUES (1,1,
 'Gibson Les Paul Traditional Pro V Flame Top Electric Guitar Washed Cherry Burst',
 'The Gibson Les Paul Traditional PRO V, commonly referred to as the �Trad PRO V.� brings Gibson tradition together with a unique feature set. 
@@ -77,7 +77,7 @@ Designed to make a must-have instrument for players who desire that classic Les 
 3099,20);
 
 INSERT INTO Productos
-(id_categorias,id_marcas,nombre,descripcion,precio,stock) 
+(categoria_id,marca_id,nombre,descripcion,precio,stock) 
 VALUES (2,5,
 'Taylor 214ce Rosewood Grand Auditorium Acoustic-Electric Guitar Natural',
 'Taylor 200 Series delivers all the essentials of a great guitar: exquisite playability, a full and articulate voice, 

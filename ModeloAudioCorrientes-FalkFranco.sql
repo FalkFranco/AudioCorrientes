@@ -1,4 +1,5 @@
 --CREATE DATABASE AudioCorrientes
+--DROP DATABASE AudioCorrientes
 USE AudioCorrientes
 
 
@@ -25,28 +26,29 @@ CREATE TABLE Clientes (
 	CONSTRAINT CK_telefono CHECK (len(telefono) = 10)
 );
 
+
 CREATE TABLE Categoria(
 	id_categorias INT PRIMARY KEY IDENTITY,
-	categoria VARCHAR(40) UNIQUE NOT NULL
+	categoria_descripcion VARCHAR(40) UNIQUE NOT NULL
 );
 
 CREATE TABLE Marca(
 	id_marcas INT PRIMARY KEY IDENTITY,
-	marca VARCHAR(40) UNIQUE NOT NULL,
-	CONSTRAINT UQ_marca UNIQUE (marca)
+	marca_descripcion VARCHAR(40) UNIQUE NOT NULL,
+	CONSTRAINT UQ_marca UNIQUE (marca_descripcion)
 );
 
 CREATE TABLE Productos(
 	id_productos INT PRIMARY KEY IDENTITY,
-	id_categorias INT NOT NULL,
-	id_marcas INT NOT NULL,
+	categoria_id INT NOT NULL,
+	marca_id INT NOT NULL,
 	nombre VARCHAR(100) NOT NULL,
 	descripcion VARCHAR(900) NOT NULL,
 	precio FLOAT NOT NULL,
 	stock INT NOT NULL,
 	estado BIT NOT NULL DEFAULT 1,
-	CONSTRAINT FK_Producto_Categoria FOREIGN KEY (id_categorias)  REFERENCES Categoria(id_categorias),
-	CONSTRAINT FK_Producto_Marca FOREIGN KEY (id_marcas)  REFERENCES Marca(id_marcas)
+	CONSTRAINT FK_Producto_Categoria FOREIGN KEY (categoria_id)  REFERENCES Categoria(id_categorias),
+	CONSTRAINT FK_Producto_Marca FOREIGN KEY (marca_id)  REFERENCES Marca(id_marcas)
 )
 
 --ALTER TABLE Productos

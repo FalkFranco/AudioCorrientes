@@ -1,4 +1,5 @@
 ﻿using Login.CNegocio;
+using Login.CVendedor.Clientes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,7 +19,7 @@ namespace Login.CSuAdministrador.Empleados
         {
             InitializeComponent();
         }
-
+        NEmpleado objEmpleado = new NEmpleado();
         private void btnAgregarEmpleado_Click(object sender, EventArgs e)
         {
             BorrarMensajeProvider();
@@ -28,13 +29,24 @@ namespace Login.CSuAdministrador.Empleados
                 DialogResult result;
 
                 // Displays the MessageBox.
-                result = MessageBox.Show("Desea agregar un nuevo empleado?", "Agregar Empleado", buttons, MessageBoxIcon.Exclamation);
+                result = MessageBox.Show("Desea agregar un nuevo Empleado?", "Agregar Empleado", buttons, MessageBoxIcon.Exclamation);
                 if (result == System.Windows.Forms.DialogResult.Yes)
                 {
-                    MessageBox.Show("Empleado Agregado");
+                    DateTime fechaIngreso = Convert.ToDateTime(dtpFechaIngreso.Value.Date.ToString("d"));
+
+                    DateTime fechaNac = Convert.ToDateTime(dtpFechaNac.Value.Date.ToString("d"));
+                    if (objEmpleado.AgregarEmpleado(txtDni.Text, txtNombre.Text, txtApellido.Text, txtTel.Text, txtDireccion.Text, txtEmail.Text, fechaIngreso, fechaNac))
+                    {
+                        MessageBox.Show("El Empleado se registró correctamente", "Empleado Registrado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("El Empleado ya existe", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        txtDni.Focus();
+                    }
                     //limpiarFormulario();
                 }
-
             }
         }
         private bool ValidarCampos()
@@ -73,6 +85,18 @@ namespace Login.CSuAdministrador.Empleados
                 ok = false;
                 errorProviderAgregarEmpleado.SetError(txtDireccion, msg);
             }
+            if (txtEmail.Text == "")
+            {
+                ok = false;
+                errorProviderAgregarEmpleado.SetError(txtDireccion, msg);
+            }
+            if (FormAgregarCliente.ValidarEmail(txtEmail.Text) == false)
+            {
+                ok = false;
+                errorProviderAgregarEmpleado.SetError(txtEmail, "Ingrese un email valido");
+            }
+
+
             //Dni con 8 Caracteres
 
             if (txtDni.Text.Length != 8 || userVal < 10000000)
@@ -138,5 +162,7 @@ namespace Login.CSuAdministrador.Empleados
         {
             this.Close();
         }
+
+
     }
 }

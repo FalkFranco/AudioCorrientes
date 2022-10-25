@@ -27,7 +27,6 @@ namespace Login.CDatos
     
         public virtual DbSet<Cliente> Clientes { get; set; }
         public virtual DbSet<DetalleVenta> DetalleVentas { get; set; }
-        public virtual DbSet<Empleado> Empleados { get; set; }
         public virtual DbSet<Role> Roles { get; set; }
         public virtual DbSet<TipoCliente> TipoClientes { get; set; }
         public virtual DbSet<TipoFactura> TipoFacturas { get; set; }
@@ -36,5 +35,6 @@ namespace Login.CDatos
         public virtual DbSet<Marca> Marcas { get; set; }
         public virtual DbSet<Categoria> Categorias { get; set; }
         public virtual DbSet<Producto> Productos { get; set; }
+        public virtual DbSet<Empleado> Empleados { get; set; }
     }
 }

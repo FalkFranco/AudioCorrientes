@@ -36,7 +36,7 @@
       <PropertyRef Name="id_empleado" />
     </Key>
     <Property Name="id_empleado" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="dni" Type="int" Nullable="false" />
+    <Property Name="dni" Type="varchar" MaxLength="8" Nullable="false" />
     <Property Name="nombre" Type="varchar" MaxLength="25" Nullable="false" />
     <Property Name="apellido" Type="varchar" MaxLength="25" Nullable="false" />
     <Property Name="telefono" Type="varchar" MaxLength="30" Nullable="false" />

@@ -31,7 +31,7 @@ namespace Login.CDatos
         public virtual Cliente Cliente { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DetalleVenta> DetalleVentas { get; set; }
-        public virtual Empleado Empleado { get; set; }
         public virtual TipoFactura TipoFactura { get; set; }
+        public virtual Empleado Empleado { get; set; }
     }
 }

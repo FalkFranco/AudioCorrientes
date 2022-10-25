@@ -41,7 +41,7 @@
             <PropertyRef Name="id_empleado" />
           </Key>
           <Property Name="id_empleado" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="dni" Type="int" Nullable="false" />
+          <Property Name="dni" Type="varchar" MaxLength="8" Nullable="false" />
           <Property Name="nombre" Type="varchar" MaxLength="25" Nullable="false" />
           <Property Name="apellido" Type="varchar" MaxLength="25" Nullable="false" />
           <Property Name="telefono" Type="varchar" MaxLength="30" Nullable="false" />
@@ -321,23 +321,6 @@
           <NavigationProperty Name="Venta" Relationship="Self.FK_Detalle_Venta" FromRole="DetalleVenta" ToRole="Ventas" />
           <NavigationProperty Name="Producto" Relationship="dbAudioCorrientesModel.FK_Detalle_Producto" FromRole="DetalleVenta" ToRole="Producto" />
         </EntityType>
-        <EntityType Name="Empleado">
-          <Key>
-            <PropertyRef Name="id_empleado" />
-          </Key>
-          <Property Name="id_empleado" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="dni" Type="Int32" Nullable="false" />
-          <Property Name="nombre" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="apellido" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="telefono" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="direccion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="activo" Type="Boolean" Nullable="false" />
-          <Property Name="fechaIngreso" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="fechaNac" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="email" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Usuarios" Relationship="Self.FK_Usuario_Empleado" FromRole="Empleados" ToRole="Usuarios" />
-          <NavigationProperty Name="Ventas" Relationship="Self.FK_Venta_Empleado" FromRole="Empleados" ToRole="Ventas" />
-        </EntityType>
         <EntityType Name="Role">
           <Key>
             <PropertyRef Name="id_rol" />
@@ -373,8 +356,8 @@
           <Property Name="contrasena" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="id_rol" Type="Int32" Nullable="false" />
           <Property Name="activo" Type="Boolean" />
-          <NavigationProperty Name="Empleado" Relationship="Self.FK_Usuario_Empleado" FromRole="Usuarios" ToRole="Empleados" />
           <NavigationProperty Name="Role" Relationship="Self.FK_Usuario_Rol" FromRole="Usuarios" ToRole="Roles" />
+          <NavigationProperty Name="Empleado" Relationship="dbAudioCorrientesModel.FK_Usuario_Empleado" FromRole="Usuario" ToRole="Empleado" />
         </EntityType>
         <EntityType Name="Venta">
           <Key>
@@ -389,8 +372,8 @@
           <Property Name="estado" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="Cliente" Relationship="Self.FK_Venta_Cliente" FromRole="Ventas" ToRole="Clientes" />
           <NavigationProperty Name="DetalleVentas" Relationship="Self.FK_Detalle_Venta" FromRole="Ventas" ToRole="DetalleVenta" />
-          <NavigationProperty Name="Empleado" Relationship="Self.FK_Venta_Empleado" FromRole="Ventas" ToRole="Empleados" />
           <NavigationProperty Name="TipoFactura" Relationship="Self.FK_Venta_TipoFactura" FromRole="Ventas" ToRole="TipoFactura" />
+          <NavigationProperty Name="Empleado" Relationship="dbAudioCorrientesModel.FK_Venta_Empleado" FromRole="Venta" ToRole="Empleado" />
         </EntityType>
         <Association Name="FK_Cliente_TipoCliente">
           <End Role="TipoCliente" Type="Self.TipoCliente" Multiplicity="1" />
@@ -428,30 +411,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Usuario_Empleado">
-          <End Role="Empleados" Type="Self.Empleado" Multiplicity="1" />
-          <End Role="Usuarios" Type="Self.Usuario" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Empleados">
-              <PropertyRef Name="id_empleado" />
-            </Principal>
-            <Dependent Role="Usuarios">
-              <PropertyRef Name="id_empleado" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Venta_Empleado">
-          <End Role="Empleados" Type="Self.Empleado" Multiplicity="1" />
-          <End Role="Ventas" Type="Self.Venta" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Empleados">
-              <PropertyRef Name="id_empleado" />
-            </Principal>
-            <Dependent Role="Ventas">
-              <PropertyRef Name="id_empleado" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Usuario_Rol">
           <End Role="Roles" Type="Self.Role" Multiplicity="1" />
           <End Role="Usuarios" Type="Self.Usuario" Multiplicity="*" />
@@ -479,7 +438,6 @@
         <EntityContainer Name="dbAudioCorrientesEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Clientes" EntityType="Self.Cliente" />
           <EntitySet Name="DetalleVentas" EntityType="Self.DetalleVenta" />
-          <EntitySet Name="Empleados" EntityType="Self.Empleado" />
           <EntitySet Name="Roles" EntityType="Self.Role" />
           <EntitySet Name="TipoClientes" EntityType="Self.TipoCliente" />
           <EntitySet Name="TipoFacturas" EntityType="Self.TipoFactura" />
@@ -496,14 +454,6 @@
           <AssociationSet Name="FK_Detalle_Venta" Association="Self.FK_Detalle_Venta">
             <End Role="Ventas" EntitySet="Ventas" />
             <End Role="DetalleVenta" EntitySet="DetalleVentas" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Usuario_Empleado" Association="Self.FK_Usuario_Empleado">
-            <End Role="Empleados" EntitySet="Empleados" />
-            <End Role="Usuarios" EntitySet="Usuarios" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Venta_Empleado" Association="Self.FK_Venta_Empleado">
-            <End Role="Empleados" EntitySet="Empleados" />
-            <End Role="Ventas" EntitySet="Ventas" />
           </AssociationSet>
           <AssociationSet Name="FK_Usuario_Rol" Association="Self.FK_Usuario_Rol">
             <End Role="Roles" EntitySet="Roles" />
@@ -527,6 +477,15 @@
           <AssociationSet Name="FK_Producto_Marca" Association="dbAudioCorrientesModel.FK_Producto_Marca">
             <End Role="Marca" EntitySet="Marcas" />
             <End Role="Producto" EntitySet="Productos" />
+          </AssociationSet>
+          <EntitySet Name="Empleados" EntityType="dbAudioCorrientesModel.Empleado" />
+          <AssociationSet Name="FK_Usuario_Empleado" Association="dbAudioCorrientesModel.FK_Usuario_Empleado">
+            <End Role="Empleado" EntitySet="Empleados" />
+            <End Role="Usuario" EntitySet="Usuarios" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Venta_Empleado" Association="dbAudioCorrientesModel.FK_Venta_Empleado">
+            <End Role="Empleado" EntitySet="Empleados" />
+            <End Role="Venta" EntitySet="Ventas" />
           </AssociationSet>
           </EntityContainer>
         <EntityType Name="Marca">
@@ -597,6 +556,47 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="Empleado">
+          <Key>
+            <PropertyRef Name="id_empleado" />
+          </Key>
+          <Property Name="id_empleado" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="dni" Type="String" Nullable="false" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="nombre" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="apellido" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="telefono" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="direccion" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="activo" Type="Boolean" Nullable="false" />
+          <Property Name="fechaIngreso" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="fechaNac" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="email" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Usuarios" Relationship="dbAudioCorrientesModel.FK_Usuario_Empleado" FromRole="Empleado" ToRole="Usuario" />
+          <NavigationProperty Name="Ventas" Relationship="dbAudioCorrientesModel.FK_Venta_Empleado" FromRole="Empleado" ToRole="Venta" />
+        </EntityType>
+        <Association Name="FK_Usuario_Empleado">
+          <End Type="dbAudioCorrientesModel.Empleado" Role="Empleado" Multiplicity="1" />
+          <End Type="dbAudioCorrientesModel.Usuario" Role="Usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empleado">
+              <PropertyRef Name="id_empleado" />
+            </Principal>
+            <Dependent Role="Usuario">
+              <PropertyRef Name="id_empleado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Venta_Empleado">
+          <End Type="dbAudioCorrientesModel.Empleado" Role="Empleado" Multiplicity="1" />
+          <End Type="dbAudioCorrientesModel.Venta" Role="Venta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empleado">
+              <PropertyRef Name="id_empleado" />
+            </Principal>
+            <Dependent Role="Venta">
+              <PropertyRef Name="id_empleado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -626,22 +626,6 @@
                 <ScalarProperty Name="precioVenta" ColumnName="precioVenta" />
                 <ScalarProperty Name="cantidad" ColumnName="cantidad" />
                 <ScalarProperty Name="subtotal" ColumnName="subtotal" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Empleados">
-            <EntityTypeMapping TypeName="dbAudioCorrientesModel.Empleado">
-              <MappingFragment StoreEntitySet="Empleados">
-                <ScalarProperty Name="id_empleado" ColumnName="id_empleado" />
-                <ScalarProperty Name="dni" ColumnName="dni" />
-                <ScalarProperty Name="nombre" ColumnName="nombre" />
-                <ScalarProperty Name="apellido" ColumnName="apellido" />
-                <ScalarProperty Name="telefono" ColumnName="telefono" />
-                <ScalarProperty Name="direccion" ColumnName="direccion" />
-                <ScalarProperty Name="activo" ColumnName="activo" />
-                <ScalarProperty Name="fechaIngreso" ColumnName="fechaIngreso" />
-                <ScalarProperty Name="fechaNac" ColumnName="fechaNac" />
-                <ScalarProperty Name="email" ColumnName="email" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -722,6 +706,22 @@
                 <ScalarProperty Name="marca_id" ColumnName="marca_id" />
                 <ScalarProperty Name="categoria_id" ColumnName="categoria_id" />
                 <ScalarProperty Name="id_productos" ColumnName="id_productos" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Empleados">
+            <EntityTypeMapping TypeName="dbAudioCorrientesModel.Empleado">
+              <MappingFragment StoreEntitySet="Empleados">
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="fechaNac" ColumnName="fechaNac" />
+                <ScalarProperty Name="fechaIngreso" ColumnName="fechaIngreso" />
+                <ScalarProperty Name="activo" ColumnName="activo" />
+                <ScalarProperty Name="direccion" ColumnName="direccion" />
+                <ScalarProperty Name="telefono" ColumnName="telefono" />
+                <ScalarProperty Name="apellido" ColumnName="apellido" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="dni" ColumnName="dni" />
+                <ScalarProperty Name="id_empleado" ColumnName="id_empleado" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

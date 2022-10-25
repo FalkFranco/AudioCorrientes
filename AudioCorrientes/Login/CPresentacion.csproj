@@ -67,6 +67,7 @@
     <Compile Include="CDatos\Cliente.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="CDatos\DEmpleados\DEmpleados.cs" />
     <Compile Include="CDatos\DetalleVenta.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -115,6 +116,7 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="CNegocio\NCliente.cs" />
+    <Compile Include="CNegocio\NEmpleado.cs" />
     <Compile Include="CNegocio\NProductos.cs" />
     <Compile Include="CPresentacion\CAdministrador\MenuPrincipalAdministrador.cs">
       <SubType>Form</SubType>
@@ -541,7 +543,7 @@
     <None Include="Resources\editar.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="CDatos\CEmpleados\" />
+    <Folder Include="CDatos\DUsuarios\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

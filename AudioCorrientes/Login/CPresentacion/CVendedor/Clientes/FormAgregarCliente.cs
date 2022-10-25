@@ -21,7 +21,6 @@ namespace Login.CVendedor.Clientes
             InitializeComponent();
         }
         NCliente objCliente = new NCliente();
-        Dclientes datos = new Dclientes();
         string idValue = "";
         private void FormAgregarCliente_Load(object sender, EventArgs e)
         {
@@ -121,7 +120,7 @@ namespace Login.CVendedor.Clientes
 
                 return ok;
         }
-        private void BorrarMensajeProvider()
+        public void BorrarMensajeProvider()
         {
             errorProvider1.SetError(txtDni, "");
             errorProvider1.SetError(txtNombre, "");

@@ -21,7 +21,7 @@ namespace Login.CDatos
         public int id_rol { get; set; }
         public Nullable<bool> activo { get; set; }
     
-        public virtual Empleado Empleado { get; set; }
         public virtual Role Role { get; set; }
+        public virtual Empleado Empleado { get; set; }
     }
 }

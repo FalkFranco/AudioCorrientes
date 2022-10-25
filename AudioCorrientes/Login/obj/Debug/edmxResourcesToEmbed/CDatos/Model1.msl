@@ -27,22 +27,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Empleados">
-      <EntityTypeMapping TypeName="dbAudioCorrientesModel.Empleado">
-        <MappingFragment StoreEntitySet="Empleados">
-          <ScalarProperty Name="id_empleado" ColumnName="id_empleado" />
-          <ScalarProperty Name="dni" ColumnName="dni" />
-          <ScalarProperty Name="nombre" ColumnName="nombre" />
-          <ScalarProperty Name="apellido" ColumnName="apellido" />
-          <ScalarProperty Name="telefono" ColumnName="telefono" />
-          <ScalarProperty Name="direccion" ColumnName="direccion" />
-          <ScalarProperty Name="activo" ColumnName="activo" />
-          <ScalarProperty Name="fechaIngreso" ColumnName="fechaIngreso" />
-          <ScalarProperty Name="fechaNac" ColumnName="fechaNac" />
-          <ScalarProperty Name="email" ColumnName="email" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Roles">
       <EntityTypeMapping TypeName="dbAudioCorrientesModel.Role">
         <MappingFragment StoreEntitySet="Roles">
@@ -120,6 +104,22 @@
           <ScalarProperty Name="marca_id" ColumnName="marca_id" />
           <ScalarProperty Name="categoria_id" ColumnName="categoria_id" />
           <ScalarProperty Name="id_productos" ColumnName="id_productos" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Empleados">
+      <EntityTypeMapping TypeName="dbAudioCorrientesModel.Empleado">
+        <MappingFragment StoreEntitySet="Empleados">
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="fechaNac" ColumnName="fechaNac" />
+          <ScalarProperty Name="fechaIngreso" ColumnName="fechaIngreso" />
+          <ScalarProperty Name="activo" ColumnName="activo" />
+          <ScalarProperty Name="direccion" ColumnName="direccion" />
+          <ScalarProperty Name="telefono" ColumnName="telefono" />
+          <ScalarProperty Name="apellido" ColumnName="apellido" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="dni" ColumnName="dni" />
+          <ScalarProperty Name="id_empleado" ColumnName="id_empleado" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

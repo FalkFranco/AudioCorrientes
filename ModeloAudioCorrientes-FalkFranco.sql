@@ -64,7 +64,7 @@ CREATE TABLE Roles(
 
 CREATE TABLE Empleados(
 	id_empleado INT PRIMARY KEY IDENTITY,
-	dni INT NOT NULL,
+	dni VARCHAR(8)NOT NULL,
 	nombre VARCHAR(25) NOT NULL,
 	apellido VARCHAR(25) NOT NULL,
 	telefono VARCHAR(30) NOT NULL,

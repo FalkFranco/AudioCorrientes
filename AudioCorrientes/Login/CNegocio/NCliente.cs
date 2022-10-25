@@ -40,6 +40,7 @@ namespace Login.CNegocio
             dgv.Columns["Seleccionar"].DisplayIndex = 10;
         }
 
+        
 
         public void CargarGridDni(DataGridView dgv, String dni)
         {

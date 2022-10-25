@@ -44,13 +44,17 @@
             this.txtTel = new System.Windows.Forms.TextBox();
             this.errorProviderAgregarEmpleado = new System.Windows.Forms.ErrorProvider(this.components);
             this.label4 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpFechaNac = new System.Windows.Forms.DateTimePicker();
+            this.dtpFechaIngreso = new System.Windows.Forms.DateTimePicker();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtEmail = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderAgregarEmpleado)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSalirMenuPrincipal
             // 
-            this.btnSalirMenuPrincipal.Location = new System.Drawing.Point(273, 319);
+            this.btnSalirMenuPrincipal.Location = new System.Drawing.Point(273, 400);
             this.btnSalirMenuPrincipal.Name = "btnSalirMenuPrincipal";
             this.btnSalirMenuPrincipal.Size = new System.Drawing.Size(200, 44);
             this.btnSalirMenuPrincipal.TabIndex = 34;
@@ -60,7 +64,7 @@
             // 
             // btnAgregarEmpleado
             // 
-            this.btnAgregarEmpleado.Location = new System.Drawing.Point(42, 319);
+            this.btnAgregarEmpleado.Location = new System.Drawing.Point(42, 400);
             this.btnAgregarEmpleado.Name = "btnAgregarEmpleado";
             this.btnAgregarEmpleado.Size = new System.Drawing.Size(200, 44);
             this.btnAgregarEmpleado.TabIndex = 33;
@@ -71,7 +75,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(270, 112);
+            this.label6.Location = new System.Drawing.Point(39, 231);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(44, 13);
             this.label6.TabIndex = 28;
@@ -80,7 +84,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(39, 231);
+            this.label5.Location = new System.Drawing.Point(39, 171);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(44, 13);
             this.label5.TabIndex = 27;
@@ -97,7 +101,7 @@
             // 
             // txtApellido
             // 
-            this.txtApellido.Location = new System.Drawing.Point(273, 128);
+            this.txtApellido.Location = new System.Drawing.Point(42, 247);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(200, 20);
             this.txtApellido.TabIndex = 22;
@@ -105,7 +109,7 @@
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(42, 247);
+            this.txtNombre.Location = new System.Drawing.Point(42, 187);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(200, 20);
             this.txtNombre.TabIndex = 21;
@@ -141,7 +145,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(39, 168);
+            this.label9.Location = new System.Drawing.Point(270, 112);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(49, 13);
             this.label9.TabIndex = 37;
@@ -156,7 +160,7 @@
             // 
             // txtTel
             // 
-            this.txtTel.Location = new System.Drawing.Point(42, 184);
+            this.txtTel.Location = new System.Drawing.Point(273, 128);
             this.txtTel.Name = "txtTel";
             this.txtTel.Size = new System.Drawing.Size(200, 20);
             this.txtTel.TabIndex = 35;
@@ -175,19 +179,57 @@
             this.label4.TabIndex = 40;
             this.label4.Text = "Fecha Nacimiento";
             // 
-            // dateTimePicker1
+            // dtpFechaNac
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(273, 247);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 41;
+            this.dtpFechaNac.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaNac.Location = new System.Drawing.Point(273, 247);
+            this.dtpFechaNac.Name = "dtpFechaNac";
+            this.dtpFechaNac.Size = new System.Drawing.Size(200, 20);
+            this.dtpFechaNac.TabIndex = 41;
+            // 
+            // dtpFechaIngreso
+            // 
+            this.dtpFechaIngreso.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaIngreso.Location = new System.Drawing.Point(273, 307);
+            this.dtpFechaIngreso.Name = "dtpFechaIngreso";
+            this.dtpFechaIngreso.Size = new System.Drawing.Size(200, 20);
+            this.dtpFechaIngreso.TabIndex = 43;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(270, 291);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(75, 13);
+            this.label7.TabIndex = 42;
+            this.label7.Text = "Fecha Ingreso";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(39, 291);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(32, 13);
+            this.label8.TabIndex = 45;
+            this.label8.Text = "Email";
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Location = new System.Drawing.Point(42, 307);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(200, 20);
+            this.txtEmail.TabIndex = 44;
             // 
             // AgregarEmpleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(529, 385);
-            this.Controls.Add(this.dateTimePicker1);
+            this.ClientSize = new System.Drawing.Size(529, 471);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.txtEmail);
+            this.Controls.Add(this.dtpFechaIngreso);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.dtpFechaNac);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label9);
@@ -226,7 +268,11 @@
         private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.TextBox txtTel;
         private System.Windows.Forms.ErrorProvider errorProviderAgregarEmpleado;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpFechaNac;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DateTimePicker dtpFechaIngreso;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txtEmail;
     }
 }

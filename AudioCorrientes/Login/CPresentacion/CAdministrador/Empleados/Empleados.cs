@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Login.CDatos;
+using Login.CNegocio;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,6 +18,8 @@ namespace Login.CSuAdministrador.Empleados
         {
             InitializeComponent();
         }
+
+        NEmpleado objEmpleado = new NEmpleado();
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
@@ -75,6 +79,7 @@ namespace Login.CSuAdministrador.Empleados
         {
             AgregarEmpleados agregarEmpleados = new AgregarEmpleados();
             agregarEmpleados.ShowDialog();
+            objEmpleado.CargarGrid(dgvEmpleados);
         }
 
 
@@ -120,6 +125,18 @@ namespace Login.CSuAdministrador.Empleados
                     e.Handled = true;
                 }
             }
+        }
+
+        private void Empleados_Load(object sender, EventArgs e)
+        {
+            objEmpleado.CargarGrid(dgvEmpleados);
+            objEmpleado.OcultarColumnas(dgvEmpleados);
+        }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            objEmpleado.CargarGrid(dgvEmpleados);
+            objEmpleado.OcultarColumnas(dgvEmpleados);
         }
     }
 }

@@ -33,7 +33,6 @@ namespace Login.CSuAdministrador.Empleados
                 if (result == System.Windows.Forms.DialogResult.Yes)
                 {
                     DateTime fechaIngreso = Convert.ToDateTime(dtpFechaIngreso.Value.Date.ToString("d"));
-
                     DateTime fechaNac = Convert.ToDateTime(dtpFechaNac.Value.Date.ToString("d"));
                     if (objEmpleado.AgregarEmpleado(txtDni.Text, txtNombre.Text, txtApellido.Text, txtTel.Text, txtDireccion.Text, txtEmail.Text, fechaIngreso, fechaNac))
                     {

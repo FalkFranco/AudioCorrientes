@@ -1,5 +1,7 @@
 ﻿using Login.CDatos;
+using Login.CDatos.DProductos;
 using Login.CNegocio;
+using Login.CSuAdministrador.Productos;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -27,12 +29,6 @@ namespace Login.CSuAdministrador.Empleados
             agregarEmpleados.Show();
         }
 
-        private void btnEditar_Click(object sender, EventArgs e)
-        {
-            EditarEmpleados editarEmpleados = new EditarEmpleados();
-            editarEmpleados.Show();
-        }
-
         private void btnAgregarROL_Click(object sender, EventArgs e)
         {
             AgregarRol agregarRol = new AgregarRol();
@@ -58,20 +54,6 @@ namespace Login.CSuAdministrador.Empleados
             if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
             {
                 e.Handled = true;
-            }
-        }
-
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
-            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
-            DialogResult result;
-
-            // Displays the MessageBox.
-            result = MessageBox.Show("Desea Eliminar el Empleado ....?", "Eliminar Empleado", buttons, MessageBoxIcon.Warning);
-            if (result == System.Windows.Forms.DialogResult.Yes)
-            {
-                MessageBox.Show("Empleado Eliminado");
-                //limpiarFormulario();
             }
         }
 
@@ -137,6 +119,33 @@ namespace Login.CSuAdministrador.Empleados
         {
             objEmpleado.CargarGrid(dgvEmpleados);
             objEmpleado.OcultarColumnas(dgvEmpleados);
+        }
+
+        int Id;
+        private void dgvEmpleados_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result;
+
+            if (dgvEmpleados.Columns[e.ColumnIndex].Name == "Editar")
+            {
+                Id = Convert.ToInt32(dgvEmpleados.CurrentRow.Cells["id_empleado"].Value.ToString());
+                EditarEmpleados FormEdit = new EditarEmpleados(Id);
+                FormEdit.ShowDialog();
+                objEmpleado.CargarGrid(dgvEmpleados);
+            }
+            if (dgvEmpleados.Columns[e.ColumnIndex].Name == "Eliminar")
+            {
+                Id = Convert.ToInt32(dgvEmpleados.CurrentRow.Cells["id_empleado"].Value.ToString());
+                result = MessageBox.Show("Desea eliminar el Cliente?\n Se eliminara de forma permanente", "Eliminar Cliente", buttons, MessageBoxIcon.Exclamation);
+                if (result == System.Windows.Forms.DialogResult.Yes)
+                {
+                    //Eliminar (Cambiar Estado)
+                    //objProducto.EliminarCliente(Id);
+                    //MessageBox.Show("Cliente eliminado con Exito", "Eliminar Cliente Exitoso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    //objProducto.CargarGrid(dgvProductos);
+                }
+            }
         }
     }
 }

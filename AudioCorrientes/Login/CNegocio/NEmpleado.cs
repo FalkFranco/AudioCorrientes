@@ -81,7 +81,7 @@ namespace Login.CNegocio
         }
 
 
-        public void CargarFormEditar(int pId, TextBox id, TextBox dni, TextBox nom, TextBox ape, TextBox tel, TextBox direc, TextBox email, DateTime fechaIngreso, DateTime fechaNac, CheckBox activo)
+        public void CargarFormEditar(int pId, TextBox id, TextBox dni, TextBox nom, TextBox ape, TextBox tel, TextBox direc, TextBox email, DateTimePicker fechaIngreso, DateTimePicker fechaNac, CheckBox activo)
         {
             var Lst = datos.Buscar(pId);
             if (Lst.Count > 0)
@@ -94,15 +94,15 @@ namespace Login.CNegocio
                     ape.Text = empleado.apellido;
                     tel.Text = empleado.telefono;
                     direc.Text = empleado.direccion;
-                    fechaIngreso = empleado.fechaIngreso;
-                    fechaNac = empleado.fechaNac;
+                    fechaIngreso.Value = empleado.fechaIngreso;
+                    fechaNac.Value = empleado.fechaNac;
                     email.Text = empleado.email;
                     activo.Checked = empleado.activo;
                 }
             }
         }
 
-        public bool EditarCliente(int id, string dni, string nombre, string apellido, string tel, string direc, string email, DateTime fechaIngreso, DateTime fechaNac, bool activo)
+        public bool EditarEmpleado(int id, string dni, string nombre, string apellido, string tel, string direc, string email, DateTime fechaIngreso, DateTime fechaNac, bool activo)
         {
             //int idTipoInt = Int32.Parse(idTipo);//De string a int para poder almacenar en la base de datos
             empleado.id_empleado = id;

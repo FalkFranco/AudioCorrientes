@@ -10,12 +10,10 @@
         <EntityTypeShape EntityType="dbAudioCorrientesModel.Role" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="dbAudioCorrientesModel.TipoCliente" Width="1.5" PointX="1.375" PointY="8.5" IsExpanded="true" />
         <EntityTypeShape EntityType="dbAudioCorrientesModel.TipoFactura" Width="1.5" PointX="3.75" PointY="1.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbAudioCorrientesModel.Usuario" Width="1.5" PointX="3" PointY="4.25" IsExpanded="true" />
         <EntityTypeShape EntityType="dbAudioCorrientesModel.Venta" Width="1.5" PointX="6" PointY="4" IsExpanded="true" />
         <AssociationConnector Association="dbAudioCorrientesModel.FK_Cliente_TipoCliente" ManuallyRouted="false" />
         <AssociationConnector Association="dbAudioCorrientesModel.FK_Venta_Cliente" ManuallyRouted="false" />
         <AssociationConnector Association="dbAudioCorrientesModel.FK_Detalle_Venta" ManuallyRouted="false" />
-        <AssociationConnector Association="dbAudioCorrientesModel.FK_Usuario_Rol" ManuallyRouted="false" />
         <AssociationConnector Association="dbAudioCorrientesModel.FK_Venta_TipoFactura" ManuallyRouted="false" />
         <EntityTypeShape EntityType="dbAudioCorrientesModel.Marca" Width="1.5" PointX="6.375" PointY="0.875" />
         <EntityTypeShape EntityType="dbAudioCorrientesModel.Categoria" Width="1.5" PointX="8.375" PointY="0.875" />
@@ -24,8 +22,10 @@
         <AssociationConnector Association="dbAudioCorrientesModel.FK_Detalle_Producto" />
         <AssociationConnector Association="dbAudioCorrientesModel.FK_Producto_Marca" />
         <EntityTypeShape EntityType="dbAudioCorrientesModel.Empleado" Width="1.5" PointX="0.75" PointY="3.875" />
-        <AssociationConnector Association="dbAudioCorrientesModel.FK_Usuario_Empleado" />
         <AssociationConnector Association="dbAudioCorrientesModel.FK_Venta_Empleado" />
+        <EntityTypeShape EntityType="dbAudioCorrientesModel.Usuario" Width="1.5" PointX="3" PointY="4.75" />
+        <AssociationConnector Association="dbAudioCorrientesModel.FK_Usuario_Empleado" />
+        <AssociationConnector Association="dbAudioCorrientesModel.FK_Usuario_Rol" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

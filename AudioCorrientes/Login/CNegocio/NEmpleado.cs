@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace Login.CNegocio
 {
@@ -37,11 +38,24 @@ namespace Login.CNegocio
             dgv.Columns["email"].DisplayIndex = 9;
             dgv.Columns["Editar"].DisplayIndex = 10;
             dgv.Columns["Eliminar"].DisplayIndex = 11;
-            dgv.Columns["Seleccionar"].DisplayIndex = 12;
+            dgv.Columns["Activar"].DisplayIndex = 12;
         }
         public void OcultarColumnas(DataGridView dgv)
         {
             dgv.Columns["Seleccionar"].Visible = false;
+            dgv.Columns["Usuarios"].Visible = false;
+            dgv.Columns["Ventas"].Visible = false;
+        }
+        public void OcultarColumnasSuAdmin(DataGridView dgv)
+        {
+            dgv.Columns["telefono"].Visible = false;
+            dgv.Columns["direccion"].Visible = false;
+            dgv.Columns["activo"].Visible = false;
+            dgv.Columns["fechaIngreso"].Visible = false;
+            dgv.Columns["fechaNac"].Visible = false;
+            dgv.Columns["email"].Visible = false;
+            dgv.Columns["Editar"].Visible = false;
+            dgv.Columns["Eliminar"].Visible = false;
             dgv.Columns["Usuarios"].Visible = false;
             dgv.Columns["Ventas"].Visible = false;
         }
@@ -98,6 +112,22 @@ namespace Login.CNegocio
                     fechaNac.Value = empleado.fechaNac;
                     email.Text = empleado.email;
                     activo.Checked = empleado.activo;
+                }
+            }
+        }
+
+        public void CargarFormUsuario(int pId, TextBox id, TextBox dni, TextBox nom, TextBox ape, TextBox email)
+        {
+            var Lst = datos.Buscar(pId);
+            if (Lst.Count > 0)
+            {
+                foreach (Empleado empleado in Lst)
+                {
+                    id.Text = empleado.id_empleado.ToString();
+                    dni.Text = empleado.dni;
+                    nom.Text = empleado.nombre;
+                    ape.Text = empleado.apellido;
+                    email.Text = empleado.email;
                 }
             }
         }

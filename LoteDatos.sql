@@ -88,6 +88,12 @@ layered rosewood back and sides adorn an internal architecture that has been opt
 All 200 Series guitars ship in a lightweight, Taylor gig bag with double-stitched seams and reinforced stress points.',
 1099,20);
 
+
+INSERT INTO Roles(rol) VALUES ('Administrador')
+INSERT INTO Roles(rol) VALUES (' Super Administrador')
+INSERT INTO Roles(rol) VALUES ('Gerente')
+INSERT INTO Roles(rol) VALUES ('Vendedor')
+
 SELECT * FROM Productos
 
 

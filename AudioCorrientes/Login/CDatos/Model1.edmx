@@ -98,10 +98,10 @@
             <PropertyRef Name="id_usuario" />
           </Key>
           <Property Name="id_usuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="id_empleado" Type="int" Nullable="false" />
+          <Property Name="empleado_id" Type="int" Nullable="false" />
           <Property Name="usuario" Type="varchar" MaxLength="25" Nullable="false" />
           <Property Name="contrasena" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="id_rol" Type="int" Nullable="false" />
+          <Property Name="rol_id" Type="int" Nullable="false" />
           <Property Name="activo" Type="bit" />
         </EntityType>
         <EntityType Name="Ventas">
@@ -184,7 +184,7 @@
               <PropertyRef Name="id_empleado" />
             </Principal>
             <Dependent Role="Usuarios">
-              <PropertyRef Name="id_empleado" />
+              <PropertyRef Name="empleado_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -196,7 +196,7 @@
               <PropertyRef Name="id_rol" />
             </Principal>
             <Dependent Role="Usuarios">
-              <PropertyRef Name="id_rol" />
+              <PropertyRef Name="rol_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -327,8 +327,8 @@
           </Key>
           <Property Name="id_rol" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="rol" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Usuarios" Relationship="Self.FK_Usuario_Rol" FromRole="Roles" ToRole="Usuarios" />
-        </EntityType>
+          <NavigationProperty Name="Usuarios" Relationship="dbAudioCorrientesModel.FK_Usuario_Rol" FromRole="Role" ToRole="Usuario" />
+          </EntityType>
         <EntityType Name="TipoCliente">
           <Key>
             <PropertyRef Name="id_tipoCliente" />
@@ -345,19 +345,6 @@
           <Property Name="tipo" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="descripcion" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Ventas" Relationship="Self.FK_Venta_TipoFactura" FromRole="TipoFactura" ToRole="Ventas" />
-        </EntityType>
-        <EntityType Name="Usuario">
-          <Key>
-            <PropertyRef Name="id_usuario" />
-          </Key>
-          <Property Name="id_usuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="id_empleado" Type="Int32" Nullable="false" />
-          <Property Name="usuario1" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="contrasena" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="id_rol" Type="Int32" Nullable="false" />
-          <Property Name="activo" Type="Boolean" />
-          <NavigationProperty Name="Role" Relationship="Self.FK_Usuario_Rol" FromRole="Usuarios" ToRole="Roles" />
-          <NavigationProperty Name="Empleado" Relationship="dbAudioCorrientesModel.FK_Usuario_Empleado" FromRole="Usuario" ToRole="Empleado" />
         </EntityType>
         <EntityType Name="Venta">
           <Key>
@@ -411,18 +398,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Usuario_Rol">
-          <End Role="Roles" Type="Self.Role" Multiplicity="1" />
-          <End Role="Usuarios" Type="Self.Usuario" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Roles">
-              <PropertyRef Name="id_rol" />
-            </Principal>
-            <Dependent Role="Usuarios">
-              <PropertyRef Name="id_rol" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Venta_TipoFactura">
           <End Role="TipoFactura" Type="Self.TipoFactura" Multiplicity="1" />
           <End Role="Ventas" Type="Self.Venta" Multiplicity="*" />
@@ -441,7 +416,6 @@
           <EntitySet Name="Roles" EntityType="Self.Role" />
           <EntitySet Name="TipoClientes" EntityType="Self.TipoCliente" />
           <EntitySet Name="TipoFacturas" EntityType="Self.TipoFactura" />
-          <EntitySet Name="Usuarios" EntityType="Self.Usuario" />
           <EntitySet Name="Ventas" EntityType="Self.Venta" />
           <AssociationSet Name="FK_Cliente_TipoCliente" Association="Self.FK_Cliente_TipoCliente">
             <End Role="TipoCliente" EntitySet="TipoClientes" />
@@ -454,10 +428,6 @@
           <AssociationSet Name="FK_Detalle_Venta" Association="Self.FK_Detalle_Venta">
             <End Role="Ventas" EntitySet="Ventas" />
             <End Role="DetalleVenta" EntitySet="DetalleVentas" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Usuario_Rol" Association="Self.FK_Usuario_Rol">
-            <End Role="Roles" EntitySet="Roles" />
-            <End Role="Usuarios" EntitySet="Usuarios" />
           </AssociationSet>
           <AssociationSet Name="FK_Venta_TipoFactura" Association="Self.FK_Venta_TipoFactura">
             <End Role="TipoFactura" EntitySet="TipoFacturas" />
@@ -479,13 +449,18 @@
             <End Role="Producto" EntitySet="Productos" />
           </AssociationSet>
           <EntitySet Name="Empleados" EntityType="dbAudioCorrientesModel.Empleado" />
+          <AssociationSet Name="FK_Venta_Empleado" Association="dbAudioCorrientesModel.FK_Venta_Empleado">
+            <End Role="Empleado" EntitySet="Empleados" />
+            <End Role="Venta" EntitySet="Ventas" />
+          </AssociationSet>
+          <EntitySet Name="Usuarios" EntityType="dbAudioCorrientesModel.Usuario" />
           <AssociationSet Name="FK_Usuario_Empleado" Association="dbAudioCorrientesModel.FK_Usuario_Empleado">
             <End Role="Empleado" EntitySet="Empleados" />
             <End Role="Usuario" EntitySet="Usuarios" />
           </AssociationSet>
-          <AssociationSet Name="FK_Venta_Empleado" Association="dbAudioCorrientesModel.FK_Venta_Empleado">
-            <End Role="Empleado" EntitySet="Empleados" />
-            <End Role="Venta" EntitySet="Ventas" />
+          <AssociationSet Name="FK_Usuario_Rol" Association="dbAudioCorrientesModel.FK_Usuario_Rol">
+            <End Role="Role" EntitySet="Roles" />
+            <End Role="Usuario" EntitySet="Usuarios" />
           </AssociationSet>
           </EntityContainer>
         <EntityType Name="Marca">
@@ -570,21 +545,9 @@
           <Property Name="fechaIngreso" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="fechaNac" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="email" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Usuarios" Relationship="dbAudioCorrientesModel.FK_Usuario_Empleado" FromRole="Empleado" ToRole="Usuario" />
           <NavigationProperty Name="Ventas" Relationship="dbAudioCorrientesModel.FK_Venta_Empleado" FromRole="Empleado" ToRole="Venta" />
+          <NavigationProperty Name="Usuarios" Relationship="dbAudioCorrientesModel.FK_Usuario_Empleado" FromRole="Empleado" ToRole="Usuario" />
         </EntityType>
-        <Association Name="FK_Usuario_Empleado">
-          <End Type="dbAudioCorrientesModel.Empleado" Role="Empleado" Multiplicity="1" />
-          <End Type="dbAudioCorrientesModel.Usuario" Role="Usuario" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Empleado">
-              <PropertyRef Name="id_empleado" />
-            </Principal>
-            <Dependent Role="Usuario">
-              <PropertyRef Name="id_empleado" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Venta_Empleado">
           <End Type="dbAudioCorrientesModel.Empleado" Role="Empleado" Multiplicity="1" />
           <End Type="dbAudioCorrientesModel.Venta" Role="Venta" Multiplicity="*" />
@@ -594,6 +557,43 @@
             </Principal>
             <Dependent Role="Venta">
               <PropertyRef Name="id_empleado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="id_usuario" />
+          </Key>
+          <Property Name="id_usuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="empleado_id" Type="Int32" Nullable="false" />
+          <Property Name="usuario1" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="contrasena" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="rol_id" Type="Int32" Nullable="false" />
+          <Property Name="activo" Type="Boolean" />
+          <NavigationProperty Name="Empleado" Relationship="dbAudioCorrientesModel.FK_Usuario_Empleado" FromRole="Usuario" ToRole="Empleado" />
+          <NavigationProperty Name="Role" Relationship="dbAudioCorrientesModel.FK_Usuario_Rol" FromRole="Usuario" ToRole="Role" />
+        </EntityType>
+        <Association Name="FK_Usuario_Empleado">
+          <End Type="dbAudioCorrientesModel.Empleado" Role="Empleado" Multiplicity="1" />
+          <End Type="dbAudioCorrientesModel.Usuario" Role="Usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empleado">
+              <PropertyRef Name="id_empleado" />
+            </Principal>
+            <Dependent Role="Usuario">
+              <PropertyRef Name="empleado_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Usuario_Rol">
+          <End Type="dbAudioCorrientesModel.Role" Role="Role" Multiplicity="1" />
+          <End Type="dbAudioCorrientesModel.Usuario" Role="Usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="id_rol" />
+            </Principal>
+            <Dependent Role="Usuario">
+              <PropertyRef Name="rol_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -654,18 +654,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Usuarios">
-            <EntityTypeMapping TypeName="dbAudioCorrientesModel.Usuario">
-              <MappingFragment StoreEntitySet="Usuarios">
-                <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
-                <ScalarProperty Name="id_empleado" ColumnName="id_empleado" />
-                <ScalarProperty Name="usuario1" ColumnName="usuario" />
-                <ScalarProperty Name="contrasena" ColumnName="contrasena" />
-                <ScalarProperty Name="id_rol" ColumnName="id_rol" />
-                <ScalarProperty Name="activo" ColumnName="activo" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Ventas">
             <EntityTypeMapping TypeName="dbAudioCorrientesModel.Venta">
               <MappingFragment StoreEntitySet="Ventas">
@@ -722,6 +710,18 @@
                 <ScalarProperty Name="nombre" ColumnName="nombre" />
                 <ScalarProperty Name="dni" ColumnName="dni" />
                 <ScalarProperty Name="id_empleado" ColumnName="id_empleado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Usuarios">
+            <EntityTypeMapping TypeName="dbAudioCorrientesModel.Usuario">
+              <MappingFragment StoreEntitySet="Usuarios">
+                <ScalarProperty Name="activo" ColumnName="activo" />
+                <ScalarProperty Name="rol_id" ColumnName="rol_id" />
+                <ScalarProperty Name="contrasena" ColumnName="contrasena" />
+                <ScalarProperty Name="usuario1" ColumnName="usuario" />
+                <ScalarProperty Name="empleado_id" ColumnName="empleado_id" />
+                <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -15,13 +15,13 @@ namespace Login.CDatos
     public partial class Usuario
     {
         public int id_usuario { get; set; }
-        public int id_empleado { get; set; }
+        public int empleado_id { get; set; }
         public string usuario1 { get; set; }
         public string contrasena { get; set; }
-        public int id_rol { get; set; }
+        public int rol_id { get; set; }
         public Nullable<bool> activo { get; set; }
     
-        public virtual Role Role { get; set; }
         public virtual Empleado Empleado { get; set; }
+        public virtual Role Role { get; set; }
     }
 }

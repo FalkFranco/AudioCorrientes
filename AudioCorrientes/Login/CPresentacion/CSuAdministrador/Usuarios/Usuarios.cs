@@ -1,4 +1,6 @@
-﻿using Login.CSuAdministrador.Empleados;
+﻿using Login.CNegocio;
+using Login.CPresentacion.CSuAdministrador.Usuarios;
+using Login.CSuAdministrador.Empleados;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +15,8 @@ namespace Login.CSuAdministrador.Usuarios
 {
     public partial class Usuarios : Form
     {
+        NEmpleado objEmpleado = new NEmpleado();
+        NUsuario objUsuario = new NUsuario();
         public Usuarios()
         {
             InitializeComponent();
@@ -109,6 +113,28 @@ namespace Login.CSuAdministrador.Usuarios
         {
             AgregarRol agregarRol = new AgregarRol();
             agregarRol.ShowDialog();
+        }
+
+        private void Usuarios_Load(object sender, EventArgs e)
+        {
+            objEmpleado.CargarGrid(dgvEmpleados);
+            objEmpleado.OcultarColumnasSuAdmin(dgvEmpleados);
+            objUsuario.CargarGrid(dgvUsuarios);
+            objUsuario.OcultarColumnas(dgvUsuarios);
+        }
+        int Id;
+        private void dgvEmpleados_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            //DialogResult result;
+
+            if (dgvEmpleados.Columns[e.ColumnIndex].Name == "Activar")
+            {
+                Id = Convert.ToInt32(dgvEmpleados.CurrentRow.Cells["id_empleado"].Value.ToString());
+                AgregarUsuario FormUsuario = new AgregarUsuario(Id);
+                FormUsuario.ShowDialog();
+                objEmpleado.CargarGrid(dgvEmpleados);
+            }
         }
     }
 }

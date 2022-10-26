@@ -214,3 +214,4 @@ C:\Users\colo5\OneDrive\Escritorio\Proyectos\AudioCorrientes\AudioCorrientes\Aud
 C:\Users\colo5\OneDrive\Escritorio\Proyectos\AudioCorrientes\AudioCorrientes\AudioCorrientes\Login\obj\Debug\CPresentacion.csproj.CopyComplete
 C:\Users\colo5\OneDrive\Escritorio\Proyectos\AudioCorrientes\AudioCorrientes\AudioCorrientes\Login\obj\Debug\Login.exe
 C:\Users\colo5\OneDrive\Escritorio\Proyectos\AudioCorrientes\AudioCorrientes\AudioCorrientes\Login\obj\Debug\Login.pdb
+C:\Users\colo5\Desktop\AudiCorrientes\AudioCorrientes\AudioCorrientes\Login\obj\Debug\Login.CPresentacion.CSuAdministrador.Usuarios.AgregarUsuario.resources

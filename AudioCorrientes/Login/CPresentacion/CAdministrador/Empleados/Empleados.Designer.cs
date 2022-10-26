@@ -35,6 +35,9 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.dgvEmpleados = new System.Windows.Forms.DataGridView();
+            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Activar = new System.Windows.Forms.DataGridViewImageColumn();
             this.chbNombreE = new System.Windows.Forms.CheckBox();
             this.chbDniE = new System.Windows.Forms.CheckBox();
             this.btnAgregarE = new System.Windows.Forms.Button();
@@ -42,9 +45,6 @@
             this.btnBuscarE = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Activar = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -102,7 +102,7 @@
             // 
             // btnActualizar
             // 
-            this.btnActualizar.Location = new System.Drawing.Point(972, 57);
+            this.btnActualizar.Location = new System.Drawing.Point(1021, 57);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(75, 23);
             this.btnActualizar.TabIndex = 16;
@@ -123,6 +123,29 @@
             this.dgvEmpleados.Size = new System.Drawing.Size(1070, 377);
             this.dgvEmpleados.TabIndex = 13;
             this.dgvEmpleados.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmpleados_CellClick);
+            // 
+            // Editar
+            // 
+            this.Editar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Editar.HeaderText = "Editar";
+            this.Editar.Image = global::Login.Properties.Resources.editar25x25;
+            this.Editar.Name = "Editar";
+            // 
+            // Eliminar
+            // 
+            this.Eliminar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Eliminar.HeaderText = "Eliminar";
+            this.Eliminar.Image = global::Login.Properties.Resources.basura25x25;
+            this.Eliminar.Name = "Eliminar";
+            this.Eliminar.Width = 49;
+            // 
+            // Activar
+            // 
+            this.Activar.HeaderText = "Activar";
+            this.Activar.Image = global::Login.Properties.Resources.editar25x25;
+            this.Activar.Name = "Activar";
+            this.Activar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Activar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // chbNombreE
             // 
@@ -188,29 +211,6 @@
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
-            // 
-            // Editar
-            // 
-            this.Editar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Editar.HeaderText = "Editar";
-            this.Editar.Image = global::Login.Properties.Resources.editar25x25;
-            this.Editar.Name = "Editar";
-            // 
-            // Eliminar
-            // 
-            this.Eliminar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Eliminar.HeaderText = "Eliminar";
-            this.Eliminar.Image = global::Login.Properties.Resources.basura25x25;
-            this.Eliminar.Name = "Eliminar";
-            this.Eliminar.Width = 49;
-            // 
-            // Activar
-            // 
-            this.Activar.HeaderText = "Activar";
-            this.Activar.Image = global::Login.Properties.Resources.editar25x25;
-            this.Activar.Name = "Activar";
-            this.Activar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Activar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // Empleados
             // 

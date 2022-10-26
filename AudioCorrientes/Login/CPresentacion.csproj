@@ -248,6 +248,12 @@
     <Compile Include="CPresentacion\CSuAdministrador\Usuarios\EditarRol.Designer.cs">
       <DependentUpon>EditarRol.cs</DependentUpon>
     </Compile>
+    <Compile Include="CPresentacion\CSuAdministrador\Usuarios\EditarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CPresentacion\CSuAdministrador\Usuarios\EditarUsuario.Designer.cs">
+      <DependentUpon>EditarUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="CPresentacion\CSuAdministrador\Usuarios\Usuarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -366,6 +372,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CPresentacion\CSuAdministrador\Usuarios\EditarRol.resx">
       <DependentUpon>EditarRol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CPresentacion\CSuAdministrador\Usuarios\EditarUsuario.resx">
+      <DependentUpon>EditarUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CPresentacion\CSuAdministrador\Usuarios\Usuarios.resx">
       <DependentUpon>Usuarios.cs</DependentUpon>

@@ -88,6 +88,27 @@ layered rosewood back and sides adorn an internal architecture that has been opt
 All 200 Series guitars ship in a lightweight, Taylor gig bag with double-stitched seams and reinforced stress points.',
 1099,20);
 
+INSERT INTO Empleados(dni,nombre,apellido,telefono,direccion,fechaIngreso,fechaNac,email) VALUES ('23784563','Maria', 'Melgarejo','3794237465','Av Maipu 234', '2021-01-01', '1998-06-24', 'mari@gmail.com')
+INSERT INTO Empleados(dni,nombre,apellido,telefono,direccion,fechaIngreso,fechaNac,email) VALUES ('41732563','Juan', 'Shuck','3795743672','Aconcagua 823', '2021-03-01', '1999-03-20', 'juan_shuck@gmail.com')
+INSERT INTO Empleados(dni,nombre,apellido,telefono,direccion,fechaIngreso,fechaNac,email) VALUES ('41633267', 'Sandra', 'Gonzales', '3795732367', 'Gral. Paz 877', '2021-02-01', '1999-06-24', 'sandragonz@gmail.com')
+INSERT INTO Empleados(dni,nombre,apellido,telefono,direccion,fechaIngreso,fechaNac,email) VALUES ('41235673', 'Oscar', 'Cruz', '3794763354', 'Bolivar 552', '2021-02-01', '1998-03-15', 'oscarcruz@gmail.com')
+INSERT INTO Empleados(dni,nombre,apellido,telefono,direccion,fechaIngreso,fechaNac,email) VALUES ('39652433', 'Melina', 'Espinoza', '3795632443', 'Junin 323', '2022-01-01', '1996-06-23', 'meliespin@gmail.com')
+INSERT INTO Empleados(dni,nombre,apellido,telefono,direccion,fechaIngreso,fechaNac,email) VALUES ('38765523', 'Sofia', 'Ruiz', '3795648735', 'Alvear 873', '2021-01-01', '1997-10-12', 'sofiruiz@gmail.com')
+INSERT INTO Empleados(dni,nombre,apellido,telefono,direccion,fechaIngreso,fechaNac,email) VALUES ('38652341', 'Lucrecia', 'Vazquez', '3794536472', 'Jujuy 448', '2021-06-01', '1994-01-24', 'lucreciavaz@gmail.com')
+INSERT INTO Empleados(dni,nombre,apellido,telefono,direccion,fechaIngreso,fechaNac,email) VALUES ('23546345', 'Ramon', 'Rojas', '3794885522', '9 De Julio 1350', '2021-06-01', '1985-11-24', 'ramonrojas@gmail.com')
+INSERT INTO Empleados(dni,nombre,apellido,telefono,direccion,fechaIngreso,fechaNac,email) VALUES ('34546890', 'Franco', 'Torres', '3794221122', 'Chaco 559', '2022-01-01', '1992-02-12', 'francotorrez@gmail.com')
+INSERT INTO Empleados(dni,nombre,apellido,telefono,direccion,fechaIngreso,fechaNac,email) VALUES ('35647835', 'Juan', 'Suarez', '3794876543', 'San Martin 663', '2022-01-01', '1993-12-12', 'juansuarez@gmail.com')
+
+
+INSERT INTO Clientes (dni, nombre, apellido, telefono, direccion, email, id_tipoCLiente) VALUES ('43672543', 'Francisco', 'Sanchez', '3794334564', 'Av Sarmiento 1226', 'fran7356@gmail.com', 1);
+INSERT INTO Clientes (dni, nombre, apellido, telefono, direccion, email, id_tipoCLiente) VALUES ('41633267', 'Sandra', 'Gonzales', '3795732367', 'Gral. Paz 877', 'sandragonz@gmail.com', 1);
+INSERT INTO Clientes (dni, nombre, apellido, telefono, direccion, email, id_tipoCLiente) VALUES ('41235673', 'Oscar', 'Cruz', '3794763354', 'Bolivar 552', 'oscarcruz@gmail.com', 1);
+INSERT INTO Clientes (dni, nombre, apellido, telefono, direccion, email, id_tipoCLiente) VALUES ('39652433', 'Melina', 'Espinoza', '3795632443', 'Junin 323', 'meliespin@gmail.com', 1);
+INSERT INTO Clientes (dni, nombre, apellido, telefono, direccion, email, id_tipoCLiente) VALUES ('38765523', 'Sofia', 'Ruiz', '3795648735', 'Alvear 873', 'sofiruiz@gmail.com', 3);
+INSERT INTO Clientes (dni, nombre, apellido, telefono, direccion, email, id_tipoCLiente) VALUES ('38652341', 'Lucrecia', 'Vazquez', '3794536472', 'Jujuy 448', 'lucreciavaz@gmail.com', 1);
+INSERT INTO Clientes (dni, nombre, apellido, telefono, direccion, email, id_tipoCLiente) VALUES ('23546345', 'Ramon', 'Rojas', '3794885522', '9 De Julio 1350', 'ramonrojas@gmail.com', 1);
+INSERT INTO Clientes (dni, nombre, apellido, telefono, direccion, email, id_tipoCLiente) VALUES ('34546890', 'Franco', 'Torres', '3794221122', 'Chaco 559', 'francotorrez@gmail.com', 2);
+INSERT INTO Clientes (dni, nombre, apellido, telefono, direccion, email, id_tipoCLiente) VALUES ('35647835', 'Juan', 'Suarez', '3794876543', 'San Martin 663', 'juansuarez@gmail.com', 1);
 
 INSERT INTO Roles(rol) VALUES ('Administrador')
 INSERT INTO Roles(rol) VALUES (' Super Administrador')
@@ -107,3 +128,8 @@ ON Clientes.id_tipoCliente = TipoCliente.id_tipoCliente;
 
 
 SELECT * FROM TipoCliente
+
+
+
+SELECT * FROM Empleados
+SELECT * FROM Usuarios

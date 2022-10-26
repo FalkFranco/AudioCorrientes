@@ -136,5 +136,45 @@ namespace Login.CSuAdministrador.Usuarios
                 objEmpleado.CargarGrid(dgvEmpleados);
             }
         }
+
+        private void btnActualizar2_Click(object sender, EventArgs e)
+        {
+            objUsuario.CargarGrid(dgvEmpleados);
+            objUsuario.OcultarColumnas(dgvEmpleados);
+        }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            objEmpleado.CargarGrid(dgvEmpleados);
+            objEmpleado.OcultarColumnasSuAdmin(dgvEmpleados);
+        }
+        int IdUsuario;
+        int IdEmpleado;
+        private void dgvUsuarios_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result;
+
+            if (dgvUsuarios.Columns[e.ColumnIndex].Name == "EditarUsuario")
+            {
+                IdUsuario = Convert.ToInt32(dgvUsuarios.CurrentRow.Cells["id_usuario"].Value.ToString());
+                IdEmpleado = Convert.ToInt32(dgvUsuarios.CurrentRow.Cells["empleado_id"].Value.ToString());
+                EditarUsuario FormEdit = new EditarUsuario(IdUsuario, IdEmpleado);
+                FormEdit.ShowDialog();
+                objUsuario.CargarGrid(dgvUsuarios);
+            }
+            if (dgvEmpleados.Columns[e.ColumnIndex].Name == "Eliminar")
+            {
+                Id = Convert.ToInt32(dgvEmpleados.CurrentRow.Cells["id_empleado"].Value.ToString());
+                result = MessageBox.Show("Desea eliminar el Cliente?\n Se eliminara de forma permanente", "Eliminar Cliente", buttons, MessageBoxIcon.Exclamation);
+                if (result == System.Windows.Forms.DialogResult.Yes)
+                {
+                    //Eliminar (Cambiar Estado)
+                    //objProducto.EliminarCliente(Id);
+                    //MessageBox.Show("Cliente eliminado con Exito", "Eliminar Cliente Exitoso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    //objProducto.CargarGrid(dgvProductos);
+                }
+            }
+        }
     }
 }

@@ -42,7 +42,7 @@ namespace Login.CNegocio
         }
         public void OcultarColumnas(DataGridView dgv)
         {
-            dgv.Columns["Seleccionar"].Visible = false;
+            dgv.Columns["Activar"].Visible = false;
             dgv.Columns["Usuarios"].Visible = false;
             dgv.Columns["Ventas"].Visible = false;
         }

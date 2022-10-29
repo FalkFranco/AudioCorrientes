@@ -133,5 +133,31 @@ namespace Login.CNegocio
                 return false;
             }
         }
+
+        //public bool validarUsuarioN( string nomUsuario, string pass)
+        //{
+        //    var Lst = datos.ValidarUsuario(nomUsuario, pass);
+        //   if (Lst.Count > 0)
+        //    {
+        //        return true;
+        //    }
+        //    else
+        //    {
+        //        return false;
+        //    }
+        //}
+
+        public List<Usuario> DevolverUsuario(string nomUsuario, string pass)
+        {
+            var Lst = datos.ValidarUsuario(nomUsuario, pass);
+            if (Lst.Count > 0)
+            {
+                return Lst;
+            }
+            return null;
+        }
+
+
+
     }
 }

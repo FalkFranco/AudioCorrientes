@@ -96,5 +96,21 @@ namespace Login.CDatos.DUsuarios
             }
         }
 
+        public List<Usuario> ValidarUsuario(string pNombreUsuario, string pPass)
+        {
+            try
+            {
+                using (db = new dbAudioCorrientesEntities())
+                {
+                    return db.Usuarios.Where(p => p.usuario1 == pNombreUsuario && p.contrasena == pPass).ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return null;
+            }
+        }
+
     }
 }

@@ -12,11 +12,19 @@ using Login.CSuAdministrador;
 using Login.CVendedor;
 using Login.CAdministrador;
 using Login.CGerente;
+using Login.CNegocio;
+using Login.CDatos;
+using Login.CDatos.DUsuarios;
+using System.Data.Entity.Core.Common.CommandTrees.ExpressionBuilder;
+using Login.CDatos.DEmpleados;
 
 namespace Login
 {
     public partial class Login : Form
     {
+        NUsuario objUsuario = new NUsuario();
+        UsuarioLogin usuarioLogeado = new UsuarioLogin();   
+        DEmpleados empleado = new DEmpleados();
         public Login()
         {
             InitializeComponent();
@@ -102,6 +110,61 @@ namespace Login
             
         }
 
-        
+        private void btnLogin_Validar_Click(object sender, EventArgs e)
+        {
+            var Lst = objUsuario.DevolverUsuario(txtUser.Text, txtPassword.Text);
+            if (Lst != null){
+                foreach(Usuario usuario in Lst)
+                {
+                    usuarioLogeado.id_usuario = usuario.id_usuario;
+                    usuarioLogeado.id_empleado = usuario.empleado_id;
+                    usuarioLogeado.rol = usuario.rol_id;
+                    usuarioLogeado.activo = (bool)usuario.activo;
+
+                    var dEmpleado = empleado.Buscar(usuario.empleado_id);
+
+                    foreach(Empleado empleado in dEmpleado)
+                    {
+                        usuarioLogeado.nombre = empleado.nombre;
+                        usuarioLogeado.apellido = empleado.apellido;
+                    }
+                }
+                abrirFormulario(usuarioLogeado);
+                //MessageBox.Show("El usuario " + usuarioLogeado.nombre + " esta en la lista", "Exito", MessageBoxButtons.OK,MessageBoxIcon.Information);
+
+            }
+            else
+            {
+                MessageBox.Show("El Usuario no Existe", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void abrirFormulario(UsuarioLogin pUsuario)
+        {
+            if (pUsuario.rol == 1)
+            {
+                MenuPrincipalAdministrador menuPrincipalAdministrador = new MenuPrincipalAdministrador();
+                menuPrincipalAdministrador.Show();
+                this.Hide();
+            }
+            else if (pUsuario.rol == 2)
+            {
+                MenuPrincipalSA menuPrincipal = new MenuPrincipalSA();
+                menuPrincipal.Show();
+                this.Hide();
+            }
+            else if (pUsuario.rol == 3)
+            {
+                MenuPrincipalGerente menuPrincipalGerente = new MenuPrincipalGerente();
+                menuPrincipalGerente.Show();
+                this.Hide();
+            }
+            else if (pUsuario.rol == 4)
+            {
+                MenuPrincipalVendedor menuPrincipalVendedor = new MenuPrincipalVendedor();
+                menuPrincipalVendedor.Show();
+                this.Hide();
+            }
+        }
     }
 }

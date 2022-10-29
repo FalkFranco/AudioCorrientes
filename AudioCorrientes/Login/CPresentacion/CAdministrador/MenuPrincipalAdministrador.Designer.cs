@@ -48,6 +48,8 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnDashboard = new System.Windows.Forms.Button();
             this.panelContenedor = new System.Windows.Forms.Panel();
+            this.lbVendedor = new System.Windows.Forms.Label();
+            this.lbUsuario = new System.Windows.Forms.Label();
             this.panelTop.SuspendLayout();
             this.panelMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -139,6 +141,8 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(204)))));
+            this.panelMenu.Controls.Add(this.lbVendedor);
+            this.panelMenu.Controls.Add(this.lbUsuario);
             this.panelMenu.Controls.Add(this.panel7);
             this.panelMenu.Controls.Add(this.btnCerrarSesion);
             this.panelMenu.Controls.Add(this.panel5);
@@ -189,7 +193,7 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.panel5.Location = new System.Drawing.Point(0, 379);
+            this.panel5.Location = new System.Drawing.Point(0, 558);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(5, 50);
             this.panel5.TabIndex = 10;
@@ -205,7 +209,7 @@
             this.btnEmpleados.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnEmpleados.Image = global::Login.Properties.Resources.empleados;
             this.btnEmpleados.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEmpleados.Location = new System.Drawing.Point(0, 379);
+            this.btnEmpleados.Location = new System.Drawing.Point(0, 558);
             this.btnEmpleados.Name = "btnEmpleados";
             this.btnEmpleados.Size = new System.Drawing.Size(220, 50);
             this.btnEmpleados.TabIndex = 9;
@@ -217,7 +221,7 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.panel4.Location = new System.Drawing.Point(0, 323);
+            this.panel4.Location = new System.Drawing.Point(0, 502);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(5, 50);
             this.panel4.TabIndex = 8;
@@ -233,7 +237,7 @@
             this.btnClientes.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnClientes.Image = global::Login.Properties.Resources.clientes;
             this.btnClientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClientes.Location = new System.Drawing.Point(0, 323);
+            this.btnClientes.Location = new System.Drawing.Point(0, 502);
             this.btnClientes.Name = "btnClientes";
             this.btnClientes.Size = new System.Drawing.Size(220, 50);
             this.btnClientes.TabIndex = 7;
@@ -245,7 +249,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.panel3.Location = new System.Drawing.Point(0, 267);
+            this.panel3.Location = new System.Drawing.Point(0, 446);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(5, 50);
             this.panel3.TabIndex = 6;
@@ -261,7 +265,7 @@
             this.btnVentas.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnVentas.Image = global::Login.Properties.Resources.venta;
             this.btnVentas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnVentas.Location = new System.Drawing.Point(0, 267);
+            this.btnVentas.Location = new System.Drawing.Point(0, 446);
             this.btnVentas.Name = "btnVentas";
             this.btnVentas.Size = new System.Drawing.Size(220, 50);
             this.btnVentas.TabIndex = 5;
@@ -273,7 +277,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.panel2.Location = new System.Drawing.Point(0, 211);
+            this.panel2.Location = new System.Drawing.Point(0, 390);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(5, 50);
             this.panel2.TabIndex = 4;
@@ -289,7 +293,7 @@
             this.btnProductos.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnProductos.Image = global::Login.Properties.Resources.producto;
             this.btnProductos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProductos.Location = new System.Drawing.Point(0, 211);
+            this.btnProductos.Location = new System.Drawing.Point(0, 390);
             this.btnProductos.Name = "btnProductos";
             this.btnProductos.Size = new System.Drawing.Size(220, 50);
             this.btnProductos.TabIndex = 3;
@@ -301,7 +305,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.panel1.Location = new System.Drawing.Point(0, 155);
+            this.panel1.Location = new System.Drawing.Point(0, 334);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(5, 50);
             this.panel1.TabIndex = 2;
@@ -327,7 +331,7 @@
             this.btnDashboard.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnDashboard.Image = global::Login.Properties.Resources.reportes;
             this.btnDashboard.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDashboard.Location = new System.Drawing.Point(0, 155);
+            this.btnDashboard.Location = new System.Drawing.Point(0, 334);
             this.btnDashboard.Name = "btnDashboard";
             this.btnDashboard.Size = new System.Drawing.Size(220, 50);
             this.btnDashboard.TabIndex = 0;
@@ -344,6 +348,28 @@
             this.panelContenedor.Size = new System.Drawing.Size(1146, 728);
             this.panelContenedor.TabIndex = 3;
             // 
+            // lbVendedor
+            // 
+            this.lbVendedor.AutoSize = true;
+            this.lbVendedor.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbVendedor.ForeColor = System.Drawing.SystemColors.Control;
+            this.lbVendedor.Location = new System.Drawing.Point(35, 154);
+            this.lbVendedor.Name = "lbVendedor";
+            this.lbVendedor.Size = new System.Drawing.Size(118, 19);
+            this.lbVendedor.TabIndex = 10;
+            this.lbVendedor.Text = "Administrador";
+            // 
+            // lbUsuario
+            // 
+            this.lbUsuario.AutoSize = true;
+            this.lbUsuario.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbUsuario.ForeColor = System.Drawing.SystemColors.Control;
+            this.lbUsuario.Location = new System.Drawing.Point(35, 187);
+            this.lbUsuario.Name = "lbUsuario";
+            this.lbUsuario.Size = new System.Drawing.Size(151, 19);
+            this.lbUsuario.TabIndex = 9;
+            this.lbUsuario.Text = "NombreVendedor";
+            // 
             // MenuPrincipalAdministrador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -355,8 +381,10 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MenuPrincipalAdministrador";
             this.Text = "MenuPrincipalAdministrador";
+            this.Load += new System.EventHandler(this.MenuPrincipalAdministrador_Load);
             this.panelTop.ResumeLayout(false);
             this.panelMenu.ResumeLayout(false);
+            this.panelMenu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -384,5 +412,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnDashboard;
         private System.Windows.Forms.Panel panelContenedor;
+        private System.Windows.Forms.Label lbVendedor;
+        private System.Windows.Forms.Label lbUsuario;
     }
 }

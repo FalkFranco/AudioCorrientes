@@ -1,4 +1,5 @@
-﻿using Login.CSuAdministrador.Empleados;
+﻿using Login.CDatos.DUsuarios;
+using Login.CSuAdministrador.Empleados;
 using Login.CSuAdministrador.Usuarios;
 using System;
 using System.Collections.Generic;
@@ -16,9 +17,11 @@ namespace Login.CSuAdministrador
 {
     public partial class MenuPrincipalSA : Form
     {
-        public MenuPrincipalSA()
+        UsuarioLogin pUsuario = new UsuarioLogin();
+        public MenuPrincipalSA(UsuarioLogin pUsuario)
         {
             InitializeComponent();
+            this.pUsuario = pUsuario;
         }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -140,6 +143,11 @@ namespace Login.CSuAdministrador
         private void btnRestaurarDB_Click(object sender, EventArgs e)
         {
             AbrirFormEnPanel(new Restaurar_Backup());
+        }
+
+        private void MenuPrincipalSA_Load(object sender, EventArgs e)
+        {
+            lbUsuario.Text = pUsuario.apellido + " " + pUsuario.nombre;
         }
     }
 }

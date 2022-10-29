@@ -1,4 +1,5 @@
-﻿using Login.CVendedor.Productos;
+﻿using Login.CDatos.DUsuarios;
+using Login.CVendedor.Productos;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,9 +17,11 @@ namespace Login.CVendedor
 {
     public partial class MenuPrincipalVendedor : Form
     {
-        public MenuPrincipalVendedor()
+        UsuarioLogin pUsuario = new UsuarioLogin();
+        public MenuPrincipalVendedor(UsuarioLogin pUsuario)
         {
             InitializeComponent();
+            this.pUsuario = pUsuario;
         }
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -112,5 +115,11 @@ namespace Login.CVendedor
         {
             AbrirFormEnPanel(new Clientes.AgregarClientes());
         }
+
+        private void MenuPrincipalVendedor_Load(object sender, EventArgs e)
+        {
+            lbUsuario.Text = pUsuario.apellido + " " + pUsuario.nombre;
+        }
+    
     }
 }

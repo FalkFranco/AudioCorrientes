@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Login.CDatos.DUsuarios
 {
-    internal class UsuarioLogin
+    public class UsuarioLogin
     {
 
         public int id_usuario { get; set; }

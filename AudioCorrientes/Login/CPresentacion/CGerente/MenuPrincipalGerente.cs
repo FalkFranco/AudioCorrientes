@@ -1,4 +1,5 @@
-﻿using Login.CSuAdministrador;
+﻿using Login.CDatos.DUsuarios;
+using Login.CSuAdministrador;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,9 +16,11 @@ namespace Login.CGerente
 {
     public partial class MenuPrincipalGerente : Form
     {
-        public MenuPrincipalGerente()
+        UsuarioLogin pUsuario = new UsuarioLogin();
+        public MenuPrincipalGerente(UsuarioLogin pUsuario)
         {
             InitializeComponent();
+            this.pUsuario = pUsuario;
         }
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -111,6 +114,11 @@ namespace Login.CGerente
         private void btnDashboard_Click(object sender, EventArgs e)
         {
             AbrirFormEnPanel(new SUDashboard());
+        }
+
+        private void MenuPrincipalGerente_Load(object sender, EventArgs e)
+        {
+            lbUsuario.Text = pUsuario.apellido + " " + pUsuario.nombre;
         }
     }
 }

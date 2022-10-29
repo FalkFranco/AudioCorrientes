@@ -34,6 +34,8 @@
             this.btnMaximizar = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnRestaurarDB = new System.Windows.Forms.Button();
             this.lbVendedor = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.btnCerrarSesion = new System.Windows.Forms.Button();
@@ -43,8 +45,7 @@
             this.btnUsuarios = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelContenedor = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnRestaurarDB = new System.Windows.Forms.Button();
+            this.lbUsuario = new System.Windows.Forms.Label();
             this.panelTop.SuspendLayout();
             this.panelMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -136,6 +137,7 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(204)))));
+            this.panelMenu.Controls.Add(this.lbUsuario);
             this.panelMenu.Controls.Add(this.panel1);
             this.panelMenu.Controls.Add(this.btnRestaurarDB);
             this.panelMenu.Controls.Add(this.lbVendedor);
@@ -151,6 +153,34 @@
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(220, 728);
             this.panelMenu.TabIndex = 1;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.panel1.Location = new System.Drawing.Point(0, 450);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(5, 50);
+            this.panel1.TabIndex = 22;
+            // 
+            // btnRestaurarDB
+            // 
+            this.btnRestaurarDB.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRestaurarDB.FlatAppearance.BorderSize = 0;
+            this.btnRestaurarDB.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Navy;
+            this.btnRestaurarDB.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(57)))), ((int)(((byte)(104)))));
+            this.btnRestaurarDB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRestaurarDB.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRestaurarDB.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnRestaurarDB.Image = global::Login.Properties.Resources.servers21;
+            this.btnRestaurarDB.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRestaurarDB.Location = new System.Drawing.Point(0, 450);
+            this.btnRestaurarDB.Name = "btnRestaurarDB";
+            this.btnRestaurarDB.Size = new System.Drawing.Size(220, 50);
+            this.btnRestaurarDB.TabIndex = 21;
+            this.btnRestaurarDB.Text = "Restaurar Backup";
+            this.btnRestaurarDB.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnRestaurarDB.UseVisualStyleBackColor = true;
+            this.btnRestaurarDB.Click += new System.EventHandler(this.btnRestaurarDB_Click);
             // 
             // lbVendedor
             // 
@@ -265,33 +295,16 @@
             this.panelContenedor.Size = new System.Drawing.Size(1146, 728);
             this.panelContenedor.TabIndex = 2;
             // 
-            // panel1
+            // lbUsuario
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.panel1.Location = new System.Drawing.Point(0, 450);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(5, 50);
-            this.panel1.TabIndex = 22;
-            // 
-            // btnRestaurarDB
-            // 
-            this.btnRestaurarDB.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRestaurarDB.FlatAppearance.BorderSize = 0;
-            this.btnRestaurarDB.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Navy;
-            this.btnRestaurarDB.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(57)))), ((int)(((byte)(104)))));
-            this.btnRestaurarDB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRestaurarDB.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRestaurarDB.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnRestaurarDB.Image = global::Login.Properties.Resources.servers21;
-            this.btnRestaurarDB.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRestaurarDB.Location = new System.Drawing.Point(0, 450);
-            this.btnRestaurarDB.Name = "btnRestaurarDB";
-            this.btnRestaurarDB.Size = new System.Drawing.Size(220, 50);
-            this.btnRestaurarDB.TabIndex = 21;
-            this.btnRestaurarDB.Text = "Restaurar Backup";
-            this.btnRestaurarDB.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnRestaurarDB.UseVisualStyleBackColor = true;
-            this.btnRestaurarDB.Click += new System.EventHandler(this.btnRestaurarDB_Click);
+            this.lbUsuario.AutoSize = true;
+            this.lbUsuario.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbUsuario.ForeColor = System.Drawing.SystemColors.Control;
+            this.lbUsuario.Location = new System.Drawing.Point(29, 172);
+            this.lbUsuario.Name = "lbUsuario";
+            this.lbUsuario.Size = new System.Drawing.Size(182, 19);
+            this.lbUsuario.TabIndex = 23;
+            this.lbUsuario.Text = "NombreAdministrador";
             // 
             // MenuPrincipalSA
             // 
@@ -304,6 +317,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MenuPrincipalSA";
             this.Text = "SUADashboard";
+            this.Load += new System.EventHandler(this.MenuPrincipalSA_Load);
             this.panelTop.ResumeLayout(false);
             this.panelMenu.ResumeLayout(false);
             this.panelMenu.PerformLayout();
@@ -331,5 +345,6 @@
         private System.Windows.Forms.Label lbVendedor;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnRestaurarDB;
+        private System.Windows.Forms.Label lbUsuario;
     }
 }

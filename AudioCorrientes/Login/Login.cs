@@ -70,45 +70,45 @@ namespace Login
             lblErrorMensaje.Visible = true;
         }
 
-        private void btnLogin_Click(object sender, EventArgs e)
-        {
+        //private void btnLogin_Click(object sender, EventArgs e)
+        //{
            
-           if(txtPassword.Text == "")
-            {
-                msgError("    " + "Ingrese Contraseña");
-            }
-            if (txtUser.Text == "")
-            {
-                msgError("    " + "Ingrese Usuario");
-            }
-            if (txtPassword.Text == "" && txtUser.Text == "")
-            {
-                msgError("    " + "Ingrese Todos los campos");
-            }
-            else if (txtUser.Text == "SuAdmin" && txtPassword.Text == "SuAdmin")
-            {
-                MenuPrincipalSA menuPrincipal = new MenuPrincipalSA();
-                menuPrincipal.Show();
-                this.Hide();
-            }else if (txtUser.Text == "Vendedor" && txtPassword.Text == "Vendedor")
-            {
-                MenuPrincipalVendedor menuPrincipalVendedor = new MenuPrincipalVendedor();
-                menuPrincipalVendedor.Show();
-                this.Hide();
-            }else if (txtUser.Text == "Admin" && txtPassword.Text == "Admin")
-            {
-                MenuPrincipalAdministrador menuPrincipalAdministrador = new MenuPrincipalAdministrador();
-                menuPrincipalAdministrador.Show();
-                this.Hide();
-            }else if (txtUser.Text == "Gerente" && txtPassword.Text == "Gerente")
-            {
-                MenuPrincipalGerente menuPrincipalGerente = new MenuPrincipalGerente();
-                menuPrincipalGerente.Show();
-                this.Hide();
-            }
-            else MessageBox.Show("No existe el usuario", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //   if(txtPassword.Text == "")
+        //    {
+        //        msgError("    " + "Ingrese Contraseña");
+        //    }
+        //    if (txtUser.Text == "")
+        //    {
+        //        msgError("    " + "Ingrese Usuario");
+        //    }
+        //    if (txtPassword.Text == "" && txtUser.Text == "")
+        //    {
+        //        msgError("    " + "Ingrese Todos los campos");
+        //    }
+        //    else if (txtUser.Text == "SuAdmin" && txtPassword.Text == "SuAdmin")
+        //    {
+        //        MenuPrincipalSA menuPrincipal = new MenuPrincipalSA();
+        //        menuPrincipal.Show();
+        //        this.Hide();
+        //    }else if (txtUser.Text == "Vendedor" && txtPassword.Text == "Vendedor")
+        //    {
+        //        MenuPrincipalVendedor menuPrincipalVendedor = new MenuPrincipalVendedor();
+        //        menuPrincipalVendedor.Show();
+        //        this.Hide();
+        //    }else if (txtUser.Text == "Admin" && txtPassword.Text == "Admin")
+        //    {
+        //        MenuPrincipalAdministrador menuPrincipalAdministrador = new MenuPrincipalAdministrador(pUsuario);
+        //        menuPrincipalAdministrador.Show();
+        //        this.Hide();
+        //    }else if (txtUser.Text == "Gerente" && txtPassword.Text == "Gerente")
+        //    {
+        //        MenuPrincipalGerente menuPrincipalGerente = new MenuPrincipalGerente();
+        //        menuPrincipalGerente.Show();
+        //        this.Hide();
+        //    }
+        //    else MessageBox.Show("No existe el usuario", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             
-        }
+        //}
 
         private void btnLogin_Validar_Click(object sender, EventArgs e)
         {
@@ -143,25 +143,25 @@ namespace Login
         {
             if (pUsuario.rol == 1)
             {
-                MenuPrincipalAdministrador menuPrincipalAdministrador = new MenuPrincipalAdministrador();
+                MenuPrincipalAdministrador menuPrincipalAdministrador = new MenuPrincipalAdministrador(pUsuario);
                 menuPrincipalAdministrador.Show();
                 this.Hide();
             }
             else if (pUsuario.rol == 2)
             {
-                MenuPrincipalSA menuPrincipal = new MenuPrincipalSA();
+                MenuPrincipalSA menuPrincipal = new MenuPrincipalSA(pUsuario);
                 menuPrincipal.Show();
                 this.Hide();
             }
             else if (pUsuario.rol == 3)
             {
-                MenuPrincipalGerente menuPrincipalGerente = new MenuPrincipalGerente();
+                MenuPrincipalGerente menuPrincipalGerente = new MenuPrincipalGerente(pUsuario);
                 menuPrincipalGerente.Show();
                 this.Hide();
             }
             else if (pUsuario.rol == 4)
             {
-                MenuPrincipalVendedor menuPrincipalVendedor = new MenuPrincipalVendedor();
+                MenuPrincipalVendedor menuPrincipalVendedor = new MenuPrincipalVendedor(pUsuario);
                 menuPrincipalVendedor.Show();
                 this.Hide();
             }

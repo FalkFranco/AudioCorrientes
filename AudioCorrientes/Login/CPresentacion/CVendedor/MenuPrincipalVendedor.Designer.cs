@@ -215,7 +215,7 @@
             this.lbVendedor.AutoSize = true;
             this.lbVendedor.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbVendedor.ForeColor = System.Drawing.SystemColors.Control;
-            this.lbVendedor.Location = new System.Drawing.Point(60, 136);
+            this.lbVendedor.Location = new System.Drawing.Point(36, 135);
             this.lbVendedor.Name = "lbVendedor";
             this.lbVendedor.Size = new System.Drawing.Size(87, 19);
             this.lbVendedor.TabIndex = 8;
@@ -226,7 +226,7 @@
             this.lbUsuario.AutoSize = true;
             this.lbUsuario.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbUsuario.ForeColor = System.Drawing.SystemColors.Control;
-            this.lbUsuario.Location = new System.Drawing.Point(42, 169);
+            this.lbUsuario.Location = new System.Drawing.Point(36, 168);
             this.lbUsuario.Name = "lbUsuario";
             this.lbUsuario.Size = new System.Drawing.Size(151, 19);
             this.lbUsuario.TabIndex = 7;
@@ -317,6 +317,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MenuPrincipalVendedor";
             this.Text = "MenuPrincipalVendedor";
+            this.Load += new System.EventHandler(this.MenuPrincipalVendedor_Load);
             this.panelTop.ResumeLayout(false);
             this.panelMenu.ResumeLayout(false);
             this.panelMenu.PerformLayout();

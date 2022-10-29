@@ -1,4 +1,6 @@
-﻿using Login.CSuAdministrador;
+﻿using Login.CDatos;
+using Login.CDatos.DUsuarios;
+using Login.CSuAdministrador;
 using Login.CSuAdministrador.Clientes;
 using Login.CSuAdministrador.Empleados;
 using System;
@@ -17,9 +19,11 @@ namespace Login.CAdministrador
 {
     public partial class MenuPrincipalAdministrador : Form
     {
-        public MenuPrincipalAdministrador()
+        UsuarioLogin pUsuario = new UsuarioLogin(); 
+        public MenuPrincipalAdministrador(UsuarioLogin pUsuario)
         {
             InitializeComponent();
+            this.pUsuario = pUsuario;
         }
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -123,6 +127,11 @@ namespace Login.CAdministrador
         private void btnEmpleados_Click(object sender, EventArgs e)
         {
             AbrirFormEnPanel(new Empleados());
+        }
+
+        private void MenuPrincipalAdministrador_Load(object sender, EventArgs e)
+        {
+            lbUsuario.Text = pUsuario.apellido + " " + pUsuario.nombre;
         }
     }
 }

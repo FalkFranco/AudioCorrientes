@@ -93,7 +93,7 @@ namespace Login.CVendedor
 
         private void btnVentas_Click(object sender, EventArgs e)
         {
-            AbrirFormEnPanel(new Vender());
+            AbrirFormEnPanel(new Vender(pUsuario));
         }
 
         private void btnCerrarSesion_Click(object sender, EventArgs e)
@@ -113,7 +113,7 @@ namespace Login.CVendedor
 
         private void btnClientes_Click(object sender, EventArgs e)
         {
-            AbrirFormEnPanel(new Clientes.AgregarClientes());
+            AbrirFormEnPanel(new Clientes.Clientes());
         }
 
         private void MenuPrincipalVendedor_Load(object sender, EventArgs e)

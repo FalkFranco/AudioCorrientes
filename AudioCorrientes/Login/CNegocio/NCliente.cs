@@ -24,6 +24,12 @@ namespace Login.CNegocio
             dgv.DataSource = Lst;
             OrdenDgv(dgv);
         }
+        public void CargarGridven(DataGridView dgv)
+        {
+            var Lst = datos.Read();
+            dgv.DataSource = Lst;
+            OrdenDgvVen(dgv);
+        }
 
         public void OrdenDgv(DataGridView dgv)
         {
@@ -40,7 +46,19 @@ namespace Login.CNegocio
             dgv.Columns["Seleccionar"].DisplayIndex = 10;
         }
 
-        
+        public void OrdenDgvVen(DataGridView dgv)
+        {
+            dgv.Columns["id_cliente"].DisplayIndex = 0;
+            dgv.Columns["dni"].DisplayIndex = 1;
+            dgv.Columns["nombre"].DisplayIndex = 2;
+            dgv.Columns["apellido"].DisplayIndex = 3;
+            dgv.Columns["telefono"].DisplayIndex = 4;
+            dgv.Columns["direccion"].DisplayIndex = 5;
+            dgv.Columns["email"].DisplayIndex = 6;
+            dgv.Columns["id_tipoCliente"].DisplayIndex = 7;
+        }
+
+
 
         public void CargarGridDni(DataGridView dgv, String dni)
         {
@@ -64,6 +82,13 @@ namespace Login.CNegocio
         {
             dgv.Columns["TipoCliente"].Visible = false;
             dgv.Columns["Ventas"].Visible = false;
+        }
+        public void ocultarColumnasVen(DataGridView dgv)
+        {
+            dgv.Columns["TipoCliente"].Visible = false;
+            dgv.Columns["Ventas"].Visible = false;
+            dgv.Columns["Telefono"].Visible = false;
+            dgv.Columns["Direccion"].Visible = false;
         }
 
         public void CargarComboBox(ComboBox cb)

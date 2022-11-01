@@ -34,14 +34,14 @@ namespace Login.CNegocio
         public void OrdenDgvVen(DataGridView dgv)
         {
             dgv.Columns["id_productos"].DisplayIndex = 0;
-            dgv.Columns["id_categorias"].DisplayIndex = 1;
-            dgv.Columns["id_marcas"].DisplayIndex = 2;
+            dgv.Columns["categoria_id"].DisplayIndex = 1;
+            dgv.Columns["marca_id"].DisplayIndex = 2;
             dgv.Columns["nombre"].DisplayIndex = 3;
             dgv.Columns["descripcion"].DisplayIndex = 4;
             dgv.Columns["precio"].DisplayIndex = 5;
             dgv.Columns["stock"].DisplayIndex = 6;
             dgv.Columns["estado"].DisplayIndex = 7;
-            dgv.Columns["Seleccionar"].DisplayIndex = 8;
+            //dgv.Columns["Seleccionar"].DisplayIndex = 8;
         }
 
         public void OrdenDgvAdmin(DataGridView dgv)
@@ -194,6 +194,11 @@ namespace Login.CNegocio
             {
                 return false;
             }
+        }
+
+        public List<Producto> cargarProductoVenta(int id)
+        {
+            return dProductos.Buscar(id);
         }
     }
 }

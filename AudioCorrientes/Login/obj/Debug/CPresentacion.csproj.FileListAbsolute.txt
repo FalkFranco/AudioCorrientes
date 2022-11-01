@@ -148,7 +148,6 @@ C:\Users\colo5\Desktop\AudiCorrientes\AudioCorrientes\AudioCorrientes\Login\obj\
 C:\Users\colo5\Desktop\AudiCorrientes\AudioCorrientes\AudioCorrientes\Login\obj\Debug\Login.CSuAdministrador.Usuarios.EditarRol.resources
 C:\Users\colo5\Desktop\AudiCorrientes\AudioCorrientes\AudioCorrientes\Login\obj\Debug\Login.CSuAdministrador.Usuarios.Usuarios.resources
 C:\Users\colo5\Desktop\AudiCorrientes\AudioCorrientes\AudioCorrientes\Login\obj\Debug\Login.CSuAdministrador.Ventas.resources
-C:\Users\colo5\Desktop\AudiCorrientes\AudioCorrientes\AudioCorrientes\Login\obj\Debug\Login.CVendedor.Clientes.AgregarClientes.resources
 C:\Users\colo5\Desktop\AudiCorrientes\AudioCorrientes\AudioCorrientes\Login\obj\Debug\Login.CVendedor.Clientes.FormAgregarCliente.resources
 C:\Users\colo5\Desktop\AudiCorrientes\AudioCorrientes\AudioCorrientes\Login\obj\Debug\Login.CVendedor.MenuPrincipalVendedor.resources
 C:\Users\colo5\Desktop\AudiCorrientes\AudioCorrientes\AudioCorrientes\Login\obj\Debug\Login.CVendedor.Productos.ListarProductos.resources
@@ -216,3 +215,4 @@ C:\Users\colo5\OneDrive\Escritorio\Proyectos\AudioCorrientes\AudioCorrientes\Aud
 C:\Users\colo5\OneDrive\Escritorio\Proyectos\AudioCorrientes\AudioCorrientes\AudioCorrientes\Login\obj\Debug\Login.pdb
 C:\Users\colo5\Desktop\AudiCorrientes\AudioCorrientes\AudioCorrientes\Login\obj\Debug\Login.CPresentacion.CSuAdministrador.Usuarios.AgregarUsuario.resources
 C:\Users\colo5\Desktop\AudiCorrientes\AudioCorrientes\AudioCorrientes\Login\obj\Debug\Login.CPresentacion.CSuAdministrador.Usuarios.EditarUsuario.resources
+C:\Users\colo5\Desktop\AudiCorrientes\AudioCorrientes\AudioCorrientes\Login\obj\Debug\Login.CVendedor.Clientes.Clientes.resources

@@ -118,7 +118,7 @@ INSERT INTO Roles(rol) VALUES ('Vendedor')
 SELECT * FROM Productos
 
 
-
+SELECT * FROM Roles
 
 
 SELECT Clientes.id_cliente, Clientes.dni, Clientes.nombre,Clientes.apellido, Clientes.telefono, Clientes.email, TipoCliente.tipo

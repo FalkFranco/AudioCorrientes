@@ -21,6 +21,7 @@ namespace Login.CVendedor.Productos
             InitializeComponent();
         }
         NProductos objProducto = new NProductos();
+        Producto producto = new Producto(); 
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
@@ -94,8 +95,14 @@ namespace Login.CVendedor.Productos
             {
                 //Carga al Carrito
                 Id = Convert.ToInt32(dgvProductos.CurrentRow.Cells["id_productos"].Value.ToString());
+                objProducto.cargarProductoVenta(Id);
                 
             }
+        }
+
+        private void dgvProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

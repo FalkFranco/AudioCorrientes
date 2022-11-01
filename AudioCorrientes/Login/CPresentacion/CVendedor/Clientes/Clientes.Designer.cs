@@ -1,6 +1,6 @@
 ﻿namespace Login.CVendedor.Clientes
 {
-    partial class AgregarClientes
+    partial class Clientes
     {
         /// <summary>
         /// Required designer variable.

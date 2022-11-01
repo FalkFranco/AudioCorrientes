@@ -12,9 +12,9 @@ using System.Windows.Forms;
 
 namespace Login.CVendedor.Clientes
 {
-    public partial class AgregarClientes : Form
+    public partial class Clientes : Form
     {
-        public AgregarClientes()
+        public Clientes()
         {
             InitializeComponent();
         }

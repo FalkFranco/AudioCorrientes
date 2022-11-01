@@ -79,6 +79,7 @@
     <Compile Include="CDatos\DUsuarios\DRol.cs" />
     <Compile Include="CDatos\DUsuarios\DUsuarios.cs" />
     <Compile Include="CDatos\DUsuarios\UsuarioLogin.cs" />
+    <Compile Include="CDatos\DVentas\DTipoFactura.cs" />
     <Compile Include="CDatos\Empleado.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -121,6 +122,7 @@
     <Compile Include="CNegocio\NCliente.cs" />
     <Compile Include="CNegocio\NEmpleado.cs" />
     <Compile Include="CNegocio\NProductos.cs" />
+    <Compile Include="CNegocio\NVentas.cs" />
     <Compile Include="CNegocio\NUsuario.cs" />
     <Compile Include="CPresentacion\CAdministrador\MenuPrincipalAdministrador.cs">
       <SubType>Form</SubType>
@@ -267,11 +269,11 @@
     <Compile Include="CPresentacion\CAdministrador\Ventas\Ventas.Designer.cs">
       <DependentUpon>Ventas.cs</DependentUpon>
     </Compile>
-    <Compile Include="CPresentacion\CVendedor\Clientes\AgregarClientes.cs">
+    <Compile Include="CPresentacion\CVendedor\Clientes\Clientes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CPresentacion\CVendedor\Clientes\AgregarClientes.Designer.cs">
-      <DependentUpon>AgregarClientes.cs</DependentUpon>
+    <Compile Include="CPresentacion\CVendedor\Clientes\Clientes.Designer.cs">
+      <DependentUpon>Clientes.cs</DependentUpon>
     </Compile>
     <Compile Include="CPresentacion\CVendedor\Clientes\FormAgregarCliente.cs">
       <SubType>Form</SubType>
@@ -383,8 +385,8 @@
     <EmbeddedResource Include="CPresentacion\CAdministrador\Ventas\Ventas.resx">
       <DependentUpon>Ventas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CPresentacion\CVendedor\Clientes\AgregarClientes.resx">
-      <DependentUpon>AgregarClientes.cs</DependentUpon>
+    <EmbeddedResource Include="CPresentacion\CVendedor\Clientes\Clientes.resx">
+      <DependentUpon>Clientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CPresentacion\CVendedor\Clientes\FormAgregarCliente.resx">
       <DependentUpon>FormAgregarCliente.cs</DependentUpon>

@@ -1,4 +1,6 @@
-﻿using Login.CNegocio;
+﻿using Login.CDatos;
+using Login.CDatos.DUsuarios;
+using Login.CNegocio;
 using Login.CVendedor.Clientes;
 using Login.CVendedor.Productos;
 using System;
@@ -16,15 +18,17 @@ namespace Login.CVendedor
 {
     public partial class Vender : Form
     {
+        UsuarioLogin pUsuario = new UsuarioLogin();
         NProductos dProductos = new NProductos();
-        public Vender()
+        NVentas nVentas = new NVentas();
+        NCliente nCliente = new NCliente();
+        public Vender(UsuarioLogin pUsuario)
         {
             InitializeComponent();
-            
+            this.pUsuario = pUsuario;
         }
 
         
-
 
         private void btnCargarLista_Click(object sender, EventArgs e)
         {
@@ -78,22 +82,15 @@ namespace Login.CVendedor
             {
                 MessageBox.Show("Debe ingresar productos para la venta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            if(txtEfectivo.Text != "")
-            {
-                if(float.Parse(lbDevolucion.Text) < 0)
+            
+                if(float.Parse(lbTotal.Text) < 0)
                 {
                     MessageBox.Show("Ingrese el monto correcto del pago en efectivo, mayor al total a pagar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
-                    errorProvider1.SetError(txtEfectivo, "");
                     MessageBox.Show("Generando Ticket...");
                 } 
-            }
-            else
-            {
-                errorProvider1.SetError(txtEfectivo, "Este campo no puede estar vacio");
-            }
         }
 
         private void txtIdArticulo_KeyPress(object sender, KeyPressEventArgs e)
@@ -156,30 +153,29 @@ namespace Login.CVendedor
 
             lbTotal.Text = CostoTotal.ToString();
         }
-
-        private void txtEfectivo_TextChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                lbDevolucion.Text = (float.Parse(txtEfectivo.Text) - float.Parse(lbTotal.Text)).ToString();
-            }
-            catch
-            {
-                lbDevolucion.Text = 0.ToString();
-
-            }
-        }
-
+        
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             ListarProductos listarProductos = new ListarProductos();
             listarProductos.ShowDialog();
+
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            AgregarClientes agregarClientes = new AgregarClientes();
+            Clientes.Clientes agregarClientes = new Clientes.Clientes();
             agregarClientes.ShowDialog();
         }
+
+        private void Vender_Load(object sender, EventArgs e)
+        {
+            nVentas.CargarComboBoxTipoFactura(cbTipoFactura);
+            lbNomVen.Text = pUsuario.apellido + " " + pUsuario.nombre;
+            dProductos.CargarGridVen(dgvProductos);
+            dProductos.OcultarColumnas(dgvProductos);
+            nCliente.CargarGridven(dgvClientes);
+            nCliente.ocultarColumnasVen(dgvClientes);
+        }
+
     }
 }

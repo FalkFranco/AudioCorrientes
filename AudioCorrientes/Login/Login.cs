@@ -112,9 +112,22 @@ namespace Login
 
         private void btnLogin_Validar_Click(object sender, EventArgs e)
         {
+            ingresar();
+        }
+        private void txtPassword_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((int)e.KeyChar == (int)Keys.Enter)
+            {
+                ingresar();
+            }
+        }
+
+        private void ingresar()
+        {
             var Lst = objUsuario.DevolverUsuario(txtUser.Text, txtPassword.Text);
-            if (Lst != null){
-                foreach(Usuario usuario in Lst)
+            if (Lst != null)
+            {
+                foreach (Usuario usuario in Lst)
                 {
                     usuarioLogeado.id_usuario = usuario.id_usuario;
                     usuarioLogeado.id_empleado = usuario.empleado_id;
@@ -123,7 +136,7 @@ namespace Login
 
                     var dEmpleado = empleado.Buscar(usuario.empleado_id);
 
-                    foreach(Empleado empleado in dEmpleado)
+                    foreach (Empleado empleado in dEmpleado)
                     {
                         usuarioLogeado.nombre = empleado.nombre;
                         usuarioLogeado.apellido = empleado.apellido;
@@ -166,5 +179,7 @@ namespace Login
                 this.Hide();
             }
         }
+
+        
     }
 }

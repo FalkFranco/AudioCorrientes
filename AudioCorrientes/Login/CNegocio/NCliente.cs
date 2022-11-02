@@ -1,4 +1,5 @@
 ﻿using Login.CDatos;
+using Login.CDatos.DProductos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,14 +34,14 @@ namespace Login.CNegocio
 
         public void OrdenDgv(DataGridView dgv)
         {
-            dgv.Columns["id_cliente"].DisplayIndex = 0;
-            dgv.Columns["dni"].DisplayIndex = 1;
-            dgv.Columns["nombre"].DisplayIndex = 2;
-            dgv.Columns["apellido"].DisplayIndex = 3;
-            dgv.Columns["telefono"].DisplayIndex = 4;
-            dgv.Columns["direccion"].DisplayIndex = 5;
-            dgv.Columns["email"].DisplayIndex = 6;
-            dgv.Columns["id_tipoCliente"].DisplayIndex = 7;
+            dgv.Columns["Id"].DisplayIndex = 0;
+            dgv.Columns["Dni"].DisplayIndex = 1;
+            dgv.Columns["Nombre"].DisplayIndex = 2;
+            dgv.Columns["Apellido"].DisplayIndex = 3;
+            dgv.Columns["Telefono"].DisplayIndex = 4;
+            dgv.Columns["Direccion"].DisplayIndex = 5;
+            dgv.Columns["Email"].DisplayIndex = 6;
+            dgv.Columns["TipoCliente"].DisplayIndex = 7;
             dgv.Columns["Editar"].DisplayIndex = 8;
             dgv.Columns["Eliminar"].DisplayIndex = 9;
             dgv.Columns["Seleccionar"].DisplayIndex = 10;
@@ -183,6 +184,21 @@ namespace Login.CNegocio
             {
                 return false;
             }
+        }
+
+        public void cargarClientes(DataGridView dgv)
+        {
+            datos.mostrarClientes(dgv);
+            OrdenDgv(dgv);
+        }
+        public void cargarClientesVen(DataGridView dgv)
+        {
+            datos.mostrarClientes(dgv);
+        }
+
+        public void cargarPorNombre(DataGridView dgv, String pNombre)
+        {
+            datos.mostrarClientesNombre(dgv, pNombre);
         }
     }
 }

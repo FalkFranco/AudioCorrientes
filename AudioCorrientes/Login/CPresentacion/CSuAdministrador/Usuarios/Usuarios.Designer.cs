@@ -33,6 +33,7 @@
             this.lbProductoTitle = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.btnActualizar = new System.Windows.Forms.Button();
             this.dgvEmpleados = new System.Windows.Forms.DataGridView();
             this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
             this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
@@ -43,6 +44,7 @@
             this.btnBuscar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.btnActualizar2 = new System.Windows.Forms.Button();
             this.dgvUsuarios = new System.Windows.Forms.DataGridView();
             this.EditarUsuario = new System.Windows.Forms.DataGridViewImageColumn();
             this.EliminarUsuario = new System.Windows.Forms.DataGridViewImageColumn();
@@ -51,18 +53,28 @@
             this.txtBuscarE = new System.Windows.Forms.TextBox();
             this.btnBuscarE = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.btnActualizarUsuElim = new System.Windows.Forms.Button();
+            this.dgvUsuariosEliminados = new System.Windows.Forms.DataGridView();
+            this.ActivarUsuario = new System.Windows.Forms.DataGridViewImageColumn();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.btnActualizar = new System.Windows.Forms.Button();
-            this.btnActualizar2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
+            this.tabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUsuariosEliminados)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -90,6 +102,8 @@
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 67);
             this.tabControl1.Name = "tabControl1";
@@ -113,6 +127,16 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Listado Empleados";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // btnActualizar
+            // 
+            this.btnActualizar.Location = new System.Drawing.Point(1021, 57);
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Size = new System.Drawing.Size(75, 23);
+            this.btnActualizar.TabIndex = 17;
+            this.btnActualizar.Text = "Actualizar";
+            this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Click += new System.EventHandler(this.Usuarios_Load);
             // 
             // dgvEmpleados
             // 
@@ -219,6 +243,16 @@
             this.tabPage2.Text = "Listado Usuarios";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // btnActualizar2
+            // 
+            this.btnActualizar2.Location = new System.Drawing.Point(1010, 57);
+            this.btnActualizar2.Name = "btnActualizar2";
+            this.btnActualizar2.Size = new System.Drawing.Size(75, 23);
+            this.btnActualizar2.TabIndex = 18;
+            this.btnActualizar2.Text = "Actualizar";
+            this.btnActualizar2.UseVisualStyleBackColor = true;
+            this.btnActualizar2.Click += new System.EventHandler(this.Usuarios_Load);
+            // 
             // dgvUsuarios
             // 
             this.dgvUsuarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -297,6 +331,109 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "Buscar Empleado por:";
             // 
+            // tabPage3
+            // 
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(1118, 516);
+            this.tabPage3.TabIndex = 4;
+            this.tabPage3.Text = "Empleados Eliminados";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.btnActualizarUsuElim);
+            this.tabPage4.Controls.Add(this.dgvUsuariosEliminados);
+            this.tabPage4.Controls.Add(this.checkBox1);
+            this.tabPage4.Controls.Add(this.checkBox2);
+            this.tabPage4.Controls.Add(this.textBox1);
+            this.tabPage4.Controls.Add(this.button2);
+            this.tabPage4.Controls.Add(this.label2);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(1118, 516);
+            this.tabPage4.TabIndex = 5;
+            this.tabPage4.Text = "Usuarios Eliminados";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // btnActualizarUsuElim
+            // 
+            this.btnActualizarUsuElim.Location = new System.Drawing.Point(1015, 61);
+            this.btnActualizarUsuElim.Name = "btnActualizarUsuElim";
+            this.btnActualizarUsuElim.Size = new System.Drawing.Size(75, 23);
+            this.btnActualizarUsuElim.TabIndex = 25;
+            this.btnActualizarUsuElim.Text = "Actualizar";
+            this.btnActualizarUsuElim.UseVisualStyleBackColor = true;
+            this.btnActualizarUsuElim.Click += new System.EventHandler(this.btnActualizarUsuElim_Click);
+            // 
+            // dgvUsuariosEliminados
+            // 
+            this.dgvUsuariosEliminados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvUsuariosEliminados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvUsuariosEliminados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ActivarUsuario});
+            this.dgvUsuariosEliminados.Location = new System.Drawing.Point(31, 102);
+            this.dgvUsuariosEliminados.Name = "dgvUsuariosEliminados";
+            this.dgvUsuariosEliminados.Size = new System.Drawing.Size(1059, 394);
+            this.dgvUsuariosEliminados.TabIndex = 24;
+            this.dgvUsuariosEliminados.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuariosEliminados_CellClick);
+            // 
+            // ActivarUsuario
+            // 
+            this.ActivarUsuario.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ActivarUsuario.HeaderText = "Activar";
+            this.ActivarUsuario.Image = global::Login.Properties.Resources.basura25x25;
+            this.ActivarUsuario.Name = "ActivarUsuario";
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(218, 21);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(63, 17);
+            this.checkBox1.TabIndex = 23;
+            this.checkBox1.Text = "Nombre";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Checked = true;
+            this.checkBox2.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox2.Location = new System.Drawing.Point(152, 21);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(45, 17);
+            this.checkBox2.TabIndex = 22;
+            this.checkBox2.Text = "DNI";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(31, 61);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(848, 20);
+            this.textBox1.TabIndex = 21;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(896, 61);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 20;
+            this.button2.Text = "Buscar";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(28, 21);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(111, 13);
+            this.label2.TabIndex = 19;
+            this.label2.Text = "Buscar Empleado por:";
+            // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
@@ -324,26 +461,6 @@
             this.dataGridViewImageColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.dataGridViewImageColumn3.Width = 489;
             // 
-            // btnActualizar
-            // 
-            this.btnActualizar.Location = new System.Drawing.Point(1021, 57);
-            this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(75, 23);
-            this.btnActualizar.TabIndex = 17;
-            this.btnActualizar.Text = "Actualizar";
-            this.btnActualizar.UseVisualStyleBackColor = true;
-            this.btnActualizar.Click += new System.EventHandler(this.Usuarios_Load);
-            // 
-            // btnActualizar2
-            // 
-            this.btnActualizar2.Location = new System.Drawing.Point(1010, 57);
-            this.btnActualizar2.Name = "btnActualizar2";
-            this.btnActualizar2.Size = new System.Drawing.Size(75, 23);
-            this.btnActualizar2.TabIndex = 18;
-            this.btnActualizar2.Text = "Actualizar";
-            this.btnActualizar2.UseVisualStyleBackColor = true;
-            this.btnActualizar2.Click += new System.EventHandler(this.Usuarios_Load);
-            // 
             // Usuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -363,6 +480,9 @@
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).EndInit();
+            this.tabPage4.ResumeLayout(false);
+            this.tabPage4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUsuariosEliminados)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
@@ -398,5 +518,15 @@
         private System.Windows.Forms.DataGridViewImageColumn EliminarUsuario;
         private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.Button btnActualizar2;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.Button btnActualizarUsuElim;
+        private System.Windows.Forms.DataGridView dgvUsuariosEliminados;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridViewImageColumn ActivarUsuario;
     }
 }

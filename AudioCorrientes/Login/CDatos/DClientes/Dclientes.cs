@@ -133,5 +133,70 @@ namespace Login.CDatos
             }
         }
 
+        public bool mostrarClientes(DataGridView dgv)
+        {
+            try
+            {
+                using (db = new dbAudioCorrientesEntities())
+                {
+                    var objMostrar = (from q in db.Clientes
+                                      select new
+                                      {
+                                          Id = q.id_cliente,
+                                          Dni = q.dni,
+                                          Nombre = q.nombre,
+                                          Apellido = q.apellido,
+                                          Telefono = q.telefono,
+                                          Direccion = q.direccion,
+                                          Email = q.email,
+                                          TipoCliente = q.TipoCliente.tipo
+                                      }).ToList();
+                    dgv.DataSource = objMostrar;
+
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+
+        }
+
+        public bool mostrarClientesNombre(DataGridView dgv, String pBuscador)
+        {
+            try
+            {
+                using (db = new dbAudioCorrientesEntities())
+                {
+                    var objMostrar = (from q in db.Clientes
+                                      where q.apellido.Contains(pBuscador)
+                                      select new
+                                      {
+                                          Id = q.id_cliente,
+                                          Dni = q.dni,
+                                          Nombre = q.nombre,
+                                          Apellido = q.apellido,
+                                          Telefono = q.telefono,
+                                          Direccion = q.direccion,
+                                          Email = q.email,
+                                          TipoCliente = q.TipoCliente.tipo
+                                      }).ToList();
+                    dgv.DataSource = objMostrar;
+
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+
+        }
+
+
+
     }
 }

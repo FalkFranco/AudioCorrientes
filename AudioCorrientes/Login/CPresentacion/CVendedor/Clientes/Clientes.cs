@@ -89,8 +89,8 @@ namespace Login.CVendedor.Clientes
 
         private void AgregarClientes_Load(object sender, EventArgs e)
         {
-            objCliente.CargarGrid(dgvClientes);
-            objCliente.ocultarColumnas(dgvClientes);
+            objCliente.cargarClientes(dgvClientes);
+            //objCliente.ocultarColumnas(dgvClientes);
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)

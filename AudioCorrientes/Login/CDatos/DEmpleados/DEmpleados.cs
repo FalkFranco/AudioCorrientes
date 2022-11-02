@@ -111,5 +111,31 @@ namespace Login.CDatos.DEmpleados
                 return null;
             }
         }
+
+        public bool mostrarEmpleados(DataGridView dgv)
+        {
+            try
+            {
+                using (db = new dbAudioCorrientesEntities())
+                {
+                    var objMostrar = (from q in db.Empleados
+                                      where q.activo == true
+                                      select new
+                                      {
+                                          Nombre = q.nombre,
+                                          //Nombre = q.Empleado.apellido + ' ' + q.Empleado.nombre,
+                                          Apellido = q.apellido,
+                                      }).ToList();
+                    dgv.DataSource = objMostrar;
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+
+        }
     }
 }

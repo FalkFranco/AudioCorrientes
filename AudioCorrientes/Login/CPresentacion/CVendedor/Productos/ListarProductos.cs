@@ -84,21 +84,10 @@ namespace Login.CVendedor.Productos
 
         private void ListarProductos_Load(object sender, EventArgs e)
         {
-            objProducto.CargarGridVen(dgvProductos);
-            objProducto.OcultarColumnas(dgvProductos);
+            objProducto.cargarProducto(dgvProductos);
+            //objProducto.OcultarColumnas(dgvProductos);
         }
 
-        int Id;
-        private void dgvProductos_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (dgvProductos.Columns[e.ColumnIndex].Name == "Seleccionar")
-            {
-                //Carga al Carrito
-                Id = Convert.ToInt32(dgvProductos.CurrentRow.Cells["id_productos"].Value.ToString());
-                objProducto.cargarProductoVenta(Id);
-                
-            }
-        }
 
         private void dgvProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {

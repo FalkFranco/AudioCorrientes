@@ -1,6 +1,7 @@
 ﻿using Login.CDatos;
 using Login.CDatos.DUsuarios;
 using Login.CNegocio;
+using Login.CPresentacion.CVendedor.Clientes;
 using Login.CVendedor.Clientes;
 using Login.CVendedor.Productos;
 using System;
@@ -19,7 +20,7 @@ namespace Login.CVendedor
     public partial class Vender : Form
     {
         UsuarioLogin pUsuario = new UsuarioLogin();
-        NProductos dProductos = new NProductos();
+        NProductos nProductos = new NProductos();
         NVentas nVentas = new NVentas();
         NCliente nCliente = new NCliente();
         public Vender(UsuarioLogin pUsuario)
@@ -171,11 +172,40 @@ namespace Login.CVendedor
         {
             nVentas.CargarComboBoxTipoFactura(cbTipoFactura);
             lbNomVen.Text = pUsuario.apellido + " " + pUsuario.nombre;
-            dProductos.CargarGridVen(dgvProductos);
-            dProductos.OcultarColumnas(dgvProductos);
-            nCliente.CargarGridven(dgvClientes);
-            nCliente.ocultarColumnasVen(dgvClientes);
+            nProductos.cargarProducto(dgvProductos);
+            //dProductos.OcultarColumnas(dgvProductos);
+            nCliente.cargarClientesVen(dgvClientes);
+            //nCliente.ocultarColumnasVen(dgvClientes);
         }
 
+        private void dgvProductos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvProductos.Columns[e.ColumnIndex].Name == "Seleccionar")
+            {
+                txtIdArticulo.Text = dgvProductos.CurrentRow.Cells["Id"].Value.ToString();
+                txtNombre.Text = dgvProductos.CurrentRow.Cells["Nombre"].Value.ToString();
+                txtPrecio.Text = dgvProductos.CurrentRow.Cells["Precio"].Value.ToString();
+            }
+            
+        }
+
+        private void dgvClientes_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvClientes.Columns[e.ColumnIndex].Name == "SeleccionarCliente")
+            {
+                txtdni.Text = dgvClientes.CurrentRow.Cells["Id"].Value.ToString();
+                txtNombreCliente.Text = dgvClientes.CurrentRow.Cells["Apellido"].Value.ToString() + ' ' + dgvClientes.CurrentRow.Cells["Nombre"].Value.ToString() ;
+            }
+        }
+
+        private void textBox5_TextChanged(object sender, EventArgs e)
+        {
+            nProductos.cargarPorNombre(dgvProductos, txtBuscarProd.Text);
+        }
+
+        private void txtBuscarCliente_TextChanged(object sender, EventArgs e)
+        {
+            nCliente.cargarPorNombre(dgvClientes, txtBuscarCliente.Text);
+        }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -94,6 +95,103 @@ namespace Login.CDatos.DProductos
                 MessageBox.Show(ex.Message);
                 return null;
             }
+        }
+
+
+        public bool mostrarProductos(DataGridView dgv)
+        {
+            try
+            {
+                using (db = new dbAudioCorrientesEntities())
+                {
+                    var objMostrar = (from q in db.Productos
+                                      where q.estado == true
+                                      select new
+                                      {
+                                          Id = q.id_productos,
+                                          Categoria = q.Categoria.categoria_descripcion,
+                                          Marca = q.Marca.marca_descripcion,
+                                          Nombre = q.nombre,
+                                          Descripcion = q.descripcion,
+                                          Precio = q.precio,
+                                          Stock = q.stock,
+                                          Estado = q.estado
+                                      }).ToList();
+                    dgv.DataSource = objMostrar;
+                    
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+
+        }
+
+        public bool mostrarProductosNoListados(DataGridView dgv)
+        {
+            try
+            {
+                using (db = new dbAudioCorrientesEntities())
+                {
+                    var objMostrar = (from q in db.Productos
+                                      where q.estado != true
+                                      select new
+                                      {
+                                          Id = q.id_productos,
+                                          Categoria = q.Categoria.categoria_descripcion,
+                                          Marca = q.Marca.marca_descripcion,
+                                          Nombre = q.nombre,
+                                          Descripcion = q.descripcion,
+                                          Precio = q.precio,
+                                          Stock = q.stock,
+                                          Estado = q.estado
+                                      }).ToList();
+                    dgv.DataSource = objMostrar;
+
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+
+        }
+
+        public bool mostrarProductosNombre(DataGridView dgv, String pNombre)
+        {
+            try
+            {
+                using (db = new dbAudioCorrientesEntities())
+                {
+                    var objMostrar = (from q in db.Productos
+                                      where q.nombre.Contains(pNombre)
+                                      select new
+                                      {
+                                          Id = q.id_productos,
+                                          Categoria = q.Categoria.categoria_descripcion,
+                                          Marca = q.Marca.marca_descripcion,
+                                          Nombre = q.nombre,
+                                          Descripcion = q.descripcion,
+                                          Precio = q.precio,
+                                          Stock = q.stock,
+                                          Estado = q.estado
+                                      }).ToList();
+                    dgv.DataSource = objMostrar;
+
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Login.CDatos.DProductos
 {
-    internal class Productos
+    public class ObjProducto
     {
         public int id_producto { get; set; }
         public string nombre { get; set; }

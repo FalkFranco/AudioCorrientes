@@ -16,6 +16,7 @@ namespace Login.CNegocio
         DMarca  dMarca = new DMarca();
         DCategoria dCategoria = new DCategoria();   
         Producto Producto = new Producto();
+        ObjProducto objProducto = new ObjProducto();
 
         public void CargarGridVen(DataGridView dgv)
         {
@@ -196,9 +197,16 @@ namespace Login.CNegocio
             }
         }
 
-        public List<Producto> cargarProductoVenta(int id)
+        public void cargarProducto(DataGridView dgv)
         {
-            return dProductos.Buscar(id);
+            dProductos.mostrarProductos(dgv);
         }
+
+        public void cargarPorNombre(DataGridView dgv, String pNombre)
+        {
+            dProductos.mostrarProductosNombre(dgv, pNombre);
+        }
+
+
     }
 }

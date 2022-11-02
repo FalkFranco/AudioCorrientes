@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -111,6 +112,70 @@ namespace Login.CDatos.DUsuarios
                 return null;
             }
         }
+
+        
+        public bool mostrarUsuarios(DataGridView dgv)
+        {
+            try
+            {
+                using (db = new dbAudioCorrientesEntities())
+                {
+                    var objMostrar = (from q in db.Usuarios
+                                      where q.activo == true
+                                      select new
+                                      {
+                                          IdEmpleado = q.empleado_id,
+                                          Id = q.id_usuario,
+                                          Nombre = q.Empleado.nombre,
+                                          Apellido = q.Empleado.apellido,
+                                          Usuario = q.usuario1,
+                                          Password = q.contrasena,
+                                          Rol = q.Role.rol,
+                                          Activo = q.activo
+                                      }).ToList();
+                    dgv.DataSource = objMostrar;
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+
+        }
+
+        public bool mostrarUsuariosEliminados(DataGridView dgv)
+        {
+            try
+            {
+                using (db = new dbAudioCorrientesEntities())
+                {
+                    var objMostrar = (from q in db.Usuarios
+                                      where q.activo != true
+                                      select new
+                                      {
+                                          IdEmpleado = q.empleado_id,
+                                          Id = q.id_usuario,
+                                          Nombre = q.Empleado.nombre,
+                                          Apellido = q.Empleado.apellido,
+                                          Usuario = q.usuario1,
+                                          Password = q.contrasena,
+                                          Rol = q.Role.rol,
+                                          Activo = q.activo
+                                      }).ToList();
+                    dgv.DataSource = objMostrar;
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+
+        }
+
 
     }
 }

@@ -156,5 +156,11 @@ namespace Login.CNegocio
                 return false;
             }
         }
+
+        public void cargarDtosEmpleados(DataGridView dgv)
+        {
+            datos.mostrarEmpleados(dgv);
+
+        }
     }
 }

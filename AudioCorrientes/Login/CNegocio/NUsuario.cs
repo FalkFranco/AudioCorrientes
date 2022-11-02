@@ -157,7 +157,16 @@ namespace Login.CNegocio
             return null;
         }
 
+        public void cargarUsuarios(DataGridView dgv)
+        {
+            datos.mostrarUsuarios(dgv);
+            
+        }
 
+        public void cargarUsuariosEliminados(DataGridView dgv)
+        {
+            datos.mostrarUsuariosEliminados(dgv);
+        }
 
     }
 }

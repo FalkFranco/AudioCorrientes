@@ -75,7 +75,7 @@
     <Compile Include="CDatos\DProductos\DCategoria.cs" />
     <Compile Include="CDatos\DProductos\DMarca.cs" />
     <Compile Include="CDatos\DProductos\DProductos.cs" />
-    <Compile Include="CDatos\DProductos\Producto.cs" />
+    <Compile Include="CDatos\DProductos\ObjProducto.cs" />
     <Compile Include="CDatos\DUsuarios\DRol.cs" />
     <Compile Include="CDatos\DUsuarios\DUsuarios.cs" />
     <Compile Include="CDatos\DUsuarios\UsuarioLogin.cs" />

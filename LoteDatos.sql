@@ -115,6 +115,11 @@ INSERT INTO Roles(rol) VALUES (' Super Administrador')
 INSERT INTO Roles(rol) VALUES ('Gerente')
 INSERT INTO Roles(rol) VALUES ('Vendedor')
 
+
+INSERT INTO TipoFactura(tipo) VALUES ('A');
+INSERT INTO TipoFactura(tipo) VALUES ('B');
+INSERT INTO TipoFactura(tipo) VALUES ('C');
+
 SELECT * FROM Productos
 
 

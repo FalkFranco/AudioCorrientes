@@ -170,6 +170,7 @@ namespace Login.CVendedor
 
         private void Vender_Load(object sender, EventArgs e)
         {
+            lbNroFactura.Text = nVentas.UltimaFactura().ToString();
             nVentas.CargarComboBoxTipoFactura(cbTipoFactura);
             lbNomVen.Text = pUsuario.apellido + " " + pUsuario.nombre;
             nProductos.cargarProducto(dgvProductos);
@@ -206,6 +207,12 @@ namespace Login.CVendedor
         private void txtBuscarCliente_TextChanged(object sender, EventArgs e)
         {
             nCliente.cargarPorNombre(dgvClientes, txtBuscarCliente.Text);
+        }
+
+        private void btnEliminarArticulo_Click(object sender, EventArgs e)
+        {
+            dataGridViewDetalle.Rows.RemoveAt(dataGridViewDetalle.CurrentRow.Index);
+            CalcularTotal();
         }
     }
 }

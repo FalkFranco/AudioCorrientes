@@ -1,6 +1,8 @@
 ﻿using Login.CDatos.DProductos;
 using Login.CDatos.DVentas;
+using Login.CSuAdministrador;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,9 +13,10 @@ namespace Login.CNegocio
 {
     internal class NVentas
     {
+        DVenta dVenta = new DVenta();
         DTipoFactura dTipoFactura = new DTipoFactura();
-
-
+        DDetalleVenta dDetalleVenta = new DDetalleVenta();
+        
 
         public void CargarComboBoxTipoFactura(ComboBox cb)
         {
@@ -29,5 +32,12 @@ namespace Login.CNegocio
                 cb.AutoCompleteSource = AutoCompleteSource.ListItems;
             }
         }
+
+        public int UltimaFactura()
+        {
+            return dVenta.UltimaFactura();
+        }
     }
 }
+
+

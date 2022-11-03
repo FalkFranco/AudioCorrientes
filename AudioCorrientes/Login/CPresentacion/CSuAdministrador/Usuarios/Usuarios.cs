@@ -220,7 +220,7 @@ namespace Login.CSuAdministrador.Usuarios
 
         private void dgvUsuariosEliminados_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-
+           
         }
     }
 }

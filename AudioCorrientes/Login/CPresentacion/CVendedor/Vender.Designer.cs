@@ -36,7 +36,7 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
+            this.lbNroFactura = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.cbTipoFactura = new System.Windows.Forms.ComboBox();
             this.label17 = new System.Windows.Forms.Label();
@@ -76,7 +76,7 @@
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
+            this.btnEliminarArticulo = new System.Windows.Forms.Button();
             this.lbTotal = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
@@ -154,7 +154,7 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.label7);
+            this.panel2.Controls.Add(this.lbNroFactura);
             this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.cbTipoFactura);
             this.panel2.Controls.Add(this.label17);
@@ -167,14 +167,14 @@
             this.panel2.Size = new System.Drawing.Size(957, 60);
             this.panel2.TabIndex = 54;
             // 
-            // label7
+            // lbNroFactura
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(89, 25);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(49, 13);
-            this.label7.TabIndex = 52;
-            this.label7.Text = "0000000";
+            this.lbNroFactura.AutoSize = true;
+            this.lbNroFactura.Location = new System.Drawing.Point(89, 25);
+            this.lbNroFactura.Name = "lbNroFactura";
+            this.lbNroFactura.Size = new System.Drawing.Size(49, 13);
+            this.lbNroFactura.TabIndex = 52;
+            this.lbNroFactura.Text = "0000000";
             // 
             // label8
             // 
@@ -457,7 +457,7 @@
             this.panel9.Controls.Add(this.dataGridViewDetalle);
             this.panel9.Controls.Add(this.button7);
             this.panel9.Controls.Add(this.button8);
-            this.panel9.Controls.Add(this.button9);
+            this.panel9.Controls.Add(this.btnEliminarArticulo);
             this.panel9.Controls.Add(this.lbTotal);
             this.panel9.Controls.Add(this.label29);
             this.panel9.Controls.Add(this.label30);
@@ -538,15 +538,16 @@
             this.button8.Text = "Confirmar Facturación";
             this.button8.UseVisualStyleBackColor = false;
             // 
-            // button9
+            // btnEliminarArticulo
             // 
-            this.button9.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button9.Location = new System.Drawing.Point(765, 37);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(175, 35);
-            this.button9.TabIndex = 54;
-            this.button9.Text = "Eliminar Producto Seleccionado";
-            this.button9.UseVisualStyleBackColor = true;
+            this.btnEliminarArticulo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEliminarArticulo.Location = new System.Drawing.Point(765, 37);
+            this.btnEliminarArticulo.Name = "btnEliminarArticulo";
+            this.btnEliminarArticulo.Size = new System.Drawing.Size(175, 35);
+            this.btnEliminarArticulo.TabIndex = 54;
+            this.btnEliminarArticulo.Text = "Eliminar Producto Seleccionado";
+            this.btnEliminarArticulo.UseVisualStyleBackColor = true;
+            this.btnEliminarArticulo.Click += new System.EventHandler(this.btnEliminarArticulo_Click);
             // 
             // lbTotal
             // 
@@ -634,7 +635,7 @@
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lbNroFactura;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox cbTipoFactura;
         private System.Windows.Forms.Label label17;
@@ -670,7 +671,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button btnEliminarArticulo;
         private System.Windows.Forms.Label lbTotal;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label30;

@@ -114,7 +114,7 @@ CREATE TABLE DetalleVenta(
 	id_detalleVenta INT PRIMARY KEY IDENTITY,
 	id_ventas INT NOT NULL,
 	id_productos INT NOT NULL,
-	precioVenta FLOAT NOT NULL,
+	precioVenta FLOAT NOT NULL, --MODIFICAR (8,2)
 	cantidad INT NOT NULL,
 	subtotal FLOAT NOT NULL,
 	CONSTRAINT FK_Detalle_Venta FOREIGN KEY (id_ventas)  REFERENCES Ventas(id_ventas),
@@ -146,7 +146,7 @@ CREATE TABLE DetalleVenta(
 
 
 
-
+SELECT * FROM Ventas
 
 
 

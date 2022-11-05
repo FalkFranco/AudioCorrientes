@@ -1,4 +1,5 @@
 ﻿using Login.CDatos;
+using Login.CDatos.DProductos;
 using Login.CDatos.DUsuarios;
 using Login.CNegocio;
 using Login.CPresentacion.CVendedor.Clientes;
@@ -8,6 +9,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity.Core.Common.CommandTrees.ExpressionBuilder;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -23,6 +25,8 @@ namespace Login.CVendedor
         NProductos nProductos = new NProductos();
         NVentas nVentas = new NVentas();
         NCliente nCliente = new NCliente();
+
+        string idValue = "";
         public Vender(UsuarioLogin pUsuario)
         {
             InitializeComponent();
@@ -42,9 +46,43 @@ namespace Login.CVendedor
             }
         }
 
+        private void btnVender_Click(object sender, EventArgs e)
+        {
+            if (dataGridViewDetalle.Rows.Count == 0)
+            {
+                MessageBox.Show("Debe ingresar productos para la venta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                float total = float.Parse(lbTotal.Text);
+                int idCliente = Int32.Parse(txtIdCliente.Text);
+                int idTipoInt = Int32.Parse(idValue);
+                nVentas.AgregarFactura(idTipoInt, pUsuario.id_usuario, idCliente, total);
+                int ultimoIdFactura = Int32.Parse(lbNroFactura.Text);
+                //Agregar los detalles
+                foreach (DataGridViewRow row in dataGridViewDetalle.Rows)
+                {
+
+                    int id = Int32.Parse(row.Cells["idArticulo"].Value.ToString());
+                    float precio = float.Parse(row.Cells["PrecioProdL"].Value.ToString());
+                    int cant = Int32.Parse(row.Cells["CantProL"].Value.ToString());
+                    //MessageBox.Show(ultimoIdFactura.ToString() + id.ToString() + ' ' + precio.ToString() + ' ' + cant.ToString());
+
+                    nVentas.AgregarDetalleVenta(ultimoIdFactura, id, precio, cant);
+
+                    //Actualizar stock
+                    nProductos.ActualizarStock(id, cant);
+
+                }
+
+                MessageBox.Show("Facturacion realizada con exito");
+            }
+        }
+
         private bool ValidarCampos()
         {
             string msg = "No puede estar vacio";
+            string msgStock = "No hay stock suficiente";
             bool ok = true;
             //Si estan vacios
             if (txtIdArticulo.Text == "")
@@ -67,7 +105,19 @@ namespace Login.CVendedor
                 ok = false;
                 errorProvider1.SetError(txtCantidad, msg);
             }
-            return ok;
+            else
+            {
+                var cant = Int32.Parse(txtCantidad.Text);
+                var stock = Int32.Parse(lbStock.Text);
+                if (cant > stock)
+                {
+                    ok = false;
+                    errorProvider1.SetError(txtCantidad, msgStock);
+                }
+            }
+
+            
+                return ok;
         }
         private void BorrarMensajeProvider()
         {
@@ -77,22 +127,7 @@ namespace Login.CVendedor
             errorProvider1.SetError(txtCantidad, "");
         }
 
-        private void btnVender_Click(object sender, EventArgs e)
-        {
-            if(dataGridViewDetalle.Rows.Count == 0)
-            {
-                MessageBox.Show("Debe ingresar productos para la venta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            
-                if(float.Parse(lbTotal.Text) < 0)
-                {
-                    MessageBox.Show("Ingrese el monto correcto del pago en efectivo, mayor al total a pagar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else
-                {
-                    MessageBox.Show("Generando Ticket...");
-                } 
-        }
+        
 
         private void txtIdArticulo_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -127,11 +162,27 @@ namespace Login.CVendedor
         }
 
         //Metodos
+
+        
         private void AgregarProducto()
         {
             float precio = float.Parse(txtPrecio.Text);
             int cantidad = int.Parse(txtCantidad.Text);
-            dataGridViewDetalle.Rows.Add(txtIdArticulo.Text,txtNombre.Text,precio,txtCantidad.Text,CalcularSubTotal(precio,cantidad));
+            dataGridViewDetalle.Rows.Add(txtIdArticulo.Text, txtNombre.Text, precio, txtCantidad.Text, CalcularSubTotal(precio, cantidad));
+            //int cant = Int32.Parse(dataGridViewDetalle.Rows.Count());
+
+            //dataGridViewDetalle.DataSource()
+            //PDetalle pDetalle = new PDetalle();
+            //pDetalle.Id = txtIdArticulo.Text;
+            //pDetalle.Nombre = txtNombre.Text;
+            //pDetalle.precio = precio;
+            //pDetalle.cantidad = txtCantidad.Text;
+            //pDetalle.subTotal = CalcularSubTotal(precio, cantidad);
+
+            //dataGridViewDetalle.Rows.Insert(1,pDetalle);
+
+            //dataGridViewDetalle.Rows.Insert(0, txtIdArticulo.Text, txtNombre.Text);
+
         }
         private float CalcularSubTotal(float precio,int cantidad)
         {
@@ -145,7 +196,7 @@ namespace Login.CVendedor
             float CostoTotal = 0;
             int Conteo;
 
-            Conteo = dataGridViewDetalle.RowCount; // se cuenta los productos y se utilisa el conteo como limite del for
+            Conteo = dataGridViewDetalle.RowCount; // se cuenta los productos y se utiliza el conteo como limite del for
             for (int i = 0; i < (Conteo - 1); i++)
             {
                 //lbTotal.Text = i.ToString();
@@ -170,6 +221,16 @@ namespace Login.CVendedor
 
         private void Vender_Load(object sender, EventArgs e)
         {
+
+            //MessageBox.Show(dataGridViewDetalle.RowCount.ToString());
+            //dataGridViewDetalle.Rows.RemoveAt(0);
+            //MessageBox.Show(dataGridViewDetalle.RowCount.ToString());
+
+            dataGridViewDetalle.Rows.Clear();
+            dataGridViewDetalle.Refresh();
+
+            //idValue = cbTipoFactura.SelectedValue.ToString();
+            dtpFechaActual.Value = DateTime.Now;
             lbNroFactura.Text = nVentas.UltimaFactura().ToString();
             nVentas.CargarComboBoxTipoFactura(cbTipoFactura);
             lbNomVen.Text = pUsuario.apellido + " " + pUsuario.nombre;
@@ -186,15 +247,16 @@ namespace Login.CVendedor
                 txtIdArticulo.Text = dgvProductos.CurrentRow.Cells["Id"].Value.ToString();
                 txtNombre.Text = dgvProductos.CurrentRow.Cells["Nombre"].Value.ToString();
                 txtPrecio.Text = dgvProductos.CurrentRow.Cells["Precio"].Value.ToString();
+                lbStock.Text = dgvProductos.CurrentRow.Cells["Stock"].Value.ToString();
             }
-            
         }
 
         private void dgvClientes_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (dgvClientes.Columns[e.ColumnIndex].Name == "SeleccionarCliente")
             {
-                txtdni.Text = dgvClientes.CurrentRow.Cells["Id"].Value.ToString();
+                txtIdCliente.Text = dgvClientes.CurrentRow.Cells["Id"].Value.ToString();
+                txtdni.Text = dgvClientes.CurrentRow.Cells["Dni"].Value.ToString();
                 txtNombreCliente.Text = dgvClientes.CurrentRow.Cells["Apellido"].Value.ToString() + ' ' + dgvClientes.CurrentRow.Cells["Nombre"].Value.ToString() ;
             }
         }
@@ -213,6 +275,11 @@ namespace Login.CVendedor
         {
             dataGridViewDetalle.Rows.RemoveAt(dataGridViewDetalle.CurrentRow.Index);
             CalcularTotal();
+        }
+
+        private void cbTipoFactura_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            idValue = cbTipoFactura.SelectedValue.ToString();
         }
     }
 }

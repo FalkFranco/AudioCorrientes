@@ -197,16 +197,17 @@ namespace Login.CDatos.DVentas
             {
                 using (db = new dbAudioCorrientesEntities())
                 {
-                    var qUltimo = (from q in db.Ventas select q).ToList();
-                    int contador = qUltimo.Count;
-                    if (contador == 0)
-                    {
-                        return 0;
-                    }
-                    else
-                    {
-                        return qUltimo[contador - 1].id_tipoFactura;
-                    }
+                    var qUltimo = (from q in db.Ventas select q.id_ventas).Max();
+                    return qUltimo + 1;
+
+                    //if (contador == 0)
+                    //{
+                    //    return 0;
+                    //}
+                    //else
+                    //{
+                    //    return qUltimo[contador - 1].id_tipoFactura;
+                    //}
                 }
             }
             catch (Exception ex)

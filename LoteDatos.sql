@@ -138,3 +138,10 @@ SELECT * FROM TipoCliente
 
 SELECT * FROM Empleados
 SELECT * FROM Usuarios
+
+SELECT * FROM Ventas
+SELECT * FROM DetalleVenta
+Select * from Productos
+
+DELETE FROM Ventas WHERE id_ventas = 2;
+DELETE FROM DetalleVenta WHERE id_ventas = 2;

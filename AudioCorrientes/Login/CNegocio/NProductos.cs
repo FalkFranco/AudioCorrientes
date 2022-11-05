@@ -208,5 +208,10 @@ namespace Login.CNegocio
         }
 
 
+        public void ActualizarStock(int id,int stock)
+        {
+            dProductos.ActualizarStock(id, stock);
+        }
+
     }
 }

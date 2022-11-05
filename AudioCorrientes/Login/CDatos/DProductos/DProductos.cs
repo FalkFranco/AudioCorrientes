@@ -193,6 +193,29 @@ namespace Login.CDatos.DProductos
             }
 
         }
+
+
+        public bool ActualizarStock(int idProducto, int cantidad)
+        {
+            try
+            {
+                using (db = new dbAudioCorrientesEntities())
+                {
+                    var producto = (from q in db.Productos
+                                    where q.id_productos == idProducto
+                                    select q).First();
+                    var nuevo = producto.stock - cantidad;
+                    producto.stock = nuevo;
+                    db.SaveChanges();
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+        }
     }
 }
 

@@ -1,6 +1,8 @@
-﻿using Login.CDatos.DProductos;
+﻿using Login.CDatos;
+using Login.CDatos.DProductos;
 using Login.CDatos.DVentas;
 using Login.CSuAdministrador;
+using Login.CSuAdministrador.Productos;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -16,6 +18,9 @@ namespace Login.CNegocio
         DVenta dVenta = new DVenta();
         DTipoFactura dTipoFactura = new DTipoFactura();
         DDetalleVenta dDetalleVenta = new DDetalleVenta();
+        Venta venta = new Venta();
+        DetalleVenta detalleVenta = new DetalleVenta();
+        
         
 
         public void CargarComboBoxTipoFactura(ComboBox cb)
@@ -36,6 +41,43 @@ namespace Login.CNegocio
         public int UltimaFactura()
         {
             return dVenta.UltimaFactura();
+        }
+
+        public bool AgregarFactura(int pIdTipoFactura,int idEmpleado, int idCliente, float total)
+        {
+            venta.id_tipoFactura = pIdTipoFactura;
+            venta.fecha = DateTime.Now;
+            venta.id_empleado = idEmpleado;
+            venta.id_cliente = idCliente;
+            venta.total = total;
+            venta.estado = true;
+
+            if (dVenta.Create(venta))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool AgregarDetalleVenta(int idVenta, int idProducto, float precioVenta, int cantidad)
+        {
+            detalleVenta.id_ventas = idVenta;
+            detalleVenta.id_productos = idProducto;
+            detalleVenta.precioVenta = precioVenta;
+            detalleVenta.cantidad = cantidad;
+            detalleVenta.subtotal = precioVenta * cantidad;
+
+            if (dDetalleVenta.Create(detalleVenta))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

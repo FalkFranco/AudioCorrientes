@@ -108,10 +108,10 @@ namespace Login.CDatos.DVentas
                                       select new
                                       {
                                           Id = q.id_ventas,
-                                          TipoFacura = q.TipoFactura.tipo,
+                                          //TipoFacura = q.TipoFactura.tipo,
                                           Fecha = q.fecha,
-                                          Cliente = q.Cliente.apellido + ' ' + q.Cliente.nombre,
-                                          Empleado = q.Empleado.apellido + ' ' + q.Empleado.nombre,
+                                          Cliente = q.Cliente.apellido,
+                                          Empleado = q.Empleado.apellido,
                                           Total = q.total,
                                           Estado = q.estado
                                       }).ToList();
@@ -197,7 +197,12 @@ namespace Login.CDatos.DVentas
             {
                 using (db = new dbAudioCorrientesEntities())
                 {
+
                     var qUltimo = (from q in db.Ventas select q.id_ventas).Max();
+                    if(qUltimo < 1)
+                    {
+                        return 1;
+                    }else
                     return qUltimo + 1;
 
                     //if (contador == 0)

@@ -1,7 +1,9 @@
 ﻿using Login.CDatos;
+using Login.CDatos.DEmpleados;
 using Login.CDatos.DProductos;
 using Login.CDatos.DUsuarios;
 using Login.CNegocio;
+using Login.CPresentacion.CSuAdministrador.Usuarios;
 using Login.CPresentacion.CVendedor.Clientes;
 using Login.CVendedor.Clientes;
 using Login.CVendedor.Productos;
@@ -57,7 +59,7 @@ namespace Login.CVendedor
                 float total = float.Parse(lbTotal.Text);
                 int idCliente = Int32.Parse(txtIdCliente.Text);
                 int idTipoInt = Int32.Parse(idValue);
-                nVentas.AgregarFactura(idTipoInt, pUsuario.id_usuario, idCliente, total);
+                nVentas.AgregarFactura(idTipoInt, pUsuario.id_empleado, idCliente, total);
                 int ultimoIdFactura = Int32.Parse(lbNroFactura.Text);
                 //Agregar los detalles
                 foreach (DataGridViewRow row in dataGridViewDetalle.Rows)
@@ -169,20 +171,7 @@ namespace Login.CVendedor
             float precio = float.Parse(txtPrecio.Text);
             int cantidad = int.Parse(txtCantidad.Text);
             dataGridViewDetalle.Rows.Add(txtIdArticulo.Text, txtNombre.Text, precio, txtCantidad.Text, CalcularSubTotal(precio, cantidad));
-            //int cant = Int32.Parse(dataGridViewDetalle.Rows.Count());
-
-            //dataGridViewDetalle.DataSource()
-            //PDetalle pDetalle = new PDetalle();
-            //pDetalle.Id = txtIdArticulo.Text;
-            //pDetalle.Nombre = txtNombre.Text;
-            //pDetalle.precio = precio;
-            //pDetalle.cantidad = txtCantidad.Text;
-            //pDetalle.subTotal = CalcularSubTotal(precio, cantidad);
-
-            //dataGridViewDetalle.Rows.Insert(1,pDetalle);
-
-            //dataGridViewDetalle.Rows.Insert(0, txtIdArticulo.Text, txtNombre.Text);
-
+           
         }
         private float CalcularSubTotal(float precio,int cantidad)
         {
@@ -197,7 +186,7 @@ namespace Login.CVendedor
             int Conteo;
 
             Conteo = dataGridViewDetalle.RowCount; // se cuenta los productos y se utiliza el conteo como limite del for
-            for (int i = 0; i < (Conteo - 1); i++)
+            for (int i = 0; i < (Conteo); i++)
             {
                 //lbTotal.Text = i.ToString();
                 CostoTotal += float.Parse(dataGridViewDetalle.Rows[i].Cells[4].Value.ToString());
@@ -221,11 +210,7 @@ namespace Login.CVendedor
 
         private void Vender_Load(object sender, EventArgs e)
         {
-
-            //MessageBox.Show(dataGridViewDetalle.RowCount.ToString());
-            //dataGridViewDetalle.Rows.RemoveAt(0);
-            //MessageBox.Show(dataGridViewDetalle.RowCount.ToString());
-
+            cbTipoFactura.SelectedValue = 1;
             dataGridViewDetalle.Rows.Clear();
             dataGridViewDetalle.Refresh();
 
@@ -238,6 +223,9 @@ namespace Login.CVendedor
             //dProductos.OcultarColumnas(dgvProductos);
             nCliente.cargarClientesVen(dgvClientes);
             //nCliente.ocultarColumnasVen(dgvClientes);
+
+            nVentas.cargarVentas(dgvVentas);
+            
         }
 
         private void dgvProductos_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -281,5 +269,26 @@ namespace Login.CVendedor
         {
             idValue = cbTipoFactura.SelectedValue.ToString();
         }
+
+        private void dgvVentas_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex == -1) return;
+            DataGridViewRow row = dgvVentas.Rows[e.RowIndex];
+            if (row != null)
+            {
+                //En este ejemplo supongo que el nombre de la columna que contendra en Id de la persona se llama columnPersonaId,
+                //de no ser asi cambia este valor por el que tengas
+                var idVenta = Convert.ToInt32(row.Cells["Id"].Value);
+
+                //En esta linea se supone que tienes una funcion que recibe un parametro de entrada que corresponde al Id de la persona
+                //y que esta funcion devuelve una coleccion de obejetos (una lista generica o un DataTable)
+                nVentas.cargarDetalles(dgvDetalles, idVenta);
+            }
+
+
+        }
+        //Listado de ventas
+
+
     }
 }

@@ -189,6 +189,37 @@ namespace Login.CDatos.DVentas
         //    }
 
         //}
+
+        public bool mostrarDetalleVentas(DataGridView dgv ,int id)
+        {
+            try
+            {
+                using (db = new dbAudioCorrientesEntities())
+                {
+                    var objMostrar = (from q in db.DetalleVentas
+                                      where q.id_ventas == id
+                                      select new
+                                      {
+                                          DetalleNro = q.id_detalleVenta,
+                                          IdVenta = q.id_ventas,
+                                          IdProducto = q.id_productos,
+                                          Producto = q.Producto.nombre,
+                                          PrecioVenta = q.Producto.precio,
+                                          Cantidad = q.cantidad,
+                                          Subtotal = q.subtotal
+                                      }).ToList();
+                    dgv.DataSource = objMostrar;
+
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+
+        }
     }
 
 }

@@ -85,6 +85,11 @@
             this.label29 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label4 = new System.Windows.Forms.Label();
+            this.dgvDetalles = new System.Windows.Forms.DataGridView();
+            this.dgvVentas = new System.Windows.Forms.DataGridView();
+            this.btnImprimir = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.tabControl1.SuspendLayout();
@@ -97,6 +102,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             this.panel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDetalle)).BeginInit();
+            this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDetalles)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVentas)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -533,30 +541,35 @@
             this.idArticulo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.idArticulo.HeaderText = "IdArticulo";
             this.idArticulo.Name = "idArticulo";
+            this.idArticulo.ReadOnly = true;
             // 
             // NombreProductoL
             // 
             this.NombreProductoL.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.NombreProductoL.HeaderText = "Nombre";
             this.NombreProductoL.Name = "NombreProductoL";
+            this.NombreProductoL.ReadOnly = true;
             // 
             // PrecioProdL
             // 
             this.PrecioProdL.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.PrecioProdL.HeaderText = "Precio";
             this.PrecioProdL.Name = "PrecioProdL";
+            this.PrecioProdL.ReadOnly = true;
             // 
             // CantProL
             // 
             this.CantProL.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.CantProL.HeaderText = "Cantidad";
             this.CantProL.Name = "CantProL";
+            this.CantProL.ReadOnly = true;
             // 
             // SubTotL
             // 
             this.SubTotL.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.SubTotL.HeaderText = "Sub Total";
             this.SubTotL.Name = "SubTotL";
+            this.SubTotL.ReadOnly = true;
             // 
             // btnCancelarFacturacion
             // 
@@ -636,6 +649,11 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.label5);
+            this.tabPage1.Controls.Add(this.btnImprimir);
+            this.tabPage1.Controls.Add(this.label4);
+            this.tabPage1.Controls.Add(this.dgvDetalles);
+            this.tabPage1.Controls.Add(this.dgvVentas);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -643,6 +661,53 @@
             this.tabPage1.TabIndex = 2;
             this.tabPage1.Text = "Listado de Ventas";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(6, 36);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(133, 25);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Facturacion";
+            // 
+            // dgvDetalles
+            // 
+            this.dgvDetalles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDetalles.Location = new System.Drawing.Point(11, 376);
+            this.dgvDetalles.Name = "dgvDetalles";
+            this.dgvDetalles.Size = new System.Drawing.Size(950, 223);
+            this.dgvDetalles.TabIndex = 1;
+            // 
+            // dgvVentas
+            // 
+            this.dgvVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvVentas.Location = new System.Drawing.Point(11, 95);
+            this.dgvVentas.Name = "dgvVentas";
+            this.dgvVentas.Size = new System.Drawing.Size(950, 227);
+            this.dgvVentas.TabIndex = 0;
+            this.dgvVentas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVentas_CellClick);
+            // 
+            // btnImprimir
+            // 
+            this.btnImprimir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnImprimir.Location = new System.Drawing.Point(848, 26);
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.Size = new System.Drawing.Size(113, 35);
+            this.btnImprimir.TabIndex = 28;
+            this.btnImprimir.Text = "Imprimir";
+            this.btnImprimir.UseVisualStyleBackColor = true;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(15, 338);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(83, 25);
+            this.label5.TabIndex = 29;
+            this.label5.Text = "Detalle";
             // 
             // Vender
             // 
@@ -671,6 +736,10 @@
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDetalle)).EndInit();
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDetalles)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVentas)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -733,5 +802,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn SubTotL;
         private System.Windows.Forms.Label lbStock;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DataGridView dgvDetalles;
+        private System.Windows.Forms.DataGridView dgvVentas;
+        private System.Windows.Forms.Button btnImprimir;
+        private System.Windows.Forms.Label label5;
     }
 }

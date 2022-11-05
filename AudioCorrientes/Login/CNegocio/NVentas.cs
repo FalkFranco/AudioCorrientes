@@ -79,6 +79,18 @@ namespace Login.CNegocio
                 return false;
             }
         }
+
+        public void cargarVentas(DataGridView dgv)
+        {
+            dVenta.mostrarVentas(dgv);
+        }
+
+        public void cargarDetalles(DataGridView dgv,int idVenta)
+        {
+            dDetalleVenta.mostrarDetalleVentas(dgv, idVenta);
+        }
+
+        
     }
 }
 

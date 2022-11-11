@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,6 +13,7 @@ namespace Login.CDatos.DVentas
     internal class DDetalleVenta
     {
         dbAudioCorrientesEntities db;
+        SqlConnection con = new SqlConnection("Server=(local); Database=AudioCorientes; integrated security=true");
 
         public bool Create(DetalleVenta pDetalleVenta)
         {
@@ -190,7 +194,7 @@ namespace Login.CDatos.DVentas
 
         //}
 
-        public bool mostrarDetalleVentas(DataGridView dgv ,int id)
+        public bool mostrarDetalleVentas(DataGridView dgv, int id)
         {
             try
             {
@@ -217,6 +221,35 @@ namespace Login.CDatos.DVentas
             {
                 MessageBox.Show(ex.Message);
                 return false;
+            }
+        }
+
+        public DataSet top5()
+        {
+            DataSet ds = new DataSet();
+            try
+            {
+                using (con)
+                {
+                    con.Open();
+                    Console.WriteLine("The database has been opened!");
+                    using (var command = new SqlCommand())
+                    {
+                        command.Connection = con;
+                        command.CommandText = @"SELECT * from Top5";
+                        //var top = command.ExecuteReader();
+                        var adapter = new SqlDataAdapter(command);
+                        adapter.Fill(ds);
+                    }
+
+
+                    return ds;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return ds;
             }
 
         }

@@ -86,13 +86,13 @@
             legend1.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Top;
             legend1.Name = "Legend1";
             this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(12, 85);
+            this.chart1.Location = new System.Drawing.Point(12, 107);
             this.chart1.Name = "chart1";
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
             series1.Name = "Series1";
             this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(799, 247);
+            this.chart1.Size = new System.Drawing.Size(799, 326);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
             // 
@@ -103,7 +103,7 @@
             legend2.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
             legend2.Name = "Legend1";
             this.chartTop5.Legends.Add(legend2);
-            this.chartTop5.Location = new System.Drawing.Point(817, 85);
+            this.chartTop5.Location = new System.Drawing.Point(817, 107);
             this.chartTop5.Name = "chartTop5";
             series2.ChartArea = "ChartArea1";
             series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
@@ -113,7 +113,7 @@
             series2.Legend = "Legend1";
             series2.Name = "Series1";
             this.chartTop5.Series.Add(series2);
-            this.chartTop5.Size = new System.Drawing.Size(320, 507);
+            this.chartTop5.Size = new System.Drawing.Size(320, 595);
             this.chartTop5.TabIndex = 1;
             this.chartTop5.Text = "chart2";
             title1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -134,7 +134,7 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.lbCantClientes);
             this.panel1.Controls.Add(this.lbTotalVent);
-            this.panel1.Location = new System.Drawing.Point(12, 347);
+            this.panel1.Location = new System.Drawing.Point(12, 457);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(280, 245);
             this.panel1.TabIndex = 2;
@@ -245,18 +245,21 @@
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.Controls.Add(this.dgvBajoStock);
             this.panel2.Controls.Add(this.label13);
-            this.panel2.Location = new System.Drawing.Point(300, 347);
+            this.panel2.Location = new System.Drawing.Point(300, 457);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(511, 245);
             this.panel2.TabIndex = 7;
             // 
             // dgvBajoStock
             // 
+            this.dgvBajoStock.AllowUserToAddRows = false;
+            this.dgvBajoStock.AllowUserToDeleteRows = false;
             this.dgvBajoStock.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvBajoStock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBajoStock.Location = new System.Drawing.Point(21, 33);
+            this.dgvBajoStock.Location = new System.Drawing.Point(21, 34);
             this.dgvBajoStock.Name = "dgvBajoStock";
-            this.dgvBajoStock.Size = new System.Drawing.Size(558, 200);
+            this.dgvBajoStock.ReadOnly = true;
+            this.dgvBajoStock.Size = new System.Drawing.Size(471, 200);
             this.dgvBajoStock.TabIndex = 8;
             // 
             // label13
@@ -397,7 +400,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1152, 609);
+            this.ClientSize = new System.Drawing.Size(1152, 714);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
@@ -407,6 +410,7 @@
             this.Controls.Add(this.chart1);
             this.Name = "SUDashboard";
             this.Text = "MenuPrincipalSA";
+            this.Load += new System.EventHandler(this.SUDashboard_Load);
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartTop5)).EndInit();
             this.panel1.ResumeLayout(false);

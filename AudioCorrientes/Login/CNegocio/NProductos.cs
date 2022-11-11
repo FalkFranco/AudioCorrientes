@@ -213,5 +213,26 @@ namespace Login.CNegocio
             dProductos.ActualizarStock(id, stock);
         }
 
+        public int cantProductos()
+        {
+            return dProductos.cantProductos();
+        }
+
+        public void cargarStockBajo(DataGridView dgv)
+        {
+            dProductos.mostrarProductosStockBajo(dgv);
+            OcultarColumnasStock(dgv);
+        }
+
+        public void OcultarColumnasStock(DataGridView dgv)
+        {
+            dgv.Columns["Id"].Visible = false;
+            dgv.Columns["Precio"].Visible = false;
+            dgv.Columns["Estado"].Visible = false;
+            dgv.Columns["Marca"].Visible = false;
+            dgv.Columns["Descripcion"].Visible = false;
+        }
+
+
     }
 }

@@ -284,8 +284,6 @@ namespace Login.CVendedor
                 //y que esta funcion devuelve una coleccion de obejetos (una lista generica o un DataTable)
                 nVentas.cargarDetalles(dgvDetalles, idVenta);
             }
-
-
         }
         //Listado de ventas
 

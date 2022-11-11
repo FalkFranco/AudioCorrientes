@@ -200,5 +200,10 @@ namespace Login.CNegocio
         {
             datos.mostrarClientesNombre(dgv, pNombre);
         }
+
+        public int cantClientes()
+        {
+            return datos.cantClientes();
+        }
     }
 }

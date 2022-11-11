@@ -196,7 +196,23 @@ namespace Login.CDatos
 
         }
 
+        public int cantClientes()
+        {
+            try
+            {
+                using (db = new dbAudioCorrientesEntities())
+                {
+                    var objMostrar = (from q in db.Clientes select q.id_cliente);
+                    return objMostrar.Count();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return 0;
+            }
 
+        }
 
     }
 }

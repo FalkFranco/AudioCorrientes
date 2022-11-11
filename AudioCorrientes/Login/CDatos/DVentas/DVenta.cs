@@ -221,5 +221,23 @@ namespace Login.CDatos.DVentas
                 return 0;
             }
         }
+
+        public int cantVentas()
+        {
+            try
+            {
+                using (db = new dbAudioCorrientesEntities())
+                {
+                    var objMostrar = (from q in db.Ventas select q.id_ventas);
+                    return objMostrar.Count();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return 0;
+            }
+
+        }
     }
 }

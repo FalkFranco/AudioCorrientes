@@ -88,6 +88,8 @@ layered rosewood back and sides adorn an internal architecture that has been opt
 All 200 Series guitars ship in a lightweight, Taylor gig bag with double-stitched seams and reinforced stress points.',
 1099,20);
 
+
+
 INSERT INTO Empleados(dni,nombre,apellido,telefono,direccion,fechaIngreso,fechaNac,email) VALUES ('23784563','Maria', 'Melgarejo','3794237465','Av Maipu 234', '2021-01-01', '1998-06-24', 'mari@gmail.com')
 INSERT INTO Empleados(dni,nombre,apellido,telefono,direccion,fechaIngreso,fechaNac,email) VALUES ('41732563','Juan', 'Shuck','3795743672','Aconcagua 823', '2021-03-01', '1999-03-20', 'juan_shuck@gmail.com')
 INSERT INTO Empleados(dni,nombre,apellido,telefono,direccion,fechaIngreso,fechaNac,email) VALUES ('41633267', 'Sandra', 'Gonzales', '3795732367', 'Gral. Paz 877', '2021-02-01', '1999-06-24', 'sandragonz@gmail.com')

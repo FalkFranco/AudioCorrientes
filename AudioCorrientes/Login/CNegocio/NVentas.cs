@@ -90,6 +90,11 @@ namespace Login.CNegocio
             dDetalleVenta.mostrarDetalleVentas(dgv, idVenta);
         }
 
+        public int cantVentas()
+        {
+            return dVenta.cantVentas();
+        }
+
         
     }
 }

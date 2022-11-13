@@ -6,10 +6,12 @@ using Login.CSuAdministrador.Productos;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace Login.CNegocio
 {
@@ -94,6 +96,12 @@ namespace Login.CNegocio
         {
             return dVenta.cantVentas();
         }
+
+        public ArrayList top5()
+        {
+            return dDetalleVenta.top5();
+        }
+
 
         
     }

@@ -1,7 +1,10 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -33,6 +36,7 @@ namespace Login.CSuAdministrador
                     backupOk = true;
                     if (backupOk == true)
                     {
+                        generarBackup();
                         MessageBox.Show("Backup realizado con exito", "Backup Exitoso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
                 }
@@ -45,14 +49,35 @@ namespace Login.CSuAdministrador
         private bool validarCampos()
         {
             bool ok = true;
-            if (txtLoc.Text == "" || txtLoc.Text == "")
+            if (txtDest.Text == "")
             {
-                btnGenerarBackUp.Enabled = false;
+                
                 ok = false;
             }
-            btnGenerarBackUp.Enabled = true;
+            
             return ok;
         }
+        public void generarBackup()
+        {
+            SqlCommand cmd;
 
+            SqlConnection conexion = new SqlConnection("Data Source=DESKTOP-1DB3D6E\\SQLEXPRESS_INST2;Initial Catalog=AudioCorrientes;Integrated Security=True");
+            cmd = new SqlCommand("BACKUP DATABASE AudioCorrientes TO DISK = '"+txtDest.Text + "\\"+ "AudioCorrientes"+ "-"+ DateTime.Now.ToString("dd-MM-yyyy--HH-mm-ss") + ".bak'", conexion);
+            conexion.Open();
+            cmd.ExecuteNonQuery();
+            conexion.Close();
+            btnGenerarBackUp.Enabled = false;
+        }
+
+        private void btnDestino_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog dlg = new FolderBrowserDialog();
+            if(dlg.ShowDialog() == DialogResult.OK)
+            {
+                txtDest.Text = dlg.SelectedPath;
+                btnGenerarBackUp.Enabled = true;
+            }
+        }
     }
 }
+

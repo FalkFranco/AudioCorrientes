@@ -4,14 +4,19 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Login.CDatos
 {
-    public abstract class ConexionSQL
+    class ConexionSQL
     {
-        protected SqlConnection GetConnection()
+        class CConexion
         {
-            return new SqlConnection("Server=(local); Database=AudioCorientes; integrated security=true");
+            //SqlConnection conex = new SqlConnection();
+
+
+
+            
         }
     }
 }

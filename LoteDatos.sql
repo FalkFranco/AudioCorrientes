@@ -147,3 +147,50 @@ Select * from Productos
 
 DELETE FROM Ventas WHERE id_ventas = 2;
 DELETE FROM DetalleVenta WHERE id_ventas = 2;
+
+SELECT COUNT(*) FROM DetalleVenta
+order by id_productos desc
+
+GO
+
+CREATE OR ALTER VIEW Top5P
+AS
+	SELECT top 5 pr.nombre , COUNT(dv.id_productos) 'Cant' FROM DetalleVenta dv
+	INNER JOIN Productos pr
+	ON dv.id_productos = pr.id_productos
+	group by pr.nombre, dv.id_productos
+	order by Cant desc
+
+SELECT * from Top5
+
+go
+DROP PROC Top5
+
+CREATE OR ALTER PROC Top5Prod
+AS
+	SELECT top 5 pr.nombre , COUNT(dv.id_productos) 'Cant' FROM DetalleVenta dv
+	INNER JOIN Productos pr
+	ON dv.id_productos = pr.id_productos
+	group by pr.nombre, dv.id_productos
+	order by Cant desc
+go
+CREATE OR ALTER PROC TopCat
+AS
+	SELECT ct.categoria_descripcion ,COUNT(ct.categoria_descripcion) as Cant FROM DetalleVenta dv
+	INNER JOIN Productos pr
+	ON dv.id_productos = pr.id_productos
+	INNER JOIN Categoria ct
+	ON pr.categoria_id = ct.id_categorias
+	group by  ct.categoria_descripcion
+	order by Cant desc
+go
+
+CREATE OR ALTER PROC generarBackup
+AS
+	BACKUP DATABASE AudioCorrientes
+	TO DISK = 'C:\Users\colo5\Desktop\AudiCorrientes\AudioCorrientes\AudiCorrientes.bak'
+	WITH NAME = 'BACKUPCOMPLETO'
+	GO
+
+go
+

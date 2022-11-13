@@ -8,12 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using System.Collections;
+using System.Windows.Forms.DataVisualization.Charting;
+
 namespace Login.CDatos.DVentas
 {
     internal class DDetalleVenta
     {
         dbAudioCorrientesEntities db;
-        SqlConnection con = new SqlConnection("Server=(local); Database=AudioCorientes; integrated security=true");
+        SqlConnection conexion = new SqlConnection("Data Source=DESKTOP-1DB3D6E\\SQLEXPRESS_INST2;Initial Catalog=AudioCorrientes;Integrated Security=True");
+        SqlCommand cmd;
+        SqlDataReader dr;
+
 
         public bool Create(DetalleVenta pDetalleVenta)
         {
@@ -224,35 +230,57 @@ namespace Login.CDatos.DVentas
             }
         }
 
-        public DataSet top5()
+        //public DataSet top5()
+        //{
+        //    DataSet ds = new DataSet();
+        //    try
+        //    {
+        //        using (conexion)
+        //        {
+        //            conexion.Open();
+        //            Console.WriteLine("The database has been opened!");
+        //            using (var command = new SqlCommand())
+        //            {
+        //                command.Connection = con;
+        //                command.CommandText = @"SELECT * from Top5";
+        //                //var top = command.ExecuteReader();
+        //                var adapter = new SqlDataAdapter(command);
+        //                adapter.Fill(ds);
+        //            }
+
+
+        //            return ds;
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show(ex.Message);
+        //        return ds;
+        //    }
+
+        //}
+        ArrayList graf = new ArrayList();
+        ArrayList Nombre = new ArrayList();
+        ArrayList Cant = new ArrayList();
+        public ArrayList top5()
         {
-            DataSet ds = new DataSet();
-            try
+            cmd = new SqlCommand("Top5Prod", conexion);
+            cmd.CommandType= CommandType.StoredProcedure;
+            conexion.Open();
+            dr = cmd.ExecuteReader();
+            while (dr.Read())
             {
-                using (con)
-                {
-                    con.Open();
-                    Console.WriteLine("The database has been opened!");
-                    using (var command = new SqlCommand())
-                    {
-                        command.Connection = con;
-                        command.CommandText = @"SELECT * from Top5";
-                        //var top = command.ExecuteReader();
-                        var adapter = new SqlDataAdapter(command);
-                        adapter.Fill(ds);
-                    }
-
-
-                    return ds;
-                }
+                Nombre.Add(dr.GetString(0));
+                Cant.Add(dr.GetInt32(1));
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-                return ds;
-            }
-
+            graf.Add(Nombre);
+            graf.Add(Cant);
+            dr.Close();
+            conexion.Close();
+            return graf;
         }
+
+
     }
 
 }

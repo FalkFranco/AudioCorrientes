@@ -237,7 +237,6 @@ namespace Login.CDatos.DVentas
                 MessageBox.Show(ex.Message);
                 return 0;
             }
-
         }
     }
 }

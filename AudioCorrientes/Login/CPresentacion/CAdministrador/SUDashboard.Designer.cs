@@ -35,7 +35,7 @@
             System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.chartCategorias = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chartTop5 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
@@ -63,7 +63,8 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            this.button1 = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.chartCategorias)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartTop5)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
@@ -79,22 +80,22 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
-            // chart1
+            // chartCategorias
             // 
             chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
+            this.chartCategorias.ChartAreas.Add(chartArea1);
             legend1.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Top;
             legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(12, 107);
-            this.chart1.Name = "chart1";
+            this.chartCategorias.Legends.Add(legend1);
+            this.chartCategorias.Location = new System.Drawing.Point(12, 107);
+            this.chartCategorias.Name = "chartCategorias";
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
             series1.Name = "Series1";
-            this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(799, 326);
-            this.chart1.TabIndex = 0;
-            this.chart1.Text = "chart1";
+            this.chartCategorias.Series.Add(series1);
+            this.chartCategorias.Size = new System.Drawing.Size(799, 326);
+            this.chartCategorias.TabIndex = 0;
+            this.chartCategorias.Text = "chart1";
             // 
             // chartTop5
             // 
@@ -396,22 +397,33 @@
             this.label7.TabIndex = 1;
             this.label7.Text = "1000";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(104, 83);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // SUDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1152, 714);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.chartTop5);
-            this.Controls.Add(this.chart1);
+            this.Controls.Add(this.chartCategorias);
             this.Name = "SUDashboard";
             this.Text = "MenuPrincipalSA";
             this.Load += new System.EventHandler(this.SUDashboard_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartCategorias)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartTop5)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -436,7 +448,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartCategorias;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartTop5;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label6;
@@ -464,5 +476,6 @@
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.Button button1;
     }
 }

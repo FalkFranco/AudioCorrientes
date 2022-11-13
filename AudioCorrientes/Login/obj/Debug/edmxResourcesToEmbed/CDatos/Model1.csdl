@@ -169,6 +169,7 @@
       <End Role="Role" EntitySet="Roles" />
       <End Role="Usuario" EntitySet="Usuarios" />
     </AssociationSet>
+    <EntitySet Name="Top5" EntityType="dbAudioCorrientesModel.Top5" />
   </EntityContainer>
   <EntityType Name="Marca">
     <Key>
@@ -304,4 +305,11 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <EntityType Name="Top5">
+    <Key>
+      <PropertyRef Name="id_productos" />
+    </Key>
+    <Property Name="id_productos" Type="Int32" Nullable="false" />
+    <Property Name="Cant" Type="Int32" />
+  </EntityType>
 </Schema>

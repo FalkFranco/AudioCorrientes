@@ -123,5 +123,13 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Top5">
+      <EntityTypeMapping TypeName="dbAudioCorrientesModel.Top5">
+        <MappingFragment StoreEntitySet="Top5">
+          <ScalarProperty Name="Cant" ColumnName="Cant" />
+          <ScalarProperty Name="id_productos" ColumnName="id_productos" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

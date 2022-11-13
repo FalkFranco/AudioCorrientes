@@ -1,0 +1,6 @@
+SuAdmin	SuAdmin-1
+OscarAdmin	OscarAdmin-1
+MariaVen	MariaVen-1
+JuanVen	JuanVen-1
+SandraGeren	SandraGeren-1
+OscarVen	OscarVen-1

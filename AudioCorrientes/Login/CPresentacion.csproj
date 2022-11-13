@@ -67,6 +67,7 @@
     <Compile Include="CDatos\Cliente.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="CDatos\ConexionSQL.cs" />
     <Compile Include="CDatos\DEmpleados\DEmpleados.cs" />
     <Compile Include="CDatos\DetalleVenta.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -110,6 +111,7 @@
     <Compile Include="CDatos\Role.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="CDatos\SQLConexion.cs" />
     <Compile Include="CDatos\TipoCliente.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -569,6 +571,8 @@
     <None Include="Resources\basura.png" />
     <None Include="Resources\editar.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="CPresentacion\Reportes\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

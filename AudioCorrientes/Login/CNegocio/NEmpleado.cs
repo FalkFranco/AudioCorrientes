@@ -26,19 +26,14 @@ namespace Login.CNegocio
 
         public void OrdenDgv(DataGridView dgv)
         {
-            dgv.Columns["id_empleado"].DisplayIndex = 0;
-            dgv.Columns["dni"].DisplayIndex = 1;
-            dgv.Columns["nombre"].DisplayIndex = 2;
-            dgv.Columns["apellido"].DisplayIndex = 3;
-            dgv.Columns["telefono"].DisplayIndex = 4;
-            dgv.Columns["direccion"].DisplayIndex = 5;
-            dgv.Columns["activo"].DisplayIndex = 6;
-            dgv.Columns["fechaIngreso"].DisplayIndex = 7;
-            dgv.Columns["fechaNac"].DisplayIndex = 8;
-            dgv.Columns["email"].DisplayIndex = 9;
-            dgv.Columns["Editar"].DisplayIndex = 10;
-            dgv.Columns["Eliminar"].DisplayIndex = 11;
-            dgv.Columns["Activar"].DisplayIndex = 12;
+            dgv.Columns["Id"].DisplayIndex = 0;
+            dgv.Columns["DNI"].DisplayIndex = 1;
+            dgv.Columns["Nombre"].DisplayIndex = 2;
+            dgv.Columns["Apellido"].DisplayIndex = 3;
+            dgv.Columns["FechaIngreso"].DisplayIndex = 4;
+            dgv.Columns["Editar"].DisplayIndex = 5;
+            dgv.Columns["Eliminar"].DisplayIndex = 6;
+            dgv.Columns["Activar"].DisplayIndex = 7;
         }
         public void OcultarColumnas(DataGridView dgv)
         {
@@ -160,7 +155,14 @@ namespace Login.CNegocio
         public void cargarDtosEmpleados(DataGridView dgv)
         {
             datos.mostrarEmpleados(dgv);
-
+            dgv.Columns["Id"].Visible = false;
+            OrdenDgv(dgv);
+        }
+        public void cargarDtosEmpleadosEliminados(DataGridView dgv)
+        {
+            datos.mostrarEmpleadosEliminados(dgv);
+            dgv.Columns["Id"].Visible = false;
+            //OrdenDgv(dgv);
         }
     }
 }

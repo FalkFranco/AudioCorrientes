@@ -31,6 +31,7 @@ namespace Login.CDatos
         public System.DateTime fechaIngreso { get; set; }
         public System.DateTime fechaNac { get; set; }
         public string email { get; set; }
+        public bool es_usu { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Venta> Ventas { get; set; }

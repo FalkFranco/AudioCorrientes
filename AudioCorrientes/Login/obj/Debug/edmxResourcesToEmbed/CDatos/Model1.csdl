@@ -169,7 +169,6 @@
       <End Role="Role" EntitySet="Roles" />
       <End Role="Usuario" EntitySet="Usuarios" />
     </AssociationSet>
-    <EntitySet Name="Top5" EntityType="dbAudioCorrientesModel.Top5" />
   </EntityContainer>
   <EntityType Name="Marca">
     <Key>
@@ -255,6 +254,7 @@
     <Property Name="email" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="Ventas" Relationship="dbAudioCorrientesModel.FK_Venta_Empleado" FromRole="Empleado" ToRole="Venta" />
     <NavigationProperty Name="Usuarios" Relationship="dbAudioCorrientesModel.FK_Usuario_Empleado" FromRole="Empleado" ToRole="Usuario" />
+    <Property Name="es_usu" Type="Boolean" Nullable="false" />
   </EntityType>
   <Association Name="FK_Venta_Empleado">
     <End Type="dbAudioCorrientesModel.Empleado" Role="Empleado" Multiplicity="1" />
@@ -305,11 +305,4 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityType Name="Top5">
-    <Key>
-      <PropertyRef Name="id_productos" />
-    </Key>
-    <Property Name="id_productos" Type="Int32" Nullable="false" />
-    <Property Name="Cant" Type="Int32" />
-  </EntityType>
 </Schema>

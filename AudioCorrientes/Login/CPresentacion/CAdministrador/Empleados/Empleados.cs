@@ -111,8 +111,8 @@ namespace Login.CSuAdministrador.Empleados
 
         private void Empleados_Load(object sender, EventArgs e)
         {
-            objEmpleado.CargarGrid(dgvEmpleados);
-            objEmpleado.OcultarColumnas(dgvEmpleados);
+            objEmpleado.cargarDtosEmpleados(dgvEmpleados);
+            //objEmpleado.OcultarColumnas(dgvEmpleados);
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)
@@ -129,10 +129,10 @@ namespace Login.CSuAdministrador.Empleados
 
             if (dgvEmpleados.Columns[e.ColumnIndex].Name == "Editar")
             {
-                Id = Convert.ToInt32(dgvEmpleados.CurrentRow.Cells["id_empleado"].Value.ToString());
+                Id = Convert.ToInt32(dgvEmpleados.CurrentRow.Cells["Id"].Value.ToString());
                 EditarEmpleados FormEdit = new EditarEmpleados(Id);
                 FormEdit.ShowDialog();
-                objEmpleado.CargarGrid(dgvEmpleados);
+                objEmpleado.cargarDtosEmpleados(dgvEmpleados);
             }
             if (dgvEmpleados.Columns[e.ColumnIndex].Name == "Eliminar")
             {

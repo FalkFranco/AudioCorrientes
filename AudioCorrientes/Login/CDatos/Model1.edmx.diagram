@@ -26,7 +26,6 @@
         <EntityTypeShape EntityType="dbAudioCorrientesModel.Usuario" Width="1.5" PointX="3" PointY="4.75" />
         <AssociationConnector Association="dbAudioCorrientesModel.FK_Usuario_Empleado" />
         <AssociationConnector Association="dbAudioCorrientesModel.FK_Usuario_Rol" />
-        <EntityTypeShape EntityType="dbAudioCorrientesModel.Top5" Width="1.5" PointX="6.375" PointY="8.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

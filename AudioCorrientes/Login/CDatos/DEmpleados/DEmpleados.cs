@@ -119,12 +119,40 @@ namespace Login.CDatos.DEmpleados
                 using (db = new dbAudioCorrientesEntities())
                 {
                     var objMostrar = (from q in db.Empleados
-                                      where q.activo == true
+                                      where q.activo == true && q.es_usu == false
                                       select new
                                       {
+                                          Id = q.id_empleado,
+                                          DNI = q.dni,
                                           Nombre = q.nombre,
-                                          //Nombre = q.Empleado.apellido + ' ' + q.Empleado.nombre,
                                           Apellido = q.apellido,
+                                          FechaIngreso = q.fechaIngreso
+                                      }).ToList();
+                    dgv.DataSource = objMostrar;
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+        }
+        public bool mostrarEmpleadosEliminados(DataGridView dgv)
+        {
+            try
+            {
+                using (db = new dbAudioCorrientesEntities())
+                {
+                    var objMostrar = (from q in db.Empleados
+                                      where q.activo == false && q.es_usu == false
+                                      select new
+                                      {
+                                          Id = q.id_empleado,
+                                          DNI = q.dni,
+                                          Nombre = q.nombre,
+                                          Apellido = q.apellido,
+                                          FechaIngreso = q.fechaIngreso
                                       }).ToList();
                     dgv.DataSource = objMostrar;
                     return true;

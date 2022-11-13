@@ -194,3 +194,19 @@ AS
 
 go
 
+CREATE OR ALTER PROC ActualizarEmpl
+AS
+	UPDATE Empleados
+	SET es_usu = 1
+	Where id_empleado IN (SELECT empleado_id FROM Usuarios)
+	GO
+
+CREATE OR ALTER PROC EliminarEmpl(@id as int)
+AS
+	UPDATE Empleados
+	SET activo = 0
+	Where id_empleado = @id
+	GO
+
+
+SELECT empleado_id FROM Usuarios

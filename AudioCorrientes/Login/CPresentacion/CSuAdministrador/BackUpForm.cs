@@ -78,6 +78,7 @@ namespace Login.CSuAdministrador
                 btnGenerarBackUp.Enabled = true;
             }
         }
+
     }
 }
 

@@ -50,6 +50,7 @@
           <Property Name="fechaIngreso" Type="date" Nullable="false" />
           <Property Name="fechaNac" Type="date" Nullable="false" />
           <Property Name="email" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="es_usu" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="Marca">
           <Key>
@@ -118,13 +119,6 @@
         </EntityType>
         <!--Errores durante la generación:
 advertencia 6002: La tabla o vista 'AudioCorrientes.dbo.Top5' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
-        <EntityType Name="Top5">
-          <Key>
-            <PropertyRef Name="id_productos" />
-          </Key>
-          <Property Name="id_productos" Type="int" Nullable="false" />
-          <Property Name="Cant" Type="int" />
-        </EntityType>
         <Association Name="FK_Cliente_TipoCliente">
           <End Role="TipoCliente" Type="Self.TipoCliente" Multiplicity="1" />
           <End Role="Clientes" Type="Self.Clientes" Multiplicity="*" />
@@ -257,12 +251,6 @@ advertencia 6002: La tabla o vista 'AudioCorrientes.dbo.Top5' no tiene definida 
           <EntitySet Name="TipoFactura" EntityType="Self.TipoFactura" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Usuarios" EntityType="Self.Usuarios" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Ventas" EntityType="Self.Ventas" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Top5" EntityType="Self.Top5" store:Type="Views" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [Top5].[id_productos] AS [id_productos], 
-    [Top5].[Cant] AS [Cant]
-    FROM [dbo].[Top5] AS [Top5]</DefiningQuery>
-          </EntitySet>
           <AssociationSet Name="FK_Cliente_TipoCliente" Association="Self.FK_Cliente_TipoCliente">
             <End Role="TipoCliente" EntitySet="TipoCliente" />
             <End Role="Clientes" EntitySet="Clientes" />
@@ -477,7 +465,6 @@ advertencia 6002: La tabla o vista 'AudioCorrientes.dbo.Top5' no tiene definida 
             <End Role="Role" EntitySet="Roles" />
             <End Role="Usuario" EntitySet="Usuarios" />
           </AssociationSet>
-          <EntitySet Name="Top5" EntityType="dbAudioCorrientesModel.Top5" />
           </EntityContainer>
         <EntityType Name="Marca">
           <Key>
@@ -563,6 +550,7 @@ advertencia 6002: La tabla o vista 'AudioCorrientes.dbo.Top5' no tiene definida 
           <Property Name="email" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Ventas" Relationship="dbAudioCorrientesModel.FK_Venta_Empleado" FromRole="Empleado" ToRole="Venta" />
           <NavigationProperty Name="Usuarios" Relationship="dbAudioCorrientesModel.FK_Usuario_Empleado" FromRole="Empleado" ToRole="Usuario" />
+          <Property Name="es_usu" Type="Boolean" Nullable="false" />
         </EntityType>
         <Association Name="FK_Venta_Empleado">
           <End Type="dbAudioCorrientesModel.Empleado" Role="Empleado" Multiplicity="1" />
@@ -613,13 +601,6 @@ advertencia 6002: La tabla o vista 'AudioCorrientes.dbo.Top5' no tiene definida 
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityType Name="Top5">
-          <Key>
-            <PropertyRef Name="id_productos" />
-          </Key>
-          <Property Name="id_productos" Type="Int32" Nullable="false" />
-          <Property Name="Cant" Type="Int32" />
-        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -723,6 +704,7 @@ advertencia 6002: La tabla o vista 'AudioCorrientes.dbo.Top5' no tiene definida 
           <EntitySetMapping Name="Empleados">
             <EntityTypeMapping TypeName="dbAudioCorrientesModel.Empleado">
               <MappingFragment StoreEntitySet="Empleados">
+                <ScalarProperty Name="es_usu" ColumnName="es_usu" />
                 <ScalarProperty Name="email" ColumnName="email" />
                 <ScalarProperty Name="fechaNac" ColumnName="fechaNac" />
                 <ScalarProperty Name="fechaIngreso" ColumnName="fechaIngreso" />
@@ -745,14 +727,6 @@ advertencia 6002: La tabla o vista 'AudioCorrientes.dbo.Top5' no tiene definida 
                 <ScalarProperty Name="usuario1" ColumnName="usuario" />
                 <ScalarProperty Name="empleado_id" ColumnName="empleado_id" />
                 <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Top5">
-            <EntityTypeMapping TypeName="dbAudioCorrientesModel.Top5">
-              <MappingFragment StoreEntitySet="Top5">
-                <ScalarProperty Name="Cant" ColumnName="Cant" />
-                <ScalarProperty Name="id_productos" ColumnName="id_productos" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Linq.Expressions;
@@ -126,8 +127,10 @@ namespace Login.CSuAdministrador.Usuarios
 
         private void Usuarios_Load(object sender, EventArgs e)
         {
-            objEmpleado.CargarGrid(dgvEmpleados);
-            objEmpleado.OcultarColumnasSuAdmin(dgvEmpleados);
+            objEmpleado.cargarDtosEmpleados(dgvEmpleados);
+            dgvEmpleados.Columns["Editar"].Visible = false;
+            //objEmpleado.OcultarColumnasSuAdmin(dgvEmpleados);
+            objEmpleado.cargarDtosEmpleadosEliminados(dgvEmpleadosEliminados);
             objUsuario.cargarUsuarios(dgvUsuarios);
             objUsuario.cargarUsuariosEliminados(dgvUsuariosEliminados);
             //objEmpleado.cargarDtosEmpleados(dgvUsuarios);
@@ -136,15 +139,49 @@ namespace Login.CSuAdministrador.Usuarios
         int Id;
         private void dgvEmpleados_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            //MessageBoxButtons buttons = MessageBoxButtons.YesNo;
-            //DialogResult result;
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result;
 
             if (dgvEmpleados.Columns[e.ColumnIndex].Name == "Activar")
             {
-                Id = Convert.ToInt32(dgvEmpleados.CurrentRow.Cells["id_empleado"].Value.ToString());
+                Id = Convert.ToInt32(dgvEmpleados.CurrentRow.Cells["Id"].Value.ToString());
                 AgregarUsuario FormUsuario = new AgregarUsuario(Id);
                 FormUsuario.ShowDialog();
-                objEmpleado.CargarGrid(dgvEmpleados);
+                objEmpleado.cargarDtosEmpleados(dgvEmpleados);
+            }
+            if (dgvEmpleados.Columns[e.ColumnIndex].Name == "Eliminar")
+            {
+
+                Id = Convert.ToInt32(dgvEmpleados.CurrentRow.Cells["Id"].Value.ToString());
+               
+                result = MessageBox.Show("Desea eliminar el Usuario?", "Eliminar Usuario", buttons, MessageBoxIcon.Exclamation);
+                if (result == System.Windows.Forms.DialogResult.Yes)
+                {
+                    eliminarEmpl(Id);
+                    MessageBox.Show("Usuario eliminado con Exito" + Rol.ToString(), "Eliminar Usuario Exitoso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    objEmpleado.cargarDtosEmpleados(dgvEmpleados);
+                    objEmpleado.cargarDtosEmpleadosEliminados(dgvEmpleadosEliminados);
+                }
+            }
+        }
+
+        private void dgvUsuElim_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result;
+            if (dgvEmpleadosEliminados.Columns[e.ColumnIndex].Name == "ActivarEmpleado")
+            {
+                Id = Convert.ToInt32(dgvEmpleadosEliminados.CurrentRow.Cells["Id"].Value.ToString());
+                result = MessageBox.Show("Desea Activar el Empleado?", "Activar Empleado", buttons, MessageBoxIcon.Exclamation);
+                if (result == System.Windows.Forms.DialogResult.Yes)
+                {
+                    activarEmpl(Id);
+                    MessageBox.Show("Empleado Activado con Exito" + Rol.ToString(), "Activar Empleado Exitoso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    objEmpleado.cargarDtosEmpleados(dgvEmpleados);
+                    objEmpleado.cargarDtosEmpleadosEliminados(dgvEmpleadosEliminados);
+                }
+               
+                
             }
         }
 
@@ -174,7 +211,7 @@ namespace Login.CSuAdministrador.Usuarios
                 FormEdit.ShowDialog();
                 objUsuario.cargarUsuarios(dgvUsuarios);
             }
-            if (dgvEmpleados.Columns[e.ColumnIndex].Name == "Eliminar")
+            if (dgvUsuarios.Columns[e.ColumnIndex].Name == "EliminarUsuario")
             {
                 Id = Convert.ToInt32(dgvUsuarios.CurrentRow.Cells["Id"].Value.ToString());
                 IdEmpleado = Convert.ToInt32(dgvUsuarios.CurrentRow.Cells["IdEmpleado"].Value.ToString());
@@ -190,6 +227,33 @@ namespace Login.CSuAdministrador.Usuarios
                     //objProducto.EliminarCliente(Id);
                     MessageBox.Show("Usuario eliminado con Exito" + Rol.ToString(), "Eliminar Usuario Exitoso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     objUsuario.cargarUsuarios(dgvUsuarios);
+                }
+            }
+        }
+
+
+        private void dgvUsuariosEliminados_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result;
+            if (dgvUsuariosEliminados.Columns[e.ColumnIndex].Name == "ActivarUsuario")
+            {
+                Id = Convert.ToInt32(dgvUsuariosEliminados.CurrentRow.Cells["Id"].Value.ToString());
+                IdEmpleado = Convert.ToInt32(dgvUsuariosEliminados.CurrentRow.Cells["IdEmpleado"].Value.ToString());
+                NomUsuarioAct = dgvUsuariosEliminados.CurrentRow.Cells["Usuario"].Value.ToString();
+                Pass = dgvUsuariosEliminados.CurrentRow.Cells["Password"].Value.ToString();
+                Rol = validarRol(dgvUsuariosEliminados.CurrentRow.Cells["Rol"].Value.ToString());
+                Activo = true;
+                result = MessageBox.Show("Desea Activar el Usuario?", "Activar Usuario", buttons, MessageBoxIcon.Exclamation);
+                if (result == System.Windows.Forms.DialogResult.Yes)
+                {
+                    objUsuario.EditarUsuario(Id, IdEmpleado, NomUsuarioAct, Pass, Rol, Activo);
+                    //Eliminar (Cambiar Estado)
+                    //objProducto.EliminarCliente(Id);
+                    MessageBox.Show("Usuario activado con Exito" + Rol.ToString(), "Activar Usuario Exitoso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    objUsuario.cargarUsuarios(dgvUsuarios);
+                    objUsuario.cargarUsuariosEliminados(dgvUsuariosEliminados);
+
                 }
             }
         }
@@ -212,15 +276,49 @@ namespace Login.CSuAdministrador.Usuarios
             }
         }
 
-
         private void btnActualizarUsuElim_Click(object sender, EventArgs e)
         {
             objUsuario.cargarUsuariosEliminados(dgvUsuariosEliminados);
         }
 
-        private void dgvUsuariosEliminados_CellClick(object sender, DataGridViewCellEventArgs e)
+        
+
+
+        private void eliminarEmpl(int id)
         {
-           
+            SqlCommand cmd;
+            SqlParameter param = new SqlParameter();
+            SqlConnection conexion = new SqlConnection("Data Source=DESKTOP-1DB3D6E\\SQLEXPRESS_INST2;Initial Catalog=AudioCorrientes;Integrated Security=True");
+            cmd = new SqlCommand("UPDATE Empleados SET activo = 0 Where id_empleado = @id", conexion);
+
+            param.ParameterName = "@id";
+            param.Value = id;
+
+            cmd.Parameters.Add(param);
+
+            //cmd.CommandType = CommandType.StoredProcedure;
+            conexion.Open();
+            cmd.ExecuteNonQuery();
+            conexion.Close();
+            
+        }
+        private void activarEmpl(int id)
+        {
+            SqlCommand cmd;
+            SqlParameter param = new SqlParameter();
+            SqlConnection conexion = new SqlConnection("Data Source=DESKTOP-1DB3D6E\\SQLEXPRESS_INST2;Initial Catalog=AudioCorrientes;Integrated Security=True");
+            cmd = new SqlCommand("UPDATE Empleados SET activo = 1 Where id_empleado = @id", conexion);
+
+            param.ParameterName = "@id";
+            param.Value = id;
+
+            cmd.Parameters.Add(param);
+
+            //cmd.CommandType = CommandType.StoredProcedure;
+            conexion.Open();
+            cmd.ExecuteNonQuery();
+            conexion.Close();
+
         }
     }
 }

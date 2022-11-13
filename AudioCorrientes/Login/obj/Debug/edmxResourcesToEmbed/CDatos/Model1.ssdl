@@ -45,6 +45,7 @@
     <Property Name="fechaIngreso" Type="date" Nullable="false" />
     <Property Name="fechaNac" Type="date" Nullable="false" />
     <Property Name="email" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="es_usu" Type="bit" Nullable="false" />
   </EntityType>
   <EntityType Name="Marca">
     <Key>
@@ -113,13 +114,6 @@
   </EntityType>
   <!--Errores durante la generación:
 advertencia 6002: La tabla o vista 'AudioCorrientes.dbo.Top5' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
-  <EntityType Name="Top5">
-    <Key>
-      <PropertyRef Name="id_productos" />
-    </Key>
-    <Property Name="id_productos" Type="int" Nullable="false" />
-    <Property Name="Cant" Type="int" />
-  </EntityType>
   <Association Name="FK_Cliente_TipoCliente">
     <End Role="TipoCliente" Type="Self.TipoCliente" Multiplicity="1" />
     <End Role="Clientes" Type="Self.Clientes" Multiplicity="*" />
@@ -252,12 +246,6 @@ advertencia 6002: La tabla o vista 'AudioCorrientes.dbo.Top5' no tiene definida 
     <EntitySet Name="TipoFactura" EntityType="Self.TipoFactura" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Usuarios" EntityType="Self.Usuarios" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Ventas" EntityType="Self.Ventas" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Top5" EntityType="Self.Top5" store:Type="Views" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-    [Top5].[id_productos] AS [id_productos], 
-    [Top5].[Cant] AS [Cant]
-    FROM [dbo].[Top5] AS [Top5]</DefiningQuery>
-    </EntitySet>
     <AssociationSet Name="FK_Cliente_TipoCliente" Association="Self.FK_Cliente_TipoCliente">
       <End Role="TipoCliente" EntitySet="TipoCliente" />
       <End Role="Clientes" EntitySet="Clientes" />

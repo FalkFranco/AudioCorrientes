@@ -35,9 +35,6 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.dgvEmpleados = new System.Windows.Forms.DataGridView();
-            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Activar = new System.Windows.Forms.DataGridViewImageColumn();
             this.chbNombre = new System.Windows.Forms.CheckBox();
             this.chbDni = new System.Windows.Forms.CheckBox();
             this.txtBuscar = new System.Windows.Forms.TextBox();
@@ -55,9 +52,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.btnActualizarUsuElim = new System.Windows.Forms.Button();
             this.dgvUsuariosEliminados = new System.Windows.Forms.DataGridView();
             this.ActivarUsuario = new System.Windows.Forms.DataGridViewImageColumn();
+            this.btnActualizarUsuElim = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -67,15 +64,28 @@
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.button1 = new System.Windows.Forms.Button();
+            this.dgvEmpleadosEliminados = new System.Windows.Forms.DataGridView();
+            this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.checkBox4 = new System.Windows.Forms.CheckBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.ActivarEmpleado = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Activar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
+            this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuariosEliminados)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleadosEliminados)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -143,37 +153,14 @@
             this.dgvEmpleados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEmpleados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Editar,
             this.Eliminar,
-            this.Activar});
+            this.Activar,
+            this.Editar});
             this.dgvEmpleados.Location = new System.Drawing.Point(26, 101);
             this.dgvEmpleados.Name = "dgvEmpleados";
             this.dgvEmpleados.Size = new System.Drawing.Size(1070, 377);
             this.dgvEmpleados.TabIndex = 14;
             this.dgvEmpleados.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmpleados_CellClick);
-            // 
-            // Editar
-            // 
-            this.Editar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Editar.HeaderText = "Editar";
-            this.Editar.Image = global::Login.Properties.Resources.editar25x25;
-            this.Editar.Name = "Editar";
-            // 
-            // Eliminar
-            // 
-            this.Eliminar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Eliminar.HeaderText = "Eliminar";
-            this.Eliminar.Image = global::Login.Properties.Resources.basura25x25;
-            this.Eliminar.Name = "Eliminar";
-            this.Eliminar.Width = 49;
-            // 
-            // Activar
-            // 
-            this.Activar.HeaderText = "Activar";
-            this.Activar.Image = global::Login.Properties.Resources.editar25x25;
-            this.Activar.Name = "Activar";
-            this.Activar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Activar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // chbNombre
             // 
@@ -333,6 +320,13 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.button1);
+            this.tabPage3.Controls.Add(this.dgvEmpleadosEliminados);
+            this.tabPage3.Controls.Add(this.checkBox3);
+            this.tabPage3.Controls.Add(this.checkBox4);
+            this.tabPage3.Controls.Add(this.textBox2);
+            this.tabPage3.Controls.Add(this.button3);
+            this.tabPage3.Controls.Add(this.label4);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
@@ -343,8 +337,8 @@
             // 
             // tabPage4
             // 
-            this.tabPage4.Controls.Add(this.btnActualizarUsuElim);
             this.tabPage4.Controls.Add(this.dgvUsuariosEliminados);
+            this.tabPage4.Controls.Add(this.btnActualizarUsuElim);
             this.tabPage4.Controls.Add(this.checkBox1);
             this.tabPage4.Controls.Add(this.checkBox2);
             this.tabPage4.Controls.Add(this.textBox1);
@@ -358,6 +352,25 @@
             this.tabPage4.Text = "Usuarios Eliminados";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
+            // dgvUsuariosEliminados
+            // 
+            this.dgvUsuariosEliminados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvUsuariosEliminados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvUsuariosEliminados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ActivarUsuario});
+            this.dgvUsuariosEliminados.Location = new System.Drawing.Point(31, 104);
+            this.dgvUsuariosEliminados.Name = "dgvUsuariosEliminados";
+            this.dgvUsuariosEliminados.Size = new System.Drawing.Size(1059, 394);
+            this.dgvUsuariosEliminados.TabIndex = 26;
+            this.dgvUsuariosEliminados.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuariosEliminados_CellClick);
+            // 
+            // ActivarUsuario
+            // 
+            this.ActivarUsuario.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ActivarUsuario.HeaderText = "ActivarUsuario";
+            this.ActivarUsuario.Image = global::Login.Properties.Resources.basura25x25;
+            this.ActivarUsuario.Name = "ActivarUsuario";
+            // 
             // btnActualizarUsuElim
             // 
             this.btnActualizarUsuElim.Location = new System.Drawing.Point(1015, 61);
@@ -367,25 +380,6 @@
             this.btnActualizarUsuElim.Text = "Actualizar";
             this.btnActualizarUsuElim.UseVisualStyleBackColor = true;
             this.btnActualizarUsuElim.Click += new System.EventHandler(this.btnActualizarUsuElim_Click);
-            // 
-            // dgvUsuariosEliminados
-            // 
-            this.dgvUsuariosEliminados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvUsuariosEliminados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvUsuariosEliminados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ActivarUsuario});
-            this.dgvUsuariosEliminados.Location = new System.Drawing.Point(31, 102);
-            this.dgvUsuariosEliminados.Name = "dgvUsuariosEliminados";
-            this.dgvUsuariosEliminados.Size = new System.Drawing.Size(1059, 394);
-            this.dgvUsuariosEliminados.TabIndex = 24;
-            this.dgvUsuariosEliminados.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuariosEliminados_CellClick);
-            // 
-            // ActivarUsuario
-            // 
-            this.ActivarUsuario.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ActivarUsuario.HeaderText = "Activar";
-            this.ActivarUsuario.Image = global::Login.Properties.Resources.basura25x25;
-            this.ActivarUsuario.Name = "ActivarUsuario";
             // 
             // checkBox1
             // 
@@ -461,6 +455,102 @@
             this.dataGridViewImageColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.dataGridViewImageColumn3.Width = 489;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(1015, 61);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 25;
+            this.button1.Text = "Actualizar";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // dgvEmpleadosEliminados
+            // 
+            this.dgvEmpleadosEliminados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvEmpleadosEliminados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEmpleadosEliminados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ActivarEmpleado});
+            this.dgvEmpleadosEliminados.Location = new System.Drawing.Point(31, 102);
+            this.dgvEmpleadosEliminados.Name = "dgvEmpleadosEliminados";
+            this.dgvEmpleadosEliminados.Size = new System.Drawing.Size(1059, 394);
+            this.dgvEmpleadosEliminados.TabIndex = 24;
+            this.dgvEmpleadosEliminados.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuElim_CellClick);
+            // 
+            // checkBox3
+            // 
+            this.checkBox3.AutoSize = true;
+            this.checkBox3.Location = new System.Drawing.Point(218, 21);
+            this.checkBox3.Name = "checkBox3";
+            this.checkBox3.Size = new System.Drawing.Size(63, 17);
+            this.checkBox3.TabIndex = 23;
+            this.checkBox3.Text = "Nombre";
+            this.checkBox3.UseVisualStyleBackColor = true;
+            // 
+            // checkBox4
+            // 
+            this.checkBox4.AutoSize = true;
+            this.checkBox4.Checked = true;
+            this.checkBox4.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox4.Location = new System.Drawing.Point(152, 21);
+            this.checkBox4.Name = "checkBox4";
+            this.checkBox4.Size = new System.Drawing.Size(45, 17);
+            this.checkBox4.TabIndex = 22;
+            this.checkBox4.Text = "DNI";
+            this.checkBox4.UseVisualStyleBackColor = true;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(31, 61);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(848, 20);
+            this.textBox2.TabIndex = 21;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(896, 61);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 20;
+            this.button3.Text = "Buscar";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(28, 21);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(111, 13);
+            this.label4.TabIndex = 19;
+            this.label4.Text = "Buscar Empleado por:";
+            // 
+            // ActivarEmpleado
+            // 
+            this.ActivarEmpleado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ActivarEmpleado.HeaderText = "Activar";
+            this.ActivarEmpleado.Image = global::Login.Properties.Resources.editar25x25;
+            this.ActivarEmpleado.Name = "ActivarEmpleado";
+            // 
+            // Eliminar
+            // 
+            this.Eliminar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Eliminar.HeaderText = "Eliminar";
+            this.Eliminar.Image = global::Login.Properties.Resources.basura25x25;
+            this.Eliminar.Name = "Eliminar";
+            this.Eliminar.Width = 49;
+            // 
+            // Activar
+            // 
+            this.Activar.HeaderText = "Activar";
+            this.Activar.Image = global::Login.Properties.Resources.editar25x25;
+            this.Activar.Name = "Activar";
+            this.Activar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Activar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // Editar
+            // 
+            this.Editar.HeaderText = "Editar";
+            this.Editar.Name = "Editar";
+            // 
             // Usuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -480,10 +570,13 @@
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).EndInit();
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuariosEliminados)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleadosEliminados)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -507,9 +600,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.DataGridView dgvEmpleados;
-        private System.Windows.Forms.DataGridViewImageColumn Editar;
-        private System.Windows.Forms.DataGridViewImageColumn Eliminar;
-        private System.Windows.Forms.DataGridViewImageColumn Activar;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn3;
@@ -521,12 +611,23 @@
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.Button btnActualizarUsuElim;
-        private System.Windows.Forms.DataGridView dgvUsuariosEliminados;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridView dgvUsuariosEliminados;
         private System.Windows.Forms.DataGridViewImageColumn ActivarUsuario;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridView dgvEmpleadosEliminados;
+        private System.Windows.Forms.CheckBox checkBox3;
+        private System.Windows.Forms.CheckBox checkBox4;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DataGridViewImageColumn ActivarEmpleado;
+        private System.Windows.Forms.DataGridViewImageColumn Eliminar;
+        private System.Windows.Forms.DataGridViewImageColumn Activar;
+        private System.Windows.Forms.DataGridViewImageColumn Editar;
     }
 }

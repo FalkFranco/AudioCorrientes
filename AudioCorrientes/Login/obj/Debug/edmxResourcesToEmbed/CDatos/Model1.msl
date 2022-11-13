@@ -98,6 +98,7 @@
     <EntitySetMapping Name="Empleados">
       <EntityTypeMapping TypeName="dbAudioCorrientesModel.Empleado">
         <MappingFragment StoreEntitySet="Empleados">
+          <ScalarProperty Name="es_usu" ColumnName="es_usu" />
           <ScalarProperty Name="email" ColumnName="email" />
           <ScalarProperty Name="fechaNac" ColumnName="fechaNac" />
           <ScalarProperty Name="fechaIngreso" ColumnName="fechaIngreso" />
@@ -120,14 +121,6 @@
           <ScalarProperty Name="usuario1" ColumnName="usuario" />
           <ScalarProperty Name="empleado_id" ColumnName="empleado_id" />
           <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Top5">
-      <EntityTypeMapping TypeName="dbAudioCorrientesModel.Top5">
-        <MappingFragment StoreEntitySet="Top5">
-          <ScalarProperty Name="Cant" ColumnName="Cant" />
-          <ScalarProperty Name="id_productos" ColumnName="id_productos" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Security.Cryptography;
@@ -41,6 +42,7 @@ namespace Login.CPresentacion.CSuAdministrador.Usuarios
                     if (objUsuario.AgregarUsuario(idEmp, txtUsuario.Text, txtPass.Text, idRol))
                     {
                         MessageBox.Show("El Usuario se registró correctamente", "Usuario Registrado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        actualizarEmpleados();
                         this.Close();
                     }
                     else
@@ -89,55 +91,18 @@ namespace Login.CPresentacion.CSuAdministrador.Usuarios
             idValue = cbRol.SelectedValue.ToString(); //Alamacena el id para poder cargar en la db
         }
 
+        public void actualizarEmpleados()
+        {
+            SqlCommand cmd;
+            SqlConnection conexion = new SqlConnection("Data Source=DESKTOP-1DB3D6E\\SQLEXPRESS_INST2;Initial Catalog=AudioCorrientes;Integrated Security=True");
+            cmd = new SqlCommand("ActualizarEmpl", conexion);
+            cmd.CommandType = CommandType.StoredProcedure;
+            conexion.Open();
+            cmd.ExecuteNonQuery();
+            conexion.Close();
+        }
 
 
-
-        //private void btnVerPass_Click(object sender, EventArgs e)
-        //{
-        //    if (txtPassword.UseSystemPasswordChar == false)
-        //    {
-        //        txtPassword.UseSystemPasswordChar = true;
-        //    }
-        //    else txtPassword.UseSystemPasswordChar = false;
-        //}
-
-
-
-        //private void txtPassword_TextChanged(object sender, EventArgs e)
-        //{
-        //    if (AlgoritmoContraseñaSegura(txtPassword.Text) == false)
-        //    {
-        //        errorProvider1.SetError(txtPassword, "La contraseña debe contener al menos una Mayuscula, simbolo y numero");
-        //    }
-        //}
-
-        //private bool AlgoritmoContraseñaSegura(string password)
-        //{
-        //    bool mayuscula = false, minuscula = false, numero = false, carespecial = false;
-        //    for (int i = 0; i < password.Length; i++)
-        //    {
-        //        if (Char.IsUpper(password, i))
-        //        {
-        //            mayuscula = true;
-        //        }
-        //        else if (Char.IsLower(password, i))
-        //        {
-        //            minuscula = true;
-        //        }
-        //        else if (Char.IsDigit(password, i))
-        //        {
-        //            numero = true;
-        //        }
-        //        else
-        //        {
-        //            carespecial = true;
-        //        }
-        //    }
-        //    if (mayuscula && minuscula && numero && carespecial && password.Length >= 8)
-        //    {
-        //        return true;
-        //    }
-        //    return false;
-        //}
+  
     }
 }

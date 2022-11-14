@@ -75,8 +75,6 @@ namespace Login.CNegocio
         }
 
        
-      
-
         public bool AgregarProducto(int idCat, int idMarca, string nombre, string descripcion, float precio, int stock, bool estado)
         {
             //int idTipoInt = Int32.Parse(idTipo);//De string a int para poder almacenar en la base de datos
@@ -201,12 +199,19 @@ namespace Login.CNegocio
         {
             dProductos.mostrarProductos(dgv);
         }
+        public void cargarProductoNoListados(DataGridView dgv)
+        {
+            dProductos.mostrarProductosNoListados(dgv);
+        }
 
         public void cargarPorNombre(DataGridView dgv, String pNombre)
         {
             dProductos.mostrarProductosNombre(dgv, pNombre);
         }
-
+        public void cargarPorId(DataGridView dgv, String pId)
+        {
+            dProductos.mostrarProductosId(dgv, pId);
+        }
 
         public void ActualizarStock(int id,int stock)
         {
@@ -231,6 +236,16 @@ namespace Login.CNegocio
             dgv.Columns["Estado"].Visible = false;
             dgv.Columns["Marca"].Visible = false;
             dgv.Columns["Descripcion"].Visible = false;
+        }
+
+        public void mostrarMarca(DataGridView dgv)
+        {
+            dMarca.mostrarMarca(dgv);
+        }
+
+        public void mostrarCategorias(DataGridView dgv)
+        {
+            dCategoria.mostrarCategorias(dgv);
         }
 
 

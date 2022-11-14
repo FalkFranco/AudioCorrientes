@@ -127,7 +127,6 @@ namespace Login.CDatos.DProductos
                 MessageBox.Show(ex.Message);
                 return false;
             }
-
         }
 
         public bool mostrarProductosNoListados(DataGridView dgv)
@@ -170,6 +169,38 @@ namespace Login.CDatos.DProductos
                 {
                     var objMostrar = (from q in db.Productos
                                       where q.nombre.Contains(pNombre)
+                                      select new
+                                      {
+                                          Id = q.id_productos,
+                                          Categoria = q.Categoria.categoria_descripcion,
+                                          Marca = q.Marca.marca_descripcion,
+                                          Nombre = q.nombre,
+                                          Descripcion = q.descripcion,
+                                          Precio = q.precio,
+                                          Stock = q.stock,
+                                          Estado = q.estado
+                                      }).ToList();
+                    dgv.DataSource = objMostrar;
+
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+
+        }
+
+        public bool mostrarProductosId(DataGridView dgv, String pId)
+        {
+            try
+            {
+                using (db = new dbAudioCorrientesEntities())
+                {
+                    var objMostrar = (from q in db.Productos
+                                      where q.id_productos.ToString().Contains(pId)
                                       select new
                                       {
                                           Id = q.id_productos,

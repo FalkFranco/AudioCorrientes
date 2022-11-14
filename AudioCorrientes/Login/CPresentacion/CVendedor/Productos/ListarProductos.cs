@@ -25,20 +25,6 @@ namespace Login.CVendedor.Productos
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            //validacion txtbox
-            BorrarMensajeProvider();
-            if (ValidarCampos())
-            {
-                    //Buscar
-                    if (chbId.Checked)
-                    {
-                        MessageBox.Show("Buscando por Id");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Buscando por Nombre");
-                    }
-            }
 
         }
         private bool ValidarCampos()
@@ -92,6 +78,30 @@ namespace Login.CVendedor.Productos
         private void dgvProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            //validacion txtbox
+            //validacion txtbox
+            BorrarMensajeProvider();
+            if (ValidarCampos())
+            {
+                //Buscar
+                if (chbId.Checked)
+                {
+                    objProducto.cargarPorId(dgvProductos, txtBuscar.Text);
+                }
+                else
+                {
+                    objProducto.cargarPorNombre(dgvProductos, txtBuscar.Text);
+                }
+            }
+        }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            objProducto.cargarProducto(dgvProductos);
         }
     }
 }

@@ -61,7 +61,8 @@ namespace Login.CSuAdministrador.Empleados
         {
             AgregarEmpleados agregarEmpleados = new AgregarEmpleados();
             agregarEmpleados.ShowDialog();
-            objEmpleado.CargarGrid(dgvEmpleados);
+            //objEmpleado.CargarGrid(dgvEmpleados);
+            objEmpleado.cargarDtosEmpleados(dgvEmpleados);
         }
 
 
@@ -112,6 +113,8 @@ namespace Login.CSuAdministrador.Empleados
         private void Empleados_Load(object sender, EventArgs e)
         {
             objEmpleado.cargarDtosEmpleados(dgvEmpleados);
+            dgvEmpleados.Columns["Activar"].Visible = false;
+            dgvEmpleados.Columns["Eliminar"].Visible = false;
             //objEmpleado.OcultarColumnas(dgvEmpleados);
         }
 

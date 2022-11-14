@@ -97,13 +97,13 @@ namespace Login.CVendedor.Clientes
         {
             FormAgregarCliente formAgregarCliente = new FormAgregarCliente();
             formAgregarCliente.ShowDialog();
-            objCliente.CargarGrid(dgvClientes);
+            objCliente.cargarClientes(dgvClientes);
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            objCliente.CargarGrid(dgvClientes);
-            objCliente.ocultarColumnas(dgvClientes);
+            objCliente.cargarClientes(dgvClientes);
+            //objCliente.ocultarColumnas(dgvClientes);
         }
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
@@ -116,12 +116,12 @@ namespace Login.CVendedor.Clientes
                 if (chbCuit.Checked)
                 {
                     //MessageBox.Show("Buscando por DNI");
-                    objCliente.CargarGridDni(dgvClientes, txtBuscar.Text);
+                    objCliente.cargarPorDni(dgvClientes, txtBuscar.Text);
                 }
                 else if (chbNombre.Checked)
                 {
                     //MessageBox.Show("Buscando por Nombre");
-                    objCliente.CargarGridNom(dgvClientes, txtBuscar.Text);
+                    objCliente.cargarPorNombre(dgvClientes, txtBuscar.Text);
                 }
             }
         }
@@ -137,7 +137,7 @@ namespace Login.CVendedor.Clientes
                 Id = Convert.ToInt32( dgvClientes.CurrentRow.Cells["id_cliente"].Value.ToString());
                 FormEditarCliente FormEdit = new FormEditarCliente(Id);
                 FormEdit.ShowDialog();
-                objCliente.CargarGrid(dgvClientes);
+                objCliente.cargarClientes(dgvClientes);
             }
             if (dgvClientes.Columns[e.ColumnIndex].Name == "Eliminar")
             {
@@ -148,7 +148,7 @@ namespace Login.CVendedor.Clientes
                     //Eliminar
                     objCliente.EliminarCliente(Id);
                     MessageBox.Show("Cliente eliminado con Exito", "Eliminar Cliente Exitoso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    objCliente.CargarGrid(dgvClientes);
+                    objCliente.cargarClientes(dgvClientes);
                 }
             }
         }

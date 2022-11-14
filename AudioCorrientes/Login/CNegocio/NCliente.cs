@@ -200,6 +200,11 @@ namespace Login.CNegocio
         {
             datos.mostrarClientesNombre(dgv, pNombre);
         }
+        public void cargarPorDni(DataGridView dgv, String pDni)
+        {
+            datos.mostrarClientesDni(dgv, pDni);
+        }
+
 
         public int cantClientes()
         {

@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -168,35 +169,94 @@ namespace Login.CSuAdministrador
 
             if (dgvProductos.Columns[e.ColumnIndex].Name == "Editar")
             {
-                Id = Convert.ToInt32(dgvProductos.CurrentRow.Cells["id_productos"].Value.ToString());
+                Id = Convert.ToInt32(dgvProductos.CurrentRow.Cells["Id"].Value.ToString());
                 EditarProducto FormEdit = new EditarProducto(Id);
                 FormEdit.ShowDialog();
-                objProducto.CargarGridAdmin(dgvProductos);
+                objProducto.cargarProducto(dgvProductos);
             }
             if (dgvProductos.Columns[e.ColumnIndex].Name == "Eliminar")
             {
-                Id = Convert.ToInt32(dgvProductos.CurrentRow.Cells["id_cliente"].Value.ToString());
-                result = MessageBox.Show("Desea eliminar el Cliente?\n Se eliminara de forma permanente", "Eliminar Cliente", buttons, MessageBoxIcon.Exclamation);
+                Id = Convert.ToInt32(dgvProductos.CurrentRow.Cells["Id"].Value.ToString());
+                result = MessageBox.Show("Desea eliminar el Producto?", "Eliminar Producto", buttons, MessageBoxIcon.Exclamation);
                 if (result == System.Windows.Forms.DialogResult.Yes)
                 {
-                    //Eliminar (Cambiar Estado)
-                    //objProducto.EliminarCliente(Id);
-                    //MessageBox.Show("Cliente eliminado con Exito", "Eliminar Cliente Exitoso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    //objProducto.CargarGrid(dgvProductos);
+                    eliminarProducto(Id);
+                    MessageBox.Show("Producto eliminado con Exito", "Eliminar Producto Exitoso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    objProducto.cargarProducto(dgvProductos);
+                    objProducto.cargarProductoNoListados(dgvProdNoListado);
                 }
             }
         }
 
         private void MenuProductos_Load(object sender, EventArgs e)
         {
-            objProducto.CargarGridAdmin(dgvProductos);
-            objProducto.OcultarColumnas(dgvProductos);
+            objProducto.cargarProducto(dgvProductos);
+            objProducto.mostrarMarca(dgvMarca);
+            objProducto.mostrarCategorias(dgvCat);
+            objProducto.cargarProductoNoListados(dgvProdNoListado);
+            //objProducto.OcultarColumnas(dgvProductos);
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
             objProducto.CargarGridAdmin(dgvProductos);
             objProducto.OcultarColumnas(dgvProductos);
+            
+        }
+
+        private void eliminarProducto(int id)
+        {
+
+            SqlCommand cmd;
+            SqlParameter param = new SqlParameter();
+            SqlConnection conexion = new SqlConnection("Data Source=DESKTOP-1DB3D6E\\SQLEXPRESS_INST2;Initial Catalog=AudioCorrientes;Integrated Security=True");
+            cmd = new SqlCommand("UPDATE Productos SET estado = 0 Where id_productos = @id", conexion);
+
+            param.ParameterName = "@id";
+            param.Value = id;
+
+            cmd.Parameters.Add(param);
+
+            //cmd.CommandType = CommandType.StoredProcedure;
+            conexion.Open();
+            cmd.ExecuteNonQuery();
+            conexion.Close();  
+        }
+        private void ListarProducto(int id)
+        {
+
+            SqlCommand cmd;
+            SqlParameter param = new SqlParameter();
+            SqlConnection conexion = new SqlConnection("Data Source=DESKTOP-1DB3D6E\\SQLEXPRESS_INST2;Initial Catalog=AudioCorrientes;Integrated Security=True");
+            cmd = new SqlCommand("UPDATE Productos SET estado = 1 Where id_productos = @id", conexion);
+
+            param.ParameterName = "@id";
+            param.Value = id;
+
+            cmd.Parameters.Add(param);
+
+            //cmd.CommandType = CommandType.StoredProcedure;
+            conexion.Open();
+            cmd.ExecuteNonQuery();
+            conexion.Close();
+        }
+
+        private void dgvProdNoListado_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvProdNoListado.Columns[e.ColumnIndex].Name == "Listar")
+            {
+                MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+                DialogResult result;
+                Id = Convert.ToInt32(dgvProdNoListado.CurrentRow.Cells["Id"].Value.ToString());
+                result = MessageBox.Show("Desea listar el Producto?", "Listar Producto", buttons, MessageBoxIcon.Exclamation);
+                if (result == System.Windows.Forms.DialogResult.Yes)
+                {
+                    ListarProducto(Id);
+                    MessageBox.Show("Producto Listado con Exito", "Listar Producto Exitoso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    objProducto.cargarProducto(dgvProductos);
+                    objProducto.cargarProductoNoListados(dgvProdNoListado);
+                }
+            }
         }
     }
 }

@@ -27,5 +27,30 @@ namespace Login.CDatos.DProductos
                 return null;
             }
         }
+
+        public bool mostrarMarca(DataGridView dgv)
+        {
+            try
+            {
+                using (db = new dbAudioCorrientesEntities())
+                {
+                    var objMostrar = (from q in db.Marcas
+                                      //where q.estado == true
+                                      select new
+                                      {
+                                          Id = q.id_marcas,
+                                          Marca = q.marca_descripcion,
+                                      }).ToList();
+                    dgv.DataSource = objMostrar;
+
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+        }
     }
 }

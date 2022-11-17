@@ -36,6 +36,11 @@ INSERT INTO Marca (marca_descripcion) VALUES ('Marshall');
 INSERT INTO Marca (marca_descripcion) VALUES ('Boss');
 INSERT INTO Marca (marca_descripcion) VALUES ('Orange');
 INSERT INTO Marca (marca_descripcion) VALUES ('Vox');
+INSERT INTO Marca (marca_descripcion) VALUES ('Casio');
+INSERT INTO Marca (marca_descripcion) VALUES ('Pearl');
+INSERT INTO Marca (marca_descripcion) VALUES ('Roland');
+INSERT INTO Marca (marca_descripcion) VALUES ('DAddario');
+INSERT INTO Marca (marca_descripcion) VALUES ('Dunlup');
 
 
 INSERT INTO Categoria(categoria_descripcion) VALUES ('Guitarra Electrica');
@@ -44,6 +49,8 @@ INSERT INTO Categoria(categoria_descripcion) VALUES ('Bajos');
 INSERT INTO Categoria(categoria_descripcion) VALUES ('Amplificadores');
 INSERT INTO Categoria(categoria_descripcion) VALUES ('Pedales');
 INSERT INTO Categoria(categoria_descripcion) VALUES ('Accesorios');
+INSERT INTO Categoria(categoria_descripcion) VALUES ('Teclados');
+INSERT INTO Categoria(categoria_descripcion) VALUES ('Baterias');
 
 INSERT INTO Productos
 (categoria_id,marca_id,nombre,descripcion,precio,stock) 
@@ -164,8 +171,8 @@ AS
 SELECT * from Top5
 
 go
-DROP PROC Top5
-
+--DROP PROC Top5
+go
 CREATE OR ALTER PROC Top5Prod
 AS
 	SELECT top 5 pr.nombre , COUNT(dv.id_productos) 'Cant' FROM DetalleVenta dv
@@ -223,11 +230,264 @@ BEGIN
 		DECLARE @IdEmpleado AS INT
 		SELECT @idEmpleado = INSERTED.id_empleado
 		FROM INSERTED
-		IF(SELECT UPDATES.activo FROM UPDATES) = 0
+		IF ((SELECT COUNT(*) FROM Usuarios where Usuarios.empleado_id = @IdEmpleado) > 0)
 		BEGIN
-			UPDATE Usuarios SET activo = 0 where @idEmpleado = empleado_id
+			IF(SELECT INSERTED.activo FROM INSERTED) = 0 
+			BEGIN
+				UPDATE Usuarios SET activo = 0 where @idEmpleado = empleado_id
+			END
 		END
 	END
 END
 GO
+
+--UPDATE Empleados SET activo = 0 where id_empleado = 12
+--UPDATE Empleados SET activo = 0 where id_empleado = 3
+
+--SELECT * FROM Empleados where activo = 0
+
+--SELECT * FROM Usuarios where empleado_id = 12
+
+--SELECT * FROM Usuarios
+--SELECT IF ((SELECT COUNT(*) FROM Usuarios where Usuarios.empleado_id = 1) > 0)
+
+--CREATE PROCEDURE GetVentasEntre(@Desde AS DATE,@Hasta AS DATE)
+--AS 
+--	SELECT * FROM DetalleVenta dv
+--	INNER JOIN Ventas vn
+--	ON dv.id_ventas = vn.id_ventas
+--	where fecha between '2022-11-06' and '2022-12-01';
+
+CREATE OR ALTER PROCEDURE GetVentasDia
+AS 
+	SELECT fecha, SUM(subtotal) AS Total FROM DetalleVenta dv
+	INNER JOIN Ventas vn
+	ON dv.id_ventas = vn.id_ventas
+	where fecha = CONVERT(DATE, GETDATE())
+	GROUP BY fecha
+
+EXEC GetVentasDia
+GO
+CREATE OR ALTER PROCEDURE GetVentasAño
+AS 
+	SELECT fecha, SUM(subtotal) AS Total FROM DetalleVenta dv
+	INNER JOIN Ventas vn
+	ON dv.id_ventas = vn.id_ventas
+	where YEAR(fecha) =  YEAR(CONVERT(DATE, GETDATE()))
+	GROUP BY fecha
+
+EXEC GetVentasAño
+GO
+CREATE OR ALTER PROCEDURE GetVentasSemana
+AS 
+	SELECT fecha, SUM(subtotal) AS Total FROM DetalleVenta dv
+	INNER JOIN Ventas vn
+	ON dv.id_ventas = vn.id_ventas
+	where fecha between DATEADD(DAY,-7, GETDATE()) AND CONVERT(DATE, GETDATE())
+	GROUP BY fecha
+
+EXEC GetVentasSemana
+GO
+CREATE OR ALTER PROCEDURE GetVentasMes
+AS 
+	SELECT fecha, SUM(subtotal) AS Total FROM DetalleVenta dv
+	INNER JOIN Ventas vn
+	ON dv.id_ventas = vn.id_ventas
+	where fecha between DATEADD(DAY,-30, GETDATE()) AND CONVERT(DATE, GETDATE())
+	GROUP BY fecha
+
+EXEC GetVentasMes
+--SELECT DATEADD(DAY,-30, GETDATE())
+--SELECT CONVERT(DATE, GETDATE())
+
+--SELECT YEAR(CONVERT(DATE, GETDATE()))
+
+GO
+CREATE OR ALTER PROCEDURE GetVentasEntre(@Desde AS DATE,@Hasta AS DATE)
+AS  
+		DECLARE @DesdeC AS DATE = CONVERT(DATE, @Desde)
+		DECLARE @HastaC AS DATE = CONVERT(DATE, @Hasta)
+		SELECT fecha, SUM(subtotal) AS Total FROM DetalleVenta dv
+		INNER JOIN Ventas vn
+		ON dv.id_ventas = vn.id_ventas
+		where fecha between @DesdeC AND @HastaC
+		GROUP BY fecha
+
+--EXEC GetVentasEntre "2022-11-03","2022-11-17" 
+go
+CREATE OR ALTER PROCEDURE GanTot
+AS  
+	SELECT Convert(Decimal,SUM(subtotal)) FROM DetalleVenta dv
+	INNER JOIN Ventas vn
+	ON dv.id_ventas = vn.id_ventas
+	
+
+GO
+CREATE OR ALTER PROCEDURE GetTopProductosEntre(@Desde AS DATE,@Hasta AS DATE)
+AS 
+	DECLARE @DesdeC AS DATE = CONVERT(DATE, @Desde)
+	DECLARE @HastaC AS DATE = CONVERT(DATE, @Hasta)
+	SELECT top 5 pr.nombre , COUNT(dv.id_productos) 'Cant' FROM DetalleVenta dv
+	INNER JOIN Ventas vn
+	ON dv.id_ventas = vn.id_ventas
+	INNER JOIN Productos pr
+	ON dv.id_productos = pr.id_productos
+	where fecha between @DesdeC AND @HastaC
+	group by pr.nombre, dv.id_productos
+	order by Cant desc
+
+EXEC GetTopProductosEntre "2022-11-01","2022-11-17" 
+
+SELECT * FROM DetalleVenta dv
+INNER JOIN Ventas vn
+ON dv.id_ventas = vn.id_ventas
+INNER JOIN Productos pr
+ON dv.id_productos = pr.id_productos
+INNER JOIN Marca mr
+ON pr.marca_id = mr.id_marcas
+
+go
+CREATE OR ALTER PROCEDURE GetTopMarcasEntre(@Desde AS DATE,@Hasta AS DATE)
+AS 
+	DECLARE @DesdeC AS DATE = CONVERT(DATE, @Desde)
+	DECLARE @HastaC AS DATE = CONVERT(DATE, @Hasta)
+	SELECT top 5 mr.marca_descripcion , COUNT(mr.id_marcas) 'Cant' FROM DetalleVenta dv
+	INNER JOIN Ventas vn
+	ON dv.id_ventas = vn.id_ventas
+	INNER JOIN Productos pr
+	ON dv.id_productos = pr.id_productos
+	INNER JOIN Marca mr
+	ON pr.marca_id = mr.id_marcas
+	where fecha between @DesdeC AND @HastaC
+	group by mr.marca_descripcion, mr.id_marcas
+	order by Cant desc
+
+
+EXEC GetTopMarcasEntre "2022-11-12","2022-11-17" 
+
+SELECT * FROM DetalleVenta dv
+INNER JOIN Ventas vn
+ON dv.id_ventas = vn.id_ventas
+INNER JOIN Productos pr
+ON dv.id_productos = pr.id_productos
+INNER JOIN Categoria ct
+ON pr.categoria_id = ct.id_categorias
+
+go
+CREATE OR ALTER PROCEDURE GetTopCategoriasEntre(@Desde AS DATE,@Hasta AS DATE)
+AS 
+	DECLARE @DesdeC AS DATE = CONVERT(DATE, @Desde)
+	DECLARE @HastaC AS DATE = CONVERT(DATE, @Hasta)
+	SELECT top 5 ct.categoria_descripcion , COUNT(ct.id_categorias) 'Cant' FROM DetalleVenta dv
+	INNER JOIN Ventas vn
+	ON dv.id_ventas = vn.id_ventas
+	INNER JOIN Productos pr
+	ON dv.id_productos = pr.id_productos
+	INNER JOIN Categoria ct
+	ON pr.categoria_id = ct.id_categorias
+	where fecha between @DesdeC AND @HastaC
+	group by ct.categoria_descripcion, ct.id_categorias
+	order by Cant desc
+
+	
+EXEC GetTopCategoriasEntre "2022-11-12","2022-11-17" 
+
+go
+CREATE OR ALTER PROCEDURE GetProductosAño
+AS 
+	SELECT top 5 pr.nombre , COUNT(dv.id_productos) 'Cant' FROM DetalleVenta dv
+	INNER JOIN Ventas vn
+	ON dv.id_ventas = vn.id_ventas
+	INNER JOIN Productos pr
+	ON dv.id_productos = pr.id_productos
+	where YEAR(fecha) =  YEAR(CONVERT(DATE, GETDATE()))
+	group by pr.nombre, dv.id_productos
+	order by Cant desc
+
+EXEC GetProductosAño
+
+go
+CREATE OR ALTER PROCEDURE GetCategoriasAño
+AS 
+	SELECT top 5 ct.categoria_descripcion , COUNT(ct.id_categorias) 'Cant' FROM DetalleVenta dv
+	INNER JOIN Ventas vn
+	ON dv.id_ventas = vn.id_ventas
+	INNER JOIN Productos pr
+	ON dv.id_productos = pr.id_productos
+	INNER JOIN Categoria ct
+	ON pr.categoria_id = ct.id_categorias
+	where YEAR(fecha) =  YEAR(CONVERT(DATE, GETDATE()))
+	group by ct.categoria_descripcion, ct.id_categorias
+	order by Cant desc
+
+	EXEC GetCategoriasAño
+
+
+go
+CREATE OR ALTER PROCEDURE GetMarcasAño
+AS 
+	SELECT top 5 mr.marca_descripcion , COUNT(mr.id_marcas) 'Cant' FROM DetalleVenta dv
+	INNER JOIN Ventas vn
+	ON dv.id_ventas = vn.id_ventas
+	INNER JOIN Productos pr
+	ON dv.id_productos = pr.id_productos
+	INNER JOIN Marca mr
+	ON pr.marca_id = mr.id_marcas
+	where YEAR(fecha) =  YEAR(CONVERT(DATE, GETDATE()))
+	group by mr.marca_descripcion, mr.id_marcas
+	order by Cant desc
+
+SELECT MONTH(fecha) Meses, SUM(total) Total FROM DetalleVenta dv
+INNER JOIN Ventas vn
+ON dv.id_ventas = vn.id_ventas
+group by MONTH(fecha)
+
+CREATE OR ALTER PROCEDURE GetVentasYear
+AS 
+SELECT MONTH(fecha) as Meses, CONVERT(DECIMAL, SUM(total)) Total FROM DetalleVenta dv
+INNER JOIN Ventas vn
+ON dv.id_ventas = vn.id_ventas
+group by MONTH(fecha)
+
+CREATE OR ALTER PROCEDURE GetVentasS1
+AS 
+SELECT MONTH(fecha) as Meses, CONVERT(DECIMAL, SUM(total)) Total FROM DetalleVenta dv
+INNER JOIN Ventas vn
+ON dv.id_ventas = vn.id_ventas
+WHERE MONTH(fecha) <= 6
+group by MONTH(fecha)
+
+CREATE OR ALTER PROCEDURE VentaMesesCustom
+@Fecha as DATE
+AS 
+SELECT DAY(fecha) as Dia, CONVERT(DECIMAL, SUM(dv.subtotal)) Total FROM DetalleVenta dv
+INNER JOIN Ventas vn
+ON dv.id_ventas = vn.id_ventas
+WHERE MONTH(fecha) = MONTH(CONVERT(DATE, @Fecha)) and YEAR(fecha) = YEAR(CONVERT(DATE, @Fecha))
+group by DAY(fecha)
+exec VentaMesesCustom "2022-11-12"
+
+
+
+CREATE OR ALTER PROCEDURE GetVentasS2
+AS 
+SELECT MONTH(fecha) as Meses, CONVERT(DECIMAL, SUM(dv.subtotal)) Total FROM DetalleVenta dv
+INNER JOIN Ventas vn
+ON dv.id_ventas = vn.id_ventas
+WHERE MONTH(fecha) > 6
+group by MONTH(fecha)
+
+
+
+
+SELECT fecha, SUM(dv.subtotal) total FROM DetalleVenta dv
+INNER JOIN Ventas vn
+ON dv.id_ventas = vn.id_ventas
+where MONTH(fecha) = MONTH(CONVERT(DATE, GETDATE()))
+group by fecha
+
+SELECT * FROM DetalleVenta dv
+INNER JOIN Ventas vn
+ON dv.id_ventas = vn.id_ventas
+
 

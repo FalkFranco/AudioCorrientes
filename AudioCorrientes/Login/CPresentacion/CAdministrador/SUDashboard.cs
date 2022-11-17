@@ -89,7 +89,6 @@ namespace Login.CSuAdministrador
         public String GanTot()
         {
             SqlCommand cmd;
-            SqlDataReader dr;
             ArrayList Tot = new ArrayList();
             ArrayList Cant = new ArrayList();
 

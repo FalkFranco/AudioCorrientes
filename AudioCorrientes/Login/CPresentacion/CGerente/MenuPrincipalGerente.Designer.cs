@@ -252,7 +252,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(5, 50);
             this.panel2.TabIndex = 4;
-            this.panel2.Visible = false;
             // 
             // btnProductos
             // 
@@ -272,7 +271,6 @@
             this.btnProductos.Text = "Productos";
             this.btnProductos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnProductos.UseVisualStyleBackColor = true;
-            this.btnProductos.Visible = false;
             this.btnProductos.Click += new System.EventHandler(this.btnProductos_Click);
             // 
             // panel1

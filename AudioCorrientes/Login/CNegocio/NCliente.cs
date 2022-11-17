@@ -24,12 +24,16 @@ namespace Login.CNegocio
             var Lst = datos.Read();
             dgv.DataSource = Lst;
             OrdenDgv(dgv);
+            dgv.Columns["Id"].Visible = false;
+            dgv.Columns["Estado"].Visible = false;
         }
         public void CargarGridven(DataGridView dgv)
         {
             var Lst = datos.Read();
             dgv.DataSource = Lst;
             OrdenDgvVen(dgv);
+            dgv.Columns["Id"].Visible = false;
+            dgv.Columns["Estado"].Visible = false;
         }
 
         public void OrdenDgv(DataGridView dgv)
@@ -67,10 +71,6 @@ namespace Login.CNegocio
             dgv.DataSource = Lst;
         }
 
-        public void EliminarCliente(int Id)
-        {
-            datos.EliminarCliente(Id);
-        }
 
         public void CargarGridNom(DataGridView dgv, String nombre)
         {
@@ -186,23 +186,23 @@ namespace Login.CNegocio
             }
         }
 
-        public void cargarClientes(DataGridView dgv)
+        public void cargarClientes(DataGridView dgv, bool estado)
         {
-            datos.mostrarClientes(dgv);
-            OrdenDgv(dgv);
+            datos.mostrarClientes(dgv, estado);
+            //OrdenDgv(dgv);
         }
-        public void cargarClientesVen(DataGridView dgv)
+        public void cargarClientesVen(DataGridView dgv, bool estado)
         {
-            datos.mostrarClientes(dgv);
+            datos.mostrarClientes(dgv, estado);
         }
 
-        public void cargarPorNombre(DataGridView dgv, String pNombre)
+        public void cargarPorNombre(DataGridView dgv, String pNombre, bool estado)
         {
-            datos.mostrarClientesNombre(dgv, pNombre);
+            datos.mostrarClientesNombre(dgv, pNombre, estado);
         }
-        public void cargarPorDni(DataGridView dgv, String pDni)
+        public void cargarPorDni(DataGridView dgv, String pDni, bool estado)
         {
-            datos.mostrarClientesDni(dgv, pDni);
+            datos.mostrarClientesDni(dgv, pDni, estado);
         }
 
 

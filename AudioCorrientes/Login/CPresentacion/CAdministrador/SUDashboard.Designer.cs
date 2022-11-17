@@ -31,21 +31,19 @@
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.chartCategorias = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chartTop5 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.lbCantProductos = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.lbCantProv = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.lbCantClientes = new System.Windows.Forms.Label();
             this.lbTotalVent = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -58,17 +56,11 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.lbtotven = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.chartCategorias)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartTop5)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBajoStock)).BeginInit();
@@ -76,8 +68,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // chartCategorias
@@ -91,11 +81,15 @@
             this.chartCategorias.Name = "chartCategorias";
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
-            series1.Name = "Series1";
+            series1.Name = "Productos";
             this.chartCategorias.Series.Add(series1);
             this.chartCategorias.Size = new System.Drawing.Size(799, 326);
             this.chartCategorias.TabIndex = 0;
             this.chartCategorias.Text = "chart1";
+            title1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title1.Name = "Top Cantidad productos comprados";
+            title1.Text = "Categorías Más Adquiridas";
+            this.chartCategorias.Titles.Add(title1);
             // 
             // chartTop5
             // 
@@ -112,27 +106,24 @@
             series2.IsValueShownAsLabel = true;
             series2.LabelForeColor = System.Drawing.Color.White;
             series2.Legend = "Legend1";
-            series2.Name = "Series1";
+            series2.Name = "Cantidad";
             this.chartTop5.Series.Add(series2);
             this.chartTop5.Size = new System.Drawing.Size(320, 595);
             this.chartTop5.TabIndex = 1;
             this.chartTop5.Text = "chart2";
-            title1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            title1.Name = "Title1";
-            title1.Text = "Top 5 Productos";
-            this.chartTop5.Titles.Add(title1);
+            title2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title2.Name = "Title1";
+            title2.Text = "Top 5 Productos";
+            this.chartTop5.Titles.Add(title2);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.pictureBox6);
-            this.panel1.Controls.Add(this.pictureBox5);
             this.panel1.Controls.Add(this.pictureBox4);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.lbCantProductos);
             this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.lbCantProv);
-            this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.lbCantClientes);
             this.panel1.Controls.Add(this.lbTotalVent);
             this.panel1.Location = new System.Drawing.Point(12, 457);
@@ -143,27 +134,17 @@
             // pictureBox6
             // 
             this.pictureBox6.Image = global::Login.Properties.Resources.product;
-            this.pictureBox6.Location = new System.Drawing.Point(6, 180);
+            this.pictureBox6.Location = new System.Drawing.Point(6, 159);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(79, 54);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox6.TabIndex = 8;
             this.pictureBox6.TabStop = false;
             // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Image = global::Login.Properties.Resources.delivery1;
-            this.pictureBox5.Location = new System.Drawing.Point(6, 107);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(79, 54);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox5.TabIndex = 7;
-            this.pictureBox5.TabStop = false;
-            // 
             // pictureBox4
             // 
             this.pictureBox4.Image = global::Login.Properties.Resources.evaluation;
-            this.pictureBox4.Location = new System.Drawing.Point(6, 36);
+            this.pictureBox4.Location = new System.Drawing.Point(6, 60);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(79, 54);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -185,7 +166,7 @@
             // 
             this.lbCantProductos.AutoSize = true;
             this.lbCantProductos.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCantProductos.Location = new System.Drawing.Point(87, 201);
+            this.lbCantProductos.Location = new System.Drawing.Point(87, 180);
             this.lbCantProductos.Name = "lbCantProductos";
             this.lbCantProductos.Size = new System.Drawing.Size(65, 30);
             this.lbCantProductos.TabIndex = 5;
@@ -195,37 +176,17 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(87, 180);
+            this.label5.Location = new System.Drawing.Point(87, 159);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(169, 21);
             this.label5.TabIndex = 4;
             this.label5.Text = "Cantidad Productos";
             // 
-            // lbCantProv
-            // 
-            this.lbCantProv.AutoSize = true;
-            this.lbCantProv.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCantProv.Location = new System.Drawing.Point(86, 131);
-            this.lbCantProv.Name = "lbCantProv";
-            this.lbCantProv.Size = new System.Drawing.Size(65, 30);
-            this.lbCantProv.TabIndex = 3;
-            this.lbCantProv.Text = "1000";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(86, 110);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(187, 21);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Cantidad Proveedores";
-            // 
             // lbCantClientes
             // 
             this.lbCantClientes.AutoSize = true;
             this.lbCantClientes.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCantClientes.Location = new System.Drawing.Point(85, 57);
+            this.lbCantClientes.Location = new System.Drawing.Point(85, 81);
             this.lbCantClientes.Name = "lbCantClientes";
             this.lbCantClientes.Size = new System.Drawing.Size(65, 30);
             this.lbCantClientes.TabIndex = 1;
@@ -235,7 +196,7 @@
             // 
             this.lbTotalVent.AutoSize = true;
             this.lbTotalVent.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTotalVent.Location = new System.Drawing.Point(85, 36);
+            this.lbTotalVent.Location = new System.Drawing.Point(85, 60);
             this.lbTotalVent.Name = "lbTotalVent";
             this.lbTotalVent.Size = new System.Drawing.Size(153, 21);
             this.lbTotalVent.TabIndex = 0;
@@ -320,8 +281,8 @@
             this.panel4.BackColor = System.Drawing.Color.White;
             this.panel4.Controls.Add(this.pictureBox2);
             this.panel4.Controls.Add(this.label1);
-            this.panel4.Controls.Add(this.label2);
-            this.panel4.Location = new System.Drawing.Point(288, 12);
+            this.panel4.Controls.Add(this.lbtotven);
+            this.panel4.Location = new System.Drawing.Point(321, 15);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(422, 67);
             this.panel4.TabIndex = 9;
@@ -346,74 +307,21 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Ingresos Brutos";
             // 
-            // label2
+            // lbtotven
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(109, 21);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(65, 30);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "1000";
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.White;
-            this.panel5.Controls.Add(this.pictureBox3);
-            this.panel5.Controls.Add(this.label4);
-            this.panel5.Controls.Add(this.label7);
-            this.panel5.Location = new System.Drawing.Point(716, 12);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(421, 67);
-            this.panel5.TabIndex = 9;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::Login.Properties.Resources.profit__1_;
-            this.pictureBox3.Location = new System.Drawing.Point(7, 3);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(100, 61);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 5;
-            this.pictureBox3.TabStop = false;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(117, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(90, 21);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Ganancia";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(116, 21);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(65, 30);
-            this.label7.TabIndex = 1;
-            this.label7.Text = "1000";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(104, 83);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.lbtotven.AutoSize = true;
+            this.lbtotven.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbtotven.Location = new System.Drawing.Point(109, 21);
+            this.lbtotven.Name = "lbtotven";
+            this.lbtotven.Size = new System.Drawing.Size(65, 30);
+            this.lbtotven.TabIndex = 1;
+            this.lbtotven.Text = "1000";
             // 
             // SUDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1152, 714);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
@@ -428,7 +336,6 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -439,9 +346,6 @@
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -454,8 +358,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label lbCantProductos;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label lbCantProv;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lbCantClientes;
         private System.Windows.Forms.Label lbTotalVent;
         private System.Windows.Forms.Panel panel2;
@@ -467,15 +369,9 @@
         private System.Windows.Forms.Label lbTotVentasNro;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lbtotven;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.Button button1;
     }
 }

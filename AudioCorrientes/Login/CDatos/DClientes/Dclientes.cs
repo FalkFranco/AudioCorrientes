@@ -133,13 +133,47 @@ namespace Login.CDatos
             }
         }
 
-        public bool mostrarClientes(DataGridView dgv)
+        public bool mostrarClientes(DataGridView dgv, bool estado)
         {
             try
             {
                 using (db = new dbAudioCorrientesEntities())
                 {
                     var objMostrar = (from q in db.Clientes
+                                      where q.estado == estado
+                                      select new
+                                      {
+                                          Id = q.id_cliente,
+                                          Dni = q.dni,
+                                          Nombre = q.nombre,
+                                          Apellido = q.apellido,
+                                          Telefono = q.telefono,
+                                          Direccion = q.direccion,
+                                          Email = q.email,
+                                          TipoCliente = q.TipoCliente.tipo,
+                                          Estado = q.estado
+                                      }).ToList();
+                    dgv.DataSource = objMostrar;
+
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+
+        }
+
+        public bool mostrarClientesNombre(DataGridView dgv, String pBuscador, bool estado)
+        {
+            try
+            {
+                using (db = new dbAudioCorrientesEntities())
+                {
+                    var objMostrar = (from q in db.Clientes
+                                      where q.apellido.Contains(pBuscador) && q.estado == estado
                                       select new
                                       {
                                           Id = q.id_cliente,
@@ -161,48 +195,16 @@ namespace Login.CDatos
                 MessageBox.Show(ex.Message);
                 return false;
             }
-
         }
 
-        public bool mostrarClientesNombre(DataGridView dgv, String pBuscador)
+        public bool mostrarClientesDni(DataGridView dgv, String pBuscador, bool estado)
         {
             try
             {
                 using (db = new dbAudioCorrientesEntities())
                 {
                     var objMostrar = (from q in db.Clientes
-                                      where q.apellido.Contains(pBuscador)
-                                      select new
-                                      {
-                                          Id = q.id_cliente,
-                                          Dni = q.dni,
-                                          Nombre = q.nombre,
-                                          Apellido = q.apellido,
-                                          Telefono = q.telefono,
-                                          Direccion = q.direccion,
-                                          Email = q.email,
-                                          TipoCliente = q.TipoCliente.tipo
-                                      }).ToList();
-                    dgv.DataSource = objMostrar;
-
-                    return true;
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-                return false;
-            }
-        }
-
-        public bool mostrarClientesDni(DataGridView dgv, String pBuscador)
-        {
-            try
-            {
-                using (db = new dbAudioCorrientesEntities())
-                {
-                    var objMostrar = (from q in db.Clientes
-                                      where q.dni.Contains(pBuscador)
+                                      where q.dni.Contains(pBuscador) && q.estado == estado
                                       select new
                                       {
                                           Id = q.id_cliente,

@@ -14,6 +14,7 @@
     <Property Name="id_tipoCliente" Type="Int32" Nullable="false" />
     <NavigationProperty Name="TipoCliente" Relationship="Self.FK_Cliente_TipoCliente" FromRole="Clientes" ToRole="TipoCliente" />
     <NavigationProperty Name="Ventas" Relationship="Self.FK_Venta_Cliente" FromRole="Clientes" ToRole="Ventas" />
+    <Property Name="estado" Type="Boolean" Nullable="false" />
   </EntityType>
   <EntityType Name="DetalleVenta">
     <Key>

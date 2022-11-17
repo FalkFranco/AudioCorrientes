@@ -158,11 +158,51 @@ namespace Login.CNegocio
             dgv.Columns["Id"].Visible = false;
             OrdenDgv(dgv);
         }
+        public void cargarDtosEmpleadosA(DataGridView dgv)
+        {
+            datos.mostrarEmpleadosA(dgv);
+            dgv.Columns["Id"].Visible = false;
+            OrdenDgv(dgv);
+        }
         public void cargarDtosEmpleadosEliminados(DataGridView dgv)
         {
             datos.mostrarEmpleadosEliminados(dgv);
             dgv.Columns["Id"].Visible = false;
             //OrdenDgv(dgv);
         }
+        public void cargarDtosEmpleadosEliminadosA(DataGridView dgv)
+        {
+            datos.mostrarEmpleadosEliminadosA(dgv);
+            dgv.Columns["Id"].Visible = false;
+            //OrdenDgv(dgv);
+        }
+
+        public void cargarDatosEmpleadosDNI(DataGridView dgv,String pDni, bool estado)
+        {
+            datos.mostrarEmpleadosDni(dgv, pDni,estado);
+            dgv.Columns["Id"].Visible = false;
+            OrdenDgv(dgv);
+        }
+        public void cargarDatosEmpleadosNombre(DataGridView dgv, String pNombre, bool estado)
+        {
+            datos.mostrarEmpleadosNombre(dgv, pNombre,estado);
+            dgv.Columns["Id"].Visible = false;
+            OrdenDgv(dgv);
+        }
+
+        public void cargarDatosEmpleadosDNIA(DataGridView dgv, String pDni)
+        {
+            datos.mostrarEmpleadosDniA(dgv, pDni);
+            dgv.Columns["Id"].Visible = false;
+            OrdenDgv(dgv);
+        }
+        public void cargarDatosEmpleadosNombreA(DataGridView dgv, String pNombre)
+        {
+            datos.mostrarEmpleadosNombreA(dgv, pNombre);
+            dgv.Columns["Id"].Visible = false;
+            OrdenDgv(dgv);
+        }
+
+
     }
 }

@@ -24,6 +24,7 @@
           <Property Name="direccion" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="email" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="id_tipoCliente" Type="int" Nullable="false" />
+          <Property Name="estado" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="DetalleVenta">
           <Key>
@@ -117,8 +118,6 @@
           <Property Name="total" Type="float" Nullable="false" />
           <Property Name="estado" Type="bit" Nullable="false" />
         </EntityType>
-        <!--Errores durante la generación:
-advertencia 6002: La tabla o vista 'AudioCorrientes.dbo.Top5' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
         <Association Name="FK_Cliente_TipoCliente">
           <End Role="TipoCliente" Type="Self.TipoCliente" Multiplicity="1" />
           <End Role="Clientes" Type="Self.Clientes" Multiplicity="*" />
@@ -310,6 +309,7 @@ advertencia 6002: La tabla o vista 'AudioCorrientes.dbo.Top5' no tiene definida 
           <Property Name="id_tipoCliente" Type="Int32" Nullable="false" />
           <NavigationProperty Name="TipoCliente" Relationship="Self.FK_Cliente_TipoCliente" FromRole="Clientes" ToRole="TipoCliente" />
           <NavigationProperty Name="Ventas" Relationship="Self.FK_Venta_Cliente" FromRole="Clientes" ToRole="Ventas" />
+          <Property Name="estado" Type="Boolean" Nullable="false" />
         </EntityType>
         <EntityType Name="DetalleVenta">
           <Key>
@@ -610,6 +610,7 @@ advertencia 6002: La tabla o vista 'AudioCorrientes.dbo.Top5' no tiene definida 
           <EntitySetMapping Name="Clientes">
             <EntityTypeMapping TypeName="dbAudioCorrientesModel.Cliente">
               <MappingFragment StoreEntitySet="Clientes">
+                <ScalarProperty Name="estado" ColumnName="estado" />
                 <ScalarProperty Name="id_cliente" ColumnName="id_cliente" />
                 <ScalarProperty Name="dni" ColumnName="dni" />
                 <ScalarProperty Name="nombre" ColumnName="nombre" />

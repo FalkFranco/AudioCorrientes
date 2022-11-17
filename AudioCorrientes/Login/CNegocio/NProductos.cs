@@ -242,10 +242,17 @@ namespace Login.CNegocio
         {
             dMarca.mostrarMarca(dgv);
         }
-
+        public void mostrarMarcasNombre(DataGridView dgv, String pNombre)
+        {
+            dMarca.mostrarMarcaNombre(dgv, pNombre);
+        }
         public void mostrarCategorias(DataGridView dgv)
         {
-            dCategoria.mostrarCategorias(dgv);
+            dCategoria.mostrarCategoria(dgv);
+        }
+        public void mostrarCategoriasNombre(DataGridView dgv,String pNombre)
+        {
+            dCategoria.mostrarCategoriaNombre(dgv, pNombre);
         }
 
 

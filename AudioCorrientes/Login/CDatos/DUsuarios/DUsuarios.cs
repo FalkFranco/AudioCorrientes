@@ -121,7 +121,7 @@ namespace Login.CDatos.DUsuarios
                 using (db = new dbAudioCorrientesEntities())
                 {
                     var objMostrar = (from q in db.Usuarios
-                                      where q.activo == true
+                                      where q.activo == true 
                                       select new
                                       {
                                           IdEmpleado = q.empleado_id,
@@ -152,7 +152,7 @@ namespace Login.CDatos.DUsuarios
                 using (db = new dbAudioCorrientesEntities())
                 {
                     var objMostrar = (from q in db.Usuarios
-                                      where q.activo != true
+                                      where q.activo != true && q.Empleado.activo == true
                                       select new
                                       {
                                           IdEmpleado = q.empleado_id,
@@ -175,7 +175,6 @@ namespace Login.CDatos.DUsuarios
             }
 
         }
-
 
     }
 }

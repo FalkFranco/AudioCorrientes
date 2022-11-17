@@ -134,17 +134,25 @@ namespace Login
                     usuarioLogeado.rol = usuario.rol_id;
                     usuarioLogeado.activo = (bool)usuario.activo;
 
-                    var dEmpleado = empleado.Buscar(usuario.empleado_id);
+                        var dEmpleado = empleado.Buscar(usuario.empleado_id);
 
-                    foreach (Empleado empleado in dEmpleado)
-                    {
-                        usuarioLogeado.nombre = empleado.nombre;
-                        usuarioLogeado.apellido = empleado.apellido;
-                    }
+                        foreach (Empleado empleado in dEmpleado)
+                        {
+                            usuarioLogeado.nombre = empleado.nombre;
+                            usuarioLogeado.apellido = empleado.apellido;
+                        }
+
                 }
-                abrirFormulario(usuarioLogeado);
-                //MessageBox.Show("El usuario " + usuarioLogeado.nombre + " esta en la lista", "Exito", MessageBoxButtons.OK,MessageBoxIcon.Information);
+                if(usuarioLogeado.activo == true)
+                {
+                    abrirFormulario(usuarioLogeado);
+                }
+                else
+                {
+                    MessageBox.Show("El Empleado: " + usuarioLogeado.apellido +" " + usuarioLogeado.nombre + " esta BLOQUEDO en el Sistema", "ERROR", MessageBoxButtons.OK,MessageBoxIcon.Error);
+                }
 
+                //MessageBox.Show("El usuario " + usuarioLogeado.nombre + " esta en la lista", "Exito", MessageBoxButtons.OK,MessageBoxIcon.Information);
             }
             else
             {

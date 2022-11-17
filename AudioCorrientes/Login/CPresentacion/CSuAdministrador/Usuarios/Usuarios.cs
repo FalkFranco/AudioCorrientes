@@ -1,4 +1,6 @@
-﻿using Login.CDatos.DUsuarios;
+﻿using Login.CDatos;
+using Login.CDatos.DProductos;
+using Login.CDatos.DUsuarios;
 using Login.CNegocio;
 using Login.CPresentacion.CSuAdministrador.Usuarios;
 using Login.CSuAdministrador.Empleados;
@@ -60,14 +62,36 @@ namespace Login.CSuAdministrador.Usuarios
         //Empleados
         private void chbDniE_Click(object sender, EventArgs e)
         {
-            chbNombreE.Checked = false;
-            chbDniE.Checked = true;
+            chbNombreU.Checked = false;
+            chbDniU.Checked = true;
         }
 
         private void chbNombreE_Click(object sender, EventArgs e)
         {
+            chbDniU.Checked = false;
+            chbNombreU.Checked = true;
+        }
+
+        private void chbDniE_Click_1(object sender, EventArgs e)
+        {
+            chbDniE.Checked = true;
+            chbNombreEl.Checked = false;
+        }
+        private void chbNombreEl_Click(object sender, EventArgs e)
+        {
+            chbNombreEl.Checked = true;
             chbDniE.Checked = false;
-            chbNombreE.Checked = true;
+        }
+        private void chbDniUE_Click(object sender, EventArgs e)
+        {
+            chbDniUE.Checked = true;
+            chbNombreUE.Checked = false;
+        }
+
+        private void chbNombreUE_Click(object sender, EventArgs e)
+        {
+            chbNombreUE.Checked = true;
+            chbDniUE.Checked = false;
         }
 
 
@@ -96,8 +120,8 @@ namespace Login.CSuAdministrador.Usuarios
 
         private void btnBuscarE_Click(object sender, EventArgs e)
         {
-            BorrarMensajeProviderCM(txtBuscarE);
-            if (ValidarCamposCM(txtBuscarE, chbNombreE))
+            BorrarMensajeProviderCM(txtBuscarU);
+            if (ValidarCamposCM(txtBuscarU, chbNombreU))
             {
                 MessageBox.Show("Buscando Empleado");
             }
@@ -105,8 +129,19 @@ namespace Login.CSuAdministrador.Usuarios
 
         private void txtBuscarE_KeyPress(object sender, KeyPressEventArgs e)
         {
+            bloqString(chbDniU, e);
+        }
+        private void txtBuscarE_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
             bloqString(chbDniE, e);
         }
+
+        private void txtBuscarUE_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            bloqString(chbDniUE, e);
+        }
+
+
 
         private void bloqString( CheckBox checkBox, KeyPressEventArgs e)
         {
@@ -132,9 +167,14 @@ namespace Login.CSuAdministrador.Usuarios
             //objEmpleado.OcultarColumnasSuAdmin(dgvEmpleados);
             objEmpleado.cargarDtosEmpleadosEliminados(dgvEmpleadosEliminados);
             objUsuario.cargarUsuarios(dgvUsuarios);
+            dgvUsuarios.Columns["Id"].Visible = false;
+            dgvUsuarios.Columns["IdEmpleado"].Visible = false;
+            dgvUsuarios.Columns["Activo"].Visible = false;
             objUsuario.cargarUsuariosEliminados(dgvUsuariosEliminados);
-            //objEmpleado.cargarDtosEmpleados(dgvUsuarios);
-            //objUsuario.OcultarColumnas(dgvUsuarios);
+            dgvUsuariosEliminados.Columns["Id"].Visible = false;
+            dgvUsuariosEliminados.Columns["IdEmpleado"].Visible = false;
+            dgvUsuariosEliminados.Columns["Activo"].Visible = false;
+
         }
         int Id;
         private void dgvEmpleados_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -320,5 +360,39 @@ namespace Login.CSuAdministrador.Usuarios
             conexion.Close();
 
         }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            
+            //Buscar
+            if (chbDni.Checked)
+            {
+                objEmpleado.cargarDatosEmpleadosDNI(dgvEmpleados, txtBuscar.Text,true);
+            }
+            else
+            {
+                objEmpleado.cargarDatosEmpleadosNombre(dgvEmpleados, txtBuscar.Text, true);
+            }
+        }
+
+
+        private void txtBuscarE_TextChanged_1(object sender, EventArgs e)
+        {
+           
+            //Buscar
+            if (chbDniU.Checked)
+            {
+                objEmpleado.cargarDatosEmpleadosDNI(dgvEmpleados, txtBuscar.Text, false);
+            }
+            else
+            {
+                objEmpleado.cargarDatosEmpleadosNombre(dgvEmpleados, txtBuscar.Text, false);
+            }
+
+        }
+
+        
+
+
     }
 }

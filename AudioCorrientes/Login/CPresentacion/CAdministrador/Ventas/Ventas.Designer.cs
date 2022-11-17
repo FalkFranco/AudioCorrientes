@@ -31,17 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.btnBuscar = new System.Windows.Forms.Button();
-            this.txtBuscador = new System.Windows.Forms.DataGridView();
-            this.IdVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FechaVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ImporteTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.VerDetalle = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.lbProductoTitle = new System.Windows.Forms.Label();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -49,13 +38,21 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
+            this.dtpHasta = new System.Windows.Forms.DateTimePicker();
+            this.dtpDesde = new System.Windows.Forms.DateTimePicker();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.dgvVentas = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lbProductoTitle = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.dgvDetalle = new System.Windows.Forms.DataGridView();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtBuscador)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVentas)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDetalle)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -70,6 +67,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.dgvDetalle);
             this.tabPage1.Controls.Add(this.button5);
             this.tabPage1.Controls.Add(this.button4);
             this.tabPage1.Controls.Add(this.button3);
@@ -77,10 +75,10 @@
             this.tabPage1.Controls.Add(this.button1);
             this.tabPage1.Controls.Add(this.label4);
             this.tabPage1.Controls.Add(this.label5);
-            this.tabPage1.Controls.Add(this.dateTimePicker3);
-            this.tabPage1.Controls.Add(this.dateTimePicker4);
+            this.tabPage1.Controls.Add(this.dtpHasta);
+            this.tabPage1.Controls.Add(this.dtpDesde);
             this.tabPage1.Controls.Add(this.btnBuscar);
-            this.tabPage1.Controls.Add(this.txtBuscador);
+            this.tabPage1.Controls.Add(this.dgvVentas);
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
@@ -89,6 +87,92 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Listar Ventas";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(292, 73);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(107, 23);
+            this.button5.TabIndex = 25;
+            this.button5.Text = "Custom";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(157, 112);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(107, 23);
+            this.button4.TabIndex = 24;
+            this.button4.Text = "Este Año";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(25, 112);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(107, 23);
+            this.button3.TabIndex = 23;
+            this.button3.Text = "Este Mes";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(157, 73);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(107, 23);
+            this.button2.TabIndex = 22;
+            this.button2.Text = "Ultimos 7 días";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(25, 73);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(107, 23);
+            this.button1.TabIndex = 21;
+            this.button1.Text = "Hoy";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(475, 114);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(49, 17);
+            this.label4.TabIndex = 20;
+            this.label4.Text = "Hasta:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(472, 78);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(52, 17);
+            this.label5.TabIndex = 19;
+            this.label5.Text = "Desde:";
+            // 
+            // dtpHasta
+            // 
+            this.dtpHasta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpHasta.Location = new System.Drawing.Point(530, 111);
+            this.dtpHasta.Name = "dtpHasta";
+            this.dtpHasta.Size = new System.Drawing.Size(200, 20);
+            this.dtpHasta.TabIndex = 18;
+            // 
+            // dtpDesde
+            // 
+            this.dtpDesde.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDesde.Location = new System.Drawing.Point(530, 76);
+            this.dtpDesde.Name = "dtpDesde";
+            this.dtpDesde.Size = new System.Drawing.Size(200, 20);
+            this.dtpDesde.TabIndex = 17;
             // 
             // btnBuscar
             // 
@@ -102,45 +186,15 @@
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
-            // txtBuscador
+            // dgvVentas
             // 
-            this.txtBuscador.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.txtBuscador.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.txtBuscador.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.IdVenta,
-            this.Cliente,
-            this.FechaVenta,
-            this.ImporteTotal,
-            this.VerDetalle});
-            this.txtBuscador.Location = new System.Drawing.Point(26, 163);
-            this.txtBuscador.Name = "txtBuscador";
-            this.txtBuscador.Size = new System.Drawing.Size(1076, 403);
-            this.txtBuscador.TabIndex = 1;
-            // 
-            // IdVenta
-            // 
-            this.IdVenta.HeaderText = "IdVenta";
-            this.IdVenta.Name = "IdVenta";
-            // 
-            // Cliente
-            // 
-            this.Cliente.HeaderText = "Cliente";
-            this.Cliente.Name = "Cliente";
-            // 
-            // FechaVenta
-            // 
-            this.FechaVenta.HeaderText = "FechaVenta";
-            this.FechaVenta.Name = "FechaVenta";
-            // 
-            // ImporteTotal
-            // 
-            this.ImporteTotal.HeaderText = "ImporteTotal";
-            this.ImporteTotal.Name = "ImporteTotal";
-            // 
-            // VerDetalle
-            // 
-            this.VerDetalle.HeaderText = "VerDetalle";
-            this.VerDetalle.Name = "VerDetalle";
+            this.dgvVentas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvVentas.Location = new System.Drawing.Point(26, 163);
+            this.dgvVentas.Name = "dgvVentas";
+            this.dgvVentas.Size = new System.Drawing.Size(1076, 207);
+            this.dgvVentas.TabIndex = 1;
+            this.dgvVentas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVentas_CellContentClick);
             // 
             // label1
             // 
@@ -176,84 +230,14 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // button5
+            // dgvDetalle
             // 
-            this.button5.Location = new System.Drawing.Point(292, 73);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(107, 23);
-            this.button5.TabIndex = 25;
-            this.button5.Text = "Custom";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(157, 112);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(107, 23);
-            this.button4.TabIndex = 24;
-            this.button4.Text = "Este Año";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(25, 112);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(107, 23);
-            this.button3.TabIndex = 23;
-            this.button3.Text = "Este Mes";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(157, 73);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(107, 23);
-            this.button2.TabIndex = 22;
-            this.button2.Text = "Ultimos 7 días";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(25, 73);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(107, 23);
-            this.button1.TabIndex = 21;
-            this.button1.Text = "Hoy";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(475, 114);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(49, 17);
-            this.label4.TabIndex = 20;
-            this.label4.Text = "Hasta:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(472, 78);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(52, 17);
-            this.label5.TabIndex = 19;
-            this.label5.Text = "Desde:";
-            // 
-            // dateTimePicker3
-            // 
-            this.dateTimePicker3.Location = new System.Drawing.Point(530, 111);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker3.TabIndex = 18;
-            // 
-            // dateTimePicker4
-            // 
-            this.dateTimePicker4.Location = new System.Drawing.Point(530, 76);
-            this.dateTimePicker4.Name = "dateTimePicker4";
-            this.dateTimePicker4.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker4.TabIndex = 17;
+            this.dgvDetalle.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvDetalle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDetalle.Location = new System.Drawing.Point(25, 388);
+            this.dgvDetalle.Name = "dgvDetalle";
+            this.dgvDetalle.Size = new System.Drawing.Size(1076, 178);
+            this.dgvDetalle.TabIndex = 26;
             // 
             // Ventas
             // 
@@ -264,13 +248,15 @@
             this.Controls.Add(this.panel1);
             this.Name = "Ventas";
             this.Text = "Ventas";
+            this.Load += new System.EventHandler(this.Ventas_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtBuscador)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVentas)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDetalle)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -280,16 +266,11 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.DataGridView txtBuscador;
+        private System.Windows.Forms.DataGridView dgvVentas;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lbProductoTitle;
         private System.Windows.Forms.ErrorProvider errorProvider1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IdVenta;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cliente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FechaVenta;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ImporteTotal;
-        private System.Windows.Forms.DataGridViewButtonColumn VerDetalle;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
@@ -297,7 +278,8 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DateTimePicker dateTimePicker3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker4;
+        private System.Windows.Forms.DateTimePicker dtpHasta;
+        private System.Windows.Forms.DateTimePicker dtpDesde;
+        private System.Windows.Forms.DataGridView dgvDetalle;
     }
 }

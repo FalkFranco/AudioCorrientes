@@ -42,14 +42,23 @@
             this.chbDniE = new System.Windows.Forms.CheckBox();
             this.btnAgregarE = new System.Windows.Forms.Button();
             this.txtBuscar = new System.Windows.Forms.TextBox();
-            this.btnBuscarE = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
+            this.dgvEmpleadosE = new System.Windows.Forms.DataGridView();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.ActivarE = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleadosE)).BeginInit();
             this.SuspendLayout();
             // 
             // lbProductoTitle
@@ -75,6 +84,7 @@
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 67);
             this.tabControl1.Name = "tabControl1";
@@ -90,7 +100,6 @@
             this.tabPage2.Controls.Add(this.chbDniE);
             this.tabPage2.Controls.Add(this.btnAgregarE);
             this.tabPage2.Controls.Add(this.txtBuscar);
-            this.tabPage2.Controls.Add(this.btnBuscarE);
             this.tabPage2.Controls.Add(this.label3);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
@@ -112,6 +121,8 @@
             // 
             // dgvEmpleados
             // 
+            this.dgvEmpleados.AllowUserToAddRows = false;
+            this.dgvEmpleados.AllowUserToDeleteRows = false;
             this.dgvEmpleados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEmpleados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -120,6 +131,7 @@
             this.Activar});
             this.dgvEmpleados.Location = new System.Drawing.Point(26, 92);
             this.dgvEmpleados.Name = "dgvEmpleados";
+            this.dgvEmpleados.ReadOnly = true;
             this.dgvEmpleados.Size = new System.Drawing.Size(1070, 377);
             this.dgvEmpleados.TabIndex = 13;
             this.dgvEmpleados.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmpleados_CellClick);
@@ -130,6 +142,7 @@
             this.Editar.HeaderText = "Editar";
             this.Editar.Image = global::Login.Properties.Resources.editar25x25;
             this.Editar.Name = "Editar";
+            this.Editar.ReadOnly = true;
             // 
             // Eliminar
             // 
@@ -137,6 +150,7 @@
             this.Eliminar.HeaderText = "Eliminar";
             this.Eliminar.Image = global::Login.Properties.Resources.basura25x25;
             this.Eliminar.Name = "Eliminar";
+            this.Eliminar.ReadOnly = true;
             this.Eliminar.Width = 49;
             // 
             // Activar
@@ -144,6 +158,7 @@
             this.Activar.HeaderText = "Activar";
             this.Activar.Image = global::Login.Properties.Resources.editar25x25;
             this.Activar.Name = "Activar";
+            this.Activar.ReadOnly = true;
             this.Activar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Activar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
@@ -187,17 +202,8 @@
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(848, 20);
             this.txtBuscar.TabIndex = 3;
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             this.txtBuscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBuscar_KeyPress_1);
-            // 
-            // btnBuscarE
-            // 
-            this.btnBuscarE.Location = new System.Drawing.Point(891, 57);
-            this.btnBuscarE.Name = "btnBuscarE";
-            this.btnBuscarE.Size = new System.Drawing.Size(75, 23);
-            this.btnBuscarE.TabIndex = 2;
-            this.btnBuscarE.Text = "Buscar";
-            this.btnBuscarE.UseVisualStyleBackColor = true;
-            this.btnBuscarE.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // label3
             // 
@@ -211,6 +217,93 @@
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.button1);
+            this.tabPage1.Controls.Add(this.dgvEmpleadosE);
+            this.tabPage1.Controls.Add(this.checkBox1);
+            this.tabPage1.Controls.Add(this.checkBox2);
+            this.tabPage1.Controls.Add(this.textBox1);
+            this.tabPage1.Controls.Add(this.label1);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(1115, 516);
+            this.tabPage1.TabIndex = 5;
+            this.tabPage1.Text = "Empleados Eliminados";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(1019, 72);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 22;
+            this.button1.Text = "Actualizar";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // dgvEmpleadosE
+            // 
+            this.dgvEmpleadosE.AllowUserToAddRows = false;
+            this.dgvEmpleadosE.AllowUserToDeleteRows = false;
+            this.dgvEmpleadosE.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvEmpleadosE.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEmpleadosE.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ActivarE});
+            this.dgvEmpleadosE.Location = new System.Drawing.Point(24, 107);
+            this.dgvEmpleadosE.Name = "dgvEmpleadosE";
+            this.dgvEmpleadosE.ReadOnly = true;
+            this.dgvEmpleadosE.Size = new System.Drawing.Size(1070, 377);
+            this.dgvEmpleadosE.TabIndex = 21;
+            this.dgvEmpleadosE.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmpleadosE_CellContentClick);
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(211, 32);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(63, 17);
+            this.checkBox1.TabIndex = 20;
+            this.checkBox1.Text = "Nombre";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Checked = true;
+            this.checkBox2.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox2.Location = new System.Drawing.Point(145, 32);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(45, 17);
+            this.checkBox2.TabIndex = 19;
+            this.checkBox2.Text = "DNI";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(24, 72);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(848, 20);
+            this.textBox1.TabIndex = 18;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(21, 32);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(111, 13);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "Buscar Empleado por:";
+            // 
+            // ActivarE
+            // 
+            this.ActivarE.HeaderText = "Activar";
+            this.ActivarE.Image = global::Login.Properties.Resources.editar25x25;
+            this.ActivarE.Name = "ActivarE";
+            this.ActivarE.ReadOnly = true;
+            this.ActivarE.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ActivarE.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // Empleados
             // 
@@ -229,6 +322,9 @@
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleadosE)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -243,7 +339,6 @@
         private System.Windows.Forms.CheckBox chbDniE;
         private System.Windows.Forms.Button btnAgregarE;
         private System.Windows.Forms.TextBox txtBuscar;
-        private System.Windows.Forms.Button btnBuscarE;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.DataGridView dgvEmpleados;
@@ -251,5 +346,13 @@
         private System.Windows.Forms.DataGridViewImageColumn Editar;
         private System.Windows.Forms.DataGridViewImageColumn Eliminar;
         private System.Windows.Forms.DataGridViewImageColumn Activar;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridView dgvEmpleadosE;
+        private System.Windows.Forms.DataGridViewImageColumn ActivarE;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label1;
     }
 }

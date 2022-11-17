@@ -1,9 +1,11 @@
-﻿using Login.CNegocio;
+﻿using Login.CDatos.DEmpleados;
+using Login.CNegocio;
 using Login.CPresentacion.CVendedor.Clientes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -19,49 +21,6 @@ namespace Login.CVendedor.Clientes
             InitializeComponent();
         }
         NCliente objCliente = new NCliente();
-
-        private void btnBuscar_Click(object sender, EventArgs e)
-        {
-            //validacion txtbox
-            BorrarMensajeProvider();
-            if (ValidarCampos())
-            {
-                //Buscar
-                if (chbCuit.Checked)
-                {
-                    //MessageBox.Show("Buscando por DNI");
-                    objCliente.CargarGridDni(dgvClientes, txtBuscar.Text);
-                }
-                else if (chbNombre.Checked)
-                {
-                    //MessageBox.Show("Buscando por Nombre");
-                    objCliente.CargarGridNom(dgvClientes, txtBuscar.Text);
-                }
-            }
-        }
-
-        private bool ValidarCampos()
-        {
-            string msg = "No puede estar vacio";
-            bool ok = true;
-            //Si estan vacios
-            if (txtBuscar.Text == "")
-            {
-                ok = false;
-                errorProvider1.SetError(txtBuscar, msg);
-            }
-            if (chbCuit.Checked == true && txtBuscar.Text.Length > 11)
-            {
-                ok = false;
-                errorProvider1.SetError(txtBuscar, "Ingrese un DNI valido (8 digitos)");
-            }
-            return ok;
-        }
-
-        private void BorrarMensajeProvider()
-        {
-            errorProvider1.SetError(txtBuscar, "");
-        }
 
 
         private void chbNombre_Click(object sender, EventArgs e)
@@ -89,7 +48,12 @@ namespace Login.CVendedor.Clientes
 
         private void AgregarClientes_Load(object sender, EventArgs e)
         {
-            objCliente.cargarClientes(dgvClientes);
+            objCliente.cargarClientes(dgvClientes, true);
+            dgvClientes.Columns["Id"].Visible = false;
+            dgvClientes.Columns["Estado"].Visible = false; 
+            objCliente.cargarClientes(dgvClientesElim, false);
+            dgvClientesElim.Columns["Id"].Visible = false;
+            dgvClientesElim.Columns["Estado"].Visible = false;
             //objCliente.ocultarColumnas(dgvClientes);
         }
 
@@ -97,33 +61,33 @@ namespace Login.CVendedor.Clientes
         {
             FormAgregarCliente formAgregarCliente = new FormAgregarCliente();
             formAgregarCliente.ShowDialog();
-            objCliente.cargarClientes(dgvClientes);
+            objCliente.cargarClientes(dgvClientes, true);
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            objCliente.cargarClientes(dgvClientes);
+            objCliente.cargarClientes(dgvClientes, true);
+            dgvClientes.Columns["Id"].Visible = false;
+            dgvClientes.Columns["Estado"].Visible = false;
             //objCliente.ocultarColumnas(dgvClientes);
         }
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
             //validacion txtbox
-            BorrarMensajeProvider();
-            if (ValidarCampos())
-            {
+            
                 //Buscar
                 if (chbCuit.Checked)
                 {
                     //MessageBox.Show("Buscando por DNI");
-                    objCliente.cargarPorDni(dgvClientes, txtBuscar.Text);
+                    objCliente.cargarPorDni(dgvClientes, txtBuscar.Text,true);
                 }
                 else if (chbNombre.Checked)
                 {
                     //MessageBox.Show("Buscando por Nombre");
-                    objCliente.cargarPorNombre(dgvClientes, txtBuscar.Text);
+                    objCliente.cargarPorNombre(dgvClientes, txtBuscar.Text, true);
                 }
-            }
+            
         }
 
         int Id;
@@ -134,25 +98,91 @@ namespace Login.CVendedor.Clientes
 
             if (dgvClientes.Columns[e.ColumnIndex].Name == "Editar")
             {
-                Id = Convert.ToInt32( dgvClientes.CurrentRow.Cells["id_cliente"].Value.ToString());
+                Id = Convert.ToInt32( dgvClientes.CurrentRow.Cells["Id"].Value.ToString());
                 FormEditarCliente FormEdit = new FormEditarCliente(Id);
                 FormEdit.ShowDialog();
-                objCliente.cargarClientes(dgvClientes);
+                objCliente.cargarClientes(dgvClientes, true);
             }
             if (dgvClientes.Columns[e.ColumnIndex].Name == "Eliminar")
             {
-                Id = Convert.ToInt32(dgvClientes.CurrentRow.Cells["id_cliente"].Value.ToString());
-                result = MessageBox.Show("Desea eliminar el Cliente?\n Se eliminara de forma permanente", "Eliminar Cliente", buttons, MessageBoxIcon.Exclamation);
+                Id = Convert.ToInt32(dgvClientes.CurrentRow.Cells["Id"].Value.ToString());
+                result = MessageBox.Show("Desea eliminar el Cliente?", "Eliminar Cliente", buttons, MessageBoxIcon.Exclamation);
                 if (result == System.Windows.Forms.DialogResult.Yes)
                 {
                     //Eliminar
-                    objCliente.EliminarCliente(Id);
+                    EliminarCliente(Id);
                     MessageBox.Show("Cliente eliminado con Exito", "Eliminar Cliente Exitoso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    objCliente.cargarClientes(dgvClientes);
+                    objCliente.cargarClientes(dgvClientes, true);
+                    dgvClientes.Columns["Id"].Visible = false;
+                    dgvClientes.Columns["Estado"].Visible = false;
+                    objCliente.cargarClientes(dgvClientesElim, false);
+                    dgvClientesElim.Columns["Id"].Visible = false;
+                    dgvClientesElim.Columns["Estado"].Visible = false;
+                }
+            }
+            
+        }
+
+
+        private void EliminarCliente(int id)
+        {
+
+            SqlCommand cmd;
+            SqlParameter param = new SqlParameter();
+            SqlConnection conexion = new SqlConnection("Data Source=DESKTOP-1DB3D6E\\SQLEXPRESS_INST2;Initial Catalog=AudioCorrientes;Integrated Security=True");
+            cmd = new SqlCommand("UPDATE Clientes SET estado = 0 Where id_cliente = @id", conexion);
+
+            param.ParameterName = "@id";
+            param.Value = id;
+
+            cmd.Parameters.Add(param);
+
+            //cmd.CommandType = CommandType.StoredProcedure;
+            conexion.Open();
+            cmd.ExecuteNonQuery();
+            conexion.Close();
+        }
+        private void ActivarCliente(int id)
+        {
+
+            SqlCommand cmd;
+            SqlParameter param = new SqlParameter();
+            SqlConnection conexion = new SqlConnection("Data Source=DESKTOP-1DB3D6E\\SQLEXPRESS_INST2;Initial Catalog=AudioCorrientes;Integrated Security=True");
+            cmd = new SqlCommand("UPDATE Clientes SET estado = 1 Where id_cliente = @id", conexion);
+
+            param.ParameterName = "@id";
+            param.Value = id;
+
+            cmd.Parameters.Add(param);
+
+            //cmd.CommandType = CommandType.StoredProcedure;
+            conexion.Open();
+            cmd.ExecuteNonQuery();
+            conexion.Close();
+        }
+
+        private void dgvClientesElim_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result;
+            if (dgvClientesElim.Columns[e.ColumnIndex].Name == "RestaurarCliente")
+            {
+                Id = Convert.ToInt32(dgvClientesElim.CurrentRow.Cells["Id"].Value.ToString());
+                result = MessageBox.Show("Desea restaurar el Cliente?", "Restaurar Cliente", buttons, MessageBoxIcon.Exclamation);
+                if (result == System.Windows.Forms.DialogResult.Yes)
+                {
+                    //Eliminar
+                    ActivarCliente(Id);
+                    MessageBox.Show("Cliente restaurado con Exito", "Restaurar Cliente Exitoso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    objCliente.cargarClientes(dgvClientes, true);
+                    dgvClientes.Columns["Id"].Visible = false;
+                    dgvClientes.Columns["Estado"].Visible = false;
+                    objCliente.cargarClientes(dgvClientesElim, false);
+                    dgvClientesElim.Columns["Id"].Visible = false;
+                    dgvClientesElim.Columns["Estado"].Visible = false;
                 }
             }
         }
-
     }
 }
 

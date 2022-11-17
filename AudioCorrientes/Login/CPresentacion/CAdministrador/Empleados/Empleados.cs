@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -35,19 +36,6 @@ namespace Login.CSuAdministrador.Empleados
             agregarRol.Show();
         }
 
-        private void btnBuscar_Click(object sender, EventArgs e)
-        {
-            BorrarMensajeProvider(txtBuscar);
-            if (ValidarCampos(txtBuscar, chbNombreE))
-            {
-                MessageBox.Show("Buscando Usuario");
-            }
-        }
-
-        private void BorrarMensajeProvider(TextBox textBox)
-        {
-            errorProvider1.SetError(textBox, "");
-        }
 
         private void txtBuscar_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -63,23 +51,6 @@ namespace Login.CSuAdministrador.Empleados
             agregarEmpleados.ShowDialog();
             //objEmpleado.CargarGrid(dgvEmpleados);
             objEmpleado.cargarDtosEmpleados(dgvEmpleados);
-        }
-
-
-        private bool ValidarCampos(TextBox textBox, CheckBox checkBox)
-        {
-            bool ok = true;
-            if (textBox.Text == "")
-            {
-                ok = false;
-                errorProvider1.SetError(textBox, "No puede estar vacio");
-            }
-            if (checkBox.Checked && textBox.Text.Length <= 4)
-            {
-                ok = false;
-                errorProvider1.SetError(textBox, "Ingrese mas de 4 caracteres");
-            }
-            return ok;
         }
 
         private void chbNombreE_Click(object sender, EventArgs e)
@@ -112,16 +83,17 @@ namespace Login.CSuAdministrador.Empleados
 
         private void Empleados_Load(object sender, EventArgs e)
         {
-            objEmpleado.cargarDtosEmpleados(dgvEmpleados);
-            dgvEmpleados.Columns["Activar"].Visible = false;
-            dgvEmpleados.Columns["Eliminar"].Visible = false;
-            //objEmpleado.OcultarColumnas(dgvEmpleados);
+            objEmpleado.cargarDtosEmpleadosA(dgvEmpleados);
+            objEmpleado.cargarDtosEmpleadosEliminadosA(dgvEmpleadosE);
+            //dgvEmpleados.Columns["Activar"].Visible = false;
+            //dgvEmpleados.Columns["Eliminar"].Visible = false;
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            objEmpleado.CargarGrid(dgvEmpleados);
-            objEmpleado.OcultarColumnas(dgvEmpleados);
+            objEmpleado.cargarDtosEmpleadosA(dgvEmpleados);
+            //dgvEmpleados.Columns["Activar"].Visible = false;
+            //dgvEmpleados.Columns["Eliminar"].Visible = false;
         }
 
         int Id;
@@ -139,14 +111,79 @@ namespace Login.CSuAdministrador.Empleados
             }
             if (dgvEmpleados.Columns[e.ColumnIndex].Name == "Eliminar")
             {
-                Id = Convert.ToInt32(dgvEmpleados.CurrentRow.Cells["id_empleado"].Value.ToString());
-                result = MessageBox.Show("Desea eliminar el Cliente?\n Se eliminara de forma permanente", "Eliminar Cliente", buttons, MessageBoxIcon.Exclamation);
+                Id = Convert.ToInt32(dgvEmpleados.CurrentRow.Cells["Id"].Value.ToString());
+                result = MessageBox.Show("Desea eliminar el Cliente?", "Eliminar Cliente", buttons, MessageBoxIcon.Exclamation);
                 if (result == System.Windows.Forms.DialogResult.Yes)
                 {
-                    //Eliminar (Cambiar Estado)
-                    //objProducto.EliminarCliente(Id);
-                    //MessageBox.Show("Cliente eliminado con Exito", "Eliminar Cliente Exitoso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    //objProducto.CargarGrid(dgvProductos);
+                    EliminarEmpleado(Id);
+                    objEmpleado.cargarDtosEmpleadosA(dgvEmpleados);
+                    objEmpleado.cargarDtosEmpleadosEliminadosA(dgvEmpleadosE);
+                }
+            }
+        }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            if (chbDniE.Checked)
+            {
+                objEmpleado.cargarDatosEmpleadosDNIA(dgvEmpleados, txtBuscar.Text);
+            }
+            else
+            {
+                objEmpleado.cargarDatosEmpleadosNombreA(dgvEmpleados, txtBuscar.Text);
+            }
+        }
+
+        private void EliminarEmpleado(int id)
+        {
+
+            SqlCommand cmd;
+            SqlParameter param = new SqlParameter();
+            SqlConnection conexion = new SqlConnection("Data Source=DESKTOP-1DB3D6E\\SQLEXPRESS_INST2;Initial Catalog=AudioCorrientes;Integrated Security=True");
+            cmd = new SqlCommand("UPDATE Empleados SET activo = 0 Where id_empleado = @id", conexion);
+
+            param.ParameterName = "@id";
+            param.Value = id;
+
+            cmd.Parameters.Add(param);
+
+            //cmd.CommandType = CommandType.StoredProcedure;
+            conexion.Open();
+            cmd.ExecuteNonQuery();
+            conexion.Close();
+        }
+        private void ActivarEmpleado(int id)
+        {
+
+            SqlCommand cmd;
+            SqlParameter param = new SqlParameter();
+            SqlConnection conexion = new SqlConnection("Data Source=DESKTOP-1DB3D6E\\SQLEXPRESS_INST2;Initial Catalog=AudioCorrientes;Integrated Security=True");
+            cmd = new SqlCommand("UPDATE Empleados SET activo = 1 Where id_empleado = @id", conexion);
+
+            param.ParameterName = "@id";
+            param.Value = id;
+
+            cmd.Parameters.Add(param);
+
+            //cmd.CommandType = CommandType.StoredProcedure;
+            conexion.Open();
+            cmd.ExecuteNonQuery();
+            conexion.Close();
+        }
+
+        private void dgvEmpleadosE_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result;
+            if (dgvEmpleadosE.Columns[e.ColumnIndex].Name == "ActivarE")
+            {
+                Id = Convert.ToInt32(dgvEmpleadosE.CurrentRow.Cells["Id"].Value.ToString());
+                result = MessageBox.Show("Desea activar el Cliente?", "Activar Cliente", buttons, MessageBoxIcon.Exclamation);
+                if (result == System.Windows.Forms.DialogResult.Yes)
+                {
+                    ActivarEmpleado(Id);
+                    objEmpleado.cargarDtosEmpleadosA(dgvEmpleados);
+                    objEmpleado.cargarDtosEmpleadosEliminadosA(dgvEmpleadosE);
                 }
             }
         }

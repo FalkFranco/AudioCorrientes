@@ -210,3 +210,24 @@ AS
 
 
 SELECT empleado_id FROM Usuarios
+
+ALTER TABLE Clientes
+ADD estado  bit not null DEFAULT 1
+
+GO
+CREATE OR ALTER TRIGGER EliminarUsuario
+ON Empleados FOR UPDATE AS
+BEGIN 
+	IF UPDATE(activo)
+	BEGIN
+		DECLARE @IdEmpleado AS INT
+		SELECT @idEmpleado = INSERTED.id_empleado
+		FROM INSERTED
+		IF(SELECT UPDATES.activo FROM UPDATES) = 0
+		BEGIN
+			UPDATE Usuarios SET activo = 0 where @idEmpleado = empleado_id
+		END
+	END
+END
+GO
+

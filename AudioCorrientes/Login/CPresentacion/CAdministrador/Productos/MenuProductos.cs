@@ -27,7 +27,7 @@ namespace Login.CSuAdministrador
         {
             AgregarProductos formAgregarProd = new AgregarProductos();
             formAgregarProd.ShowDialog();
-            objProducto.CargarGridAdmin(dgvProductos);
+            objProducto.cargarProducto(dgvProductos);
         }
 
 
@@ -43,69 +43,7 @@ namespace Login.CSuAdministrador
             formAddMarca.ShowDialog();
         }
 
-
-        //Validaciones de Formularios
-        private void btnBuscar_Click(object sender, EventArgs e)
-        {
-            BorrarMensajeProvider();
-            if (ValidarCampos())
-            {
-                //Buscar
-                if (chbId.Checked)
-                {
-                    MessageBox.Show("Buscando por Id");
-                }
-                else
-                {
-                    MessageBox.Show("Buscando por Nombre");
-                }
-            }
-
-        }
-
-        private bool ValidarCampos()
-        {
-            bool ok = true;
-            if(txtBuscar.Text == "")
-            {
-                ok = false;
-                errorProviderBuscar.SetError(txtBuscar, "No puede estar vacio al realizar una busqueda");
-            }
-            if (txtBuscar.Text.Length <= 4)
-            {
-                ok = false;
-                errorProviderBuscar.SetError(txtBuscar, "Ingrese mas de 4 caracteres");
-            }
-            return ok;
-        }
-        private void BorrarMensajeProvider()
-        {
-            errorProviderBuscar.SetError(txtBuscar, "");
-        }
-
-        private void txtBuscar_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (chbId.Checked)
-            {
-                if (!char.IsNumber(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
-                {
-                    e.Handled = true;
-                }
-            }
-        }
-
-
-        private void chbId_Click(object sender, EventArgs e)
-        {
-            chbNombre.Checked = false;
-            chbId.Checked = true;
-        }
-
-        private void chbNombre_Click(object sender, EventArgs e)
-        {
-            chbId.Checked = false;
-            chbNombre.Checked = true;
-        }
+       
 
         private void dgvProductos_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
@@ -191,17 +129,31 @@ namespace Login.CSuAdministrador
         private void MenuProductos_Load(object sender, EventArgs e)
         {
             objProducto.cargarProducto(dgvProductos);
+            dgvProductos.Columns["Id"].Visible = false;
+            dgvProductos.Columns["Estado"].Visible = false;
             objProducto.mostrarMarca(dgvMarca);
             objProducto.mostrarCategorias(dgvCat);
+            
+            dgvMarca.Columns["Id"].Visible = false;
+            dgvCat.Columns["Id"].Visible = false;
             objProducto.cargarProductoNoListados(dgvProdNoListado);
+            dgvProdNoListado.Columns["Id"].Visible = false;
+            dgvProdNoListado.Columns["Estado"].Visible = false;
             //objProducto.OcultarColumnas(dgvProductos);
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            objProducto.CargarGridAdmin(dgvProductos);
-            objProducto.OcultarColumnas(dgvProductos);
-            
+            objProducto.cargarProducto(dgvProductos);
+            dgvProductos.Columns["Id"].Visible = false;
+            dgvProductos.Columns["Estado"].Visible = false;
+
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            objProducto.cargarProductoNoListados(dgvProdNoListado);
+            dgvProdNoListado.Columns["Id"].Visible = false;
+            dgvProdNoListado.Columns["Estado"].Visible = false;
         }
 
         private void eliminarProducto(int id)
@@ -258,5 +210,22 @@ namespace Login.CSuAdministrador
                 }
             }
         }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            objProducto.cargarPorNombre(dgvProductos, txtBuscar.Text);
+        }
+
+        private void txtBuscarC_TextChanged(object sender, EventArgs e)
+        {
+            objProducto.mostrarCategoriasNombre(dgvCat, txtBuscarC.Text);
+        }
+
+        private void txtBuscarM_TextChanged(object sender, EventArgs e)
+        {
+            objProducto.mostrarMarcasNombre(dgvMarca, txtBuscarM.Text);
+        }
+
+        
     }
 }

@@ -4,3 +4,9 @@ MariaVen	MariaVen-1
 JuanVen	JuanVen-1
 SandraGeren	SandraGeren-1
 OscarVen	OscarVen-1
+MariaVen	MariaVen-1
+
+Baja logica Cliente (LISTO)
+Imp factura
+Repotes
+dar de baja empl y usu (LISTO)

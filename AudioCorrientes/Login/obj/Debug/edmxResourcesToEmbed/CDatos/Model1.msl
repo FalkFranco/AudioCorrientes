@@ -4,6 +4,7 @@
     <EntitySetMapping Name="Clientes">
       <EntityTypeMapping TypeName="dbAudioCorrientesModel.Cliente">
         <MappingFragment StoreEntitySet="Clientes">
+          <ScalarProperty Name="estado" ColumnName="estado" />
           <ScalarProperty Name="id_cliente" ColumnName="id_cliente" />
           <ScalarProperty Name="dni" ColumnName="dni" />
           <ScalarProperty Name="nombre" ColumnName="nombre" />

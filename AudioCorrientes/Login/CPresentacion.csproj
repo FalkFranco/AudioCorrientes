@@ -304,6 +304,7 @@
     <Compile Include="CPresentacion\CVendedor\Productos\ListarProductos.Designer.cs">
       <DependentUpon>ListarProductos.cs</DependentUpon>
     </Compile>
+    <Compile Include="CPresentacion\CVendedor\TicketVentas.cs" />
     <Compile Include="CPresentacion\CVendedor\Vender.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -573,6 +574,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="CPresentacion\Reportes\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

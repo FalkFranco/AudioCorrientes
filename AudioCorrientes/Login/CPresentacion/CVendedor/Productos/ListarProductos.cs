@@ -1,4 +1,5 @@
 ﻿using Login.CDatos;
+using Login.CDatos.DEmpleados;
 using Login.CNegocio;
 using Login.CPresentacion.CVendedor.Clientes;
 using System;
@@ -23,80 +24,16 @@ namespace Login.CVendedor.Productos
         NProductos objProducto = new NProductos();
         Producto producto = new Producto(); 
 
-        private void btnBuscar_Click(object sender, EventArgs e)
-        {
-
-        }
-        private bool ValidarCampos()
-        {
-            string msg = "No puede estar vacio";
-            bool ok = true;
-            //Si estan vacios
-            if (txtBuscar.Text == "")
-            {
-                ok = false;
-                errorProvider1.SetError(txtBuscar, msg);
-            }
-            return ok;
-        }
-
-        private void BorrarMensajeProvider()
-        {
-            errorProvider1.SetError(txtBuscar, "");
-        }
-
-        private void chbNombre_Click(object sender, EventArgs e)
-        {
-            chbId.Checked = false;
-            chbNombre.Checked = true;
-        }
-
-        private void chbId_Click(object sender, EventArgs e)
-        {
-            chbNombre.Checked = false;
-            chbId.Checked = true;
-        }
-
-        private void txtBuscar_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (chbId.Checked)
-            {
-                if (!char.IsNumber(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
-                {
-                    e.Handled = true;
-                }
-            }
-        }
-
         private void ListarProductos_Load(object sender, EventArgs e)
         {
             objProducto.cargarProducto(dgvProductos);
+            dgvProductos.Columns["Id"].Visible = false;
             //objProducto.OcultarColumnas(dgvProductos);
-        }
-
-
-        private void dgvProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
-            //validacion txtbox
-            //validacion txtbox
-            BorrarMensajeProvider();
-            if (ValidarCampos())
-            {
-                //Buscar
-                if (chbId.Checked)
-                {
-                    objProducto.cargarPorId(dgvProductos, txtBuscar.Text);
-                }
-                else
-                {
-                    objProducto.cargarPorNombre(dgvProductos, txtBuscar.Text);
-                }
-            }
+            objProducto.cargarPorNombre(dgvProductos, txtBuscar.Text);
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)

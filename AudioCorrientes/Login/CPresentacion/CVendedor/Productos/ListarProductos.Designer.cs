@@ -34,8 +34,6 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dgvProductos = new System.Windows.Forms.DataGridView();
-            this.chbNombre = new System.Windows.Forms.CheckBox();
-            this.chbId = new System.Windows.Forms.CheckBox();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -80,8 +78,6 @@
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.dgvProductos);
-            this.tabPage1.Controls.Add(this.chbNombre);
-            this.tabPage1.Controls.Add(this.chbId);
             this.tabPage1.Controls.Add(this.txtBuscar);
             this.tabPage1.Controls.Add(this.btnActualizar);
             this.tabPage1.Controls.Add(this.label1);
@@ -101,31 +97,6 @@
             this.dgvProductos.Name = "dgvProductos";
             this.dgvProductos.Size = new System.Drawing.Size(956, 403);
             this.dgvProductos.TabIndex = 17;
-            this.dgvProductos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductos_CellContentClick);
-            // 
-            // chbNombre
-            // 
-            this.chbNombre.AutoSize = true;
-            this.chbNombre.Location = new System.Drawing.Point(241, 16);
-            this.chbNombre.Name = "chbNombre";
-            this.chbNombre.Size = new System.Drawing.Size(63, 17);
-            this.chbNombre.TabIndex = 16;
-            this.chbNombre.Text = "Nombre";
-            this.chbNombre.UseVisualStyleBackColor = true;
-            this.chbNombre.Click += new System.EventHandler(this.chbNombre_Click);
-            // 
-            // chbId
-            // 
-            this.chbId.AutoSize = true;
-            this.chbId.Checked = true;
-            this.chbId.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chbId.Location = new System.Drawing.Point(155, 17);
-            this.chbId.Name = "chbId";
-            this.chbId.Size = new System.Drawing.Size(35, 17);
-            this.chbId.TabIndex = 15;
-            this.chbId.Text = "Id";
-            this.chbId.UseVisualStyleBackColor = true;
-            this.chbId.Click += new System.EventHandler(this.chbId_Click);
             // 
             // txtBuscar
             // 
@@ -134,7 +105,6 @@
             this.txtBuscar.Size = new System.Drawing.Size(956, 20);
             this.txtBuscar.TabIndex = 3;
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
-            this.txtBuscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBuscar_KeyPress);
             // 
             // btnActualizar
             // 
@@ -151,9 +121,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(23, 17);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(107, 13);
+            this.label1.Size = new System.Drawing.Size(147, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Buscar Producto por:";
+            this.label1.Text = "Buscar Producto por Nombre:";
             // 
             // errorProvider1
             // 
@@ -189,8 +159,6 @@
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.CheckBox chbNombre;
-        private System.Windows.Forms.CheckBox chbId;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.DataGridView dgvProductos;
     }

@@ -45,6 +45,11 @@ namespace Login.CSuAdministrador.Clientes
             errorProvider1.SetError(txtBusqueda, "");
         }
 
+        private void txtBusqueda_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void Clientes_Load(object sender, EventArgs e)
         {
 

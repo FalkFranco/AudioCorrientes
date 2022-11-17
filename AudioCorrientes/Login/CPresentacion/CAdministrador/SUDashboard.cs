@@ -1,5 +1,6 @@
 ﻿using Login.CDatos;
 using Login.CNegocio;
+using Login.CPresentacion;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -32,12 +33,11 @@ namespace Login.CSuAdministrador
             nProductos.cargarStockBajo(dgvBajoStock);
             top5();
             topCategorias();
+            //lbtotven.Text = GanTot().ToString();
+            lbtotven.Text= GanTot();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            //MessageBox.Show(nVentas.top5().ToString);
-        }
+
 
 
         
@@ -84,6 +84,26 @@ namespace Login.CSuAdministrador
             chartCategorias.Series[0].Points.DataBindXY(Cat, Cant);
             dr.Close();
             conexion.Close();
+        }
+
+        public String GanTot()
+        {
+            SqlCommand cmd;
+            SqlDataReader dr;
+            ArrayList Tot = new ArrayList();
+            ArrayList Cant = new ArrayList();
+
+            SqlConnection conexion = new SqlConnection("Data Source=DESKTOP-1DB3D6E\\SQLEXPRESS_INST2;Initial Catalog=AudioCorrientes;Integrated Security=True");
+            cmd = new SqlCommand("SELECT Convert(Decimal,SUM(subtotal)) FROM DetalleVenta dv\r\n\tINNER JOIN Ventas vn\r\n\tON dv.id_ventas = vn.id_ventas", conexion);
+            //cmd.CommandType = CommandType.StoredProcedure;
+            conexion.Open();
+            String tot = cmd.ExecuteScalar().ToString();
+            //String Total = cmd.ExecuteReader()[0].ToString();
+            //String tot = cmd.ExecuteReader();
+
+
+            conexion.Close();
+            return tot;
         }
 
     }

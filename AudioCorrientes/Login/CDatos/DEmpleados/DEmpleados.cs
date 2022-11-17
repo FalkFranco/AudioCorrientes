@@ -138,6 +138,33 @@ namespace Login.CDatos.DEmpleados
                 return false;
             }
         }
+
+        public bool mostrarEmpleadosA(DataGridView dgv)
+        {
+            try
+            {
+                using (db = new dbAudioCorrientesEntities())
+                {
+                    var objMostrar = (from q in db.Empleados
+                                      where q.activo == true 
+                                      select new
+                                      {
+                                          Id = q.id_empleado,
+                                          DNI = q.dni,
+                                          Nombre = q.nombre,
+                                          Apellido = q.apellido,
+                                          FechaIngreso = q.fechaIngreso
+                                      }).ToList();
+                    dgv.DataSource = objMostrar;
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+        }
         public bool mostrarEmpleadosEliminados(DataGridView dgv)
         {
             try
@@ -146,6 +173,145 @@ namespace Login.CDatos.DEmpleados
                 {
                     var objMostrar = (from q in db.Empleados
                                       where q.activo == false && q.es_usu == false
+                                      select new
+                                      {
+                                          Id = q.id_empleado,
+                                          DNI = q.dni,
+                                          Nombre = q.nombre,
+                                          Apellido = q.apellido,
+                                          FechaIngreso = q.fechaIngreso
+                                      }).ToList();
+                    dgv.DataSource = objMostrar;
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+
+        }
+        public bool mostrarEmpleadosEliminadosA(DataGridView dgv)
+        {
+            try
+            {
+                using (db = new dbAudioCorrientesEntities())
+                {
+                    var objMostrar = (from q in db.Empleados
+                                      where q.activo == false 
+                                      select new
+                                      {
+                                          Id = q.id_empleado,
+                                          DNI = q.dni,
+                                          Nombre = q.nombre,
+                                          Apellido = q.apellido,
+                                          FechaIngreso = q.fechaIngreso
+                                      }).ToList();
+                    dgv.DataSource = objMostrar;
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+
+        }
+
+        public bool mostrarEmpleadosDni(DataGridView dgv, String pDni, bool estado)
+        {
+            try
+            {
+                using (db = new dbAudioCorrientesEntities())
+                {
+                    var objMostrar = (from q in db.Empleados
+                                      where q.dni.Contains(pDni) && q.activo == estado && q.es_usu == false
+                                      select new
+                                      {
+                                          Id = q.id_empleado,
+                                          DNI = q.dni,
+                                          Nombre = q.nombre,
+                                          Apellido = q.apellido,
+                                          FechaIngreso = q.fechaIngreso
+                                      }).ToList();
+                    dgv.DataSource = objMostrar;
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+
+        }
+
+        public bool mostrarEmpleadosNombre(DataGridView dgv,String pNombre, bool estado)
+        {
+            try
+            {
+                using (db = new dbAudioCorrientesEntities())
+                {
+                    var objMostrar = (from q in db.Empleados
+                                      where q.nombre.Contains(pNombre) && q.activo == estado && q.es_usu == false
+                                      select new
+                                      {
+                                          Id = q.id_empleado,
+                                          DNI = q.dni,
+                                          Nombre = q.nombre,
+                                          Apellido = q.apellido,
+                                          FechaIngreso = q.fechaIngreso
+                                      }).ToList();
+                    dgv.DataSource = objMostrar;
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+
+        }
+
+        public bool mostrarEmpleadosDniA(DataGridView dgv, String pDni)
+        {
+            try
+            {
+                using (db = new dbAudioCorrientesEntities())
+                {
+                    var objMostrar = (from q in db.Empleados
+                                      where q.dni.Contains(pDni)
+                                      select new
+                                      {
+                                          Id = q.id_empleado,
+                                          DNI = q.dni,
+                                          Nombre = q.nombre,
+                                          Apellido = q.apellido,
+                                          FechaIngreso = q.fechaIngreso
+                                      }).ToList();
+                    dgv.DataSource = objMostrar;
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+
+        }
+
+        public bool mostrarEmpleadosNombreA(DataGridView dgv, String pNombre)
+        {
+            try
+            {
+                using (db = new dbAudioCorrientesEntities())
+                {
+                    var objMostrar = (from q in db.Empleados
+                                      where q.nombre.Contains(pNombre) 
                                       select new
                                       {
                                           Id = q.id_empleado,

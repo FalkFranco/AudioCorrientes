@@ -40,18 +40,30 @@
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.dgvClientes = new System.Windows.Forms.DataGridView();
-            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Seleccionar = new System.Windows.Forms.DataGridViewImageColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.dgvClientesElim = new System.Windows.Forms.DataGridView();
+            this.label2 = new System.Windows.Forms.Label();
+            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Seleccionar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.RestaurarCliente = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvClientesElim)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -77,6 +89,7 @@
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 67);
             this.tabControl1.Name = "tabControl1";
@@ -163,7 +176,6 @@
             this.btnBuscar.TabIndex = 2;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // dgvClientes
             // 
@@ -178,29 +190,6 @@
             this.dgvClientes.Size = new System.Drawing.Size(940, 403);
             this.dgvClientes.TabIndex = 1;
             this.dgvClientes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientes_CellClick);
-            // 
-            // Editar
-            // 
-            this.Editar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Editar.HeaderText = "Editar";
-            this.Editar.Image = global::Login.Properties.Resources.editar25x25;
-            this.Editar.Name = "Editar";
-            // 
-            // Eliminar
-            // 
-            this.Eliminar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Eliminar.HeaderText = "Eliminar";
-            this.Eliminar.Image = global::Login.Properties.Resources.basura25x25;
-            this.Eliminar.Name = "Eliminar";
-            this.Eliminar.Width = 49;
-            // 
-            // Seleccionar
-            // 
-            this.Seleccionar.HeaderText = "Seleccionar";
-            this.Seleccionar.Image = global::Login.Properties.Resources.carrito_de_compras;
-            this.Seleccionar.Name = "Seleccionar";
-            this.Seleccionar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Seleccionar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // label1
             // 
@@ -229,14 +218,144 @@
             this.dataGridViewImageColumn2.Image = global::Login.Properties.Resources.basura;
             this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
             // 
-            // AgregarClientes
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.button1);
+            this.tabPage2.Controls.Add(this.checkBox1);
+            this.tabPage2.Controls.Add(this.checkBox2);
+            this.tabPage2.Controls.Add(this.button2);
+            this.tabPage2.Controls.Add(this.textBox1);
+            this.tabPage2.Controls.Add(this.button3);
+            this.tabPage2.Controls.Add(this.dgvClientesElim);
+            this.tabPage2.Controls.Add(this.label2);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(1118, 516);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Clientes Eliminados";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(976, 60);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 23;
+            this.button1.Text = "Actualizar";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(223, 19);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(63, 17);
+            this.checkBox1.TabIndex = 22;
+            this.checkBox1.Text = "Nombre";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Checked = true;
+            this.checkBox2.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox2.Location = new System.Drawing.Point(137, 20);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(45, 17);
+            this.checkBox2.TabIndex = 21;
+            this.checkBox2.Text = "DNI";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(976, 95);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(123, 35);
+            this.button2.TabIndex = 20;
+            this.button2.Text = "Agregar";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(22, 60);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(848, 20);
+            this.textBox1.TabIndex = 19;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(887, 60);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 18;
+            this.button3.Text = "Buscar";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // dgvClientesElim
+            // 
+            this.dgvClientesElim.AllowUserToAddRows = false;
+            this.dgvClientesElim.AllowUserToDeleteRows = false;
+            this.dgvClientesElim.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvClientesElim.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvClientesElim.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.RestaurarCliente});
+            this.dgvClientesElim.Location = new System.Drawing.Point(22, 95);
+            this.dgvClientesElim.Name = "dgvClientesElim";
+            this.dgvClientesElim.ReadOnly = true;
+            this.dgvClientesElim.Size = new System.Drawing.Size(940, 403);
+            this.dgvClientesElim.TabIndex = 17;
+            this.dgvClientesElim.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientesElim_CellClick);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(19, 20);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(96, 13);
+            this.label2.TabIndex = 16;
+            this.label2.Text = "Buscar Cliente por:";
+            // 
+            // Editar
+            // 
+            this.Editar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Editar.HeaderText = "Editar";
+            this.Editar.Image = global::Login.Properties.Resources.editar25x25;
+            this.Editar.Name = "Editar";
+            // 
+            // Eliminar
+            // 
+            this.Eliminar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Eliminar.HeaderText = "Eliminar";
+            this.Eliminar.Image = global::Login.Properties.Resources.basura25x25;
+            this.Eliminar.Name = "Eliminar";
+            this.Eliminar.Width = 49;
+            // 
+            // Seleccionar
+            // 
+            this.Seleccionar.HeaderText = "Seleccionar";
+            this.Seleccionar.Image = global::Login.Properties.Resources.carrito_de_compras;
+            this.Seleccionar.Name = "Seleccionar";
+            this.Seleccionar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Seleccionar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // RestaurarCliente
+            // 
+            this.RestaurarCliente.HeaderText = "Restaurar Cliente";
+            this.RestaurarCliente.Image = global::Login.Properties.Resources.editar25x25;
+            this.RestaurarCliente.Name = "RestaurarCliente";
+            this.RestaurarCliente.ReadOnly = true;
+            this.RestaurarCliente.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.RestaurarCliente.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // Clientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1126, 609);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.panel1);
-            this.Name = "AgregarClientes";
+            this.Name = "Clientes";
             this.Text = "AgregarClientes";
             this.Load += new System.EventHandler(this.AgregarClientes_Load);
             this.panel1.ResumeLayout(false);
@@ -246,6 +365,9 @@
             this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvClientesElim)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -267,8 +389,18 @@
         private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.DataGridView dgvClientesElim;
+        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridViewImageColumn Editar;
         private System.Windows.Forms.DataGridViewImageColumn Eliminar;
         private System.Windows.Forms.DataGridViewImageColumn Seleccionar;
+        private System.Windows.Forms.DataGridViewImageColumn RestaurarCliente;
     }
 }

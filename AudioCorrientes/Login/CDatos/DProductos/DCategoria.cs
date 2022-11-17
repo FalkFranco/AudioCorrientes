@@ -27,14 +27,39 @@ namespace Login.CDatos.DProductos
             }
         }
 
-        public bool mostrarCategorias(DataGridView dgv)
+        public bool mostrarCategoria(DataGridView dgv)
         {
             try
             {
                 using (db = new dbAudioCorrientesEntities())
                 {
                     var objMostrar = (from q in db.Categorias
-                                          //where q.estado == true
+                                      //where q.estado == true
+                                      select new
+                                      {
+                                          Id = q.id_categorias,
+                                          Marca = q.categoria_descripcion,
+                                      }).ToList();
+                    dgv.DataSource = objMostrar;
+
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+        }
+
+        public bool mostrarCategoriaNombre(DataGridView dgv, String pNombre)
+        {
+            try
+            {
+                using (db = new dbAudioCorrientesEntities())
+                {
+                    var objMostrar = (from q in db.Categorias
+                                      where q.categoria_descripcion.Contains(pNombre)
                                       select new
                                       {
                                           Id = q.id_categorias,

@@ -4,6 +4,7 @@ using Login.CDatos.DProductos;
 using Login.CDatos.DUsuarios;
 using Login.CNegocio;
 using Login.CPresentacion.CSuAdministrador.Usuarios;
+using Login.CPresentacion.CVendedor;
 using Login.CPresentacion.CVendedor.Clientes;
 using Login.CVendedor.Clientes;
 using Login.CVendedor.Productos;
@@ -14,6 +15,8 @@ using System.Data;
 using System.Data.Entity.Core.Common.CommandTrees.ExpressionBuilder;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.Remoting.Contexts;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -42,9 +45,10 @@ namespace Login.CVendedor
             BorrarMensajeProvider();
             if (ValidarCampos())
             {
-                //Metodo Agregar al detalle
-                AgregarProducto();
-                CalcularTotal();
+                ////Metodo Agregar al detalle
+                //AgregarProducto();
+                //CalcularTotal();
+                controlarPruductoLista(txtIdArticulo.Text);
             }
         }
 
@@ -56,31 +60,61 @@ namespace Login.CVendedor
             }
             else
             {
-                float total = float.Parse(lbTotal.Text);
-                int idCliente = Int32.Parse(txtIdCliente.Text);
-                int idTipoInt = Int32.Parse(idValue);
-                nVentas.AgregarFactura(idTipoInt, pUsuario.id_empleado, idCliente, total);
-                int ultimoIdFactura = Int32.Parse(lbNroFactura.Text);
-                //Agregar los detalles
-                foreach (DataGridViewRow row in dataGridViewDetalle.Rows)
+                if (ValidarVenta())
                 {
+                    float total = float.Parse(lbTotal.Text);
+                    int idCliente = Int32.Parse(txtIdCliente.Text);
+                    int idTipoInt = Int32.Parse(idValue);
+                    nVentas.AgregarFactura(idTipoInt, pUsuario.id_empleado, idCliente, total);
+                    int ultimoIdFactura = Int32.Parse(lbNroFactura.Text);
+                    //Agregar los detalles
+                    foreach (DataGridViewRow row in dataGridViewDetalle.Rows)
+                    {
 
-                    int id = Int32.Parse(row.Cells["idArticulo"].Value.ToString());
-                    float precio = float.Parse(row.Cells["PrecioProdL"].Value.ToString());
-                    int cant = Int32.Parse(row.Cells["CantProL"].Value.ToString());
-                    //MessageBox.Show(ultimoIdFactura.ToString() + id.ToString() + ' ' + precio.ToString() + ' ' + cant.ToString());
+                        int id = Int32.Parse(row.Cells["idArticulo"].Value.ToString());
+                        float precio = float.Parse(row.Cells["PrecioProdL"].Value.ToString());
+                        int cant = Int32.Parse(row.Cells["CantProL"].Value.ToString());
+                        //MessageBox.Show(ultimoIdFactura.ToString() + id.ToString() + ' ' + precio.ToString() + ' ' + cant.ToString());
 
-                    nVentas.AgregarDetalleVenta(ultimoIdFactura, id, precio, cant);
+                        nVentas.AgregarDetalleVenta(ultimoIdFactura, id, precio, cant);
 
-                    //Actualizar stock
-                    nProductos.ActualizarStock(id, cant);
+                        //Actualizar stock
+                        nProductos.ActualizarStock(id, cant);
+                        nVentas.cargarVentas(dgvVentas, pUsuario.id_empleado);
+                        dgvVentas.Columns["IdEmpleado"].Visible = false;
 
+                    }
+
+                    //Limpiar formulario
+                    limpiarFormulario();
+
+                    MessageBox.Show("Facturacion realizada con exito");
                 }
-
-                MessageBox.Show("Facturacion realizada con exito");
             }
         }
 
+        private void limpiarFormulario()
+        {
+            txtIdCliente.Text = "";
+            txtdni.Text = "";
+            txtNombre.Text = "";
+            txtIdArticulo.Text = "";
+            txtNombreCliente.Text = "";
+            txtPrecio.Text = "";
+            txtCantidad.Text = "";
+        }
+        private bool ValidarVenta()
+        {
+            string msg = "No puede estar vacio";
+            bool ok = true;
+            if (txtIdCliente.Text == "")
+            {
+                ok = false;
+                errorProvider1.SetError(txtIdCliente, msg);
+            }
+
+            return ok;
+        }
         private bool ValidarCampos()
         {
             string msg = "No puede estar vacio";
@@ -171,7 +205,11 @@ namespace Login.CVendedor
             float precio = float.Parse(txtPrecio.Text);
             int cantidad = int.Parse(txtCantidad.Text);
             dataGridViewDetalle.Rows.Add(txtIdArticulo.Text, txtNombre.Text, precio, txtCantidad.Text, CalcularSubTotal(precio, cantidad));
-           
+            txtCantidad.Text = "";
+            txtNombre.Text = "";
+            txtIdArticulo.Text = "";
+            txtPrecio.Text = "";
+            lbStock.Text = "0";
         }
         private float CalcularSubTotal(float precio,int cantidad)
         {
@@ -220,12 +258,16 @@ namespace Login.CVendedor
             nVentas.CargarComboBoxTipoFactura(cbTipoFactura);
             lbNomVen.Text = pUsuario.apellido + " " + pUsuario.nombre;
             nProductos.cargarProducto(dgvProductos);
+            dgvProductos.Columns["Id"].Visible = false;
+            dgvProductos.Columns["Estado"].Visible = false;
             //dProductos.OcultarColumnas(dgvProductos);
-            nCliente.cargarClientesVen(dgvClientes);
+            nCliente.cargarClientesVen(dgvClientes,true);
+            dgvClientes.Columns["Id"].Visible = false;
             //nCliente.ocultarColumnasVen(dgvClientes);
 
-            nVentas.cargarVentas(dgvVentas);
-            
+            nVentas.cargarVentas(dgvVentas, pUsuario.id_empleado);
+            dgvVentas.Columns["IdEmpleado"].Visible = false;
+
         }
 
         private void dgvProductos_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -256,7 +298,7 @@ namespace Login.CVendedor
 
         private void txtBuscarCliente_TextChanged(object sender, EventArgs e)
         {
-            nCliente.cargarPorNombre(dgvClientes, txtBuscarCliente.Text);
+            nCliente.cargarPorNombre(dgvClientes, txtBuscarCliente.Text, true);
         }
 
         private void btnEliminarArticulo_Click(object sender, EventArgs e)
@@ -270,6 +312,7 @@ namespace Login.CVendedor
             idValue = cbTipoFactura.SelectedValue.ToString();
         }
 
+        DataGridViewRow ColumnaVenta;
         private void dgvVentas_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex == -1) return;
@@ -278,15 +321,67 @@ namespace Login.CVendedor
             {
                 //En este ejemplo supongo que el nombre de la columna que contendra en Id de la persona se llama columnPersonaId,
                 //de no ser asi cambia este valor por el que tengas
-                var idVenta = Convert.ToInt32(row.Cells["Id"].Value);
+                var idVenta = Convert.ToInt32(row.Cells["NroFactura"].Value);
 
                 //En esta linea se supone que tienes una funcion que recibe un parametro de entrada que corresponde al Id de la persona
                 //y que esta funcion devuelve una coleccion de obejetos (una lista generica o un DataTable)
                 nVentas.cargarDetalles(dgvDetalles, idVenta);
+                dgvDetalles.Columns["IdVenta"].Visible = false;
+                dgvDetalles.Columns["IdProducto"].Visible = false;
+                ColumnaVenta = row;
             }
         }
         //Listado de ventas
 
+        private void controlarPruductoLista(string pId)
+        {
+            if (dataGridViewDetalle.RowCount > 0)
+            {
+                // Primero averigua si el registro existe:
+                bool existe = false;
+                for (int i = 0; i < dataGridViewDetalle.RowCount; i++)
+                {
+                    if (Int32.Parse(dataGridViewDetalle.Rows[i].Cells["IdArticulo"].Value.ToString()) == Int32.Parse(pId))
+                    {
+                        MessageBox.Show("El producto ya ha sido ingresado");
+                        existe = true;
+                        int cant = Int32.Parse(dataGridViewDetalle.Rows[i].Cells["CantProL"].Value.ToString());
+                        float subTotal = float.Parse(dataGridViewDetalle.Rows[i].Cells["SubTotL"].Value.ToString());
+                        cant += Int32.Parse(txtCantidad.Text);
+                        dataGridViewDetalle.Rows[i].Cells["CantProL"].Value = cant;
+                        dataGridViewDetalle.Rows[i].Cells["SubTotL"].Value = subTotal + float.Parse(txtPrecio.Text);
+                        CalcularTotal();
+                        txtCantidad.Text = "";
+                        txtNombre.Text = "";
+                        txtIdArticulo.Text = "";
+                        txtPrecio.Text = "";
+                        lbStock.Text = "0";
+
+                        break; // debes salirte del ciclo si encuentras el registro, no es necesario seguir dentro
+                    }
+                }
+
+                // Luego, ya fuera del ciclo, solo si no existe, realizas la insercion:
+                if (existe == false)
+                {
+                    AgregarProducto();
+                    CalcularTotal();
+                }
+            }
+            else
+            {
+                AgregarProducto();
+                CalcularTotal();
+            }
+        }
+
+        
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+
+        }
+
 
     }
+
 }

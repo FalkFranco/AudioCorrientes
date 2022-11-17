@@ -85,11 +85,11 @@
             this.label29 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label5 = new System.Windows.Forms.Label();
+            this.btnImprimir = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.dgvDetalles = new System.Windows.Forms.DataGridView();
             this.dgvVentas = new System.Windows.Forms.DataGridView();
-            this.btnImprimir = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.tabControl1.SuspendLayout();
@@ -135,7 +135,7 @@
             // 
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Location = new System.Drawing.Point(3, 73);
+            this.tabControl1.Location = new System.Drawing.Point(1, 73);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(990, 631);
@@ -284,11 +284,14 @@
             // 
             // dgvClientes
             // 
+            this.dgvClientes.AllowUserToAddRows = false;
+            this.dgvClientes.AllowUserToDeleteRows = false;
             this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvClientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.SeleccionarCliente});
             this.dgvClientes.Location = new System.Drawing.Point(288, 11);
             this.dgvClientes.Name = "dgvClientes";
+            this.dgvClientes.ReadOnly = true;
             this.dgvClientes.Size = new System.Drawing.Size(628, 103);
             this.dgvClientes.TabIndex = 52;
             this.dgvClientes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientes_CellClick);
@@ -298,6 +301,7 @@
             this.SeleccionarCliente.HeaderText = "Seleccionar";
             this.SeleccionarCliente.Image = global::Login.Properties.Resources.venta;
             this.SeleccionarCliente.Name = "SeleccionarCliente";
+            this.SeleccionarCliente.ReadOnly = true;
             this.SeleccionarCliente.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.SeleccionarCliente.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
@@ -404,11 +408,14 @@
             // 
             // dgvProductos
             // 
+            this.dgvProductos.AllowUserToAddRows = false;
+            this.dgvProductos.AllowUserToDeleteRows = false;
             this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProductos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Seleccionar});
             this.dgvProductos.Location = new System.Drawing.Point(291, 58);
             this.dgvProductos.Name = "dgvProductos";
+            this.dgvProductos.ReadOnly = true;
             this.dgvProductos.Size = new System.Drawing.Size(616, 143);
             this.dgvProductos.TabIndex = 51;
             this.dgvProductos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductos_CellClick);
@@ -418,6 +425,7 @@
             this.Seleccionar.HeaderText = "Seleccionar";
             this.Seleccionar.Image = global::Login.Properties.Resources.venta;
             this.Seleccionar.Name = "Seleccionar";
+            this.Seleccionar.ReadOnly = true;
             // 
             // label24
             // 
@@ -662,6 +670,26 @@
             this.tabPage1.Text = "Listado de Ventas";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(15, 338);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(83, 25);
+            this.label5.TabIndex = 29;
+            this.label5.Text = "Detalle";
+            // 
+            // btnImprimir
+            // 
+            this.btnImprimir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnImprimir.Location = new System.Drawing.Point(848, 26);
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.Size = new System.Drawing.Size(113, 35);
+            this.btnImprimir.TabIndex = 28;
+            this.btnImprimir.Text = "Imprimir";
+            this.btnImprimir.UseVisualStyleBackColor = true;
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -674,40 +702,26 @@
             // 
             // dgvDetalles
             // 
+            this.dgvDetalles.AllowUserToAddRows = false;
+            this.dgvDetalles.AllowUserToDeleteRows = false;
             this.dgvDetalles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDetalles.Location = new System.Drawing.Point(11, 376);
             this.dgvDetalles.Name = "dgvDetalles";
+            this.dgvDetalles.ReadOnly = true;
             this.dgvDetalles.Size = new System.Drawing.Size(950, 223);
             this.dgvDetalles.TabIndex = 1;
             // 
             // dgvVentas
             // 
+            this.dgvVentas.AllowUserToAddRows = false;
+            this.dgvVentas.AllowUserToDeleteRows = false;
             this.dgvVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvVentas.Location = new System.Drawing.Point(11, 95);
             this.dgvVentas.Name = "dgvVentas";
+            this.dgvVentas.ReadOnly = true;
             this.dgvVentas.Size = new System.Drawing.Size(950, 227);
             this.dgvVentas.TabIndex = 0;
             this.dgvVentas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVentas_CellClick);
-            // 
-            // btnImprimir
-            // 
-            this.btnImprimir.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnImprimir.Location = new System.Drawing.Point(848, 26);
-            this.btnImprimir.Name = "btnImprimir";
-            this.btnImprimir.Size = new System.Drawing.Size(113, 35);
-            this.btnImprimir.TabIndex = 28;
-            this.btnImprimir.Text = "Imprimir";
-            this.btnImprimir.UseVisualStyleBackColor = true;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(15, 338);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(83, 25);
-            this.label5.TabIndex = 29;
-            this.label5.Text = "Detalle";
             // 
             // Vender
             // 

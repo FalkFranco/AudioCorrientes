@@ -82,9 +82,9 @@ namespace Login.CNegocio
             }
         }
 
-        public void cargarVentas(DataGridView dgv)
+        public void cargarVentas(DataGridView dgv, int idEmpleado)
         {
-            dVenta.mostrarVentas(dgv);
+            dVenta.mostrarVentas(dgv, idEmpleado);
         }
 
         public void cargarDetalles(DataGridView dgv,int idVenta)
@@ -103,7 +103,38 @@ namespace Login.CNegocio
         }
 
 
-        
+        public void cargarVentaHoy(DataGridView dgv)
+        {
+            dVenta.mostrarVentasHoy(dgv);
+        }
+
+        public void cargarVentasSemana(DataGridView dgv)
+        {
+            dVenta.mostrarVentasSemana(dgv);
+        }
+
+        public void cargarVentasMes(DataGridView dgv)
+        {
+            dVenta.mostrarVentasMes(dgv);
+        }
+
+        public void cargarVentasYear(DataGridView dgv)
+        {
+            dVenta.mostrarVentasYear(dgv);
+        }
+
+        public void cargarVentasEntre(DataGridView dgv, DateTime Desde, DateTime Hasta)
+        {
+            dVenta.mostrarVentasEntre(dgv, Desde, Hasta);
+
+        }
+
+
+        public ArrayList VentasDia()
+        {
+            return dVenta.VentasDia();
+        }
+
     }
 }
 

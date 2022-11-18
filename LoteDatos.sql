@@ -490,4 +490,25 @@ SELECT * FROM DetalleVenta dv
 INNER JOIN Ventas vn
 ON dv.id_ventas = vn.id_ventas
 
+SELECT FORMAT (getdate(), 'MM/dd/yyyy') 
+SELECT id_ventas,fecha,convert(varchar(25),fecha,101),id_empleado,id_cliente,total,1 FROM Ventas
+SELECT id_ventas,fecha,convert(varchar(25),fecha,110),id_empleado,id_cliente,total,1 FROM Ventas
+
+--PARA RELLENAR OBJETO DE VENTAS
+SELECT dv.id_ventas, CONCAT(cl.apellido, ' ' , cl.nombre) AS Cliente, CONCAT(em.apellido, ' ' , em.nombre) AS Vendedor,FORMAT(vn.fecha,vn.total,'dd-mm-yyyy') FROM DetalleVenta dv
+INNER JOIN Ventas vn
+ON dv.id_ventas = vn.id_ventas
+INNER JOIN Empleados em
+ON vn.id_empleado = em.id_empleado
+INNER JOIN Clientes cl
+ON vn.id_cliente = cl.id_cliente
+where vn.fecha BETWEEN vn.fecha AND getdate()
+group by dv.id_ventas, CONCAT(cl.apellido, ' ' , cl.nombre), CONCAT(em.apellido, ' ' , em.nombre),vn.fecha,vn.total
+
+--PARA RELLENAR OBJETO DETALLE
+SELECT dv.id_ventas, pr.nombre, dv.cantidad,dv.precioVenta,CONVERT(DECIMAL,dv.subtotal) FROM DetalleVenta dv
+INNER JOIN Ventas vn
+ON dv.id_ventas = vn.id_ventas
+INNER JOIN Productos pr
+ON dv.id_productos = pr.id_productos
 

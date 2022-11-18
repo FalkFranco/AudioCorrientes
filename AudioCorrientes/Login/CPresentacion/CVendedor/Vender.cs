@@ -8,18 +8,22 @@ using Login.CPresentacion.CVendedor;
 using Login.CPresentacion.CVendedor.Clientes;
 using Login.CVendedor.Clientes;
 using Login.CVendedor.Productos;
+using Login.Ticket;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.Entity.Core.Common.CommandTrees.ExpressionBuilder;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Runtime.Remoting.Contexts;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static DevExpress.XtraEditors.Mask.MaskSettings;
+using static DevExpress.XtraReports.Design.View.Office2003PaintHelper;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Login.CVendedor
@@ -81,6 +85,8 @@ namespace Login.CVendedor
                         //Actualizar stock
                         nProductos.ActualizarStock(id, cant);
                         nVentas.cargarVentas(dgvVentas, pUsuario.id_empleado);
+
+                        //ACTIVAR DESPUES
                         dgvVentas.Columns["IdEmpleado"].Visible = false;
 
                     }
@@ -266,6 +272,8 @@ namespace Login.CVendedor
             //nCliente.ocultarColumnasVen(dgvClientes);
 
             nVentas.cargarVentas(dgvVentas, pUsuario.id_empleado);
+
+            //ACTIVAR DESPUES --------------------------------------
             dgvVentas.Columns["IdEmpleado"].Visible = false;
 
         }
@@ -313,10 +321,12 @@ namespace Login.CVendedor
         }
 
         DataGridViewRow ColumnaVenta;
+        int rowVenta = 0;
         private void dgvVentas_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex == -1) return;
             DataGridViewRow row = dgvVentas.Rows[e.RowIndex];
+            //rowVenta = dgvVentas.Rows[e.RowIndex]; 
             if (row != null)
             {
                 //En este ejemplo supongo que el nombre de la columna que contendra en Id de la persona se llama columnPersonaId,
@@ -326,8 +336,12 @@ namespace Login.CVendedor
                 //En esta linea se supone que tienes una funcion que recibe un parametro de entrada que corresponde al Id de la persona
                 //y que esta funcion devuelve una coleccion de obejetos (una lista generica o un DataTable)
                 nVentas.cargarDetalles(dgvDetalles, idVenta);
+
+                //ACTIVAR DESPUES-------------------------------------------------------
+
                 dgvDetalles.Columns["IdVenta"].Visible = false;
                 dgvDetalles.Columns["IdProducto"].Visible = false;
+                dgvDetalles.Columns["DetalleNro"].Visible = false;
                 ColumnaVenta = row;
             }
         }
@@ -381,7 +395,44 @@ namespace Login.CVendedor
 
         }
 
+        
+        private void btnImprimir_Click_1(object sender, EventArgs e)
+        {
+            Image newImage = Image.FromFile("C:\\Users\\colo5\\Desktop\\AudiCorrientes\\AudioCorrientes\\AudioCorrientes\\Login\\Resources\\logoM (2).png");
+            
+            DetallePedido d = new DetallePedido();
+            CabeceraDetalle c = new CabeceraDetalle();
+            crearTicket ticket = new crearTicket();
+            ticket.empresa = "AudioCorrientes";
+            ticket.direccion = "Junin 283";
+            ticket.logo = newImage;
+            int row = dgvVentas.CurrentRow.Index;
+            //MessageBox.Show(dgvVentas.Rows[row].Cells[0].Value.ToString());
+            c = new CabeceraDetalle();
+            c.VentaId = Convert.ToInt32(dgvVentas.Rows[row].Cells[0].Value);
+            c.Fecha = DateTime.Parse(dgvVentas.Rows[row].Cells[1].Value.ToString(), new CultureInfo("en-CA"));
+            c.Cliente = dgvVentas.Rows[row].Cells[2].Value.ToString();
+            c.Empleado = dgvVentas.Rows[row].Cells[4].Value.ToString();
+            c.Total = Convert.ToDecimal(dgvVentas.Rows[row].Cells[5].Value);
+            ticket.listaCabecera.Add(c);
 
+
+            for (int i = 0; i < dgvDetalles.Rows.Count; i++)
+            {
+                d = new DetallePedido();
+                d.NombreProducto = Convert.ToString(dgvDetalles.Rows[i].Cells[3].Value);
+                d.PrecioUnitario = Convert.ToDecimal(dgvDetalles.Rows[i].Cells[4].Value);
+                d.Cantidad = Convert.ToInt32(dgvDetalles.Rows[i].Cells[5].Value);
+                d.Total = Convert.ToDecimal(dgvDetalles.Rows[i].Cells[6].Value);
+                ticket.listaProductos.Add(d);
+            }
+            ticket.imprimir(ticket);
+        }
+
+        private void dgvVentas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 
 }

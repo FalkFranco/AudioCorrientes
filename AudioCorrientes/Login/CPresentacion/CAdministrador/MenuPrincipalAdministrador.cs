@@ -116,7 +116,7 @@ namespace Login.CAdministrador
 
         private void btnVentas_Click(object sender, EventArgs e)
         {
-            AbrirFormEnPanel(new Ventas());
+            AbrirFormEnPanel(new ObjVenta());
         }
 
         private void btnClientes_Click(object sender, EventArgs e)

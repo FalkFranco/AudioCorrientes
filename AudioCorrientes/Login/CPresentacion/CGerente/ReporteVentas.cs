@@ -22,6 +22,7 @@ namespace Login.CGerente
         private void button1_Click(object sender, EventArgs e)
         {
             VentasDia("GetVentasDia");
+            lbdias.Text = "Días";
         }
 
         public void VentasDia(String nomProc)
@@ -103,11 +104,13 @@ namespace Login.CGerente
         private void button2_Click(object sender, EventArgs e)
         {
             semestres("GetVentasS1");
+            lbdias.Text = "Meses";
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             GetVentasMeses(DateTime.Now);
+            lbdias.Text = "Días";
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -119,11 +122,13 @@ namespace Login.CGerente
         {
             GetVentasMeses(dateTimePicker1.Value);
             //MessageBox.Show(dateTimePicker1.Value.ToString());
+            lbdias.Text = "Días";
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
             semestres("GetVentasS2");
+            lbdias.Text = "Meses";
         }
 
         private void ReporteVentas_Load(object sender, EventArgs e)

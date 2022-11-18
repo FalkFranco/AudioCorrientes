@@ -42,7 +42,7 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lbdias = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.lbFecha = new System.Windows.Forms.Label();
@@ -164,14 +164,14 @@
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
-            // label1
+            // lbdias
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(834, 667);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(30, 13);
-            this.label1.TabIndex = 18;
-            this.label1.Text = "Días";
+            this.lbdias.AutoSize = true;
+            this.lbdias.Location = new System.Drawing.Point(834, 667);
+            this.lbdias.Name = "lbdias";
+            this.lbdias.Size = new System.Drawing.Size(30, 13);
+            this.lbdias.TabIndex = 18;
+            this.lbdias.Text = "Días";
             // 
             // label3
             // 
@@ -210,7 +210,7 @@
             this.Controls.Add(this.lbFecha);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lbdias);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
@@ -245,7 +245,7 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbdias;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lbFecha;

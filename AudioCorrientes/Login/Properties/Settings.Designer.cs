@@ -33,5 +33,16 @@ namespace Login.Properties {
                 return ((string)(this["dbAudioCorrientesConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-1DB3D6E\\SQLEXPRESS_INST2;Initial Catalog=AudioCorrientes;Inte" +
+            "grated Security=True")]
+        public string AudioCorrientesConnectionString {
+            get {
+                return ((string)(this["AudioCorrientesConnectionString"]));
+            }
+        }
     }
 }

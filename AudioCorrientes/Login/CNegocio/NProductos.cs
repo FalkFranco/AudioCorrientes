@@ -16,7 +16,7 @@ namespace Login.CNegocio
         DMarca  dMarca = new DMarca();
         DCategoria dCategoria = new DCategoria();   
         Producto Producto = new Producto();
-        ObjProducto objProducto = new ObjProducto();
+
 
         public void CargarGridVen(DataGridView dgv)
         {

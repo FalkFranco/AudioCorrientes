@@ -10,6 +10,7 @@ using System.Windows.Forms;
 
 using System.Collections;
 using System.Windows.Forms.DataVisualization.Charting;
+using Login.CPresentacion.CVendedor;
 
 namespace Login.CDatos.DVentas
 {
@@ -136,6 +137,44 @@ namespace Login.CDatos.DVentas
             }
 
         }
+
+        //public List<T> mostrarDetallesIMP()
+        //{
+        //    try
+        //    {
+        //        using (db = new dbAudioCorrientesEntities())
+        //        {
+        //            var objMostrar = (from q in db.DetalleVentas
+        //                              select new
+        //                              {
+        //                                  IdVenta = q.id_ventas,
+        //                                  Producto = q.Producto.nombre,
+        //                                  Cantidad = q.cantidad,
+        //                                  PrecioVenta = q.Producto.precio,
+        //                                  Subtotal = q.subtotal
+        //                              }).ToList();
+
+        //            DetallePedido detallePedido = new DetallePedido();
+
+        //            foreach(var i in objMostrar)
+        //            {
+        //                detallePedido.VentaId = i.IdVenta;
+        //                detallePedido.NombreProducto = i.Producto;
+        //                detallePedido.Cantidad = i.Cantidad;
+        //                detallePedido.PrecioUnitario = Convert.ToDecimal(i.PrecioVenta);
+        //                detallePedido.Total = Convert.ToDecimal(i.Subtotal);
+        //            }
+                    
+        //            return objMostrar;
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show(ex.Message);
+        //        return null;
+        //    }
+
+        //}
 
         //public bool mostrarProductosNoListados(DataGridView dgv)
         //{

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DevExpress.XtraGrid;
 
 namespace Login.CDatos.DVentas
 {
@@ -121,6 +122,35 @@ namespace Login.CDatos.DVentas
                                           Empleado = q.Empleado.apellido,
                                           Total = q.total,
                                           Estado = q.estado
+                                      }).ToList();
+                    dgv.DataSource = objMostrar;
+
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+
+        }
+
+        public bool mostrarVentasIMP(GridControl dgv)
+        {
+            try
+            {
+                using (db = new dbAudioCorrientesEntities())
+                {
+                    var objMostrar = (from q in db.Ventas
+                                      where q.estado == true 
+                                      select new
+                                      {
+                                          NroFactura = q.id_ventas,
+                                          Cliente = q.Cliente.apellido,
+                                          Empleado = q.Empleado.apellido,
+                                          Fecha = q.fecha,
+                                          Total = q.total,
                                       }).ToList();
                     dgv.DataSource = objMostrar;
 

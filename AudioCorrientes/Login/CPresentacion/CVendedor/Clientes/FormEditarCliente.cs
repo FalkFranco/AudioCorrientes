@@ -41,7 +41,7 @@ namespace Login.CPresentacion.CVendedor.Clientes
                 {
                     int id = Convert.ToInt32(txtId.Text);
                     int idTipoInt = Int32.Parse(idValue);//De string a int para poder almacenar en la base de datos
-                    if (objCliente.EditarCliente(id,txtDni.Text, txtNombre.Text, txtApellido.Text, txtTel.Text, txtDireccion.Text, txtEmail.Text, idTipoInt))
+                    if (objCliente.EditarCliente(id,txtDni.Text, txtNombre.Text, txtApellido.Text, txtTel.Text, txtDireccion.Text, txtEmail.Text, idTipoInt,true ))
                     {
                         MessageBox.Show("El Cliente se Edito correctamente", "Cliente Editado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Close();

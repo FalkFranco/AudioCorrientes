@@ -495,7 +495,7 @@ SELECT id_ventas,fecha,convert(varchar(25),fecha,101),id_empleado,id_cliente,tot
 SELECT id_ventas,fecha,convert(varchar(25),fecha,110),id_empleado,id_cliente,total,1 FROM Ventas
 
 --PARA RELLENAR OBJETO DE VENTAS
-SELECT dv.id_ventas, CONCAT(cl.apellido, ' ' , cl.nombre) AS Cliente, CONCAT(em.apellido, ' ' , em.nombre) AS Vendedor,FORMAT(vn.fecha,vn.total,'dd-mm-yyyy') FROM DetalleVenta dv
+SELECT dv.id_ventas, CONCAT(cl.apellido, ' ' , cl.nombre) AS Cliente, CONCAT(em.apellido, ' ' , em.nombre) AS Vendedor,FORMAT(vn.fecha,'dd-mm-yyyy'),vn.total, FROM DetalleVenta dv
 INNER JOIN Ventas vn
 ON dv.id_ventas = vn.id_ventas
 INNER JOIN Empleados em
@@ -511,4 +511,33 @@ INNER JOIN Ventas vn
 ON dv.id_ventas = vn.id_ventas
 INNER JOIN Productos pr
 ON dv.id_productos = pr.id_productos
+where dv.id_ventas = 17
 
+
+
+SELECT fecha AS Ventas 
+FROM Ventas
+WHERE
+    fecha IS NOT NULL
+    AND TRY_CONVERT(date, fecha, 103) IS NULL;
+
+CREATE OR ALTER PROCEDURE CargarVentas(
+@Desde AS DATE,
+@Hasta AS DATE)
+AS 
+	SELECT dv.id_ventas, CONCAT(cl.apellido, ' ' , cl.nombre) AS Cliente, CONCAT(em.apellido, ' ' , em.nombre) AS Vendedor,vn.fecha,vn.total 
+	FROM DetalleVenta dv 
+	INNER JOIN Ventas vn 
+	ON dv.id_ventas = vn.id_ventas  
+	INNER JOIN Empleados
+	em ON vn.id_empleado = em.id_empleado 
+	INNER JOIN Clientes cl 
+	ON vn.id_cliente = cl.id_cliente 
+	where vn.fecha BETWEEN @Desde and @Hasta
+	group by dv.id_ventas, CONCAT(cl.apellido, ' ' , cl.nombre), CONCAT(em.apellido, ' ' , em.nombre),vn.fecha,vn.total
+
+select * from DetalleVenta where id_ventas=10
+
+update DetalleVenta Set precioVenta = 849, subtotal = 849 where id_ventas=10 and id_detalleVenta =7
+
+update Ventas Set total = 57846 where id_ventas = 10

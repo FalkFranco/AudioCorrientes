@@ -164,7 +164,7 @@ namespace Login.CNegocio
             }
         }
 
-        public bool EditarCliente(int id ,string dni, string nombre, string apellido, string tel, string direc, string email, int idTipo)
+        public bool EditarCliente(int id ,string dni, string nombre, string apellido, string tel, string direc, string email, int idTipo, bool estado)
         {
             //int idTipoInt = Int32.Parse(idTipo);//De string a int para poder almacenar en la base de datos
             cliente.id_cliente = id;
@@ -175,6 +175,7 @@ namespace Login.CNegocio
             cliente.direccion = direc;
             cliente.email = email;
             cliente.id_tipoCliente = idTipo;
+            cliente.estado = estado;
 
             if (datos.EditarCliente(cliente))
             {

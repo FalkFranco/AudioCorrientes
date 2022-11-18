@@ -92,5 +92,16 @@ namespace Login.CPresentacion.CVendedor.Clientes
                 }
             }
         }
+        int Id;
+        private void dgvClientes_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvClientes.Columns[e.ColumnIndex].Name == "Editar")
+            {
+                Id = Convert.ToInt32(dgvClientes.CurrentRow.Cells["Id"].Value.ToString());
+                FormEditarCliente FormEdit = new FormEditarCliente(Id);
+                FormEdit.ShowDialog();
+                objCliente.cargarClientes(dgvClientes, true);
+            }
+        }
     }
 }

@@ -8,7 +8,7 @@ MariaVen	MariaVen-1
 RamonVen	RamonVen-1
 
 
-Baja logica Cliente (LISTO)ssss
+Baja logica Cliente (LISTO)
 Imp factura (LISTO)
 Repotes (LISTO)
 dar de baja empl y usu (LISTO)

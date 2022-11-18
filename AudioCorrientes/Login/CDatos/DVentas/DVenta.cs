@@ -136,6 +136,38 @@ namespace Login.CDatos.DVentas
 
         }
 
+        public bool mostrarVentasFechas(DataGridView dgv, int idEmpleado, DateTime Desde, DateTime Hasta)
+        {
+            try
+            {
+                using (db = new dbAudioCorrientesEntities())
+                {
+                    var objMostrar = (from q in db.Ventas
+                                      where q.estado == true && q.Empleado.id_empleado == idEmpleado
+                                      && q.fecha > Desde && q.fecha < Hasta
+                                      select new
+                                      {
+                                          NroFactura = q.id_ventas,
+                                          //TipoFacura = q.TipoFactura.tipo,
+                                          Fecha = q.fecha,
+                                          Cliente = q.Cliente.apellido,
+                                          IdEmpleado = q.Empleado.id_empleado,
+                                          Empleado = q.Empleado.apellido,
+                                          Total = q.total,
+                                          Estado = q.estado
+                                      }).ToList();
+                    dgv.DataSource = objMostrar;
+
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+        }
+
         public bool mostrarVentasIMP(GridControl dgv)
         {
             try

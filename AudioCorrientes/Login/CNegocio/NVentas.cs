@@ -87,6 +87,11 @@ namespace Login.CNegocio
             dVenta.mostrarVentas(dgv, idEmpleado);
         }
 
+        public void cargarVentasFechas(DataGridView dgv, int idEmpleado,DateTime Desde, DateTime Hasta)
+        {
+            dVenta.mostrarVentasFechas(dgv, idEmpleado,Desde, Hasta);
+        }
+
         public void cargarDetalles(DataGridView dgv,int idVenta)
         {
             dDetalleVenta.mostrarDetalleVentas(dgv, idVenta);

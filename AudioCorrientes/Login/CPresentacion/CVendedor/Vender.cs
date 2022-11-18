@@ -275,6 +275,10 @@ namespace Login.CVendedor
 
             //ACTIVAR DESPUES --------------------------------------
             dgvVentas.Columns["IdEmpleado"].Visible = false;
+            dgvVentas.Columns["Estado"].Visible = false;
+
+            dtpDesde.MaxDate = DateTime.Now.AddDays(-1);
+            dtpHasta.MaxDate = DateTime.Now;
 
         }
 
@@ -319,9 +323,7 @@ namespace Login.CVendedor
         {
             idValue = cbTipoFactura.SelectedValue.ToString();
         }
-
         DataGridViewRow ColumnaVenta;
-        int rowVenta = 0;
         private void dgvVentas_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex == -1) return;
@@ -342,6 +344,7 @@ namespace Login.CVendedor
                 dgvDetalles.Columns["IdVenta"].Visible = false;
                 dgvDetalles.Columns["IdProducto"].Visible = false;
                 dgvDetalles.Columns["DetalleNro"].Visible = false;
+                
                 ColumnaVenta = row;
             }
         }
@@ -429,9 +432,17 @@ namespace Login.CVendedor
             ticket.imprimir(ticket);
         }
 
-        private void dgvVentas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void btnBuscar_Click_1(object sender, EventArgs e)
         {
+            nVentas.cargarVentasFechas(dgvVentas, pUsuario.id_empleado, dtpDesde.Value, dtpHasta.Value);
+            dgvVentas.Columns["IdEmpleado"].Visible = false;
+        }
 
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            nVentas.cargarVentas(dgvVentas, pUsuario.id_empleado);
+            dgvVentas.Columns["IdEmpleado"].Visible = false;
+            dgvVentas.Columns["Estado"].Visible = false;
         }
     }
 

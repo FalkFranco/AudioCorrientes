@@ -376,3 +376,4 @@ C:\Users\colo5\Desktop\AudiCorrientes\AudioCorrientes\AudioCorrientes\Login\bin\
 C:\Users\colo5\Desktop\AudiCorrientes\AudioCorrientes\AudioCorrientes\Login\bin\Debug\Dapper.dll
 C:\Users\colo5\Desktop\AudiCorrientes\AudioCorrientes\AudioCorrientes\Login\bin\Debug\Dapper.xml
 C:\Users\colo5\Desktop\AudiCorrientes\AudioCorrientes\AudioCorrientes\Login\obj\Debug\Login.CPresentacion.CVendedor.Facturaciones.resources
+C:\Users\colo5\Desktop\AudiCorrientes\AudioCorrientes\AudioCorrientes\Login\obj\Debug\Login.CPresentacion.CVendedor.Clientes.ClientesVendedor.resources

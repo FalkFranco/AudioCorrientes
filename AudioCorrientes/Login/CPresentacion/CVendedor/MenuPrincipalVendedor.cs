@@ -1,4 +1,5 @@
 ﻿using Login.CDatos.DUsuarios;
+using Login.CPresentacion.CVendedor.Clientes;
 using Login.CVendedor.Productos;
 using System;
 using System.Collections.Generic;
@@ -113,7 +114,7 @@ namespace Login.CVendedor
 
         private void btnClientes_Click(object sender, EventArgs e)
         {
-            AbrirFormEnPanel(new Clientes.Clientes());
+            AbrirFormEnPanel(new ClientesVendedor());
         }
 
         private void MenuPrincipalVendedor_Load(object sender, EventArgs e)

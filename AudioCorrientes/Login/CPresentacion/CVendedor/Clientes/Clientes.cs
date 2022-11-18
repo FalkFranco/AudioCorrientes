@@ -50,7 +50,8 @@ namespace Login.CVendedor.Clientes
         {
             objCliente.cargarClientes(dgvClientes, true);
             dgvClientes.Columns["Id"].Visible = false;
-            dgvClientes.Columns["Estado"].Visible = false; 
+            dgvClientes.Columns["Estado"].Visible = false;
+            dgvClientes.Columns["Eliminar"].Visible = false;
             objCliente.cargarClientes(dgvClientesElim, false);
             dgvClientesElim.Columns["Id"].Visible = false;
             dgvClientesElim.Columns["Estado"].Visible = false;

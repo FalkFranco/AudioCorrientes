@@ -52,14 +52,16 @@
             // 
             // btnDestino
             // 
+            this.btnDestino.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.btnDestino.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDestino.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDestino.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDestino.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDestino.Location = new System.Drawing.Point(510, 40);
             this.btnDestino.Name = "btnDestino";
             this.btnDestino.Size = new System.Drawing.Size(118, 33);
             this.btnDestino.TabIndex = 1;
             this.btnDestino.Text = "Buscar Destino";
-            this.btnDestino.UseVisualStyleBackColor = true;
+            this.btnDestino.UseVisualStyleBackColor = false;
             this.btnDestino.Click += new System.EventHandler(this.btnDestino_Click);
             // 
             // panel1
@@ -102,12 +104,15 @@
             // 
             // btnGenerarBackUp
             // 
+            this.btnGenerarBackUp.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.btnGenerarBackUp.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnGenerarBackUp.Enabled = false;
-            this.btnGenerarBackUp.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGenerarBackUp.Location = new System.Drawing.Point(290, 378);
+            this.btnGenerarBackUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGenerarBackUp.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGenerarBackUp.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnGenerarBackUp.Location = new System.Drawing.Point(288, 364);
             this.btnGenerarBackUp.Name = "btnGenerarBackUp";
-            this.btnGenerarBackUp.Size = new System.Drawing.Size(215, 33);
+            this.btnGenerarBackUp.Size = new System.Drawing.Size(215, 42);
             this.btnGenerarBackUp.TabIndex = 7;
             this.btnGenerarBackUp.Text = "Generar Copia";
             this.btnGenerarBackUp.UseVisualStyleBackColor = true;

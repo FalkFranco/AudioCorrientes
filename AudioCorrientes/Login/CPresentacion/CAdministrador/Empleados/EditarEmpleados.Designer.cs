@@ -40,8 +40,6 @@
             this.label9 = new System.Windows.Forms.Label();
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.txtTel = new System.Windows.Forms.TextBox();
-            this.btnSalirMenuPrincipal = new System.Windows.Forms.Button();
-            this.btnEditarEmpleado = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.labelId = new System.Windows.Forms.Label();
@@ -53,6 +51,8 @@
             this.txtId = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.chbEstado = new System.Windows.Forms.CheckBox();
+            this.btnSalirMenuPrincipal = new System.Windows.Forms.Button();
+            this.btnEditarEmpleado = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -78,6 +78,7 @@
             // 
             // dtpFechaIngreso
             // 
+            this.dtpFechaIngreso.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dtpFechaIngreso.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFechaIngreso.Location = new System.Drawing.Point(293, 333);
             this.dtpFechaIngreso.Name = "dtpFechaIngreso";
@@ -95,6 +96,7 @@
             // 
             // dtpFechaNac
             // 
+            this.dtpFechaNac.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dtpFechaNac.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFechaNac.Location = new System.Drawing.Point(293, 273);
             this.dtpFechaNac.Name = "dtpFechaNac";
@@ -141,25 +143,6 @@
             this.txtTel.Name = "txtTel";
             this.txtTel.Size = new System.Drawing.Size(200, 20);
             this.txtTel.TabIndex = 55;
-            // 
-            // btnSalirMenuPrincipal
-            // 
-            this.btnSalirMenuPrincipal.Location = new System.Drawing.Point(293, 469);
-            this.btnSalirMenuPrincipal.Name = "btnSalirMenuPrincipal";
-            this.btnSalirMenuPrincipal.Size = new System.Drawing.Size(200, 44);
-            this.btnSalirMenuPrincipal.TabIndex = 54;
-            this.btnSalirMenuPrincipal.Text = "Salir";
-            this.btnSalirMenuPrincipal.UseVisualStyleBackColor = true;
-            // 
-            // btnEditarEmpleado
-            // 
-            this.btnEditarEmpleado.Location = new System.Drawing.Point(62, 469);
-            this.btnEditarEmpleado.Name = "btnEditarEmpleado";
-            this.btnEditarEmpleado.Size = new System.Drawing.Size(200, 44);
-            this.btnEditarEmpleado.TabIndex = 53;
-            this.btnEditarEmpleado.Text = "Editar";
-            this.btnEditarEmpleado.UseVisualStyleBackColor = true;
-            this.btnEditarEmpleado.Click += new System.EventHandler(this.btnEditarEmpleado_Click);
             // 
             // label6
             // 
@@ -248,6 +231,7 @@
             // chbEstado
             // 
             this.chbEstado.AutoSize = true;
+            this.chbEstado.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chbEstado.Location = new System.Drawing.Point(293, 395);
             this.chbEstado.Name = "chbEstado";
             this.chbEstado.Size = new System.Drawing.Size(114, 17);
@@ -255,11 +239,41 @@
             this.chbEstado.Text = "Activo / No Activo";
             this.chbEstado.UseVisualStyleBackColor = true;
             // 
+            // btnSalirMenuPrincipal
+            // 
+            this.btnSalirMenuPrincipal.BackColor = System.Drawing.Color.Red;
+            this.btnSalirMenuPrincipal.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSalirMenuPrincipal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalirMenuPrincipal.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalirMenuPrincipal.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnSalirMenuPrincipal.Location = new System.Drawing.Point(293, 469);
+            this.btnSalirMenuPrincipal.Name = "btnSalirMenuPrincipal";
+            this.btnSalirMenuPrincipal.Size = new System.Drawing.Size(200, 44);
+            this.btnSalirMenuPrincipal.TabIndex = 70;
+            this.btnSalirMenuPrincipal.Text = "Salir";
+            this.btnSalirMenuPrincipal.UseVisualStyleBackColor = false;
+            // 
+            // btnEditarEmpleado
+            // 
+            this.btnEditarEmpleado.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnEditarEmpleado.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEditarEmpleado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditarEmpleado.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditarEmpleado.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnEditarEmpleado.Location = new System.Drawing.Point(62, 469);
+            this.btnEditarEmpleado.Name = "btnEditarEmpleado";
+            this.btnEditarEmpleado.Size = new System.Drawing.Size(200, 44);
+            this.btnEditarEmpleado.TabIndex = 69;
+            this.btnEditarEmpleado.Text = "Editar";
+            this.btnEditarEmpleado.UseVisualStyleBackColor = false;
+            // 
             // EditarEmpleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(553, 540);
+            this.Controls.Add(this.btnSalirMenuPrincipal);
+            this.Controls.Add(this.btnEditarEmpleado);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.chbEstado);
             this.Controls.Add(this.label11);
@@ -274,8 +288,6 @@
             this.Controls.Add(this.label9);
             this.Controls.Add(this.txtDireccion);
             this.Controls.Add(this.txtTel);
-            this.Controls.Add(this.btnSalirMenuPrincipal);
-            this.Controls.Add(this.btnEditarEmpleado);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.labelId);
@@ -305,8 +317,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.TextBox txtTel;
-        private System.Windows.Forms.Button btnSalirMenuPrincipal;
-        private System.Windows.Forms.Button btnEditarEmpleado;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label labelId;
@@ -316,5 +326,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.CheckBox chbEstado;
+        private System.Windows.Forms.Button btnSalirMenuPrincipal;
+        private System.Windows.Forms.Button btnEditarEmpleado;
     }
 }

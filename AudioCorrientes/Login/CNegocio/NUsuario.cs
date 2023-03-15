@@ -1,7 +1,7 @@
 ﻿using Login.CDatos;
 using Login.CDatos.DProductos;
 using Login.CDatos.DUsuarios;
-using Login.CSuAdministrador.Clientes;
+//using Login.CSuAdministrador.Clientes;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity.Core.Common.CommandTrees.ExpressionBuilder;

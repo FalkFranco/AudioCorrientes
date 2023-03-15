@@ -85,7 +85,7 @@
             series1.Legend = "Legend1";
             series1.Name = "Productos";
             this.chartCategorias.Series.Add(series1);
-            this.chartCategorias.Size = new System.Drawing.Size(1096, 434);
+            this.chartCategorias.Size = new System.Drawing.Size(1122, 434);
             this.chartCategorias.TabIndex = 0;
             this.chartCategorias.Text = "chart1";
             title1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -98,9 +98,11 @@
             chartArea2.Name = "ChartArea1";
             this.chartTop5.ChartAreas.Add(chartArea2);
             legend2.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
+            legend2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            legend2.IsTextAutoFit = false;
             legend2.Name = "Legend1";
             this.chartTop5.Legends.Add(legend2);
-            this.chartTop5.Location = new System.Drawing.Point(1198, 105);
+            this.chartTop5.Location = new System.Drawing.Point(1233, 105);
             this.chartTop5.Name = "chartTop5";
             series2.ChartArea = "ChartArea1";
             series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
@@ -110,7 +112,7 @@
             series2.Legend = "Legend1";
             series2.Name = "Cantidad";
             this.chartTop5.Series.Add(series2);
-            this.chartTop5.Size = new System.Drawing.Size(444, 434);
+            this.chartTop5.Size = new System.Drawing.Size(409, 849);
             this.chartTop5.TabIndex = 1;
             this.chartTop5.Text = "chart2";
             title2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -210,9 +212,9 @@
             this.panel2.Controls.Add(this.dgvBajoStock);
             this.panel2.Controls.Add(this.label13);
             this.panel2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel2.Location = new System.Drawing.Point(516, 582);
+            this.panel2.Location = new System.Drawing.Point(480, 582);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(960, 372);
+            this.panel2.Size = new System.Drawing.Size(699, 372);
             this.panel2.TabIndex = 7;
             // 
             // dgvBajoStock
@@ -224,7 +226,7 @@
             this.dgvBajoStock.Location = new System.Drawing.Point(21, 34);
             this.dgvBajoStock.Name = "dgvBajoStock";
             this.dgvBajoStock.ReadOnly = true;
-            this.dgvBajoStock.Size = new System.Drawing.Size(910, 321);
+            this.dgvBajoStock.Size = new System.Drawing.Size(667, 321);
             this.dgvBajoStock.TabIndex = 8;
             // 
             // label13

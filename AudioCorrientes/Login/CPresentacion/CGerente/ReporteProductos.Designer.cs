@@ -107,52 +107,72 @@
             // 
             // btnCustom
             // 
+            this.btnCustom.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnCustom.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCustom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCustom.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCustom.Location = new System.Drawing.Point(303, 97);
             this.btnCustom.Name = "btnCustom";
             this.btnCustom.Size = new System.Drawing.Size(130, 36);
             this.btnCustom.TabIndex = 26;
             this.btnCustom.Text = "Custom";
-            this.btnCustom.UseVisualStyleBackColor = true;
+            this.btnCustom.UseVisualStyleBackColor = false;
             this.btnCustom.Click += new System.EventHandler(this.btnCustom_Click);
             // 
             // btnAño
             // 
+            this.btnAño.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnAño.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAño.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAño.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAño.Location = new System.Drawing.Point(168, 136);
             this.btnAño.Name = "btnAño";
             this.btnAño.Size = new System.Drawing.Size(130, 36);
             this.btnAño.TabIndex = 25;
             this.btnAño.Text = "Este Año";
-            this.btnAño.UseVisualStyleBackColor = true;
+            this.btnAño.UseVisualStyleBackColor = false;
             this.btnAño.Click += new System.EventHandler(this.btnAño_Click);
             // 
             // btnMes
             // 
+            this.btnMes.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnMes.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMes.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMes.Location = new System.Drawing.Point(36, 136);
             this.btnMes.Name = "btnMes";
             this.btnMes.Size = new System.Drawing.Size(130, 36);
             this.btnMes.TabIndex = 24;
             this.btnMes.Text = "Este Mes";
-            this.btnMes.UseVisualStyleBackColor = true;
+            this.btnMes.UseVisualStyleBackColor = false;
             this.btnMes.Click += new System.EventHandler(this.btnMes_Click);
             // 
             // btnSemana
             // 
+            this.btnSemana.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnSemana.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSemana.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSemana.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSemana.Location = new System.Drawing.Point(168, 97);
             this.btnSemana.Name = "btnSemana";
             this.btnSemana.Size = new System.Drawing.Size(130, 36);
             this.btnSemana.TabIndex = 23;
             this.btnSemana.Text = "Ultimos 7 días";
-            this.btnSemana.UseVisualStyleBackColor = true;
+            this.btnSemana.UseVisualStyleBackColor = false;
             this.btnSemana.Click += new System.EventHandler(this.btnSemana_Click);
             // 
             // btnHoy
             // 
+            this.btnHoy.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnHoy.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnHoy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHoy.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHoy.Location = new System.Drawing.Point(36, 97);
             this.btnHoy.Name = "btnHoy";
             this.btnHoy.Size = new System.Drawing.Size(130, 36);
             this.btnHoy.TabIndex = 22;
             this.btnHoy.Text = "Hoy";
-            this.btnHoy.UseVisualStyleBackColor = true;
+            this.btnHoy.UseVisualStyleBackColor = false;
             this.btnHoy.Click += new System.EventHandler(this.btnHoy_Click);
             // 
             // label3

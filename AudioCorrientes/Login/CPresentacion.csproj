@@ -190,12 +190,6 @@
     <Compile Include="CPresentacion\CGerente\MenuPrincipalGerente.Designer.cs">
       <DependentUpon>MenuPrincipalGerente.cs</DependentUpon>
     </Compile>
-    <Compile Include="CPresentacion\CAdministrador\Clientes\Clientes.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CPresentacion\CAdministrador\Clientes\Clientes.Designer.cs">
-      <DependentUpon>Clientes.cs</DependentUpon>
-    </Compile>
     <Compile Include="CPresentacion\CAdministrador\Empleados\AgregarEmpleados.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -322,10 +316,10 @@
     <Compile Include="CPresentacion\CAdministrador\Ventas\Ventas.Designer.cs">
       <DependentUpon>Ventas.cs</DependentUpon>
     </Compile>
-    <Compile Include="CPresentacion\CVendedor\Clientes\Clientes.cs">
+    <Compile Include="CPresentacion\CAdministrador\Clientes\Clientes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CPresentacion\CVendedor\Clientes\Clientes.Designer.cs">
+    <Compile Include="CPresentacion\CAdministrador\Clientes\Clientes.Designer.cs">
       <DependentUpon>Clientes.cs</DependentUpon>
     </Compile>
     <Compile Include="CPresentacion\CVendedor\Clientes\ClientesVendedor.cs">
@@ -345,12 +339,6 @@
     </Compile>
     <Compile Include="CPresentacion\CVendedor\Clientes\FormEditarCliente.Designer.cs">
       <DependentUpon>FormEditarCliente.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CPresentacion\CVendedor\Facturaciones.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CPresentacion\CVendedor\Facturaciones.Designer.cs">
-      <DependentUpon>Facturaciones.cs</DependentUpon>
     </Compile>
     <Compile Include="CPresentacion\CVendedor\Productos\DetallePedido.cs" />
     <Compile Include="CPresentacion\CVendedor\MenuPrincipalVendedor.cs">
@@ -395,9 +383,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CPresentacion\CGerente\MenuPrincipalGerente.resx">
       <DependentUpon>MenuPrincipalGerente.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CPresentacion\CAdministrador\Clientes\Clientes.resx">
-      <DependentUpon>Clientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CPresentacion\CAdministrador\Empleados\AgregarEmpleados.resx">
       <DependentUpon>AgregarEmpleados.cs</DependentUpon>
@@ -462,7 +447,7 @@
     <EmbeddedResource Include="CPresentacion\CAdministrador\Ventas\Ventas.resx">
       <DependentUpon>Ventas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CPresentacion\CVendedor\Clientes\Clientes.resx">
+    <EmbeddedResource Include="CPresentacion\CAdministrador\Clientes\Clientes.resx">
       <DependentUpon>Clientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CPresentacion\CVendedor\Clientes\ClientesVendedor.resx">
@@ -473,9 +458,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CPresentacion\CVendedor\Clientes\FormEditarCliente.resx">
       <DependentUpon>FormEditarCliente.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CPresentacion\CVendedor\Facturaciones.resx">
-      <DependentUpon>Facturaciones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CPresentacion\CVendedor\MenuPrincipalVendedor.resx">
       <DependentUpon>MenuPrincipalVendedor.cs</DependentUpon>

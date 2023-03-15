@@ -215,7 +215,7 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.panel5.Location = new System.Drawing.Point(0, 558);
+            this.panel5.Location = new System.Drawing.Point(0, 502);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(5, 50);
             this.panel5.TabIndex = 10;
@@ -231,7 +231,7 @@
             this.btnEmpleados.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnEmpleados.Image = global::Login.Properties.Resources.empleados;
             this.btnEmpleados.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEmpleados.Location = new System.Drawing.Point(0, 558);
+            this.btnEmpleados.Location = new System.Drawing.Point(0, 502);
             this.btnEmpleados.Name = "btnEmpleados";
             this.btnEmpleados.Size = new System.Drawing.Size(220, 50);
             this.btnEmpleados.TabIndex = 9;
@@ -243,7 +243,7 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.panel4.Location = new System.Drawing.Point(0, 502);
+            this.panel4.Location = new System.Drawing.Point(0, 446);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(5, 50);
             this.panel4.TabIndex = 8;
@@ -259,7 +259,7 @@
             this.btnClientes.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnClientes.Image = global::Login.Properties.Resources.clientes;
             this.btnClientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClientes.Location = new System.Drawing.Point(0, 502);
+            this.btnClientes.Location = new System.Drawing.Point(0, 446);
             this.btnClientes.Name = "btnClientes";
             this.btnClientes.Size = new System.Drawing.Size(220, 50);
             this.btnClientes.TabIndex = 7;
@@ -271,10 +271,11 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.panel3.Location = new System.Drawing.Point(0, 446);
+            this.panel3.Location = new System.Drawing.Point(0, 630);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(5, 50);
             this.panel3.TabIndex = 6;
+            this.panel3.Visible = false;
             // 
             // btnVentas
             // 
@@ -287,13 +288,14 @@
             this.btnVentas.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnVentas.Image = global::Login.Properties.Resources.venta;
             this.btnVentas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnVentas.Location = new System.Drawing.Point(0, 446);
+            this.btnVentas.Location = new System.Drawing.Point(0, 630);
             this.btnVentas.Name = "btnVentas";
             this.btnVentas.Size = new System.Drawing.Size(220, 50);
             this.btnVentas.TabIndex = 5;
             this.btnVentas.Text = "Ventas";
             this.btnVentas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnVentas.UseVisualStyleBackColor = true;
+            this.btnVentas.Visible = false;
             this.btnVentas.Click += new System.EventHandler(this.btnVentas_Click);
             // 
             // panel2

@@ -32,10 +32,10 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.txtLoc = new System.Windows.Forms.TextBox();
-            this.btnBuscar = new System.Windows.Forms.Button();
-            this.btnRestaurar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.btnRestaurar = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -52,9 +52,9 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.btnBuscar);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.txtLoc);
-            this.panel2.Controls.Add(this.btnBuscar);
             this.panel2.Location = new System.Drawing.Point(41, 171);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(658, 100);
@@ -78,31 +78,6 @@
             this.txtLoc.Size = new System.Drawing.Size(292, 20);
             this.txtLoc.TabIndex = 3;
             // 
-            // btnBuscar
-            // 
-            this.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBuscar.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.Location = new System.Drawing.Point(520, 35);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(118, 33);
-            this.btnBuscar.TabIndex = 2;
-            this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.UseVisualStyleBackColor = true;
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
-            // 
-            // btnRestaurar
-            // 
-            this.btnRestaurar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRestaurar.Enabled = false;
-            this.btnRestaurar.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRestaurar.Location = new System.Drawing.Point(295, 315);
-            this.btnRestaurar.Name = "btnRestaurar";
-            this.btnRestaurar.Size = new System.Drawing.Size(188, 33);
-            this.btnRestaurar.TabIndex = 1;
-            this.btnRestaurar.Text = "Restaurar Copia";
-            this.btnRestaurar.UseVisualStyleBackColor = true;
-            this.btnRestaurar.Click += new System.EventHandler(this.btnRestaurar_Click);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -115,14 +90,42 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnRestaurar);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.btnRestaurar);
             this.panel1.Location = new System.Drawing.Point(452, 252);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(788, 448);
             this.panel1.TabIndex = 11;
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscar.Location = new System.Drawing.Point(523, 35);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(118, 33);
+            this.btnBuscar.TabIndex = 12;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = false;
+            // 
+            // btnRestaurar
+            // 
+            this.btnRestaurar.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnRestaurar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRestaurar.Enabled = false;
+            this.btnRestaurar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRestaurar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRestaurar.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnRestaurar.Location = new System.Drawing.Point(268, 325);
+            this.btnRestaurar.Name = "btnRestaurar";
+            this.btnRestaurar.Size = new System.Drawing.Size(215, 42);
+            this.btnRestaurar.TabIndex = 11;
+            this.btnRestaurar.Text = "Restaurar Copia";
+            this.btnRestaurar.UseVisualStyleBackColor = false;
             // 
             // Restaurar_Backup
             // 
@@ -146,9 +149,9 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtLoc;
-        private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.Button btnRestaurar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.Button btnRestaurar;
     }
 }

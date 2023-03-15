@@ -33,14 +33,14 @@
             this.lbProductoTitle = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.btnAgregarMarca = new System.Windows.Forms.Button();
+            this.btnAgregarCat = new System.Windows.Forms.Button();
+            this.btnAgregar = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.dgvProductos = new System.Windows.Forms.DataGridView();
             this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
             this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnAgregarMarca = new System.Windows.Forms.Button();
-            this.btnAgregarCat = new System.Windows.Forms.Button();
-            this.btnAgregar = new System.Windows.Forms.Button();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.button1 = new System.Windows.Forms.Button();
@@ -98,6 +98,7 @@
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.Location = new System.Drawing.Point(0, 67);
@@ -108,30 +109,75 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.btnActualizar);
-            this.tabPage1.Controls.Add(this.dgvProductos);
-            this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Controls.Add(this.btnAgregarMarca);
             this.tabPage1.Controls.Add(this.btnAgregarCat);
             this.tabPage1.Controls.Add(this.btnAgregar);
+            this.tabPage1.Controls.Add(this.btnActualizar);
+            this.tabPage1.Controls.Add(this.dgvProductos);
+            this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Controls.Add(this.txtBuscar);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1660, 897);
+            this.tabPage1.Size = new System.Drawing.Size(1660, 894);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Listar Productos";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // btnAgregarMarca
+            // 
+            this.btnAgregarMarca.BackColor = System.Drawing.Color.Green;
+            this.btnAgregarMarca.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAgregarMarca.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregarMarca.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarMarca.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnAgregarMarca.Location = new System.Drawing.Point(1468, 279);
+            this.btnAgregarMarca.Name = "btnAgregarMarca";
+            this.btnAgregarMarca.Size = new System.Drawing.Size(153, 44);
+            this.btnAgregarMarca.TabIndex = 36;
+            this.btnAgregarMarca.Text = "Agregar Marca";
+            this.btnAgregarMarca.UseVisualStyleBackColor = false;
+            // 
+            // btnAgregarCat
+            // 
+            this.btnAgregarCat.BackColor = System.Drawing.Color.Green;
+            this.btnAgregarCat.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAgregarCat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregarCat.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarCat.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnAgregarCat.Location = new System.Drawing.Point(1468, 196);
+            this.btnAgregarCat.Name = "btnAgregarCat";
+            this.btnAgregarCat.Size = new System.Drawing.Size(153, 44);
+            this.btnAgregarCat.TabIndex = 35;
+            this.btnAgregarCat.Text = "Agregar Categoria";
+            this.btnAgregarCat.UseVisualStyleBackColor = false;
+            // 
+            // btnAgregar
+            // 
+            this.btnAgregar.BackColor = System.Drawing.Color.Green;
+            this.btnAgregar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregar.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnAgregar.Location = new System.Drawing.Point(1468, 107);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(153, 44);
+            this.btnAgregar.TabIndex = 34;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.UseVisualStyleBackColor = false;
+            // 
             // btnActualizar
             // 
-            this.btnActualizar.Location = new System.Drawing.Point(1085, 40);
+            this.btnActualizar.BackColor = System.Drawing.Color.Gold;
+            this.btnActualizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnActualizar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActualizar.Location = new System.Drawing.Point(1328, 40);
             this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(97, 37);
-            this.btnActualizar.TabIndex = 16;
+            this.btnActualizar.Size = new System.Drawing.Size(94, 39);
+            this.btnActualizar.TabIndex = 21;
             this.btnActualizar.Text = "Actualizar";
-            this.btnActualizar.UseVisualStyleBackColor = true;
-            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
+            this.btnActualizar.UseVisualStyleBackColor = false;
             // 
             // dgvProductos
             // 
@@ -179,36 +225,6 @@
             this.label1.TabIndex = 17;
             this.label1.Text = "Buscar Producto por Nombre:";
             // 
-            // btnAgregarMarca
-            // 
-            this.btnAgregarMarca.Location = new System.Drawing.Point(1486, 220);
-            this.btnAgregarMarca.Name = "btnAgregarMarca";
-            this.btnAgregarMarca.Size = new System.Drawing.Size(123, 35);
-            this.btnAgregarMarca.TabIndex = 8;
-            this.btnAgregarMarca.Text = "Agregar Marca";
-            this.btnAgregarMarca.UseVisualStyleBackColor = true;
-            this.btnAgregarMarca.Click += new System.EventHandler(this.btnAgregarMarca_Click);
-            // 
-            // btnAgregarCat
-            // 
-            this.btnAgregarCat.Location = new System.Drawing.Point(1486, 156);
-            this.btnAgregarCat.Name = "btnAgregarCat";
-            this.btnAgregarCat.Size = new System.Drawing.Size(123, 35);
-            this.btnAgregarCat.TabIndex = 7;
-            this.btnAgregarCat.Text = "Agregar Categoria";
-            this.btnAgregarCat.UseVisualStyleBackColor = true;
-            this.btnAgregarCat.Click += new System.EventHandler(this.btnAgregarCat_Click);
-            // 
-            // btnAgregar
-            // 
-            this.btnAgregar.Location = new System.Drawing.Point(1486, 92);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(123, 35);
-            this.btnAgregar.TabIndex = 4;
-            this.btnAgregar.Text = "Agregar";
-            this.btnAgregar.UseVisualStyleBackColor = true;
-            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
-            // 
             // txtBuscar
             // 
             this.txtBuscar.Location = new System.Drawing.Point(53, 57);
@@ -223,23 +239,26 @@
             this.tabPage4.Controls.Add(this.dgvProdNoListado);
             this.tabPage4.Controls.Add(this.label4);
             this.tabPage4.Controls.Add(this.textBox1);
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Location = new System.Drawing.Point(4, 25);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1660, 897);
+            this.tabPage4.Size = new System.Drawing.Size(1660, 894);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Productos No Listados";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(1514, 30);
+            this.button1.BackColor = System.Drawing.Color.Gold;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(1538, 56);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 40);
-            this.button1.TabIndex = 26;
+            this.button1.Size = new System.Drawing.Size(94, 39);
+            this.button1.TabIndex = 31;
             this.button1.Text = "Actualizar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // dgvProdNoListado
             // 
@@ -289,23 +308,27 @@
             this.tabPage2.Controls.Add(this.txtBuscarC);
             this.tabPage2.Controls.Add(this.dgvCat);
             this.tabPage2.Controls.Add(this.label2);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1660, 897);
+            this.tabPage2.Size = new System.Drawing.Size(1660, 894);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Listar Categorias";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // btnAgregarC
             // 
-            this.btnAgregarC.Location = new System.Drawing.Point(1497, 92);
+            this.btnAgregarC.BackColor = System.Drawing.Color.Green;
+            this.btnAgregarC.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAgregarC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregarC.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarC.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnAgregarC.Location = new System.Drawing.Point(1486, 92);
             this.btnAgregarC.Name = "btnAgregarC";
-            this.btnAgregarC.Size = new System.Drawing.Size(123, 35);
-            this.btnAgregarC.TabIndex = 4;
+            this.btnAgregarC.Size = new System.Drawing.Size(153, 44);
+            this.btnAgregarC.TabIndex = 35;
             this.btnAgregarC.Text = "Agregar";
-            this.btnAgregarC.UseVisualStyleBackColor = true;
-            this.btnAgregarC.Click += new System.EventHandler(this.btnAgregarCat_Click);
+            this.btnAgregarC.UseVisualStyleBackColor = false;
             // 
             // txtBuscarC
             // 
@@ -354,13 +377,16 @@
             // 
             // btnAgregarM
             // 
-            this.btnAgregarM.Location = new System.Drawing.Point(1497, 92);
+            this.btnAgregarM.BackColor = System.Drawing.Color.Green;
+            this.btnAgregarM.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregarM.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarM.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnAgregarM.Location = new System.Drawing.Point(1489, 92);
             this.btnAgregarM.Name = "btnAgregarM";
-            this.btnAgregarM.Size = new System.Drawing.Size(123, 35);
-            this.btnAgregarM.TabIndex = 4;
+            this.btnAgregarM.Size = new System.Drawing.Size(153, 44);
+            this.btnAgregarM.TabIndex = 36;
             this.btnAgregarM.Text = "Agregar";
-            this.btnAgregarM.UseVisualStyleBackColor = true;
-            this.btnAgregarM.Click += new System.EventHandler(this.btnAgregarMarca_Click);
+            this.btnAgregarM.UseVisualStyleBackColor = false;
             // 
             // txtBuscarM
             // 
@@ -433,18 +459,13 @@
         private System.Windows.Forms.Label lbProductoTitle;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.TextBox txtBuscar;
-        private System.Windows.Forms.Button btnAgregarMarca;
-        private System.Windows.Forms.Button btnAgregarCat;
         private System.Windows.Forms.ErrorProvider errorProviderBuscar;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.Button btnAgregarC;
         private System.Windows.Forms.TextBox txtBuscarC;
         private System.Windows.Forms.DataGridView dgvCat;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.Button btnAgregarM;
         private System.Windows.Forms.TextBox txtBuscarM;
         private System.Windows.Forms.DataGridView dgvMarca;
         private System.Windows.Forms.Label label3;
@@ -452,12 +473,17 @@
         private System.Windows.Forms.DataGridView dgvProductos;
         private System.Windows.Forms.DataGridViewImageColumn Editar;
         private System.Windows.Forms.DataGridViewImageColumn Eliminar;
-        private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView dgvProdNoListado;
         private System.Windows.Forms.DataGridViewImageColumn Listar;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btnActualizar;
+        private System.Windows.Forms.Button btnAgregarMarca;
+        private System.Windows.Forms.Button btnAgregarCat;
+        private System.Windows.Forms.Button btnAgregar;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAgregarC;
+        private System.Windows.Forms.Button btnAgregarM;
     }
 }

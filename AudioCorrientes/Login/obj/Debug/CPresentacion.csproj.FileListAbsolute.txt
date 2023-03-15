@@ -519,7 +519,6 @@ C:\Users\colo5\Desktop\AudioCorrientes\AudioCorrientes\Login\obj\Debug\Login.CDa
 C:\Users\colo5\Desktop\AudioCorrientes\AudioCorrientes\Login\obj\Debug\Login.CDatos.DVentas.Imprimir.resources
 C:\Users\colo5\Desktop\AudioCorrientes\AudioCorrientes\Login\obj\Debug\Login.CAdministrador.MenuPrincipalAdministrador.resources
 C:\Users\colo5\Desktop\AudioCorrientes\AudioCorrientes\Login\obj\Debug\Login.CGerente.MenuPrincipalGerente.resources
-C:\Users\colo5\Desktop\AudioCorrientes\AudioCorrientes\Login\obj\Debug\Login.CSuAdministrador.Clientes.Clientes.resources
 C:\Users\colo5\Desktop\AudioCorrientes\AudioCorrientes\Login\obj\Debug\Login.CSuAdministrador.Empleados.AgregarEmpleados.resources
 C:\Users\colo5\Desktop\AudioCorrientes\AudioCorrientes\Login\obj\Debug\Login.CSuAdministrador.Empleados.AgregarRol.resources
 C:\Users\colo5\Desktop\AudioCorrientes\AudioCorrientes\Login\obj\Debug\Login.CSuAdministrador.Empleados.EditarEmpleados.resources
@@ -545,7 +544,6 @@ C:\Users\colo5\Desktop\AudioCorrientes\AudioCorrientes\Login\obj\Debug\Login.CVe
 C:\Users\colo5\Desktop\AudioCorrientes\AudioCorrientes\Login\obj\Debug\Login.CPresentacion.CVendedor.Clientes.ClientesVendedor.resources
 C:\Users\colo5\Desktop\AudioCorrientes\AudioCorrientes\Login\obj\Debug\Login.CVendedor.Clientes.FormAgregarCliente.resources
 C:\Users\colo5\Desktop\AudioCorrientes\AudioCorrientes\Login\obj\Debug\Login.CPresentacion.CVendedor.Clientes.FormEditarCliente.resources
-C:\Users\colo5\Desktop\AudioCorrientes\AudioCorrientes\Login\obj\Debug\Login.CPresentacion.CVendedor.Facturaciones.resources
 C:\Users\colo5\Desktop\AudioCorrientes\AudioCorrientes\Login\obj\Debug\Login.CVendedor.MenuPrincipalVendedor.resources
 C:\Users\colo5\Desktop\AudioCorrientes\AudioCorrientes\Login\obj\Debug\Login.CVendedor.Productos.ListarProductos.resources
 C:\Users\colo5\Desktop\AudioCorrientes\AudioCorrientes\Login\obj\Debug\Login.CVendedor.Vender.resources

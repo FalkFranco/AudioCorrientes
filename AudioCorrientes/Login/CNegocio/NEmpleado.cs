@@ -1,6 +1,6 @@
 ﻿using Login.CDatos;
 using Login.CDatos.DEmpleados;
-using Login.CSuAdministrador.Clientes;
+//using Login.CSuAdministrador.Clientes;
 using Login.CSuAdministrador.Empleados;
 using System;
 using System.Collections.Generic;

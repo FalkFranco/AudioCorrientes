@@ -60,9 +60,9 @@
             this.txtBuscarE = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.btnActualizarUsuElim = new System.Windows.Forms.Button();
             this.dgvUsuariosEliminados = new System.Windows.Forms.DataGridView();
             this.ActivarUsuario = new System.Windows.Forms.DataGridViewImageColumn();
-            this.btnActualizarUsuElim = new System.Windows.Forms.Button();
             this.chbNombreUE = new System.Windows.Forms.CheckBox();
             this.chbDniUE = new System.Windows.Forms.CheckBox();
             this.txtBuscarUE = new System.Windows.Forms.TextBox();
@@ -136,13 +136,16 @@
             // 
             // btnActualizar
             // 
-            this.btnActualizar.Location = new System.Drawing.Point(1021, 57);
+            this.btnActualizar.BackColor = System.Drawing.Color.Gold;
+            this.btnActualizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnActualizar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActualizar.Location = new System.Drawing.Point(1511, 49);
             this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(75, 23);
-            this.btnActualizar.TabIndex = 17;
+            this.btnActualizar.Size = new System.Drawing.Size(97, 39);
+            this.btnActualizar.TabIndex = 26;
             this.btnActualizar.Text = "Actualizar";
-            this.btnActualizar.UseVisualStyleBackColor = true;
-            this.btnActualizar.Click += new System.EventHandler(this.Usuarios_Load);
+            this.btnActualizar.UseVisualStyleBackColor = false;
             // 
             // dgvEmpleados
             // 
@@ -182,6 +185,7 @@
             // chbNombre
             // 
             this.chbNombre.AutoSize = true;
+            this.chbNombre.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chbNombre.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chbNombre.Location = new System.Drawing.Point(263, 19);
             this.chbNombre.Name = "chbNombre";
@@ -196,6 +200,7 @@
             this.chbDni.AutoSize = true;
             this.chbDni.Checked = true;
             this.chbDni.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chbDni.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chbDni.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chbDni.Location = new System.Drawing.Point(197, 19);
             this.chbDni.Name = "chbDni";
@@ -242,13 +247,16 @@
             // 
             // btnActualizar2
             // 
-            this.btnActualizar2.Location = new System.Drawing.Point(1529, 51);
+            this.btnActualizar2.BackColor = System.Drawing.Color.Gold;
+            this.btnActualizar2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnActualizar2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnActualizar2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActualizar2.Location = new System.Drawing.Point(1522, 40);
             this.btnActualizar2.Name = "btnActualizar2";
-            this.btnActualizar2.Size = new System.Drawing.Size(90, 35);
-            this.btnActualizar2.TabIndex = 18;
+            this.btnActualizar2.Size = new System.Drawing.Size(97, 39);
+            this.btnActualizar2.TabIndex = 27;
             this.btnActualizar2.Text = "Actualizar";
-            this.btnActualizar2.UseVisualStyleBackColor = true;
-            this.btnActualizar2.Click += new System.EventHandler(this.Usuarios_Load);
+            this.btnActualizar2.UseVisualStyleBackColor = false;
             // 
             // dgvUsuarios
             // 
@@ -280,6 +288,7 @@
             // chbNombreU
             // 
             this.chbNombreU.AutoSize = true;
+            this.chbNombreU.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chbNombreU.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chbNombreU.Location = new System.Drawing.Point(263, 18);
             this.chbNombreU.Name = "chbNombreU";
@@ -294,6 +303,7 @@
             this.chbDniU.AutoSize = true;
             this.chbDniU.Checked = true;
             this.chbDniU.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chbDniU.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chbDniU.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chbDniU.Location = new System.Drawing.Point(197, 18);
             this.chbDniU.Name = "chbDniU";
@@ -339,12 +349,16 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(1523, 61);
+            this.button1.BackColor = System.Drawing.Color.Gold;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(1516, 53);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(90, 34);
-            this.button1.TabIndex = 25;
+            this.button1.Size = new System.Drawing.Size(97, 39);
+            this.button1.TabIndex = 28;
             this.button1.Text = "Actualizar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // dgvEmpleadosEliminados
             // 
@@ -368,6 +382,7 @@
             // chbNombreEl
             // 
             this.chbNombreEl.AutoSize = true;
+            this.chbNombreEl.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chbNombreEl.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chbNombreEl.Location = new System.Drawing.Point(262, 20);
             this.chbNombreEl.Name = "chbNombreEl";
@@ -382,6 +397,7 @@
             this.chbDniE.AutoSize = true;
             this.chbDniE.Checked = true;
             this.chbDniE.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chbDniE.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chbDniE.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chbDniE.Location = new System.Drawing.Point(196, 20);
             this.chbDniE.Name = "chbDniE";
@@ -412,8 +428,8 @@
             // 
             // tabPage4
             // 
-            this.tabPage4.Controls.Add(this.dgvUsuariosEliminados);
             this.tabPage4.Controls.Add(this.btnActualizarUsuElim);
+            this.tabPage4.Controls.Add(this.dgvUsuariosEliminados);
             this.tabPage4.Controls.Add(this.chbNombreUE);
             this.tabPage4.Controls.Add(this.chbDniUE);
             this.tabPage4.Controls.Add(this.txtBuscarUE);
@@ -425,6 +441,19 @@
             this.tabPage4.TabIndex = 5;
             this.tabPage4.Text = "Usuarios Eliminados";
             this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // btnActualizarUsuElim
+            // 
+            this.btnActualizarUsuElim.BackColor = System.Drawing.Color.Gold;
+            this.btnActualizarUsuElim.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnActualizarUsuElim.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnActualizarUsuElim.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActualizarUsuElim.Location = new System.Drawing.Point(1511, 53);
+            this.btnActualizarUsuElim.Name = "btnActualizarUsuElim";
+            this.btnActualizarUsuElim.Size = new System.Drawing.Size(97, 39);
+            this.btnActualizarUsuElim.TabIndex = 29;
+            this.btnActualizarUsuElim.Text = "Actualizar";
+            this.btnActualizarUsuElim.UseVisualStyleBackColor = false;
             // 
             // dgvUsuariosEliminados
             // 
@@ -445,19 +474,10 @@
             this.ActivarUsuario.Image = global::Login.Properties.Resources.basura25x25;
             this.ActivarUsuario.Name = "ActivarUsuario";
             // 
-            // btnActualizarUsuElim
-            // 
-            this.btnActualizarUsuElim.Location = new System.Drawing.Point(1521, 53);
-            this.btnActualizarUsuElim.Name = "btnActualizarUsuElim";
-            this.btnActualizarUsuElim.Size = new System.Drawing.Size(87, 30);
-            this.btnActualizarUsuElim.TabIndex = 25;
-            this.btnActualizarUsuElim.Text = "Actualizar";
-            this.btnActualizarUsuElim.UseVisualStyleBackColor = true;
-            this.btnActualizarUsuElim.Click += new System.EventHandler(this.btnActualizarUsuElim_Click);
-            // 
             // chbNombreUE
             // 
             this.chbNombreUE.AutoSize = true;
+            this.chbNombreUE.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chbNombreUE.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chbNombreUE.Location = new System.Drawing.Point(251, 21);
             this.chbNombreUE.Name = "chbNombreUE";
@@ -472,6 +492,7 @@
             this.chbDniUE.AutoSize = true;
             this.chbDniUE.Checked = true;
             this.chbDniUE.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chbDniUE.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chbDniUE.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chbDniUE.Location = new System.Drawing.Point(185, 21);
             this.chbDniUE.Name = "chbDniUE";
@@ -579,18 +600,14 @@
         private System.Windows.Forms.DataGridView dgvUsuarios;
         private System.Windows.Forms.DataGridViewImageColumn EditarUsuario;
         private System.Windows.Forms.DataGridViewImageColumn EliminarUsuario;
-        private System.Windows.Forms.Button btnActualizar;
-        private System.Windows.Forms.Button btnActualizar2;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.Button btnActualizarUsuElim;
         private System.Windows.Forms.CheckBox chbNombreUE;
         private System.Windows.Forms.CheckBox chbDniUE;
         private System.Windows.Forms.TextBox txtBuscarUE;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dgvUsuariosEliminados;
         private System.Windows.Forms.DataGridViewImageColumn ActivarUsuario;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView dgvEmpleadosEliminados;
         private System.Windows.Forms.CheckBox chbNombreEl;
         private System.Windows.Forms.CheckBox chbDniE;
@@ -600,5 +617,9 @@
         private System.Windows.Forms.DataGridViewImageColumn Eliminar;
         private System.Windows.Forms.DataGridViewImageColumn Activar;
         private System.Windows.Forms.DataGridViewImageColumn Editar;
+        private System.Windows.Forms.Button btnActualizar;
+        private System.Windows.Forms.Button btnActualizar2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnActualizarUsuElim;
     }
 }

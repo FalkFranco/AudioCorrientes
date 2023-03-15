@@ -1,6 +1,7 @@
 ﻿using Login.CDatos;
 using Login.CDatos.DProductos;
-using Login.CSuAdministrador.Clientes;
+//using Login.CAdministrador.Clientes;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;

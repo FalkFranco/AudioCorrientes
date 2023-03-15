@@ -391,8 +391,14 @@ namespace Login.CSuAdministrador.Usuarios
 
         }
 
-        
+        private void chbCuit_Click(object sender, EventArgs e)
+        {
 
+        }
 
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -117,7 +117,7 @@ namespace Login.CSuAdministrador
 
         private void btnClientes_Click(object sender, EventArgs e)
         {
-            AbrirFormEnPanel(new Clientes.Clientes());
+            //AbrirFormEnPanel(new Clientes.Clientes());
         }
 
         private void btnCerrarSesion_Click(object sender, EventArgs e)

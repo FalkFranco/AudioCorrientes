@@ -105,25 +105,30 @@ namespace Login.CSuAdministrador
             MessageBoxButtons buttons = MessageBoxButtons.YesNo;
             DialogResult result;
 
-            if (dgvProductos.Columns[e.ColumnIndex].Name == "Editar")
+            if (e.ColumnIndex >= 0 && e.ColumnIndex < dgvProductos.Columns.Count)
             {
-                Id = Convert.ToInt32(dgvProductos.CurrentRow.Cells["Id"].Value.ToString());
-                EditarProducto FormEdit = new EditarProducto(Id);
-                FormEdit.ShowDialog();
-                objProducto.cargarProducto(dgvProductos);
-            }
-            if (dgvProductos.Columns[e.ColumnIndex].Name == "Eliminar")
-            {
-                Id = Convert.ToInt32(dgvProductos.CurrentRow.Cells["Id"].Value.ToString());
-                result = MessageBox.Show("Desea eliminar el Producto?", "Eliminar Producto", buttons, MessageBoxIcon.Exclamation);
-                if (result == System.Windows.Forms.DialogResult.Yes)
+                if (dgvProductos.Columns[e.ColumnIndex].Name == "Editar")
                 {
-                    eliminarProducto(Id);
-                    MessageBox.Show("Producto eliminado con Exito", "Eliminar Producto Exitoso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    Id = Convert.ToInt32(dgvProductos.CurrentRow.Cells["Id"].Value.ToString());
+                    EditarProducto FormEdit = new EditarProducto(Id);
+                    FormEdit.ShowDialog();
                     objProducto.cargarProducto(dgvProductos);
-                    objProducto.cargarProductoNoListados(dgvProdNoListado);
                 }
+                if (dgvProductos.Columns[e.ColumnIndex].Name == "Eliminar")
+                {
+                    Id = Convert.ToInt32(dgvProductos.CurrentRow.Cells["Id"].Value.ToString());
+                    result = MessageBox.Show("Desea eliminar el Producto?", "Eliminar Producto", buttons, MessageBoxIcon.Exclamation);
+                    if (result == System.Windows.Forms.DialogResult.Yes)
+                    {
+                        eliminarProducto(Id);
+                        MessageBox.Show("Producto eliminado con Exito", "Eliminar Producto Exitoso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        objProducto.cargarProducto(dgvProductos);
+                        objProducto.cargarProductoNoListados(dgvProdNoListado);
+                    }
+                }
+
             }
+
         }
 
         private void MenuProductos_Load(object sender, EventArgs e)
@@ -195,18 +200,21 @@ namespace Login.CSuAdministrador
 
         private void dgvProdNoListado_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dgvProdNoListado.Columns[e.ColumnIndex].Name == "Listar")
+            if (e.ColumnIndex >= 0 && e.ColumnIndex < dgvProductos.Columns.Count)
             {
-                MessageBoxButtons buttons = MessageBoxButtons.YesNo;
-                DialogResult result;
-                Id = Convert.ToInt32(dgvProdNoListado.CurrentRow.Cells["Id"].Value.ToString());
-                result = MessageBox.Show("Desea listar el Producto?", "Listar Producto", buttons, MessageBoxIcon.Exclamation);
-                if (result == System.Windows.Forms.DialogResult.Yes)
+                if (dgvProdNoListado.Columns[e.ColumnIndex].Name == "Listar")
                 {
-                    ListarProducto(Id);
-                    MessageBox.Show("Producto Listado con Exito", "Listar Producto Exitoso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    objProducto.cargarProducto(dgvProductos);
-                    objProducto.cargarProductoNoListados(dgvProdNoListado);
+                    MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+                    DialogResult result;
+                    Id = Convert.ToInt32(dgvProdNoListado.CurrentRow.Cells["Id"].Value.ToString());
+                    result = MessageBox.Show("Desea listar el Producto?", "Listar Producto", buttons, MessageBoxIcon.Exclamation);
+                    if (result == System.Windows.Forms.DialogResult.Yes)
+                    {
+                        ListarProducto(Id);
+                        MessageBox.Show("Producto Listado con Exito", "Listar Producto Exitoso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        objProducto.cargarProducto(dgvProductos);
+                        objProducto.cargarProductoNoListados(dgvProdNoListado);
+                    }
                 }
             }
         }
@@ -226,6 +234,6 @@ namespace Login.CSuAdministrador
             objProducto.mostrarMarcasNombre(dgvMarca, txtBuscarM.Text);
         }
 
-        
+
     }
 }

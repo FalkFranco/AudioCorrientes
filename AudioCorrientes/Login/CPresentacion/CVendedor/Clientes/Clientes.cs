@@ -94,34 +94,36 @@ namespace Login.CVendedor.Clientes
         int Id;
         private void dgvClientes_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
-            DialogResult result;
+            if (e.ColumnIndex >= 0 && e.ColumnIndex < dgvClientes.Columns.Count)
+            {
+                MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+                DialogResult result;
 
-            if (dgvClientes.Columns[e.ColumnIndex].Name == "Editar")
-            {
-                Id = Convert.ToInt32( dgvClientes.CurrentRow.Cells["Id"].Value.ToString());
-                FormEditarCliente FormEdit = new FormEditarCliente(Id);
-                FormEdit.ShowDialog();
-                objCliente.cargarClientes(dgvClientes, true);
-            }
-            if (dgvClientes.Columns[e.ColumnIndex].Name == "Eliminar")
-            {
-                Id = Convert.ToInt32(dgvClientes.CurrentRow.Cells["Id"].Value.ToString());
-                result = MessageBox.Show("Desea eliminar el Cliente?", "Eliminar Cliente", buttons, MessageBoxIcon.Exclamation);
-                if (result == System.Windows.Forms.DialogResult.Yes)
+                if (dgvClientes.Columns[e.ColumnIndex].Name == "Editar")
                 {
-                    //Eliminar
-                    EliminarCliente(Id);
-                    MessageBox.Show("Cliente eliminado con Exito", "Eliminar Cliente Exitoso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    Id = Convert.ToInt32(dgvClientes.CurrentRow.Cells["Id"].Value.ToString());
+                    FormEditarCliente FormEdit = new FormEditarCliente(Id);
+                    FormEdit.ShowDialog();
                     objCliente.cargarClientes(dgvClientes, true);
-                    dgvClientes.Columns["Id"].Visible = false;
-                    dgvClientes.Columns["Estado"].Visible = false;
-                    objCliente.cargarClientes(dgvClientesElim, false);
-                    dgvClientesElim.Columns["Id"].Visible = false;
-                    dgvClientesElim.Columns["Estado"].Visible = false;
+                }
+                if (dgvClientes.Columns[e.ColumnIndex].Name == "Eliminar")
+                {
+                    Id = Convert.ToInt32(dgvClientes.CurrentRow.Cells["Id"].Value.ToString());
+                    result = MessageBox.Show("Desea eliminar el Cliente?", "Eliminar Cliente", buttons, MessageBoxIcon.Exclamation);
+                    if (result == System.Windows.Forms.DialogResult.Yes)
+                    {
+                        //Eliminar
+                        EliminarCliente(Id);
+                        MessageBox.Show("Cliente eliminado con Exito", "Eliminar Cliente Exitoso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        objCliente.cargarClientes(dgvClientes, true);
+                        dgvClientes.Columns["Id"].Visible = false;
+                        dgvClientes.Columns["Estado"].Visible = false;
+                        objCliente.cargarClientes(dgvClientesElim, false);
+                        dgvClientesElim.Columns["Id"].Visible = false;
+                        dgvClientesElim.Columns["Estado"].Visible = false;
+                    }
                 }
             }
-            
         }
 
 
@@ -184,6 +186,8 @@ namespace Login.CVendedor.Clientes
                 }
             }
         }
+
+
     }
 }
 

@@ -208,6 +208,7 @@
             this.label2.Size = new System.Drawing.Size(16, 13);
             this.label2.TabIndex = 77;
             this.label2.Text = "Id";
+            this.label2.Visible = false;
             // 
             // txtId
             // 
@@ -216,6 +217,7 @@
             this.txtId.ReadOnly = true;
             this.txtId.Size = new System.Drawing.Size(200, 20);
             this.txtId.TabIndex = 76;
+            this.txtId.Visible = false;
             // 
             // FormEditarCliente
             // 

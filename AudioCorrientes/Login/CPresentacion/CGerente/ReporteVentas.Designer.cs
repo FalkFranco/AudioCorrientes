@@ -56,14 +56,14 @@
             this.chartVentas.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.chartVentas.Legends.Add(legend1);
-            this.chartVentas.Location = new System.Drawing.Point(12, 206);
+            this.chartVentas.Location = new System.Drawing.Point(45, 194);
             this.chartVentas.Name = "chartVentas";
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
             series1.Name = "MontoVendido";
             series1.YValuesPerPoint = 2;
             this.chartVentas.Series.Add(series1);
-            this.chartVentas.Size = new System.Drawing.Size(1005, 513);
+            this.chartVentas.Size = new System.Drawing.Size(1327, 738);
             this.chartVentas.TabIndex = 0;
             this.chartVentas.Text = "chart1";
             // 
@@ -74,7 +74,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1038, 67);
+            this.panel1.Size = new System.Drawing.Size(1668, 67);
             this.panel1.TabIndex = 3;
             // 
             // lbProductoTitle
@@ -91,7 +91,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(472, 99);
+            this.label2.Location = new System.Drawing.Point(487, 99);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(52, 17);
             this.label2.TabIndex = 10;
@@ -99,16 +99,16 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(530, 97);
+            this.dateTimePicker1.Location = new System.Drawing.Point(545, 97);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker1.TabIndex = 8;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(25, 94);
+            this.button1.Location = new System.Drawing.Point(45, 88);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(107, 23);
+            this.button1.Size = new System.Drawing.Size(132, 38);
             this.button1.TabIndex = 12;
             this.button1.Text = "Hoy";
             this.button1.UseVisualStyleBackColor = true;
@@ -116,9 +116,9 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(157, 94);
+            this.button2.Location = new System.Drawing.Point(183, 88);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(107, 23);
+            this.button2.Size = new System.Drawing.Size(132, 38);
             this.button2.TabIndex = 13;
             this.button2.Text = "Primer Semestre";
             this.button2.UseVisualStyleBackColor = true;
@@ -126,9 +126,9 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(25, 133);
+            this.button3.Location = new System.Drawing.Point(45, 132);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(107, 23);
+            this.button3.Size = new System.Drawing.Size(132, 38);
             this.button3.TabIndex = 14;
             this.button3.Text = "Este Mes";
             this.button3.UseVisualStyleBackColor = true;
@@ -136,9 +136,9 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(157, 133);
+            this.button4.Location = new System.Drawing.Point(183, 132);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(107, 23);
+            this.button4.Size = new System.Drawing.Size(132, 38);
             this.button4.TabIndex = 15;
             this.button4.Text = "Este Año";
             this.button4.UseVisualStyleBackColor = true;
@@ -146,9 +146,9 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(291, 135);
+            this.button5.Location = new System.Drawing.Point(321, 132);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(107, 23);
+            this.button5.Size = new System.Drawing.Size(132, 38);
             this.button5.TabIndex = 16;
             this.button5.Text = "Custom";
             this.button5.UseVisualStyleBackColor = true;
@@ -156,9 +156,9 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(291, 93);
+            this.button6.Location = new System.Drawing.Point(321, 87);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(107, 23);
+            this.button6.Size = new System.Drawing.Size(132, 38);
             this.button6.TabIndex = 17;
             this.button6.Text = "Segundo Semestre";
             this.button6.UseVisualStyleBackColor = true;
@@ -167,7 +167,7 @@
             // lbdias
             // 
             this.lbdias.AutoSize = true;
-            this.lbdias.Location = new System.Drawing.Point(834, 667);
+            this.lbdias.Location = new System.Drawing.Point(1185, 860);
             this.lbdias.Name = "lbdias";
             this.lbdias.Size = new System.Drawing.Size(30, 13);
             this.lbdias.TabIndex = 18;
@@ -176,7 +176,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(22, 263);
+            this.label3.Location = new System.Drawing.Point(63, 267);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(40, 26);
             this.label3.TabIndex = 19;
@@ -186,7 +186,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(766, 94);
+            this.label4.Location = new System.Drawing.Point(1418, 87);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(80, 24);
             this.label4.TabIndex = 20;
@@ -196,7 +196,7 @@
             // 
             this.lbFecha.AutoSize = true;
             this.lbFecha.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbFecha.Location = new System.Drawing.Point(853, 94);
+            this.lbFecha.Location = new System.Drawing.Point(1505, 87);
             this.lbFecha.Name = "lbFecha";
             this.lbFecha.Size = new System.Drawing.Size(138, 24);
             this.lbFecha.TabIndex = 21;
@@ -206,7 +206,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1038, 731);
+            this.ClientSize = new System.Drawing.Size(1668, 990);
             this.Controls.Add(this.lbFecha);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);

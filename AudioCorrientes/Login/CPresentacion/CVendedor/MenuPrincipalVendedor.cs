@@ -121,6 +121,6 @@ namespace Login.CVendedor
         {
             lbUsuario.Text = pUsuario.apellido + " " + pUsuario.nombre;
         }
-    
+
     }
 }

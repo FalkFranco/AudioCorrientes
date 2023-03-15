@@ -401,7 +401,7 @@ namespace Login.CVendedor
         
         private void btnImprimir_Click_1(object sender, EventArgs e)
         {
-            Image newImage = Image.FromFile("C:\\Users\\colo5\\Desktop\\AudiCorrientes\\AudioCorrientes\\AudioCorrientes\\Login\\Resources\\logoM (2).png");
+            Image newImage = Image.FromFile("C:\\Users\\colo5\\Desktop\\AudioCorrientes\\AudioCorrientes\\Login\\Resources\\logoM (2).png");
             
             DetallePedido d = new DetallePedido();
             CabeceraDetalle c = new CabeceraDetalle();
@@ -443,6 +443,11 @@ namespace Login.CVendedor
             nVentas.cargarVentas(dgvVentas, pUsuario.id_empleado);
             dgvVentas.Columns["IdEmpleado"].Visible = false;
             dgvVentas.Columns["Estado"].Visible = false;
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 

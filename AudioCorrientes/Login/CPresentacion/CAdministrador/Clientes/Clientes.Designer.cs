@@ -51,7 +51,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 73);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1255, 542);
+            this.tabControl1.Size = new System.Drawing.Size(1668, 924);
             this.tabControl1.TabIndex = 4;
             // 
             // tabPage1
@@ -63,14 +63,14 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1247, 516);
+            this.tabPage1.Size = new System.Drawing.Size(1660, 898);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Listar Clientes";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // txtBusqueda
             // 
-            this.txtBusqueda.Location = new System.Drawing.Point(26, 57);
+            this.txtBusqueda.Location = new System.Drawing.Point(47, 64);
             this.txtBusqueda.Name = "txtBusqueda";
             this.txtBusqueda.Size = new System.Drawing.Size(1109, 20);
             this.txtBusqueda.TabIndex = 3;
@@ -79,7 +79,7 @@
             // btnBuscar
             // 
             this.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBuscar.Location = new System.Drawing.Point(1149, 54);
+            this.btnBuscar.Location = new System.Drawing.Point(1173, 64);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(75, 23);
             this.btnBuscar.TabIndex = 2;
@@ -90,17 +90,18 @@
             // txtBuscador
             // 
             this.txtBuscador.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.txtBuscador.Location = new System.Drawing.Point(26, 92);
+            this.txtBuscador.Location = new System.Drawing.Point(47, 101);
             this.txtBuscador.Name = "txtBuscador";
-            this.txtBuscador.Size = new System.Drawing.Size(1198, 403);
+            this.txtBuscador.Size = new System.Drawing.Size(1396, 729);
             this.txtBuscador.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(23, 17);
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(44, 26);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(80, 13);
+            this.label1.Size = new System.Drawing.Size(107, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Buscar Clientes";
             // 
@@ -111,7 +112,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1255, 67);
+            this.panel1.Size = new System.Drawing.Size(1668, 67);
             this.panel1.TabIndex = 5;
             // 
             // lbProductoTitle
@@ -132,7 +133,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1255, 609);
+            this.ClientSize = new System.Drawing.Size(1668, 990);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.tabControl1);
             this.Name = "Clientes";

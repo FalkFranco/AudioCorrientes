@@ -116,7 +116,7 @@ namespace Login.CAdministrador
 
         private void btnVentas_Click(object sender, EventArgs e)
         {
-            AbrirFormEnPanel(new ObjVenta());
+            AbrirFormEnPanel(new Ventas());
         }
 
         private void btnClientes_Click(object sender, EventArgs e)
@@ -133,5 +133,6 @@ namespace Login.CAdministrador
         {
             lbUsuario.Text = pUsuario.apellido + " " + pUsuario.nombre;
         }
+
     }
 }

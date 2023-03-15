@@ -99,27 +99,31 @@ namespace Login.CSuAdministrador.Empleados
         int Id;
         private void dgvEmpleados_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
-            DialogResult result;
 
-            if (dgvEmpleados.Columns[e.ColumnIndex].Name == "Editar")
+            if (e.ColumnIndex >= 0 && e.ColumnIndex < dgvEmpleados.Columns.Count)
             {
-                Id = Convert.ToInt32(dgvEmpleados.CurrentRow.Cells["Id"].Value.ToString());
-                EditarEmpleados FormEdit = new EditarEmpleados(Id);
-                FormEdit.ShowDialog();
-                objEmpleado.cargarDtosEmpleados(dgvEmpleados);
-            }
-            if (dgvEmpleados.Columns[e.ColumnIndex].Name == "Eliminar")
-            {
-                Id = Convert.ToInt32(dgvEmpleados.CurrentRow.Cells["Id"].Value.ToString());
-                result = MessageBox.Show("Desea eliminar el Cliente?", "Eliminar Cliente", buttons, MessageBoxIcon.Exclamation);
-                if (result == System.Windows.Forms.DialogResult.Yes)
+                MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+                DialogResult result;
+
+                if (dgvEmpleados.Columns[e.ColumnIndex].Name == "Editar")
                 {
-                    EliminarEmpleado(Id);
-                    objEmpleado.cargarDtosEmpleadosA(dgvEmpleados);
-                    objEmpleado.cargarDtosEmpleadosEliminadosA(dgvEmpleadosE);
+                    Id = Convert.ToInt32(dgvEmpleados.CurrentRow.Cells["Id"].Value.ToString());
+                    EditarEmpleados FormEdit = new EditarEmpleados(Id);
+                    FormEdit.ShowDialog();
+                    objEmpleado.cargarDtosEmpleados(dgvEmpleados);
                 }
-            }
+                if (dgvEmpleados.Columns[e.ColumnIndex].Name == "Eliminar")
+                {
+                    Id = Convert.ToInt32(dgvEmpleados.CurrentRow.Cells["Id"].Value.ToString());
+                    result = MessageBox.Show("Desea eliminar el Cliente?", "Eliminar Cliente", buttons, MessageBoxIcon.Exclamation);
+                    if (result == System.Windows.Forms.DialogResult.Yes)
+                    {
+                        EliminarEmpleado(Id);
+                        objEmpleado.cargarDtosEmpleadosA(dgvEmpleados);
+                        objEmpleado.cargarDtosEmpleadosEliminadosA(dgvEmpleadosE);
+                    }
+                }
+            }  
         }
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)

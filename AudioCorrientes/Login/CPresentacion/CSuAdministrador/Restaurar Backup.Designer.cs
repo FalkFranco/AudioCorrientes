@@ -35,14 +35,16 @@
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnRestaurar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(87, 167);
+            this.label4.Location = new System.Drawing.Point(59, 158);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(150, 21);
             this.label4.TabIndex = 9;
@@ -53,7 +55,7 @@
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.txtLoc);
             this.panel2.Controls.Add(this.btnBuscar);
-            this.panel2.Location = new System.Drawing.Point(69, 180);
+            this.panel2.Location = new System.Drawing.Point(41, 171);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(658, 100);
             this.panel2.TabIndex = 8;
@@ -93,7 +95,7 @@
             this.btnRestaurar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRestaurar.Enabled = false;
             this.btnRestaurar.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRestaurar.Location = new System.Drawing.Point(323, 324);
+            this.btnRestaurar.Location = new System.Drawing.Point(295, 315);
             this.btnRestaurar.Name = "btnRestaurar";
             this.btnRestaurar.Size = new System.Drawing.Size(188, 33);
             this.btnRestaurar.TabIndex = 1;
@@ -105,27 +107,36 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(287, 46);
+            this.label1.Location = new System.Drawing.Point(259, 37);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(224, 25);
             this.label1.TabIndex = 10;
             this.label1.Text = "Restaurar Backup DB";
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.btnRestaurar);
+            this.panel1.Location = new System.Drawing.Point(452, 252);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(788, 448);
+            this.panel1.TabIndex = 11;
+            // 
             // Restaurar_Backup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.btnRestaurar);
+            this.ClientSize = new System.Drawing.Size(1668, 990);
+            this.Controls.Add(this.panel1);
             this.Name = "Restaurar_Backup";
             this.Text = "Restaurar_Backup";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -138,5 +149,6 @@
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button btnRestaurar;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel1;
     }
 }

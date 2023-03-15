@@ -79,7 +79,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1126, 67);
+            this.panel1.Size = new System.Drawing.Size(1668, 67);
             this.panel1.TabIndex = 0;
             // 
             // lbProductoTitle
@@ -99,10 +99,11 @@
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.Location = new System.Drawing.Point(0, 67);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1126, 542);
+            this.tabControl1.Size = new System.Drawing.Size(1668, 923);
             this.tabControl1.TabIndex = 1;
             // 
             // tabPage1
@@ -117,16 +118,16 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1118, 516);
+            this.tabPage1.Size = new System.Drawing.Size(1660, 897);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Listar Productos";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // btnActualizar
             // 
-            this.btnActualizar.Location = new System.Drawing.Point(980, 57);
+            this.btnActualizar.Location = new System.Drawing.Point(1085, 40);
             this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(75, 23);
+            this.btnActualizar.Size = new System.Drawing.Size(97, 37);
             this.btnActualizar.TabIndex = 16;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = true;
@@ -134,15 +135,18 @@
             // 
             // dgvProductos
             // 
+            this.dgvProductos.AllowUserToAddRows = false;
+            this.dgvProductos.AllowUserToDeleteRows = false;
             this.dgvProductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProductos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Editar,
             this.Eliminar});
-            this.dgvProductos.Location = new System.Drawing.Point(26, 92);
+            this.dgvProductos.Location = new System.Drawing.Point(53, 92);
             this.dgvProductos.Name = "dgvProductos";
+            this.dgvProductos.ReadOnly = true;
             this.dgvProductos.RowHeadersWidth = 62;
-            this.dgvProductos.Size = new System.Drawing.Size(940, 403);
+            this.dgvProductos.Size = new System.Drawing.Size(1369, 662);
             this.dgvProductos.TabIndex = 20;
             this.dgvProductos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductos_CellClick);
             // 
@@ -153,6 +157,7 @@
             this.Editar.Image = global::Login.Properties.Resources.editar25x25;
             this.Editar.MinimumWidth = 8;
             this.Editar.Name = "Editar";
+            this.Editar.ReadOnly = true;
             // 
             // Eliminar
             // 
@@ -161,20 +166,22 @@
             this.Eliminar.Image = global::Login.Properties.Resources.basura25x25;
             this.Eliminar.MinimumWidth = 8;
             this.Eliminar.Name = "Eliminar";
-            this.Eliminar.Width = 49;
+            this.Eliminar.ReadOnly = true;
+            this.Eliminar.Width = 60;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(23, 18);
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(50, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(147, 13);
+            this.label1.Size = new System.Drawing.Size(198, 16);
             this.label1.TabIndex = 17;
             this.label1.Text = "Buscar Producto por Nombre:";
             // 
             // btnAgregarMarca
             // 
-            this.btnAgregarMarca.Location = new System.Drawing.Point(980, 460);
+            this.btnAgregarMarca.Location = new System.Drawing.Point(1486, 220);
             this.btnAgregarMarca.Name = "btnAgregarMarca";
             this.btnAgregarMarca.Size = new System.Drawing.Size(123, 35);
             this.btnAgregarMarca.TabIndex = 8;
@@ -184,7 +191,7 @@
             // 
             // btnAgregarCat
             // 
-            this.btnAgregarCat.Location = new System.Drawing.Point(980, 403);
+            this.btnAgregarCat.Location = new System.Drawing.Point(1486, 156);
             this.btnAgregarCat.Name = "btnAgregarCat";
             this.btnAgregarCat.Size = new System.Drawing.Size(123, 35);
             this.btnAgregarCat.TabIndex = 7;
@@ -194,7 +201,7 @@
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(980, 92);
+            this.btnAgregar.Location = new System.Drawing.Point(1486, 92);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(123, 35);
             this.btnAgregar.TabIndex = 4;
@@ -204,9 +211,9 @@
             // 
             // txtBuscar
             // 
-            this.txtBuscar.Location = new System.Drawing.Point(26, 57);
+            this.txtBuscar.Location = new System.Drawing.Point(53, 57);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(848, 20);
+            this.txtBuscar.Size = new System.Drawing.Size(827, 22);
             this.txtBuscar.TabIndex = 3;
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
@@ -219,16 +226,16 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1118, 516);
+            this.tabPage4.Size = new System.Drawing.Size(1660, 897);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Productos No Listados";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(1019, 59);
+            this.button1.Location = new System.Drawing.Point(1514, 30);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(94, 40);
             this.button1.TabIndex = 26;
             this.button1.Text = "Actualizar";
             this.button1.UseVisualStyleBackColor = true;
@@ -236,14 +243,17 @@
             // 
             // dgvProdNoListado
             // 
+            this.dgvProdNoListado.AllowUserToAddRows = false;
+            this.dgvProdNoListado.AllowUserToDeleteRows = false;
             this.dgvProdNoListado.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvProdNoListado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProdNoListado.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Listar});
-            this.dgvProdNoListado.Location = new System.Drawing.Point(22, 94);
+            this.dgvProdNoListado.Location = new System.Drawing.Point(46, 109);
             this.dgvProdNoListado.Name = "dgvProdNoListado";
+            this.dgvProdNoListado.ReadOnly = true;
             this.dgvProdNoListado.RowHeadersWidth = 62;
-            this.dgvProdNoListado.Size = new System.Drawing.Size(1072, 403);
+            this.dgvProdNoListado.Size = new System.Drawing.Size(1586, 590);
             this.dgvProdNoListado.TabIndex = 30;
             this.dgvProdNoListado.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProdNoListado_CellClick);
             // 
@@ -254,21 +264,23 @@
             this.Listar.Image = global::Login.Properties.Resources.editar25x25;
             this.Listar.MinimumWidth = 8;
             this.Listar.Name = "Listar";
+            this.Listar.ReadOnly = true;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(19, 20);
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(43, 30);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(147, 13);
+            this.label4.Size = new System.Drawing.Size(198, 16);
             this.label4.TabIndex = 27;
             this.label4.Text = "Buscar Producto por Nombre:";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(22, 59);
+            this.textBox1.Location = new System.Drawing.Point(46, 64);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(848, 20);
+            this.textBox1.Size = new System.Drawing.Size(848, 22);
             this.textBox1.TabIndex = 22;
             // 
             // tabPage2
@@ -280,14 +292,14 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1118, 516);
+            this.tabPage2.Size = new System.Drawing.Size(1660, 897);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Listar Categorias";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // btnAgregarC
             // 
-            this.btnAgregarC.Location = new System.Drawing.Point(980, 92);
+            this.btnAgregarC.Location = new System.Drawing.Point(1497, 92);
             this.btnAgregarC.Name = "btnAgregarC";
             this.btnAgregarC.Size = new System.Drawing.Size(123, 35);
             this.btnAgregarC.TabIndex = 4;
@@ -297,9 +309,9 @@
             // 
             // txtBuscarC
             // 
-            this.txtBuscarC.Location = new System.Drawing.Point(26, 57);
+            this.txtBuscarC.Location = new System.Drawing.Point(62, 57);
             this.txtBuscarC.Name = "txtBuscarC";
-            this.txtBuscarC.Size = new System.Drawing.Size(848, 20);
+            this.txtBuscarC.Size = new System.Drawing.Size(812, 22);
             this.txtBuscarC.TabIndex = 3;
             this.txtBuscarC.TextChanged += new System.EventHandler(this.txtBuscarC_TextChanged);
             // 
@@ -309,19 +321,20 @@
             this.dgvCat.AllowUserToDeleteRows = false;
             this.dgvCat.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvCat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCat.Location = new System.Drawing.Point(26, 92);
+            this.dgvCat.Location = new System.Drawing.Point(62, 92);
             this.dgvCat.Name = "dgvCat";
             this.dgvCat.ReadOnly = true;
             this.dgvCat.RowHeadersWidth = 62;
-            this.dgvCat.Size = new System.Drawing.Size(940, 403);
+            this.dgvCat.Size = new System.Drawing.Size(1393, 705);
             this.dgvCat.TabIndex = 1;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(23, 17);
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(59, 26);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(146, 13);
+            this.label2.Size = new System.Drawing.Size(203, 16);
             this.label2.TabIndex = 0;
             this.label2.Text = "Buscar Categoria por Nombre";
             // 
@@ -331,17 +344,17 @@
             this.tabPage3.Controls.Add(this.txtBuscarM);
             this.tabPage3.Controls.Add(this.dgvMarca);
             this.tabPage3.Controls.Add(this.label3);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1118, 516);
+            this.tabPage3.Size = new System.Drawing.Size(1660, 894);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Listar Marcas";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // btnAgregarM
             // 
-            this.btnAgregarM.Location = new System.Drawing.Point(980, 92);
+            this.btnAgregarM.Location = new System.Drawing.Point(1497, 92);
             this.btnAgregarM.Name = "btnAgregarM";
             this.btnAgregarM.Size = new System.Drawing.Size(123, 35);
             this.btnAgregarM.TabIndex = 4;
@@ -351,9 +364,9 @@
             // 
             // txtBuscarM
             // 
-            this.txtBuscarM.Location = new System.Drawing.Point(26, 57);
+            this.txtBuscarM.Location = new System.Drawing.Point(62, 55);
             this.txtBuscarM.Name = "txtBuscarM";
-            this.txtBuscarM.Size = new System.Drawing.Size(848, 20);
+            this.txtBuscarM.Size = new System.Drawing.Size(848, 22);
             this.txtBuscarM.TabIndex = 3;
             this.txtBuscarM.TextChanged += new System.EventHandler(this.txtBuscarM_TextChanged);
             // 
@@ -363,19 +376,20 @@
             this.dgvMarca.AllowUserToDeleteRows = false;
             this.dgvMarca.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvMarca.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMarca.Location = new System.Drawing.Point(26, 92);
+            this.dgvMarca.Location = new System.Drawing.Point(62, 92);
             this.dgvMarca.Name = "dgvMarca";
             this.dgvMarca.ReadOnly = true;
             this.dgvMarca.RowHeadersWidth = 62;
-            this.dgvMarca.Size = new System.Drawing.Size(940, 403);
+            this.dgvMarca.Size = new System.Drawing.Size(1393, 705);
             this.dgvMarca.TabIndex = 1;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(23, 17);
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(59, 26);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(131, 13);
+            this.label3.Size = new System.Drawing.Size(180, 16);
             this.label3.TabIndex = 0;
             this.label3.Text = "Buscar Marca por Nombre";
             // 
@@ -387,7 +401,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1126, 609);
+            this.ClientSize = new System.Drawing.Size(1668, 990);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.panel1);
             this.Name = "MenuProductos";

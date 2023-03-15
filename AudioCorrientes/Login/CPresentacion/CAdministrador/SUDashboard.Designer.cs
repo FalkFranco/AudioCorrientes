@@ -75,15 +75,17 @@
             chartArea1.Name = "ChartArea1";
             this.chartCategorias.ChartAreas.Add(chartArea1);
             legend1.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Top;
+            legend1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            legend1.IsTextAutoFit = false;
             legend1.Name = "Legend1";
             this.chartCategorias.Legends.Add(legend1);
-            this.chartCategorias.Location = new System.Drawing.Point(12, 107);
+            this.chartCategorias.Location = new System.Drawing.Point(57, 105);
             this.chartCategorias.Name = "chartCategorias";
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
             series1.Name = "Productos";
             this.chartCategorias.Series.Add(series1);
-            this.chartCategorias.Size = new System.Drawing.Size(799, 326);
+            this.chartCategorias.Size = new System.Drawing.Size(1096, 434);
             this.chartCategorias.TabIndex = 0;
             this.chartCategorias.Text = "chart1";
             title1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -98,7 +100,7 @@
             legend2.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
             legend2.Name = "Legend1";
             this.chartTop5.Legends.Add(legend2);
-            this.chartTop5.Location = new System.Drawing.Point(817, 107);
+            this.chartTop5.Location = new System.Drawing.Point(1198, 105);
             this.chartTop5.Name = "chartTop5";
             series2.ChartArea = "ChartArea1";
             series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
@@ -108,7 +110,7 @@
             series2.Legend = "Legend1";
             series2.Name = "Cantidad";
             this.chartTop5.Series.Add(series2);
-            this.chartTop5.Size = new System.Drawing.Size(320, 595);
+            this.chartTop5.Size = new System.Drawing.Size(444, 434);
             this.chartTop5.TabIndex = 1;
             this.chartTop5.Text = "chart2";
             title2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -126,15 +128,15 @@
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.lbCantClientes);
             this.panel1.Controls.Add(this.lbTotalVent);
-            this.panel1.Location = new System.Drawing.Point(12, 457);
+            this.panel1.Location = new System.Drawing.Point(57, 582);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(280, 245);
+            this.panel1.Size = new System.Drawing.Size(384, 372);
             this.panel1.TabIndex = 2;
             // 
             // pictureBox6
             // 
             this.pictureBox6.Image = global::Login.Properties.Resources.product;
-            this.pictureBox6.Location = new System.Drawing.Point(6, 159);
+            this.pictureBox6.Location = new System.Drawing.Point(37, 158);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(79, 54);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -144,7 +146,7 @@
             // pictureBox4
             // 
             this.pictureBox4.Image = global::Login.Properties.Resources.evaluation;
-            this.pictureBox4.Location = new System.Drawing.Point(6, 60);
+            this.pictureBox4.Location = new System.Drawing.Point(37, 59);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(79, 54);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -166,7 +168,7 @@
             // 
             this.lbCantProductos.AutoSize = true;
             this.lbCantProductos.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCantProductos.Location = new System.Drawing.Point(87, 180);
+            this.lbCantProductos.Location = new System.Drawing.Point(118, 179);
             this.lbCantProductos.Name = "lbCantProductos";
             this.lbCantProductos.Size = new System.Drawing.Size(65, 30);
             this.lbCantProductos.TabIndex = 5;
@@ -176,7 +178,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(87, 159);
+            this.label5.Location = new System.Drawing.Point(118, 158);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(169, 21);
             this.label5.TabIndex = 4;
@@ -186,7 +188,7 @@
             // 
             this.lbCantClientes.AutoSize = true;
             this.lbCantClientes.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCantClientes.Location = new System.Drawing.Point(85, 81);
+            this.lbCantClientes.Location = new System.Drawing.Point(116, 80);
             this.lbCantClientes.Name = "lbCantClientes";
             this.lbCantClientes.Size = new System.Drawing.Size(65, 30);
             this.lbCantClientes.TabIndex = 1;
@@ -196,7 +198,7 @@
             // 
             this.lbTotalVent.AutoSize = true;
             this.lbTotalVent.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTotalVent.Location = new System.Drawing.Point(85, 60);
+            this.lbTotalVent.Location = new System.Drawing.Point(116, 59);
             this.lbTotalVent.Name = "lbTotalVent";
             this.lbTotalVent.Size = new System.Drawing.Size(153, 21);
             this.lbTotalVent.TabIndex = 0;
@@ -207,9 +209,10 @@
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.Controls.Add(this.dgvBajoStock);
             this.panel2.Controls.Add(this.label13);
-            this.panel2.Location = new System.Drawing.Point(300, 457);
+            this.panel2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel2.Location = new System.Drawing.Point(516, 582);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(511, 245);
+            this.panel2.Size = new System.Drawing.Size(960, 372);
             this.panel2.TabIndex = 7;
             // 
             // dgvBajoStock
@@ -221,7 +224,7 @@
             this.dgvBajoStock.Location = new System.Drawing.Point(21, 34);
             this.dgvBajoStock.Name = "dgvBajoStock";
             this.dgvBajoStock.ReadOnly = true;
-            this.dgvBajoStock.Size = new System.Drawing.Size(471, 200);
+            this.dgvBajoStock.Size = new System.Drawing.Size(910, 321);
             this.dgvBajoStock.TabIndex = 8;
             // 
             // label13
@@ -241,7 +244,7 @@
             this.panel3.Controls.Add(this.pictureBox1);
             this.panel3.Controls.Add(this.lbTotVentas);
             this.panel3.Controls.Add(this.lbTotVentasNro);
-            this.panel3.Location = new System.Drawing.Point(12, 12);
+            this.panel3.Location = new System.Drawing.Point(57, 22);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(270, 67);
             this.panel3.TabIndex = 8;
@@ -282,7 +285,7 @@
             this.panel4.Controls.Add(this.pictureBox2);
             this.panel4.Controls.Add(this.label1);
             this.panel4.Controls.Add(this.lbtotven);
-            this.panel4.Location = new System.Drawing.Point(321, 15);
+            this.panel4.Location = new System.Drawing.Point(366, 22);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(422, 67);
             this.panel4.TabIndex = 9;
@@ -321,7 +324,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1152, 714);
+            this.ClientSize = new System.Drawing.Size(1668, 990);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);

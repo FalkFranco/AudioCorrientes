@@ -655,6 +655,7 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\selectClient.png" />
     <None Include="Resources\carrito-de-compras.png" />
     <None Include="Resources\editar25x25.png" />
     <None Include="Resources\basura25x25.png" />

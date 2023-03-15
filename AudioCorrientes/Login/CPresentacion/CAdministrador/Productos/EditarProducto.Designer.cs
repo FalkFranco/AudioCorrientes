@@ -205,6 +205,7 @@
             this.label9.Size = new System.Drawing.Size(62, 13);
             this.label9.TabIndex = 36;
             this.label9.Text = "Id Producto";
+            this.label9.Visible = false;
             // 
             // txtIdProducto
             // 
@@ -213,6 +214,7 @@
             this.txtIdProducto.ReadOnly = true;
             this.txtIdProducto.Size = new System.Drawing.Size(161, 20);
             this.txtIdProducto.TabIndex = 35;
+            this.txtIdProducto.Visible = false;
             // 
             // chbEstado
             // 

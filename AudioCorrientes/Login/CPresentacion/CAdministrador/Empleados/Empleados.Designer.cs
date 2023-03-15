@@ -43,22 +43,22 @@
             this.btnAgregarE = new System.Windows.Forms.Button();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.button1 = new System.Windows.Forms.Button();
             this.dgvEmpleadosE = new System.Windows.Forms.DataGridView();
+            this.ActivarE = new System.Windows.Forms.DataGridViewImageColumn();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.ActivarE = new System.Windows.Forms.DataGridViewImageColumn();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleadosE)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // lbProductoTitle
@@ -78,7 +78,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1123, 67);
+            this.panel1.Size = new System.Drawing.Size(1668, 67);
             this.panel1.TabIndex = 16;
             // 
             // tabControl1
@@ -86,10 +86,11 @@
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.Location = new System.Drawing.Point(0, 67);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1123, 542);
+            this.tabControl1.Size = new System.Drawing.Size(1668, 923);
             this.tabControl1.TabIndex = 17;
             // 
             // tabPage2
@@ -101,19 +102,19 @@
             this.tabPage2.Controls.Add(this.btnAgregarE);
             this.tabPage2.Controls.Add(this.txtBuscar);
             this.tabPage2.Controls.Add(this.label3);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1115, 516);
+            this.tabPage2.Size = new System.Drawing.Size(1660, 894);
             this.tabPage2.TabIndex = 4;
             this.tabPage2.Text = "Listado Empleados";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // btnActualizar
             // 
-            this.btnActualizar.Location = new System.Drawing.Point(1021, 57);
+            this.btnActualizar.Location = new System.Drawing.Point(1087, 45);
             this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(75, 23);
+            this.btnActualizar.Size = new System.Drawing.Size(90, 32);
             this.btnActualizar.TabIndex = 16;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = true;
@@ -129,10 +130,10 @@
             this.Editar,
             this.Eliminar,
             this.Activar});
-            this.dgvEmpleados.Location = new System.Drawing.Point(26, 92);
+            this.dgvEmpleados.Location = new System.Drawing.Point(36, 88);
             this.dgvEmpleados.Name = "dgvEmpleados";
             this.dgvEmpleados.ReadOnly = true;
-            this.dgvEmpleados.Size = new System.Drawing.Size(1070, 377);
+            this.dgvEmpleados.Size = new System.Drawing.Size(1506, 758);
             this.dgvEmpleados.TabIndex = 13;
             this.dgvEmpleados.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmpleados_CellClick);
             // 
@@ -151,7 +152,7 @@
             this.Eliminar.Image = global::Login.Properties.Resources.basura25x25;
             this.Eliminar.Name = "Eliminar";
             this.Eliminar.ReadOnly = true;
-            this.Eliminar.Width = 49;
+            this.Eliminar.Width = 64;
             // 
             // Activar
             // 
@@ -165,9 +166,10 @@
             // chbNombreE
             // 
             this.chbNombreE.AutoSize = true;
-            this.chbNombreE.Location = new System.Drawing.Point(213, 17);
+            this.chbNombreE.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chbNombreE.Location = new System.Drawing.Point(260, 20);
             this.chbNombreE.Name = "chbNombreE";
-            this.chbNombreE.Size = new System.Drawing.Size(63, 17);
+            this.chbNombreE.Size = new System.Drawing.Size(78, 20);
             this.chbNombreE.TabIndex = 12;
             this.chbNombreE.Text = "Nombre";
             this.chbNombreE.UseVisualStyleBackColor = true;
@@ -178,9 +180,10 @@
             this.chbDniE.AutoSize = true;
             this.chbDniE.Checked = true;
             this.chbDniE.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chbDniE.Location = new System.Drawing.Point(147, 17);
+            this.chbDniE.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chbDniE.Location = new System.Drawing.Point(194, 20);
             this.chbDniE.Name = "chbDniE";
-            this.chbDniE.Size = new System.Drawing.Size(45, 17);
+            this.chbDniE.Size = new System.Drawing.Size(49, 20);
             this.chbDniE.TabIndex = 11;
             this.chbDniE.Text = "DNI";
             this.chbDniE.UseVisualStyleBackColor = true;
@@ -198,9 +201,9 @@
             // 
             // txtBuscar
             // 
-            this.txtBuscar.Location = new System.Drawing.Point(26, 57);
+            this.txtBuscar.Location = new System.Drawing.Point(36, 57);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(848, 20);
+            this.txtBuscar.Size = new System.Drawing.Size(848, 22);
             this.txtBuscar.TabIndex = 3;
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             this.txtBuscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBuscar_KeyPress_1);
@@ -208,15 +211,12 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(23, 17);
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(37, 20);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(111, 13);
+            this.label3.Size = new System.Drawing.Size(151, 16);
             this.label3.TabIndex = 0;
             this.label3.Text = "Buscar Empleado por:";
-            // 
-            // errorProvider1
-            // 
-            this.errorProvider1.ContainerControl = this;
             // 
             // tabPage1
             // 
@@ -229,16 +229,16 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1115, 516);
+            this.tabPage1.Size = new System.Drawing.Size(1660, 897);
             this.tabPage1.TabIndex = 5;
             this.tabPage1.Text = "Empleados Eliminados";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(1019, 72);
+            this.button1.Location = new System.Drawing.Point(1087, 45);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(90, 32);
             this.button1.TabIndex = 22;
             this.button1.Text = "Actualizar";
             this.button1.UseVisualStyleBackColor = true;
@@ -251,50 +251,12 @@
             this.dgvEmpleadosE.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEmpleadosE.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ActivarE});
-            this.dgvEmpleadosE.Location = new System.Drawing.Point(24, 107);
+            this.dgvEmpleadosE.Location = new System.Drawing.Point(36, 88);
             this.dgvEmpleadosE.Name = "dgvEmpleadosE";
             this.dgvEmpleadosE.ReadOnly = true;
-            this.dgvEmpleadosE.Size = new System.Drawing.Size(1070, 377);
+            this.dgvEmpleadosE.Size = new System.Drawing.Size(1506, 758);
             this.dgvEmpleadosE.TabIndex = 21;
             this.dgvEmpleadosE.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmpleadosE_CellContentClick);
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(211, 32);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(63, 17);
-            this.checkBox1.TabIndex = 20;
-            this.checkBox1.Text = "Nombre";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Checked = true;
-            this.checkBox2.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox2.Location = new System.Drawing.Point(145, 32);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(45, 17);
-            this.checkBox2.TabIndex = 19;
-            this.checkBox2.Text = "DNI";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(24, 72);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(848, 20);
-            this.textBox1.TabIndex = 18;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(21, 32);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(111, 13);
-            this.label1.TabIndex = 17;
-            this.label1.Text = "Buscar Empleado por:";
             // 
             // ActivarE
             // 
@@ -305,11 +267,56 @@
             this.ActivarE.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.ActivarE.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox1.Location = new System.Drawing.Point(260, 20);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(78, 20);
+            this.checkBox1.TabIndex = 20;
+            this.checkBox1.Text = "Nombre";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Checked = true;
+            this.checkBox2.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox2.Location = new System.Drawing.Point(194, 20);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(49, 20);
+            this.checkBox2.TabIndex = 19;
+            this.checkBox2.Text = "DNI";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(36, 57);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(848, 22);
+            this.textBox1.TabIndex = 18;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(37, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(151, 16);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "Buscar Empleado por:";
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // Empleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1123, 609);
+            this.ClientSize = new System.Drawing.Size(1668, 990);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.panel1);
             this.Name = "Empleados";
@@ -321,10 +328,10 @@
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleadosE)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }

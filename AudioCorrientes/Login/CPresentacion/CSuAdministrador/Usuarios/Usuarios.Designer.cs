@@ -91,7 +91,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1126, 67);
+            this.panel1.Size = new System.Drawing.Size(1668, 67);
             this.panel1.TabIndex = 1;
             // 
             // lbProductoTitle
@@ -111,10 +111,11 @@
             this.chbNombreE.Controls.Add(this.tabPage3);
             this.chbNombreE.Controls.Add(this.tabPage4);
             this.chbNombreE.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.chbNombreE.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chbNombreE.Location = new System.Drawing.Point(0, 67);
             this.chbNombreE.Name = "chbNombreE";
             this.chbNombreE.SelectedIndex = 0;
-            this.chbNombreE.Size = new System.Drawing.Size(1126, 542);
+            this.chbNombreE.Size = new System.Drawing.Size(1668, 923);
             this.chbNombreE.TabIndex = 2;
             // 
             // tabPage1
@@ -125,10 +126,10 @@
             this.tabPage1.Controls.Add(this.chbDni);
             this.tabPage1.Controls.Add(this.txtBuscar);
             this.tabPage1.Controls.Add(this.label1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1118, 516);
+            this.tabPage1.Size = new System.Drawing.Size(1660, 894);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Listado Empleados";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -151,9 +152,9 @@
             this.Eliminar,
             this.Activar,
             this.Editar});
-            this.dgvEmpleados.Location = new System.Drawing.Point(26, 101);
+            this.dgvEmpleados.Location = new System.Drawing.Point(46, 101);
             this.dgvEmpleados.Name = "dgvEmpleados";
-            this.dgvEmpleados.Size = new System.Drawing.Size(1070, 377);
+            this.dgvEmpleados.Size = new System.Drawing.Size(1562, 761);
             this.dgvEmpleados.TabIndex = 14;
             this.dgvEmpleados.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmpleados_CellClick);
             // 
@@ -163,7 +164,7 @@
             this.Eliminar.HeaderText = "Eliminar";
             this.Eliminar.Image = global::Login.Properties.Resources.basura25x25;
             this.Eliminar.Name = "Eliminar";
-            this.Eliminar.Width = 49;
+            this.Eliminar.Width = 60;
             // 
             // Activar
             // 
@@ -181,9 +182,10 @@
             // chbNombre
             // 
             this.chbNombre.AutoSize = true;
-            this.chbNombre.Location = new System.Drawing.Point(198, 17);
+            this.chbNombre.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chbNombre.Location = new System.Drawing.Point(263, 19);
             this.chbNombre.Name = "chbNombre";
-            this.chbNombre.Size = new System.Drawing.Size(63, 17);
+            this.chbNombre.Size = new System.Drawing.Size(78, 20);
             this.chbNombre.TabIndex = 12;
             this.chbNombre.Text = "Nombre";
             this.chbNombre.UseVisualStyleBackColor = true;
@@ -194,9 +196,10 @@
             this.chbDni.AutoSize = true;
             this.chbDni.Checked = true;
             this.chbDni.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chbDni.Location = new System.Drawing.Point(132, 17);
+            this.chbDni.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chbDni.Location = new System.Drawing.Point(197, 19);
             this.chbDni.Name = "chbDni";
-            this.chbDni.Size = new System.Drawing.Size(45, 17);
+            this.chbDni.Size = new System.Drawing.Size(49, 20);
             this.chbDni.TabIndex = 11;
             this.chbDni.Text = "DNI";
             this.chbDni.UseVisualStyleBackColor = true;
@@ -204,9 +207,9 @@
             // 
             // txtBuscar
             // 
-            this.txtBuscar.Location = new System.Drawing.Point(26, 57);
+            this.txtBuscar.Location = new System.Drawing.Point(46, 59);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(848, 20);
+            this.txtBuscar.Size = new System.Drawing.Size(848, 22);
             this.txtBuscar.TabIndex = 3;
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             this.txtBuscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBuscar_KeyPress);
@@ -214,9 +217,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(23, 17);
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(43, 19);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(100, 13);
+            this.label1.Size = new System.Drawing.Size(133, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Buscar Usuario por:";
             // 
@@ -228,19 +232,19 @@
             this.tabPage2.Controls.Add(this.chbDniU);
             this.tabPage2.Controls.Add(this.txtBuscarU);
             this.tabPage2.Controls.Add(this.label3);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1118, 516);
+            this.tabPage2.Size = new System.Drawing.Size(1660, 894);
             this.tabPage2.TabIndex = 3;
             this.tabPage2.Text = "Listado Usuarios";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // btnActualizar2
             // 
-            this.btnActualizar2.Location = new System.Drawing.Point(1010, 57);
+            this.btnActualizar2.Location = new System.Drawing.Point(1529, 51);
             this.btnActualizar2.Name = "btnActualizar2";
-            this.btnActualizar2.Size = new System.Drawing.Size(75, 23);
+            this.btnActualizar2.Size = new System.Drawing.Size(90, 35);
             this.btnActualizar2.TabIndex = 18;
             this.btnActualizar2.Text = "Actualizar";
             this.btnActualizar2.UseVisualStyleBackColor = true;
@@ -253,9 +257,9 @@
             this.dgvUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.EditarUsuario,
             this.EliminarUsuario});
-            this.dgvUsuarios.Location = new System.Drawing.Point(26, 98);
+            this.dgvUsuarios.Location = new System.Drawing.Point(33, 98);
             this.dgvUsuarios.Name = "dgvUsuarios";
-            this.dgvUsuarios.Size = new System.Drawing.Size(1059, 394);
+            this.dgvUsuarios.Size = new System.Drawing.Size(1586, 767);
             this.dgvUsuarios.TabIndex = 15;
             this.dgvUsuarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuarios_CellClick);
             // 
@@ -276,9 +280,10 @@
             // chbNombreU
             // 
             this.chbNombreU.AutoSize = true;
-            this.chbNombreU.Location = new System.Drawing.Point(213, 17);
+            this.chbNombreU.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chbNombreU.Location = new System.Drawing.Point(263, 18);
             this.chbNombreU.Name = "chbNombreU";
-            this.chbNombreU.Size = new System.Drawing.Size(63, 17);
+            this.chbNombreU.Size = new System.Drawing.Size(78, 20);
             this.chbNombreU.TabIndex = 12;
             this.chbNombreU.Text = "Nombre";
             this.chbNombreU.UseVisualStyleBackColor = true;
@@ -289,9 +294,10 @@
             this.chbDniU.AutoSize = true;
             this.chbDniU.Checked = true;
             this.chbDniU.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chbDniU.Location = new System.Drawing.Point(147, 17);
+            this.chbDniU.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chbDniU.Location = new System.Drawing.Point(197, 18);
             this.chbDniU.Name = "chbDniU";
-            this.chbDniU.Size = new System.Drawing.Size(45, 17);
+            this.chbDniU.Size = new System.Drawing.Size(49, 20);
             this.chbDniU.TabIndex = 11;
             this.chbDniU.Text = "DNI";
             this.chbDniU.UseVisualStyleBackColor = true;
@@ -299,18 +305,19 @@
             // 
             // txtBuscarU
             // 
-            this.txtBuscarU.Location = new System.Drawing.Point(26, 57);
+            this.txtBuscarU.Location = new System.Drawing.Point(33, 57);
             this.txtBuscarU.Name = "txtBuscarU";
-            this.txtBuscarU.Size = new System.Drawing.Size(848, 20);
+            this.txtBuscarU.Size = new System.Drawing.Size(848, 22);
             this.txtBuscarU.TabIndex = 3;
             this.txtBuscarU.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBuscarE_KeyPress);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(23, 17);
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(30, 19);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(111, 13);
+            this.label3.Size = new System.Drawing.Size(151, 16);
             this.label3.TabIndex = 0;
             this.label3.Text = "Buscar Empleado por:";
             // 
@@ -322,19 +329,19 @@
             this.tabPage3.Controls.Add(this.chbDniE);
             this.tabPage3.Controls.Add(this.txtBuscarE);
             this.tabPage3.Controls.Add(this.label4);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1118, 516);
+            this.tabPage3.Size = new System.Drawing.Size(1660, 894);
             this.tabPage3.TabIndex = 4;
             this.tabPage3.Text = "Empleados Eliminados";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(1015, 61);
+            this.button1.Location = new System.Drawing.Point(1523, 61);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(90, 34);
             this.button1.TabIndex = 25;
             this.button1.Text = "Actualizar";
             this.button1.UseVisualStyleBackColor = true;
@@ -345,9 +352,9 @@
             this.dgvEmpleadosEliminados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEmpleadosEliminados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ActivarEmpleado});
-            this.dgvEmpleadosEliminados.Location = new System.Drawing.Point(31, 102);
+            this.dgvEmpleadosEliminados.Location = new System.Drawing.Point(40, 106);
             this.dgvEmpleadosEliminados.Name = "dgvEmpleadosEliminados";
-            this.dgvEmpleadosEliminados.Size = new System.Drawing.Size(1059, 394);
+            this.dgvEmpleadosEliminados.Size = new System.Drawing.Size(1573, 757);
             this.dgvEmpleadosEliminados.TabIndex = 24;
             this.dgvEmpleadosEliminados.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuElim_CellClick);
             // 
@@ -361,9 +368,10 @@
             // chbNombreEl
             // 
             this.chbNombreEl.AutoSize = true;
-            this.chbNombreEl.Location = new System.Drawing.Point(218, 21);
+            this.chbNombreEl.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chbNombreEl.Location = new System.Drawing.Point(262, 20);
             this.chbNombreEl.Name = "chbNombreEl";
-            this.chbNombreEl.Size = new System.Drawing.Size(63, 17);
+            this.chbNombreEl.Size = new System.Drawing.Size(78, 20);
             this.chbNombreEl.TabIndex = 23;
             this.chbNombreEl.Text = "Nombre";
             this.chbNombreEl.UseVisualStyleBackColor = true;
@@ -374,9 +382,10 @@
             this.chbDniE.AutoSize = true;
             this.chbDniE.Checked = true;
             this.chbDniE.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chbDniE.Location = new System.Drawing.Point(152, 21);
+            this.chbDniE.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chbDniE.Location = new System.Drawing.Point(196, 20);
             this.chbDniE.Name = "chbDniE";
-            this.chbDniE.Size = new System.Drawing.Size(45, 17);
+            this.chbDniE.Size = new System.Drawing.Size(49, 20);
             this.chbDniE.TabIndex = 22;
             this.chbDniE.Text = "DNI";
             this.chbDniE.UseVisualStyleBackColor = true;
@@ -384,9 +393,9 @@
             // 
             // txtBuscarE
             // 
-            this.txtBuscarE.Location = new System.Drawing.Point(31, 61);
+            this.txtBuscarE.Location = new System.Drawing.Point(40, 61);
             this.txtBuscarE.Name = "txtBuscarE";
-            this.txtBuscarE.Size = new System.Drawing.Size(848, 20);
+            this.txtBuscarE.Size = new System.Drawing.Size(848, 22);
             this.txtBuscarE.TabIndex = 21;
             this.txtBuscarE.TextChanged += new System.EventHandler(this.txtBuscarE_TextChanged_1);
             this.txtBuscarE.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBuscarE_KeyPress_1);
@@ -394,9 +403,10 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(28, 21);
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(39, 21);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(111, 13);
+            this.label4.Size = new System.Drawing.Size(151, 16);
             this.label4.TabIndex = 19;
             this.label4.Text = "Buscar Empleado por:";
             // 
@@ -408,10 +418,10 @@
             this.tabPage4.Controls.Add(this.chbDniUE);
             this.tabPage4.Controls.Add(this.txtBuscarUE);
             this.tabPage4.Controls.Add(this.label2);
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Location = new System.Drawing.Point(4, 25);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1118, 516);
+            this.tabPage4.Size = new System.Drawing.Size(1660, 894);
             this.tabPage4.TabIndex = 5;
             this.tabPage4.Text = "Usuarios Eliminados";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -424,7 +434,7 @@
             this.ActivarUsuario});
             this.dgvUsuariosEliminados.Location = new System.Drawing.Point(31, 104);
             this.dgvUsuariosEliminados.Name = "dgvUsuariosEliminados";
-            this.dgvUsuariosEliminados.Size = new System.Drawing.Size(1059, 394);
+            this.dgvUsuariosEliminados.Size = new System.Drawing.Size(1577, 761);
             this.dgvUsuariosEliminados.TabIndex = 26;
             this.dgvUsuariosEliminados.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuariosEliminados_CellClick);
             // 
@@ -437,9 +447,9 @@
             // 
             // btnActualizarUsuElim
             // 
-            this.btnActualizarUsuElim.Location = new System.Drawing.Point(1015, 61);
+            this.btnActualizarUsuElim.Location = new System.Drawing.Point(1521, 53);
             this.btnActualizarUsuElim.Name = "btnActualizarUsuElim";
-            this.btnActualizarUsuElim.Size = new System.Drawing.Size(75, 23);
+            this.btnActualizarUsuElim.Size = new System.Drawing.Size(87, 30);
             this.btnActualizarUsuElim.TabIndex = 25;
             this.btnActualizarUsuElim.Text = "Actualizar";
             this.btnActualizarUsuElim.UseVisualStyleBackColor = true;
@@ -448,9 +458,10 @@
             // chbNombreUE
             // 
             this.chbNombreUE.AutoSize = true;
-            this.chbNombreUE.Location = new System.Drawing.Point(218, 21);
+            this.chbNombreUE.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chbNombreUE.Location = new System.Drawing.Point(251, 21);
             this.chbNombreUE.Name = "chbNombreUE";
-            this.chbNombreUE.Size = new System.Drawing.Size(63, 17);
+            this.chbNombreUE.Size = new System.Drawing.Size(78, 20);
             this.chbNombreUE.TabIndex = 23;
             this.chbNombreUE.Text = "Nombre";
             this.chbNombreUE.UseVisualStyleBackColor = true;
@@ -461,9 +472,10 @@
             this.chbDniUE.AutoSize = true;
             this.chbDniUE.Checked = true;
             this.chbDniUE.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chbDniUE.Location = new System.Drawing.Point(152, 21);
+            this.chbDniUE.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chbDniUE.Location = new System.Drawing.Point(185, 21);
             this.chbDniUE.Name = "chbDniUE";
-            this.chbDniUE.Size = new System.Drawing.Size(45, 17);
+            this.chbDniUE.Size = new System.Drawing.Size(49, 20);
             this.chbDniUE.TabIndex = 22;
             this.chbDniUE.Text = "DNI";
             this.chbDniUE.UseVisualStyleBackColor = true;
@@ -473,16 +485,17 @@
             // 
             this.txtBuscarUE.Location = new System.Drawing.Point(31, 61);
             this.txtBuscarUE.Name = "txtBuscarUE";
-            this.txtBuscarUE.Size = new System.Drawing.Size(848, 20);
+            this.txtBuscarUE.Size = new System.Drawing.Size(848, 22);
             this.txtBuscarUE.TabIndex = 21;
             this.txtBuscarUE.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBuscarUE_KeyPress);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(28, 21);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(111, 13);
+            this.label2.Size = new System.Drawing.Size(151, 16);
             this.label2.TabIndex = 19;
             this.label2.Text = "Buscar Empleado por:";
             // 
@@ -517,7 +530,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1126, 609);
+            this.ClientSize = new System.Drawing.Size(1668, 990);
             this.Controls.Add(this.chbNombreE);
             this.Controls.Add(this.panel1);
             this.Name = "Usuarios";

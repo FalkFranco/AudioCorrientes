@@ -21,30 +21,15 @@ namespace Login.CSuAdministrador
 
         private void btnRestaurar_Click(object sender, EventArgs e)
         {
-            if (validarCampos())
+            if (restaurarBackup())
             {
-                MessageBoxButtons buttons = MessageBoxButtons.YesNo;
-                DialogResult result;
-                var backupOk = false;
-
-                // Displays the MessageBox.
-                result = MessageBox.Show("¿Seguro que desea realizar una restauracion del backup de la base de datos?", "Restauracion Backup", buttons, MessageBoxIcon.Exclamation);
-                if (result == System.Windows.Forms.DialogResult.Yes)
-                {
-                    //Funcion Backup
-                    backupOk = true;
-                    if (backupOk == true)
-                    {
-                        restaurarBackup();
-                        MessageBox.Show("Restauración de Backup realizado con exito", "Restauración Backup Exitoso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    }
-                }
+                MessageBox.Show("El Backup ha sido restaurado con exito!");
             }
             else
             {
-                MessageBox.Show("Debe selaccionar un archivo a restaurar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error al restaurar!");
             }
-            
+
         }
 
         private bool validarCampos()
@@ -72,7 +57,7 @@ namespace Login.CSuAdministrador
         }
 
 
-        public void restaurarBackup()
+        public bool restaurarBackup()
         {
             SqlCommand cmd;
             SqlCommand cmd1;
@@ -97,10 +82,12 @@ namespace Login.CSuAdministrador
 
                 conexion.Close();
                 btnRestaurar.Enabled = false;
+                return true;
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message); 
+                return false;
             }
             
         }

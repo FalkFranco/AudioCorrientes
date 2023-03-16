@@ -84,6 +84,7 @@
             this.btnSalir.TabIndex = 41;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // btnAgregarCategoria
             // 
@@ -98,6 +99,7 @@
             this.btnAgregarCategoria.TabIndex = 40;
             this.btnAgregarCategoria.Text = "Agregar";
             this.btnAgregarCategoria.UseVisualStyleBackColor = false;
+            this.btnAgregarCategoria.Click += new System.EventHandler(this.btnAgregarCategoria_Click);
             // 
             // AgregarCategoria
             // 

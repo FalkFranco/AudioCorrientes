@@ -290,6 +290,7 @@
             this.btnAgregarEmpleado.TabIndex = 91;
             this.btnAgregarEmpleado.Text = "Editar";
             this.btnAgregarEmpleado.UseVisualStyleBackColor = false;
+            this.btnAgregarEmpleado.Click += new System.EventHandler(this.btnAgregarEmpleado_Click);
             // 
             // EditarUsuario
             // 

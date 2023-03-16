@@ -248,6 +248,7 @@
             this.btnSalirMenuPrincipal.TabIndex = 72;
             this.btnSalirMenuPrincipal.Text = "Salir";
             this.btnSalirMenuPrincipal.UseVisualStyleBackColor = false;
+            this.btnSalirMenuPrincipal.Click += new System.EventHandler(this.btnSalirMenuPrincipal_Click);
             // 
             // btnAgregarProducto
             // 
@@ -262,6 +263,7 @@
             this.btnAgregarProducto.TabIndex = 71;
             this.btnAgregarProducto.Text = "Editar";
             this.btnAgregarProducto.UseVisualStyleBackColor = false;
+            this.btnAgregarProducto.Click += new System.EventHandler(this.btnAgregarProducto_Click);
             // 
             // EditarProducto
             // 

@@ -84,6 +84,7 @@
             this.btnSalir.TabIndex = 43;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // btnAgregarMarca
             // 
@@ -98,6 +99,7 @@
             this.btnAgregarMarca.TabIndex = 42;
             this.btnAgregarMarca.Text = "Agregar";
             this.btnAgregarMarca.UseVisualStyleBackColor = false;
+            this.btnAgregarMarca.Click += new System.EventHandler(this.btnAgregarMarca_Click);
             // 
             // AgregarMarca
             // 

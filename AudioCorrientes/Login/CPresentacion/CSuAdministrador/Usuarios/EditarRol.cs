@@ -16,5 +16,10 @@ namespace Login.CSuAdministrador.Usuarios
         {
             InitializeComponent();
         }
+
+        private void btnSalirMenuPrincipal_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

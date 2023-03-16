@@ -231,6 +231,7 @@
             this.btnSalirMenuPrincipal.TabIndex = 69;
             this.btnSalirMenuPrincipal.Text = "Salir";
             this.btnSalirMenuPrincipal.UseVisualStyleBackColor = false;
+            this.btnSalirMenuPrincipal.Click += new System.EventHandler(this.btnSalirMenuPrincipal_Click);
             // 
             // btnAgregarEmpleado
             // 
@@ -245,6 +246,7 @@
             this.btnAgregarEmpleado.TabIndex = 68;
             this.btnAgregarEmpleado.Text = "Agregar";
             this.btnAgregarEmpleado.UseVisualStyleBackColor = false;
+            this.btnAgregarEmpleado.Click += new System.EventHandler(this.btnAgregarEmpleado_Click);
             // 
             // AgregarUsuario
             // 

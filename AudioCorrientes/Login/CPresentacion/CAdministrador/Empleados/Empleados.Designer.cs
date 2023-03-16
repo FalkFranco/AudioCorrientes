@@ -116,7 +116,7 @@
             this.btnActualizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnActualizar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnActualizar.Location = new System.Drawing.Point(1457, 45);
+            this.btnActualizar.Location = new System.Drawing.Point(1416, 47);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(85, 35);
             this.btnActualizar.TabIndex = 17;
@@ -136,7 +136,7 @@
             this.dgvEmpleados.Location = new System.Drawing.Point(36, 88);
             this.dgvEmpleados.Name = "dgvEmpleados";
             this.dgvEmpleados.ReadOnly = true;
-            this.dgvEmpleados.Size = new System.Drawing.Size(1506, 758);
+            this.dgvEmpleados.Size = new System.Drawing.Size(1465, 758);
             this.dgvEmpleados.TabIndex = 13;
             this.dgvEmpleados.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmpleados_CellClick);
             // 
@@ -196,12 +196,16 @@
             // 
             // btnAgregarE
             // 
-            this.btnAgregarE.Location = new System.Drawing.Point(26, 475);
+            this.btnAgregarE.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnAgregarE.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregarE.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarE.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnAgregarE.Location = new System.Drawing.Point(1519, 107);
             this.btnAgregarE.Name = "btnAgregarE";
-            this.btnAgregarE.Size = new System.Drawing.Size(123, 35);
+            this.btnAgregarE.Size = new System.Drawing.Size(123, 46);
             this.btnAgregarE.TabIndex = 4;
             this.btnAgregarE.Text = "Agregar Empleado";
-            this.btnAgregarE.UseVisualStyleBackColor = true;
+            this.btnAgregarE.UseVisualStyleBackColor = false;
             this.btnAgregarE.Click += new System.EventHandler(this.btnAgregarE_Click);
             // 
             // txtBuscar

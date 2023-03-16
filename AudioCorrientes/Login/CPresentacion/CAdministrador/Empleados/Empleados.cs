@@ -50,7 +50,8 @@ namespace Login.CSuAdministrador.Empleados
             AgregarEmpleados agregarEmpleados = new AgregarEmpleados();
             agregarEmpleados.ShowDialog();
             //objEmpleado.CargarGrid(dgvEmpleados);
-            objEmpleado.cargarDtosEmpleados(dgvEmpleados);
+            objEmpleado.cargarDtosEmpleadosA(dgvEmpleados);
+            objEmpleado.cargarDtosEmpleadosEliminadosA(dgvEmpleadosE);
         }
 
         private void chbNombreE_Click(object sender, EventArgs e)
@@ -85,7 +86,7 @@ namespace Login.CSuAdministrador.Empleados
         {
             objEmpleado.cargarDtosEmpleadosA(dgvEmpleados);
             objEmpleado.cargarDtosEmpleadosEliminadosA(dgvEmpleadosE);
-            //dgvEmpleados.Columns["Activar"].Visible = false;
+            dgvEmpleados.Columns["Activar"].Visible = false;
             //dgvEmpleados.Columns["Eliminar"].Visible = false;
         }
 

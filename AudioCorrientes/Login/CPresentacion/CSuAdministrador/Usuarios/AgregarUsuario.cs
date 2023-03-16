@@ -102,6 +102,9 @@ namespace Login.CPresentacion.CSuAdministrador.Usuarios
             conexion.Close();
         }
 
-
+        private void btnSalirMenuPrincipal_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

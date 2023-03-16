@@ -137,6 +137,7 @@
             this.btnAgregarMarca.TabIndex = 36;
             this.btnAgregarMarca.Text = "Agregar Marca";
             this.btnAgregarMarca.UseVisualStyleBackColor = false;
+            this.btnAgregarMarca.Click += new System.EventHandler(this.btnAgregarMarca_Click);
             // 
             // btnAgregarCat
             // 
@@ -151,6 +152,7 @@
             this.btnAgregarCat.TabIndex = 35;
             this.btnAgregarCat.Text = "Agregar Categoria";
             this.btnAgregarCat.UseVisualStyleBackColor = false;
+            this.btnAgregarCat.Click += new System.EventHandler(this.btnAgregarCat_Click);
             // 
             // btnAgregar
             // 
@@ -165,6 +167,7 @@
             this.btnAgregar.TabIndex = 34;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = false;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // btnActualizar
             // 
@@ -178,6 +181,7 @@
             this.btnActualizar.TabIndex = 21;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = false;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // dgvProductos
             // 
@@ -329,6 +333,7 @@
             this.btnAgregarC.TabIndex = 35;
             this.btnAgregarC.Text = "Agregar";
             this.btnAgregarC.UseVisualStyleBackColor = false;
+            this.btnAgregarC.Click += new System.EventHandler(this.btnAgregarCat_Click);
             // 
             // txtBuscarC
             // 
@@ -387,6 +392,7 @@
             this.btnAgregarM.TabIndex = 36;
             this.btnAgregarM.Text = "Agregar";
             this.btnAgregarM.UseVisualStyleBackColor = false;
+            this.btnAgregarM.Click += new System.EventHandler(this.btnAgregarMarca_Click);
             // 
             // txtBuscarM
             // 
